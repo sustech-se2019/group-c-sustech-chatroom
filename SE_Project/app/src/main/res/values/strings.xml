@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">南科大聊天室</string>
+    <string name="IM_Server_Url">http://10.21.72.100:8081/</string>
 </resources>
