@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/JsonHttpRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/SpringUtil.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -209,8 +204,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="280" />
-    <option name="y" value="286" />
+    <option name="x" value="70" />
+    <option name="y" value="107" />
     <option name="width" value="1409" />
     <option name="height" value="866" />
   </component>
@@ -350,7 +345,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginAndRegistTset">
+  <component name="RunManager" selected="Spring Boot.Application (1)">
     <configuration name="LoginAndRegistTset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LoginAndRegistTset" />
       <module name="SIM-Server" />
@@ -459,8 +454,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginAndRegistTset" />
         <item itemvalue="Spring Boot.Application (1)" />
+        <item itemvalue="JUnit.LoginAndRegistTset" />
         <item itemvalue="JUnit.LoginAndRegistTset.test1" />
         <item itemvalue="Application.LoginAndRegistTset" />
       </list>
@@ -482,7 +477,7 @@
       <workItem from="1555338514540" duration="6658000" />
       <workItem from="1555383216881" duration="10388000" />
       <workItem from="1555398513146" duration="16913000" />
-      <workItem from="1555420134165" duration="8676000" />
+      <workItem from="1555420134165" duration="8968000" />
     </task>
     <servers />
   </component>
@@ -510,7 +505,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52618000" />
+    <option name="totallyTimeSpent" value="52910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -523,7 +518,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="280" y="286" width="1409" height="866" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -545,7 +539,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.30832195" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" weight="0.30832195" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32833788" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23498888" />
@@ -569,6 +563,40 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="53" column="27" lean-forward="true" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="51" column="50" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/target/classes/com/imooc/pojo/bo/UsersBO.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/target/classes/com/imooc/enums/MsgActionEnum.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/target/classes/com/imooc/mapper/ChatMsgMapper.class" />
@@ -577,27 +605,9 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/src/main/java/org/n3r/idworker/strategy/DayPrefixRandomCodeStrategy.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/pom.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/src/main/java/com/imooc/Application.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/ChatHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/WSServerInitialzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/WSServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/ChatHandler.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/WSServerInitialzer.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/WSServer.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.6.RELEASE/spring-context-5.1.6.RELEASE.jar!/org/springframework/context/annotation/ComponentScan.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -612,16 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/User.java" />
-    <entry file="file://$PROJECT_DIR$/../后端/imooc-muxin-netty/src/main/resources/application.properties" />
-    <entry file="file://$PROJECT_DIR$/../后端/imooc-muxin-netty/src/main/resources/application" />
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa20856.36769/源码/资料/coding-261/后端/imooc-muxin-netty/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="26" lean-forward="true" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml" />
     <entry file="file://$PROJECT_DIR$/target/pom.xml.fxml" />
     <entry file="file://$PROJECT_DIR$/target/pomxml.tld" />
@@ -630,13 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Dao/UserDao.xml" />
     <entry file="file://$PROJECT_DIR$/target/generatorConfig.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/SpringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/SpringUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
     <entry file="file://$PROJECT_DIR$/target/classes/mybatis-config.xml" />
     <entry file="file://$PROJECT_DIR$/target/classes/application.properties" />

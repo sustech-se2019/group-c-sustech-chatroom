@@ -2,6 +2,8 @@ package com.example.se_project;
 
 import android.content.Intent;
 import android.os.Debug;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.setClass(MainActivity.this, RegisterActivity.class);
                 MainActivity.this.startActivity(intent);
                 //Intent reg = new Intent(MainActivity.this, RegisterActivity.this);
-                regist("789","789",4.0);
+
                 break;
 //            case R.id.ensure_button:
 ////                register
@@ -60,81 +62,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            JSONObject result = (JSONObject)msg.obj;
+            switch (result.getIntValue("status")) {
+                case HttpURLConnection.HTTP_OK:
+                    //登录成功
+                    Log.d("result: ", result.getString("data"));
+                    break;
+                default:
+                    Log.d("result: ", result.getString("msg"));
+                    break;
+            }
+        }
+    };
+
+
     private void login(final String username, final String password ) {
         final String request_url = this.getString(R.string.IM_Server_Url) + "/login";
         new Thread(new Runnable() {
             @Override
             public void run() {
-                                try {
-                                    URL url = new URL(request_url);
-                                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                                    connection.setRequestMethod("POST");
-                                    connection.setDoOutput(true);
-                                    connection.setDoInput(true);
-                                    connection.setUseCaches(false);
-                                    connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");//设置参数类型是json格式
-                                    connection.connect();
-
-                                    String body = "{\"username\":" + username + ",\"password\":" + password + "}";
-                                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
-                                    writer.write(body);
-                                    writer.close();
-
-                                    int responseCode = connection.getResponseCode();
-                                    InputStream inputStream = connection.getInputStream();
-                                    String result = inputStream2String(inputStream);//将流转换为字符串。
-                                    JSONObject result_json = JSONObject.parseObject(result);
-
-                                    if (result_json.getIntValue("status") == HttpURLConnection.HTTP_OK) {
-
-                                        Log.d("result: ", result_json.getString("data"));
-
-                                    } else {
-                                        Log.d("result: ", result_json.getString("msg"));
-                                    }
-
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-            }
-        }).start();
-
-    }
-
-    private void regist(final String username, final String password, final double gpa) {
-        final String request_url = this.getString(R.string.IM_Server_Url) + "/regist";
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+                Message message = new Message();
                 try {
-                    URL url = new URL(request_url);
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    connection.setRequestMethod("POST");
-                    connection.setDoOutput(true);
-                    connection.setDoInput(true);
-                    connection.setUseCaches(false);
-                    connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");//设置参数类型是json格式
-                    connection.connect();
+                    String data = "{\"username\":" + username + ",\"password\":" + password + "}";
+                    JSONObject json_data = JSONObject.parseObject(data);
 
-                    String body = "{\"username\":" + username + ",\"password\":" + password + ",\"gpa\":" + gpa + "}";
-                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
-                    writer.write(body);
-                    writer.close();
-
-                    int responseCode = connection.getResponseCode();
-                    InputStream inputStream = connection.getInputStream();
-                    String result = inputStream2String(inputStream);//将流转换为字符串。
-                    JSONObject result_json = JSONObject.parseObject(result);
-
-                    if (result_json.getIntValue("status") == HttpURLConnection.HTTP_OK) {
-
-                        Log.d("result: ", result_json.getString("data"));
-
-                    } else {
-                        Log.d("result: ", result_json.getString("msg"));
-                    }
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    handler.sendMessage(message);
 
                 } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",0);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    handler.sendMessage(message);
                     e.printStackTrace();
                 }
             }
@@ -142,12 +106,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public String inputStream2String (InputStream in) throws IOException {
-        StringBuffer out = new StringBuffer();
-        byte[] b = new byte[4096];
-        for (int n; (n = in.read(b)) != -1;) {
-            out.append(new String(b,0,n));
-        }
-        return out.toString();
-    }
+
 }
