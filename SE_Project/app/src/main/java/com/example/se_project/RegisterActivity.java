@@ -1,5 +1,6 @@
 package com.example.se_project;
 
+import android.annotation.SuppressLint;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
         regist("789","789",4.0);
     }
 
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
