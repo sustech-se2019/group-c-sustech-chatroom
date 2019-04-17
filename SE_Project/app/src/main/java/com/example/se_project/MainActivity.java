@@ -1,5 +1,6 @@
 package com.example.se_project;
 
+import android.content.Intent;
 import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,7 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.register_button:
                 //register
-                setContentView(R.layout.register);
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, RegisterActivity.class);
+                MainActivity.this.startActivity(intent);
+                //Intent reg = new Intent(MainActivity.this, RegisterActivity.this);
                 regist("789","789",4.0);
                 break;
 //            case R.id.ensure_button:
