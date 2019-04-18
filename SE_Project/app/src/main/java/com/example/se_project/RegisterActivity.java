@@ -1,6 +1,7 @@
 package com.example.se_project;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,10 @@ public class RegisterActivity extends AppCompatActivity {
             switch (result.getIntValue("status")) {
                 case HttpURLConnection.HTTP_OK:
                     //注册成功
+                    Intent intent = new Intent();//场景切换
+                    intent.setClass(RegisterActivity.this, MainActivity.class);
+                    RegisterActivity.this.startActivity(intent);
+
                     Log.d("result: ", result.getString("data"));
                     break;
                 default:

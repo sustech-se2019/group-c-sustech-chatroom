@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         login.setOnClickListener(this);
         register.setOnClickListener(this);
         //ensure_register.setOnClickListener(this);
+
+
     }
 
     @Override
@@ -40,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.login_button:
                 //login in
                 login("123","123");
+                Intent intent1 = new Intent();
+                intent1.setClass(MainActivity.this, ChatroomActivity.class);
+                MainActivity.this.startActivity(intent1);
+
                 break;
             case R.id.register_button:
                 //register
