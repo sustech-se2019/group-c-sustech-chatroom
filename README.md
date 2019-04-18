@@ -1,17 +1,18 @@
 # main-project-repository-sustech-chatroom
 main-project-repository-sustech-chatroom created by GitHub Classroom   
 Group name : Sustech Chatroom   
-Group member :   
+Group member :
+
 		11612512陈达寅
 		11610528潘天赐
 		11610507陈逸鸣
 		11612527曾政然
 		11612729查梓杰
-		11612601何治成   
+		11612601何治成
 		
-		1. The GUI of Registration and login and some click events (11612512 Dayin Chen)   
-		2. The Server of Registration and login (11612527 Zeng Zhengran)   
-		3. Read the content of Textfield and send to the server. Some dialog to forbiden the illegal operations (11612512 Dayin Chen)   
+1. The GUI of Registration and login and some click events (11612512 Dayin Chen)   
+2. The Server of Registration and login (11612527 Zeng Zhengran)   
+3. Read the content of Textfield and send to the server. Some dialog to forbiden the illegal operations (11612512 Dayin Chen)   
 
 
 g) Future plan:   
