@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">南科大聊天室</string>
     <string name="IM_Server_Url">http://10.21.72.100:8081/</string>
+    <string name="outside_name">Chatroom</string>
+    <string name="entry_button_name">Camera</string>
+    <string name="capture_button_description">Capture</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
 </resources>

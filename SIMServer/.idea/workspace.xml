@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/HttpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/RegisterActivity.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -500,7 +497,7 @@
       <workItem from="1555383216881" duration="10388000" />
       <workItem from="1555398513146" duration="16913000" />
       <workItem from="1555420134165" duration="8968000" />
-      <workItem from="1555519806354" duration="595000" />
+      <workItem from="1555519806354" duration="644000" />
     </task>
     <servers />
   </component>
@@ -528,7 +525,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53505000" />
+    <option name="totallyTimeSpent" value="53554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -562,7 +559,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.30695772" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" weight="0.30695772" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32833788" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23498888" />

@@ -32,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Log.d("result: ", result.getString("data"));
                     break;
                 default:
+                    //注册失败
                     Log.d("result: ", result.getString("msg"));
                     break;
             }
