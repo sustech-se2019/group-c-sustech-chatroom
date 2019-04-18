@@ -98,6 +98,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                     Log.d("result: ", result.getString("data"));
                     break;
+                case HttpURLConnection.HTTP_INTERNAL_ERROR:
+                    Log.d("result: ", result.getString("msg"));
+                    showdialog_exit_username();
+                    break;
                 default:
                     //注册失败
                     Log.d("result: ", result.getString("msg"));
@@ -114,11 +118,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             public void run() {
                 Message message = new Message();
                 try {
-                    String data = "{\"username\":" + username + ",\"password\":" + password + ",\"gpa\":" + gpa + "}";
-                    JSONObject json_data = JSONObject.parseObject(data);
+
+                    JSONObject json_data = new JSONObject();
+                    json_data.put("username", username);
+                    json_data.put("password", password);
+                    json_data.put("gpa", gpa);
 
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
-                    ;
                     handler.sendMessage(message);
 
                 } catch (Exception e) {

@@ -74,25 +74,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     };
 
-
-
-
-
-
-
-
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_button:
                 //login in
                 String usname = login_username.getText().toString();
-                String psword = login_username.getText().toString();
+                String psword = login_password.getText().toString();
                 login(usname,psword);
-                Intent intent1 = new Intent();
-                intent1.setClass(MainActivity.this, ChatActivity.class);
-                MainActivity.this.startActivity(intent1);
 
                 break;
             case R.id.register_button:
@@ -115,7 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
             Intent intent = new Intent();
+
             switch (result.getIntValue("status")) {
+
                 case HttpURLConnection.HTTP_OK:
                     //登录成功
 
@@ -123,16 +114,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     intent1.setClass(MainActivity.this, ChatActivity.class);
                     MainActivity.this.startActivity(intent1);
                     Log.d("result: ", result.getString("data"));
-
-                    intent.setClass(MainActivity.this, ChatActivity.class);
-                    MainActivity.this.startActivity(intent);
                     break;
                 default:
                     //登陆失败
                     showdialog_wrong_password();
-                    Log.d("result: ", result.getString("msg"));
-//                    intent.setClass(MainActivity.this, ChatActivity.class);
-//                    MainActivity.this.startActivity(intent);
+                    Log.d("result", result.getString("msg"));
+
                     break;
             }
         }
@@ -146,8 +133,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void run() {
                 Message message = new Message();
                 try {
-                    String data = "{\"username\":" + username + ",\"password\":" + password + "}";
-                    JSONObject json_data = JSONObject.parseObject(data);
+                    JSONObject json_data = new JSONObject();
+                    json_data.put("username", username);
+                    json_data.put("password", password);
 
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
                     handler.sendMessage(message);
