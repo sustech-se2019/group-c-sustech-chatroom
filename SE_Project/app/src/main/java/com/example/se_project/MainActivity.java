@@ -69,13 +69,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
+            Intent intent = new Intent();
             switch (result.getIntValue("status")) {
                 case HttpURLConnection.HTTP_OK:
                     //登录成功
                     Log.d("result: ", result.getString("data"));
+
+                    intent.setClass(MainActivity.this, ChatActivity.class);
+                    MainActivity.this.startActivity(intent);
                     break;
                 default:
                     Log.d("result: ", result.getString("msg"));
+                    intent.setClass(MainActivity.this, ChatActivity.class);
+                    MainActivity.this.startActivity(intent);
                     break;
             }
         }
