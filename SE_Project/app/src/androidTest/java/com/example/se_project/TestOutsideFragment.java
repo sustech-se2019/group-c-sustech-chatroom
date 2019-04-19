@@ -60,13 +60,11 @@ public class TestOutsideFragment{
     @UiThreadTest
     public void onCreateViewPerformClick() {
         OutsideFragment outsideFragment = (OutsideFragment) rule.getActivity().getSupportFragmentManager().findFragmentById(R.id.outside);
-        outsideFragment.getView().findViewById(R.id.entry).performClick();
-        //onView(withId(R.id.entry)).perform(click());
 
-        //Assert.assertTrue(outsideFragment.getView().findViewById(R.id.entry).performClick());
 
-        //Assert.assertNull(rule.getActivity());
-        //Assert.assertEquals(0,rule.getActivity().getWindow().getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        Assert.assertTrue(outsideFragment.getView().findViewById(R.id.entry).performClick());
+
+        Assert.assertEquals(1024,rule.getActivity().getWindow().getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
 }

@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private Button ensure;
     private String usname, psword, repsword;
     double gpa;
-
+    AlertDialog alertdialog1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,31 +46,31 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-    public void showdialog_dif_password() {
+    private void showdialog_dif_password() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("两次密码不一致");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1 = alertdialogbuilder.create();
+        alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
 
-    public void showdialog_exit_username() {
+    private void showdialog_exit_username() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("用户名已存在");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1 = alertdialogbuilder.create();
+        alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
 
 
-    public void showdialog_fail_connect() {
+    private void showdialog_fail_connect() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("连接服务器失败");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1 = alertdialogbuilder.create();
+        alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
 
