@@ -13,7 +13,7 @@ import sim.pojo.Users;
 @Service
 public class UserDaoImpl implements UserDao {
 
-    @Autowired
+    @Autowired(required = false)
     private UsersMapper userMapper;
 
     @Transactional(propagation = Propagation.SUPPORTS)
@@ -24,7 +24,7 @@ public class UserDaoImpl implements UserDao {
 
         Users result = userMapper.selectOne(user);
 
-        return result != null ? true : false;
+        return result != null;
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
@@ -36,9 +36,7 @@ public class UserDaoImpl implements UserDao {
         criteria.andEqualTo("username", username);
         criteria.andEqualTo("password", pwd);
 
-        Users result = userMapper.selectOneByExample(userExample);
-
-        return result;
+        return userMapper.selectOneByExample(userExample);
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
@@ -57,6 +55,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
     public Users queryUserById(String userId) {
         return userMapper.selectByPrimaryKey(userId);
     }

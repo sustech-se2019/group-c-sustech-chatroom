@@ -24,4 +24,6 @@ public interface UserDao {
      */
     public Users updateUserInfo(Users user);
 
+    public Users queryUserById(String userId);
+
 }
