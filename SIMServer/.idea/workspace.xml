@@ -5,117 +5,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/RegisterActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/RegisterActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/LoginAndRegistTset.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoginAndRegistTset.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2166">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginAndRegistController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-              <folding>
-                <element signature="e#816#817#0" expanded="true" />
-                <element signature="e#869#870#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginAndRegistTset.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2253#2254#0" expanded="true" />
-                <element signature="e#2287#2288#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="488">
+                  <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#636#637#0" expanded="true" />
+                    <element signature="e#679#680#0" expanded="true" />
+                    <element signature="e#716#717#0" expanded="true" />
+                    <element signature="e#759#760#0" expanded="true" />
+                    <element signature="e#816#817#0" expanded="true" />
+                    <element signature="e#869#870#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="188">
+                  <caret line="228" column="28" lean-forward="true" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#915#924#0" expanded="true" />
+                    <element signature="e#2710#2719#0" expanded="true" />
+                    <element signature="e#6317#6326#0" expanded="true" />
+                    <element signature="e#6565#6574#0" expanded="true" />
+                    <element signature="e#6860#6869#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -124,6 +74,7 @@
         <option value="Tag Library Descriptor" />
         <option value="spring-beans.schema" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -177,14 +128,10 @@
         <option value="$PROJECT_DIR$/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Application.java" />
         <option value="$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java" />
+        <option value="$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -210,14 +157,10 @@
       <select />
     </treeState>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="70" />
-    <option name="y" value="107" />
-    <option name="width" value="1409" />
-    <option name="height" value="866" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="2021" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -225,9 +168,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,19 +184,44 @@
               <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
               <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -265,14 +230,17 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="cores_evosuite_param" value="1" />
     <property name="evosuite_gui_dialog_height" value="300" />
     <property name="evosuite_gui_dialog_width" value="570" />
     <property name="evosuite_jar_location" value="" />
     <property name="execution_mode" value="JAR" />
-    <property name="last_opened_file_path" value="D:/Git/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="memory_evosuite_param" value="2000" />
     <property name="mvn_location" value="C:\Program Files\apache-maven-3.5.3\bin\mvn.cmd" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -280,27 +248,33 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.54022986" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="target_folder_evosuite_param" value="src/evo" />
     <property name="time_evosuite_param" value="3" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\SUSTC\CS304\SIMServer\src\main\java\sim" />
-      <recent name="D:\SUSTC\CS304\SIMServer\src\main\resources\mapper" />
-      <recent name="D:\SUSTC\CS304\SIMServer\target" />
-      <recent name="D:\SUSTC\CS304\SIMServer\src\main\java\sim\pojo\vo" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="sim.utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SUSTC\CS304\SIMServer" />
+      <recent name="D:\SUSTC\CS304\SIMServer\src" />
+      <recent name="D:\SUSTC\CS304\SIMServer\src\main" />
       <recent name="D:\SUSTC\CS304\SIMServer\src\main\java\sim\utils" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="sim.utils" />
       <recent name="sim.mapper" />
       <recent name="sim.pojo" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\SUSTC\CS304\SIMServer" />
-      <recent name="D:\SUSTC\CS304\SIMServer\src" />
-      <recent name="D:\SUSTC\CS304\SIMServer\src\main" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\SUSTC\CS304\SIMServer\src\main\java\sim" />
+      <recent name="D:\SUSTC\CS304\SIMServer\src\main\resources\mapper" />
+      <recent name="D:\SUSTC\CS304\SIMServer\target" />
+      <recent name="D:\SUSTC\CS304\SIMServer\src\main\java\sim\pojo\vo" />
       <recent name="D:\SUSTC\CS304\SIMServer\src\main\java\sim\utils" />
     </key>
   </component>
@@ -316,68 +290,107 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginAndRegistTset.test1">
-    <configuration name="LoginAndRegistTset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LoginAndRegistTset" />
-      <module name="SIM-Server" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-    </configuration>
+  <component name="RunManager" selected="JUnit.JSONResultTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginAndRegistTset" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JSONResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginAndRegistTset" />
-      <option name="METHOD_NAME" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.utils" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="LoginAndRegistTset.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JSONResultTest.errorException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoginAndRegistTset" />
-      <option name="METHOD_NAME" value="test1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.utils" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
+      <option name="METHOD_NAME" value="errorException2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JSONResultTest.errorTokenMsg2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.utils" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
+      <option name="METHOD_NAME" value="errorTokenMsg2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JSONResultTest.isOKNValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.utils" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
+      <option name="METHOD_NAME" value="isOKNValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JSONResultTest.setStatus2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.utils" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
+      <option name="METHOD_NAME" value="setStatus2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
@@ -390,57 +403,34 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" />
       <option name="WORKING_DIRECTORY" />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="SIM-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sim.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="sim.Application" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
+    <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
       <properties />
       <listeners />
-      <method>
+      <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.LoginAndRegistTset" />
-      <item itemvalue="JUnit.LoginAndRegistTset" />
-      <item itemvalue="JUnit.LoginAndRegistTset.test1" />
-      <item itemvalue="Spring Boot.Application (1)" />
+      <item itemvalue="JUnit.JSONResultTest.errorTokenMsg2" />
+      <item itemvalue="JUnit.JSONResultTest.errorException2" />
+      <item itemvalue="JUnit.JSONResultTest.isOKNValid" />
+      <item itemvalue="JUnit.JSONResultTest.setStatus2" />
+      <item itemvalue="JUnit.JSONResultTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginAndRegistTset.test1" />
-        <item itemvalue="JUnit.LoginAndRegistTset" />
-        <item itemvalue="Spring Boot.Application (1)" />
-        <item itemvalue="Application.LoginAndRegistTset" />
+        <item itemvalue="JUnit.JSONResultTest" />
+        <item itemvalue="JUnit.JSONResultTest.setStatus2" />
+        <item itemvalue="JUnit.JSONResultTest.isOKNValid" />
+        <item itemvalue="JUnit.JSONResultTest.errorException2" />
+        <item itemvalue="JUnit.JSONResultTest.errorTokenMsg2" />
       </list>
     </recent_temporary>
   </component>
@@ -464,43 +454,44 @@
       <workItem from="1555519806354" duration="644000" />
       <workItem from="1555564723300" duration="1081000" />
       <workItem from="1555570045710" duration="1303000" />
+      <workItem from="1555663943986" duration="2845000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginAndRegistTset - 2019.04.16 at 16h 15m 45s.xml">
-      <configuration name="LoginAndRegistTset" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_errorMap2 - 2019.04.19 at 17h 20m 10s.xml">
+      <configuration name="JSONResultTest.errorMap2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset_test1 - 2019.04.16 at 20h 25m 31s.xml">
-      <configuration name="LoginAndRegistTset.test1" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_errorMap1 - 2019.04.19 at 17h 20m 15s.xml">
+      <configuration name="JSONResultTest.errorMap1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset_test1 - 2019.04.16 at 20h 25m 51s.xml">
-      <configuration name="LoginAndRegistTset.test1" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_errorTokenMsg1 - 2019.04.19 at 17h 21m 06s.xml">
+      <configuration name="JSONResultTest.errorTokenMsg1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset_test1 - 2019.04.16 at 20h 40m 20s.xml">
-      <configuration name="LoginAndRegistTset.test1" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_errorTokenMsg1 - 2019.04.19 at 17h 21m 29s.xml">
+      <configuration name="JSONResultTest.errorTokenMsg1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset - 2019.04.16 at 20h 40m 38s.xml">
-      <configuration name="LoginAndRegistTset" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_errorTokenMsg2 - 2019.04.19 at 17h 22m 06s.xml">
+      <configuration name="JSONResultTest.errorTokenMsg2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset - 2019.04.16 at 21h 10m 35s.xml">
-      <configuration name="LoginAndRegistTset" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_errorException2 - 2019.04.19 at 17h 24m 29s.xml">
+      <configuration name="JSONResultTest.errorException2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset - 2019.04.17 at 00h 09m 40s.xml">
-      <configuration name="LoginAndRegistTset" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_isOKNValid - 2019.04.19 at 17h 26m 14s.xml">
+      <configuration name="JSONResultTest.isOKNValid" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset - 2019.04.18 at 17h 04m 42s.xml">
-      <configuration name="LoginAndRegistTset" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_setStatus2 - 2019.04.19 at 17h 29m 44s.xml">
+      <configuration name="JSONResultTest.setStatus2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset_test1 - 2019.04.18 at 17h 06m 31s.xml">
-      <configuration name="LoginAndRegistTset.test1" configurationId="JUnit" />
+    <history-entry file="JSONResultTest_setStatus2 - 2019.04.19 at 17h 29m 59s.xml">
+      <configuration name="JSONResultTest.setStatus2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="LoginAndRegistTset_test1 - 2019.04.18 at 17h 06m 56s.xml">
-      <configuration name="LoginAndRegistTset.test1" configurationId="JUnit" />
+    <history-entry file="JSONResultTest - 2019.04.19 at 17h 40m 07s.xml">
+      <configuration name="JSONResultTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55938000" />
+    <option name="totallyTimeSpent" value="58783000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,108 +503,52 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="107" width="1409" height="866" extended-state="0" />
+    <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="PlantUML" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50085473" side_tool="true" weight="0.34196186" />
-      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.16901408" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Designer" order="2" />
-      <window_info anchor="bottom" id="EvoSuite" order="10" weight="0.32970026" />
-      <window_info anchor="right" id="Database" order="7" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.08541915" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32970026" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32833788" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Java Enterprise" order="15" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.5006821" />
-      <window_info anchor="bottom" id="Spring" order="13" weight="0.32833788" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23869532" />
-      <window_info anchor="right" id="Bean Validation" order="10" weight="0.32991454" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32896176" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.42244738" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32970026" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50085473" side_tool="true" weight="0.34196186" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3281372" />
+      <window_info anchor="bottom" id="EvoSuite" order="11" weight="0.32970026" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Spring" order="14" weight="0.32833788" />
+      <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32896176" />
+      <window_info anchor="bottom" id="Java Enterprise" order="16" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="PlantUML" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.16901408" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.32991454" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#869#870#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="12" column="53" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2253#2254#0" expanded="true" />
-            <element signature="e#2287#2288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/target/classes/com/imooc/pojo/bo/UsersBO.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/target/classes/com/imooc/enums/MsgActionEnum.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/imooc-muxin-netty/target/classes/com/imooc/mapper/ChatMsgMapper.class" />
@@ -696,10 +631,49 @@
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/codec/Bytes.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/codec/Base64.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/json/Jsons.class" />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2166">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -715,35 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
+        <state relative-caret-position="782">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -752,23 +699,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
+        <state relative-caret-position="488">
+          <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
           <folding>
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
             <element signature="e#816#817#0" expanded="true" />
             <element signature="e#869#870#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+        <state relative-caret-position="188">
+          <caret line="228" column="28" lean-forward="true" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2253#2254#0" expanded="true" />
-            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#915#924#0" expanded="true" />
+            <element signature="e#2710#2719#0" expanded="true" />
+            <element signature="e#6317#6326#0" expanded="true" />
+            <element signature="e#6565#6574#0" expanded="true" />
+            <element signature="e#6860#6869#0" expanded="true" />
           </folding>
         </state>
       </provider>
