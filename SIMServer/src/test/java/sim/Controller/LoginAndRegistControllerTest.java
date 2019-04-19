@@ -1,3 +1,4 @@
+package sim.Controller;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -7,8 +8,9 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
 
-public class LoginAndRegistTset{
+public class LoginAndRegistControllerTest {
 
     static String ServerUrl = "http://127.0.0.1:8081/";
 
@@ -55,45 +57,27 @@ public class LoginAndRegistTset{
 
     }
 
+
+
     @Test
-    public void test1(){
+    public void testLogin1() {
         login("123","123");
     }
 
     @Test
-    public void test2(){
+    public void testLogin2() {
+        login("123fy3298ry923rf","123u390ry892rgff");
+    }
+
+    @Test
+    public void testRegist2(){
         regist("123","123",0);
     }
 
     @Test
-    public void test3(){
-        regist("456","456", 3.4);
+    public void testRegist3(){
+        regist("uhdiwei","uhihii", 3.4);
     }
-}
 
-//@RunWith(SpringRunner.class)
-//@SpringBootTest(classes={Application.class})// 指定启动类
-//public class LoginAndRegistTset {
-//
-//    @Test
-//    public void testOne(){
-//        System.out.println("test hello 1");
-//    }
-//
-//    @Test
-//    public void testTwo(){
-//        System.out.println("test hello 2");
-//        TestCase.assertEquals(1, 1);
-//    }
-//
-//    @Before
-//    public void testBefore(){
-//        System.out.println("before");
-//    }
-//
-//    @After
-//    public void testAfter(){
-//        System.out.println("after");
-//    }
-//
-//}
+
+}
