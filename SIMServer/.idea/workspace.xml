@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/sim/utils/JsonUtilsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/LoginAndRegistTset.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/LoginAndRegistTset.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,17 +25,12 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
+            <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
-                  <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+                <state relative-caret-position="146">
+                  <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
                   <folding>
-                    <element signature="e#636#637#0" expanded="true" />
-                    <element signature="e#679#680#0" expanded="true" />
-                    <element signature="e#716#717#0" expanded="true" />
-                    <element signature="e#759#760#0" expanded="true" />
-                    <element signature="e#816#817#0" expanded="true" />
-                    <element signature="e#869#870#0" expanded="true" />
+                    <element signature="imports" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -48,16 +41,17 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java">
+            <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JsonUtilsTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="188">
-                  <caret line="228" column="28" lean-forward="true" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="28" />
+                <state relative-caret-position="513">
+                  <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
                   <folding>
-                    <element signature="e#915#924#0" expanded="true" />
-                    <element signature="e#2710#2719#0" expanded="true" />
-                    <element signature="e#6317#6326#0" expanded="true" />
-                    <element signature="e#6565#6574#0" expanded="true" />
-                    <element signature="e#6860#6869#0" expanded="true" />
+                    <element signature="e#176#177#0" expanded="true" />
+                    <element signature="e#249#250#0" expanded="true" />
+                    <element signature="e#310#311#0" expanded="true" />
+                    <element signature="e#392#393#0" expanded="true" />
+                    <element signature="e#804#813#0" expanded="true" />
+                    <element signature="e#1131#1139#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -130,6 +124,7 @@
         <option value="$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" />
+        <option value="$PROJECT_DIR$/src/test/java/sim/utils/JsonUtilsTest.java" />
       </list>
     </option>
   </component>
@@ -200,6 +195,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
@@ -290,14 +294,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JSONResultTest">
+  <component name="RunManager" selected="JUnit.JsonUtilsTest.jsonToList2">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONResultTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonUtilsTest.jsonToList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
       <extension name="coverage">
         <pattern>
@@ -306,25 +310,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sim.utils" />
-      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JSONResultTest.errorException2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SIM-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sim.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="sim.utils" />
-      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
-      <option name="METHOD_NAME" value="errorException2" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JsonUtilsTest" />
+      <option name="METHOD_NAME" value="jsonToList" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -332,7 +319,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONResultTest.errorTokenMsg2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonUtilsTest.jsonToList2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
       <extension name="coverage">
         <pattern>
@@ -341,8 +328,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sim.utils" />
-      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
-      <option name="METHOD_NAME" value="errorTokenMsg2" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JsonUtilsTest" />
+      <option name="METHOD_NAME" value="jsonToList2" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -350,7 +337,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONResultTest.isOKNValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonUtilsTest.jsonToPojo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
       <extension name="coverage">
         <pattern>
@@ -359,8 +346,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sim.utils" />
-      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
-      <option name="METHOD_NAME" value="isOKNValid" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JsonUtilsTest" />
+      <option name="METHOD_NAME" value="jsonToPojo" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -368,7 +355,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONResultTest.setStatus2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonUtilsTest.jsonToPojo2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
       <extension name="coverage">
         <pattern>
@@ -377,8 +364,26 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="sim.utils" />
-      <option name="MAIN_CLASS_NAME" value="sim.utils.JSONResultTest" />
-      <option name="METHOD_NAME" value="setStatus2" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JsonUtilsTest" />
+      <option name="METHOD_NAME" value="jsonToPojo2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonUtilsTest.objectToJson1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.utils" />
+      <option name="MAIN_CLASS_NAME" value="sim.utils.JsonUtilsTest" />
+      <option name="METHOD_NAME" value="objectToJson1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -418,19 +423,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.JSONResultTest.errorTokenMsg2" />
-      <item itemvalue="JUnit.JSONResultTest.errorException2" />
-      <item itemvalue="JUnit.JSONResultTest.isOKNValid" />
-      <item itemvalue="JUnit.JSONResultTest.setStatus2" />
-      <item itemvalue="JUnit.JSONResultTest" />
+      <item itemvalue="JUnit.JsonUtilsTest.objectToJson1" />
+      <item itemvalue="JUnit.JsonUtilsTest.jsonToPojo" />
+      <item itemvalue="JUnit.JsonUtilsTest.jsonToPojo2" />
+      <item itemvalue="JUnit.JsonUtilsTest.jsonToList" />
+      <item itemvalue="JUnit.JsonUtilsTest.jsonToList2" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JSONResultTest" />
-        <item itemvalue="JUnit.JSONResultTest.setStatus2" />
-        <item itemvalue="JUnit.JSONResultTest.isOKNValid" />
-        <item itemvalue="JUnit.JSONResultTest.errorException2" />
-        <item itemvalue="JUnit.JSONResultTest.errorTokenMsg2" />
+        <item itemvalue="JUnit.JsonUtilsTest.jsonToList2" />
+        <item itemvalue="JUnit.JsonUtilsTest.jsonToList" />
+        <item itemvalue="JUnit.JsonUtilsTest.jsonToPojo2" />
+        <item itemvalue="JUnit.JsonUtilsTest.jsonToPojo" />
+        <item itemvalue="JUnit.JsonUtilsTest.objectToJson1" />
       </list>
     </recent_temporary>
   </component>
@@ -454,44 +459,44 @@
       <workItem from="1555519806354" duration="644000" />
       <workItem from="1555564723300" duration="1081000" />
       <workItem from="1555570045710" duration="1303000" />
-      <workItem from="1555663943986" duration="2845000" />
+      <workItem from="1555663943986" duration="3958000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="JSONResultTest_errorMap2 - 2019.04.19 at 17h 20m 10s.xml">
-      <configuration name="JSONResultTest.errorMap2" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_objectToJson2 - 2019.04.19 at 17h 47m 20s.xml">
+      <configuration name="JsonUtilsTest.objectToJson2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_errorMap1 - 2019.04.19 at 17h 20m 15s.xml">
-      <configuration name="JSONResultTest.errorMap1" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_objectToJson2 - 2019.04.19 at 17h 47m 51s.xml">
+      <configuration name="JsonUtilsTest.objectToJson2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_errorTokenMsg1 - 2019.04.19 at 17h 21m 06s.xml">
-      <configuration name="JSONResultTest.errorTokenMsg1" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_objectToJson1 - 2019.04.19 at 17h 48m 34s.xml">
+      <configuration name="JsonUtilsTest.objectToJson1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_errorTokenMsg1 - 2019.04.19 at 17h 21m 29s.xml">
-      <configuration name="JSONResultTest.errorTokenMsg1" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_objectToJson1 - 2019.04.19 at 17h 48m 48s.xml">
+      <configuration name="JsonUtilsTest.objectToJson1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_errorTokenMsg2 - 2019.04.19 at 17h 22m 06s.xml">
-      <configuration name="JSONResultTest.errorTokenMsg2" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_jsonToPojo - 2019.04.19 at 17h 51m 30s.xml">
+      <configuration name="JsonUtilsTest.jsonToPojo" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_errorException2 - 2019.04.19 at 17h 24m 29s.xml">
-      <configuration name="JSONResultTest.errorException2" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_jsonToPojo2 - 2019.04.19 at 17h 52m 32s.xml">
+      <configuration name="JsonUtilsTest.jsonToPojo2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_isOKNValid - 2019.04.19 at 17h 26m 14s.xml">
-      <configuration name="JSONResultTest.isOKNValid" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_jsonToPojo2 - 2019.04.19 at 17h 52m 48s.xml">
+      <configuration name="JsonUtilsTest.jsonToPojo2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_setStatus2 - 2019.04.19 at 17h 29m 44s.xml">
-      <configuration name="JSONResultTest.setStatus2" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_jsonToList - 2019.04.19 at 17h 56m 45s.xml">
+      <configuration name="JsonUtilsTest.jsonToList" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest_setStatus2 - 2019.04.19 at 17h 29m 59s.xml">
-      <configuration name="JSONResultTest.setStatus2" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_jsonToList2 - 2019.04.19 at 17h 58m 04s.xml">
+      <configuration name="JsonUtilsTest.jsonToList2" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JSONResultTest - 2019.04.19 at 17h 40m 07s.xml">
-      <configuration name="JSONResultTest" configurationId="JUnit" />
+    <history-entry file="JsonUtilsTest_jsonToList2 - 2019.04.19 at 17h 58m 50s.xml">
+      <configuration name="JsonUtilsTest.jsonToList2" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58783000" />
+    <option name="totallyTimeSpent" value="59896000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -506,7 +511,7 @@
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.08541915" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08541915" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -655,16 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="554">
@@ -677,22 +672,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="237" column="18" selection-start-line="237" selection-start-column="18" selection-end-line="237" selection-end-column="18" />
+          <folding>
+            <element signature="e#915#924#0" expanded="true" />
+            <element signature="e#2710#2719#0" expanded="true" />
+            <element signature="e#6317#6326#0" expanded="true" />
+            <element signature="e#6565#6574#0" expanded="true" />
+            <element signature="e#6860#6869#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -712,16 +711,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JSONResultTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="228" column="28" lean-forward="true" selection-start-line="228" selection-start-column="28" selection-end-line="228" selection-end-column="28" />
+        <state relative-caret-position="300">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
           <folding>
-            <element signature="e#915#924#0" expanded="true" />
-            <element signature="e#2710#2719#0" expanded="true" />
-            <element signature="e#6317#6326#0" expanded="true" />
-            <element signature="e#6565#6574#0" expanded="true" />
-            <element signature="e#6860#6869#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/JsonUtilsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <element signature="e#176#177#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#804#813#0" expanded="true" />
+            <element signature="e#1131#1139#0" expanded="true" />
           </folding>
         </state>
       </provider>
