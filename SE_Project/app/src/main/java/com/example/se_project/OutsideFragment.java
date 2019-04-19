@@ -31,14 +31,7 @@ public class OutsideFragment extends Fragment {
                         .replace(R.id.outside, CameraFragment.newInstance()).addToBackStack(null).commit();
             }
         });
-//        entry.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(onButtonClick!=null){
-//                    onButtonClick.onClick(entry);
-//                }
-//            }
-//        });
+
         return view;
     }
 
@@ -47,23 +40,4 @@ public class OutsideFragment extends Fragment {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return true;
     }
-
-//    @Override
-//    public void onDestroy() {
-//        getActivity().getWindow().clearFlags(
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        super.onDestroy();
-//    }
-
-/*    public OnButtonClick getOnButtonClick() {
-        return onButtonClick;
-    }
-
-    public void setOnButtonClick(OnButtonClick onButtonClick) {
-        this.onButtonClick = onButtonClick;
-    }
-
-    public interface OnButtonClick{
-        public void onClick(View view);
-    }*/
 }
