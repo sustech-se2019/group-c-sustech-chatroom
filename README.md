@@ -14,6 +14,7 @@ Group member :
 2. The Server of Registration and login (11612527 Zeng Zhengran)   
 3. Read the content of Textfield and send to the server. Some dialog to forbiden the illegal operations (11612512 Dayin Chen)   
 4. JAVADoc (11612729 Zijie Zha)
+5. Fixing Checkstyle,PMD,Findbugs erros(11610528 Tianci Pan)
 
 b) Test scenario   
 	+ Register   
