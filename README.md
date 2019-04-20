@@ -11,11 +11,14 @@ Group member :
 		11612601何治成
 
 1. The GUI of Registration and login and some click events (11612512 Dayin Chen)   
-2. The Server of Registration and login (11612527 Zeng Zhengran)   
+2. The Server of Registration and login (11612527 Zhengran Zeng)   
 3. Read the content of Textfield and send to the server. Some dialog to forbiden the illegal operations (11612512 Dayin Chen)   
 4. JAVADoc (11612729 Zijie Zha)
 5. Fixing Checkstyle,PMD,Findbugs erros(11610528 Tianci Pan)
+6. Camera feature (11612601 Zhicheng He)
 
+a) Chosen Features 
+	In this iteration we chose to develop the registration function, login function, camera function. First of all, from the development point of view, user data as the index of data, other functions rely on user data for the specified push, so the user datas' manipulation must be completed in the first time, and from the perspective of the user interface, the first thing that users would do for entering the application is to register or log in, so these two functions should be completed first. The only one in the remaining functions that can be developed in parallel with the login registration function are cameras and translations. The camera is easier to implement, so the third option is to complete the camera.
 b) Test scenario   
 	+ Register   
 		+ When user successfully register an account, a success dialog is shown   
