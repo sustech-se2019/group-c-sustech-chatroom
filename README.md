@@ -17,23 +17,25 @@ Group member :
 
 b) Test scenario
 
- + Register
-   + When user successfully register an account, a success dialog is shown
-   + When user fail to register due to inconsistency between two password or existed username, corresponding dialog is shown
-+ Login
-  + When user login successfully to her account, main page of chatroom is shown
-  + When user login with an incorrect userid/password, the user will get an error message saying 
-    “Wrong password”
-+ Taking photo
-  + When successfully takeing a photo, it will turn back to main page of chatroom and tell the user the storage location
-  + User can also leave from the camera fragment to main page directly without taking a photo.
+		+ Register
+		  + When user successfully register an account, a success dialog is shown
+		  + When user fail to register due to inconsistency between two password or existed username, corresponding dialog is shown
+		+ Login
+		  + When user login successfully to her account, main page of chatroom is shown
+		  + When user login with an incorrect userid/password, the user will get an error message saying 
+		    “Wrong password”
+		+ Taking photo
+		  + When successfully takeing a photo, it will turn back to main page of chatroom and tell the user the storage location
+		  + User can also leave from the camera fragment to main page directly without taking a photo.
 
-​		
+​		 
+
+d)
 
 g) Future plan:   
-   week10: Account register and Login form and Camera.   
-   week11: Chating room and Friend system   
-   week12: Translation and File transition   
-   week13: Moments sharing and Comment or Like the Moment   
-   Week14: Extra effect on GPA   
-   Week15: Polish the GUI and the other details   
+		week10: Account register and Login form and Camera.   
+		week11: Chating room and Friend system   
+		week12: Translation and File transition   
+		week13: Moments sharing and Comment or Like the Moment   
+		Week14: Extra effect on GPA   
+		Week15: Polish the GUI and the other details   
