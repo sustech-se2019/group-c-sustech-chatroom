@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Camera</string>
-    <string name="outside_name">Chatroom</string>
-    <string name="entry_button_name">Camera</string>
-    <string name="capture_button_description">Capture</string>
-    <string name="request_permission">This sample needs camera permission.</string>
-    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
-</resources>

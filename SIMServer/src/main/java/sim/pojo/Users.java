@@ -1,7 +1,9 @@
 package sim.pojo;
 
 import javax.persistence.Id;
-
+/**
+ * The type Users.
+ */
 public class Users {
     @Id
     private String id;
@@ -15,70 +17,90 @@ public class Users {
     private Double gpa;
 
     /**
-     * @return id
+     * Gets id.
+     *
+     * @return id id
      */
     public String getId() {
         return id;
     }
 
     /**
-     * @param id
+     * Sets id.
+     *
+     * @param id the id
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * @return username
+     * Gets username.
+     *
+     * @return username username
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * @param username
+     * Sets username.
+     *
+     * @param username the username
      */
     public void setUsername(String username) {
         this.username = username;
     }
 
     /**
-     * @return password
+     * Gets password.
+     *
+     * @return password password
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * @param password
+     * Sets password.
+     *
+     * @param password the password
      */
     public void setPassword(String password) {
         this.password = password;
     }
 
     /**
-     * @return nickname
+     * Gets nickname.
+     *
+     * @return nickname nickname
      */
     public String getNickname() {
         return nickname;
     }
 
     /**
-     * @param nickname
+     * Sets nickname.
+     *
+     * @param nickname the nickname
      */
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
     /**
-     * @return gpa
+     * Gets gpa.
+     *
+     * @return gpa gpa
      */
     public Double getGpa() {
         return gpa;
     }
 
     /**
-     * @param gpa
+     * Sets gpa.
+     *
+     * @param gpa the gpa
      */
     public void setGpa(Double gpa) {
         this.gpa = gpa;

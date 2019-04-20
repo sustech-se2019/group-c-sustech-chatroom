@@ -18,14 +18,20 @@ import com.alibaba.fastjson.JSONObject;
 import org.w3c.dom.Text;
 
 import java.net.HttpURLConnection;
-
+/**
+ * Main activity of the application.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
 
     private Button login, register,ensure_register;
-    private TextView login_username, login_password,  register_username, register_password, register_repassword, register_GPA;
+    private TextView login_username, login_password;
+    AlertDialog alertdialog1;
     @Override
+    /**
+     * {@inheritDoc}
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -44,27 +50,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-
-    public void showdialog_wrong_password()
+    /**
+     * To show wrong password dialog.
+     */
+    private void showdialog_wrong_password()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("密码错误");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1=alertdialogbuilder.create();
+        alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
-
-    public void showdialog_no_username()
+    /**
+     * To show username not exist dialog.
+     */
+    private void showdialog_no_username()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("用户名不存在");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1=alertdialogbuilder.create();
+        alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
-
+    /**
+     * When click "确定",cancle dialog.
+     */
     private DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
     {@Override
 
@@ -75,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_button:
@@ -82,21 +97,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String usname = login_username.getText().toString();
                 String psword = login_password.getText().toString();
                 login(usname,psword);
-
                 break;
             case R.id.register_button:
                 //register
                Intent intent = new Intent();
                intent.setClass(MainActivity.this, RegisterActivity.class);
                MainActivity.this.startActivity(intent);
-                //Intent reg = new Intent(MainActivity.this, RegisterActivity.this);
-
-
-                break;
-
+               break;
         }
     }
-
+    /**
+     * Handle the login in message in {@link JSONObject} type.
+     */
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
@@ -124,8 +136,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     };
-
-
+  
+    /**
+     * Get information of login and send to server.
+     */
     private void login(final String username, final String password ) {
         final String request_url = this.getString(R.string.IM_Server_Url) + "/login";
         new Thread(new Runnable() {

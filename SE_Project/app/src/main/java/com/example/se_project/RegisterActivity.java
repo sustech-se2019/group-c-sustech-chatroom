@@ -16,16 +16,27 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
 
 import java.net.HttpURLConnection;
-
+/**
+ * {@link AppCompatActivity} is an activity type. This class used to control Register activity.
+ */
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register_username, register_password, register_repassword, register_GPA;
     private Button ensure;
     private String usname, psword, repsword;
+    /**
+     * The Gpa of a student.
+     */
     double gpa;
-
+    /**
+     * The alert dialog.
+     */
+    AlertDialog alertdialog1;
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -38,42 +49,44 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         ensure = findViewById(R.id.ensure_button);
         ensure.setOnClickListener(this);
-
-
-
-
-
-
     }
-
-    public void showdialog_dif_password() {
+    /**
+     * If the second password is different from the first one, it will show a different password {@link AlertDialog}.
+     */
+    private void showdialog_dif_password() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("两次密码不一致");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1 = alertdialogbuilder.create();
+        alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
-
-    public void showdialog_exit_username() {
+    /**
+     * If the user name is already exist, it will show a duplicate user name {@link AlertDialog}.
+     */
+    private void showdialog_exit_username() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("用户名已存在");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1 = alertdialogbuilder.create();
+        alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
 
-
-    public void showdialog_fail_connect() {
+    /**
+     * If app fail to connect to server , it will show a connect fail {@link AlertDialog}.
+     */
+    private void showdialog_fail_connect() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("连接服务器失败");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1 = alertdialogbuilder.create();
+        alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
-
+    /**
+     * If click "确定", {@link AlertDialog} will be canceled.
+     */
     private DialogInterface.OnClickListener click1 = new DialogInterface.OnClickListener() {
         @Override
 
@@ -81,8 +94,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             arg0.cancel();
         }
     };
-
-
+ 
+    /**
+     * To handle with the register message of {@link JSONObject}.
+     */
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
@@ -110,7 +125,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             }
         }
     };
-
+    /**
+     * Get the register information and regist it in server...
+     */
     private void regist(final String username, final String password, final double gpa) {
         final String request_url = this.getString(R.string.IM_Server_Url) + "/regist";
         new Thread(new Runnable() {
@@ -141,6 +158,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ensure_button:

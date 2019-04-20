@@ -6,17 +6,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-
+/**
+ * The type Outside fragment is a {@link Fragment} used to settle the camera.
+ */
 public class OutsideFragment extends Fragment {
 
 //    private Button entry;
 //    private OnButtonClick onButtonClick;
-
+    /**
+     * To produce a new outside fragment。
+     *
+     * @return the outside fragment.
+     */
     public static OutsideFragment newInstance() {
         return new OutsideFragment();
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_entry, container, false);
@@ -31,39 +40,17 @@ public class OutsideFragment extends Fragment {
                         .replace(R.id.outside, CameraFragment.newInstance()).addToBackStack(null).commit();
             }
         });
-//        entry.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if(onButtonClick!=null){
-//                    onButtonClick.onClick(entry);
-//                }
-//            }
-//        });
+
         return view;
     }
-
+    /**
+     * When back pressed, this activity will be closed.
+     *
+     * @return the boolean
+     */
     protected boolean onBackPressed() {
         getActivity().getWindow().clearFlags(
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         return true;
     }
-
-//    @Override
-//    public void onDestroy() {
-//        getActivity().getWindow().clearFlags(
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//        super.onDestroy();
-//    }
-
-/*    public OnButtonClick getOnButtonClick() {
-        return onButtonClick;
-    }
-
-    public void setOnButtonClick(OnButtonClick onButtonClick) {
-        this.onButtonClick = onButtonClick;
-    }
-
-    public interface OnButtonClick{
-        public void onClick(View view);
-    }*/
 }

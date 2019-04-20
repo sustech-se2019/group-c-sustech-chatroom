@@ -28,14 +28,32 @@ public class AutoFitTextureView extends TextureView {
     private int mRatioWidth = 0;
     private int mRatioHeight = 0;
 
+    /**
+     * Instantiates a new Auto fit texture view with null attribution.
+     *
+     * @param context the context
+     */
     public AutoFitTextureView(Context context) {
         this(context, null);
     }
 
+    /**
+     * Instantiates a new Auto fit texture view with defstyle 0.
+     *
+     * @param context the context
+     * @param attrs   the attrs
+     */
     public AutoFitTextureView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    /**
+     * Instantiates a new Auto fit texture view.
+     *
+     * @param context  the context
+     * @param attrs    the attrs
+     * @param defStyle the def style
+     */
     public AutoFitTextureView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
@@ -48,7 +66,7 @@ public class AutoFitTextureView extends TextureView {
      * @param width  Relative horizontal size
      * @param height Relative vertical size
      */
-    public void setAspectRatio(int width, int height) {
+    protected void setAspectRatio(int width, int height) {
         if (width < 0 || height < 0) {
             throw new IllegalArgumentException("Size cannot be negative.");
         }
@@ -58,6 +76,9 @@ public class AutoFitTextureView extends TextureView {
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
