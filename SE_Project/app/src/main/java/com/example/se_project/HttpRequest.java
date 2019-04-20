@@ -9,9 +9,18 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+/**
+ * This class is to deal with http request of json object ({@link JSONObject}).
+ */
 public class HttpRequest {
-
+    /**
+     * To produce a {@link JSONObject} request by url and json.
+     *
+     * @param url_String the target url in string type.
+     * @param json       the json object to send in {@link JSONObject} type.
+     * @return the json object
+     * @throws Exception the exception of {@link java.net.MalformedURLException},{@link IOException},{@link java.net.ProtocolException}
+     */
     public static JSONObject jsonRequest(String url_String, JSONObject json) throws Exception{
         URL url = new URL(url_String);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
