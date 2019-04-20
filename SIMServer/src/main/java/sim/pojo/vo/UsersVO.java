@@ -2,7 +2,7 @@ package sim.pojo.vo;
 
 import java.util.List;
 /**
- * The type Users vo.
+ * The type UsersVO contains all the user information without password, witch means it is for user to get information.
  */
 public class UsersVO {
     private String id;
