@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void showdialog_wrong_password()
+    private void showdialog_wrong_password()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertdialog1.show();
     }
 
-    public void showdialog_no_username()
+    private void showdialog_no_username()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
@@ -82,18 +82,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String usname = login_username.getText().toString();
                 String psword = login_password.getText().toString();
                 login(usname,psword);
-
                 break;
             case R.id.register_button:
                 //register
                Intent intent = new Intent();
                intent.setClass(MainActivity.this, RegisterActivity.class);
                MainActivity.this.startActivity(intent);
-                //Intent reg = new Intent(MainActivity.this, RegisterActivity.this);
-
-
-                break;
-
+               break;
         }
     }
 
