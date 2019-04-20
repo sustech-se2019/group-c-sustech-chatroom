@@ -12,6 +12,9 @@ public class ChatActivity extends AppCompatActivity {
     private OutsideFragment outsideFragment = OutsideFragment.newInstance();
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_main);
@@ -28,6 +31,9 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onBackPressed() {
 //        super.onBackPressed();
         if(outsideFragment != null && outsideFragment.onBackPressed()){super.onBackPressed();}

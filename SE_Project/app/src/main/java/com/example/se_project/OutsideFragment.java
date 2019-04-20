@@ -23,6 +23,9 @@ public class OutsideFragment extends Fragment {
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_entry, container, false);

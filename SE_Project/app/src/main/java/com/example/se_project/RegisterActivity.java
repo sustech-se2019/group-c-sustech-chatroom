@@ -34,6 +34,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     AlertDialog alertdialog1;
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
@@ -155,6 +158,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ensure_button:

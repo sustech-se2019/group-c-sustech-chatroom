@@ -74,9 +74,15 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * The type Camera fragment is used to access the android camera. .
+ */
 public class CameraFragment extends Fragment
         implements ActivityCompat.OnRequestPermissionsResultCallback {
 
+    /**
+     * The Camera utils {@link CameraUtils}.
+     */
     CameraUtils cameraUtils = new CameraUtils();
 
     private static final int REQUEST_CAMERA_PERMISSION = 1;
@@ -155,17 +161,28 @@ public class CameraFragment extends Fragment
     private CaptureRequest mPreviewRequest;
 
 
+    /**
+     * New instance camera fragment.
+     *
+     * @return the camera fragment
+     */
     public static CameraFragment newInstance() {
         return new CameraFragment();
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_camera, container, false);
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onViewCreated(final View view, Bundle savedInstanceState) {
         view.findViewById(R.id.capture).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,6 +196,9 @@ public class CameraFragment extends Fragment
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
@@ -187,6 +207,9 @@ public class CameraFragment extends Fragment
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onResume() {
         super.onResume();
         cameraUtils.startBackgroundThread();
@@ -203,6 +226,9 @@ public class CameraFragment extends Fragment
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onPause() {
         cameraUtils.closeCamera();
         cameraUtils.stopBackgroundThread();
@@ -255,6 +281,12 @@ public class CameraFragment extends Fragment
 
         private static final String ARG_MESSAGE = "message";
 
+        /**
+         * New instance error dialog.
+         *
+         * @param message the message
+         * @return the error dialog
+         */
         public static ErrorDialog newInstance(String message) {
             ErrorDialog dialog = new ErrorDialog();
             Bundle args = new Bundle();
@@ -265,6 +297,9 @@ public class CameraFragment extends Fragment
 
         @NonNull
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Activity activity = getActivity();
             return new AlertDialog.Builder(activity)
@@ -287,6 +322,9 @@ public class CameraFragment extends Fragment
 
         @NonNull
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             final Fragment parent = getParentFragment();
             return new AlertDialog.Builder(getActivity())
@@ -321,21 +359,33 @@ public class CameraFragment extends Fragment
             = new TextureView.SurfaceTextureListener() {
 
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public void onSurfaceTextureAvailable(SurfaceTexture texture, int width, int height) {
             openCamera(width, height);
         }
 
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public void onSurfaceTextureSizeChanged(SurfaceTexture texture, int width, int height) {
             configureTransform(width, height);
         }
 
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public boolean onSurfaceTextureDestroyed(SurfaceTexture texture) {
             return true;
         }
 
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public void onSurfaceTextureUpdated(SurfaceTexture texture) {
         }
 
@@ -528,6 +578,9 @@ public class CameraFragment extends Fragment
         }
 
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public void onDisconnected(@NonNull CameraDevice cameraDevice) {
             cameraUtils.mCameraOpenCloseLock.release();
             cameraDevice.close();
@@ -535,6 +588,9 @@ public class CameraFragment extends Fragment
         }
 
         @Override
+        /**
+         * {@inheritDoc}
+         */
         public void onError(@NonNull CameraDevice cameraDevice, int error) {
             cameraUtils.mCameraOpenCloseLock.release();
             cameraDevice.close();

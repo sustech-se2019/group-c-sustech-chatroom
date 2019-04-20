@@ -10,6 +10,9 @@ import java.util.Comparator;
 public class CompareSizesByArea implements Comparator<Size> {
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public int compare(Size lhs, Size rhs) {
         // We cast here to ensure the multiplications won't overflow
         return Long.signum((long) lhs.getWidth() * lhs.getHeight() -

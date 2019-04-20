@@ -21,12 +21,20 @@ public class ImageSaver implements Runnable {
      */
     private final File mFile;
 
+    /**
+     * save the image
+     * @param image
+     * @param file
+     */
     ImageSaver(Image image, File file) {
         mImage = image;
         mFile = file;
     }
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void run() {
         ByteBuffer buffer = mImage.getPlanes()[0].getBuffer();
         byte[] bytes = new byte[buffer.remaining()];

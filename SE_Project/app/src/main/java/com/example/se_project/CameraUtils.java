@@ -32,6 +32,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Camera utils are used to set camera .attribution.
+ */
 public class CameraUtils {
 
     /**
@@ -103,8 +106,7 @@ public class CameraUtils {
      * doesn't exist, choose the largest one that is at most as large as the respective max size,
      * and whose aspect ratio matches with the specified value.
      *
-     * @param choices           The list of sizes that the camera supports for the intended output
-     *                          class
+     * @param choices           The list of sizes that the camera supports for the intended output                          class
      * @param textureViewWidth  The width of the texture view relative to sensor coordinate
      * @param textureViewHeight The height of the texture view relative to sensor coordinate
      * @param maxWidth          The maximum width that can be chosen
@@ -210,8 +212,9 @@ public class CameraUtils {
     /**
      * Unlock the focus. This method should be called when still image capture sequence is
      * finished.
+     *
+     * @param requestBuilder the request builder
      */
-
     protected void setAutoFlash(CaptureRequest.Builder requestBuilder) {
         if (mFlashSupported) {
             requestBuilder.set(CaptureRequest.CONTROL_AE_MODE,

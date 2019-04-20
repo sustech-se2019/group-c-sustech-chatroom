@@ -29,6 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView login_username, login_password;
     AlertDialog alertdialog1;
     @Override
+    /**
+     * {@inheritDoc}
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -84,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     @Override
+    /**
+     * {@inheritDoc}
+     */
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login_button:
