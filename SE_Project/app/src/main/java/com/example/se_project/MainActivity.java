@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private Button login, register,ensure_register;
-    private TextView login_username, login_password,  register_username, register_password, register_repassword, register_GPA;
+    private TextView login_username, login_password;
+    AlertDialog alertdialog1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("密码错误");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1=alertdialogbuilder.create();
+        alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
 
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("用户名不存在");
         alertdialogbuilder.setPositiveButton("确定", click1);
-        AlertDialog alertdialog1=alertdialogbuilder.create();
+        alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
 
