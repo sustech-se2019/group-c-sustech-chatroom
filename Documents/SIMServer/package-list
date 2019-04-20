@@ -1,0 +1,8 @@
+sim
+sim.Controller
+sim.Dao
+sim.DaoImpl
+sim.mapper
+sim.pojo
+sim.pojo.vo
+sim.utils
