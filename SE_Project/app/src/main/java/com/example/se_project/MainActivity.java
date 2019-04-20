@@ -18,7 +18,9 @@ import com.alibaba.fastjson.JSONObject;
 import org.w3c.dom.Text;
 
 import java.net.HttpURLConnection;
-
+/**
+ * Main activity of the application.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -45,7 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
-
+    /**
+     * To show wrong password dialog.
+     */
     private void showdialog_wrong_password()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
@@ -55,7 +59,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
-
+    /**
+     * To show username not exist dialog.
+     */
     private void showdialog_no_username()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
@@ -65,7 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
-
+    /**
+     * When click "确定",cancle dialog.
+     */
     private DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
     {@Override
 
@@ -92,7 +100,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                break;
         }
     }
-
+    /**
+     * Handle the login in message in {@link JSONObject} type.
+     */
     @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
@@ -120,8 +130,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     };
-
-
+  
+    /**
+     * Get information of login and send to server.
+     */
     private void login(final String username, final String password ) {
         final String request_url = this.getString(R.string.IM_Server_Url) + "/login";
         new Thread(new Runnable() {

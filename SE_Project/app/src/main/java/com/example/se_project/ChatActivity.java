@@ -2,9 +2,13 @@ package com.example.se_project;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
+/**
+ * A {@link AppCompatActivity} is a Activaty component and this class is chat window
+ */
 public class ChatActivity extends AppCompatActivity {
-
+    /**
+     * The Outside fragment.
+     */
     private OutsideFragment outsideFragment = OutsideFragment.newInstance();
 
     @Override
