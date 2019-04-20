@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- *  自定义响应结构, 转换类
+ *  Custom response structure, conversion class
  */
 public class JsonUtils {
 
@@ -15,7 +15,7 @@ public class JsonUtils {
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     /**
-     * 将对象转换成json字符串。
+     * transform object into json
      * <p>Title: pojoToJson</p>
      * <p>Description: </p>
      * @param Object data
@@ -32,7 +32,7 @@ public class JsonUtils {
     }
     
     /**
-     * 将json结果集转化为对象
+     * transform json to object
      * 
      * @param jsonData json数据
      * @param clazz 对象中的object类型
@@ -49,7 +49,7 @@ public class JsonUtils {
     }
     
     /**
-     * 将json数据转换成pojo对象list
+     * list transform json into pojo object
      * <p>Title: jsonToList</p>
      * <p>Description: </p>
      * @param jsonData

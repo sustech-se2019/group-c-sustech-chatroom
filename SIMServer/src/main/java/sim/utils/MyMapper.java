@@ -28,7 +28,7 @@ import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
- * 继承自己的MyMapper
+ * inherit MyMapper
  *
  * @author liuzh
  * @since 2015-09-06 21:53

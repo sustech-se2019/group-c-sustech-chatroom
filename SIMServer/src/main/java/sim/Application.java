@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
 /**
- * The type Application.
+ * runner
  */
 @SpringBootApplication
 // 扫描mybatis mapper包路径
