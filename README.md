@@ -16,21 +16,20 @@ Group member :
 4. JAVADoc (11612729 Zijie Zha)
 
 b) Test scenario
-
-		+ Register
-		  + When user successfully register an account, a success dialog is shown
-		  + When user fail to register due to inconsistency between two password or existed username, corresponding dialog is shown
-		+ Login
-		  + When user login successfully to her account, main page of chatroom is shown
-		  + When user login with an incorrect userid/password, the user will get an error message saying 
-		    “Wrong password”
-		+ Taking photo
-		  + When successfully takeing a photo, it will turn back to main page of chatroom and tell the user the storage location
-		  + User can also leave from the camera fragment to main page directly without taking a photo.
+	+ Register
+		+ When user successfully register an account, a success dialog is shown
+		+ When user fail to register due to inconsistency between two password or existed username, corresponding dialog is shown
+	+ Login
+		+ When user login successfully to her account, main page of chatroom is shown
+		+ When user login with an incorrect userid/password, the user will get an error message saying 
+			“Wrong password”
+	+ Taking photo
+		+ When successfully takeing a photo, it will turn back to main page of chatroom and tell the user the storage location
+		+ User can also leave from the camera fragment to main page directly without taking a photo.
 
 ​		 
 
-d)
+d) Checkstyle, PMD, Findbugs
 
 g) Future plan:   
 		week10: Account register and Login form and Camera.   
