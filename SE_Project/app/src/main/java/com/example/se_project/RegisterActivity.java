@@ -22,12 +22,6 @@ import java.net.HttpURLConnection;
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView register_username, register_password, register_repassword, register_GPA;
-    private Button ensure;
-    private String usname, psword, repsword;
-    /**
-     * The Gpa of a student.
-     */
-    double gpa;
     /**
      * The alert dialog.
      */
@@ -38,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      * {@inheritDoc}
      */
     protected void onCreate(Bundle savedInstanceState) {
-
+        Button ensure;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -53,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     /**
      * If the second password is different from the first one, it will show a different password {@link AlertDialog}.
      */
-    private void showdialog_dif_password() {
+    void showdialogDifPassword() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("两次密码不一致");
@@ -64,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     /**
      * If the user name is already exist, it will show a duplicate user name {@link AlertDialog}.
      */
-    private void showdialog_exit_username() {
+    void showdialogExitUsername() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("用户名已存在");
@@ -76,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     /**
      * If app fail to connect to server , it will show a connect fail {@link AlertDialog}.
      */
-    private void showdialog_fail_connect() {
+    void showdialogFailConnect() {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder = new AlertDialog.Builder(this);
         alertdialogbuilder.setMessage("连接服务器失败");
@@ -87,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     /**
      * If click "确定", {@link AlertDialog} will be canceled.
      */
-    private DialogInterface.OnClickListener click1 = new DialogInterface.OnClickListener() {
+    DialogInterface.OnClickListener click1 = new DialogInterface.OnClickListener() {
         @Override
 
         public void onClick(DialogInterface arg0, int arg1) {
@@ -99,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      * To handle with the register message of {@link JSONObject}.
      */
     @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
+    Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -115,12 +109,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     break;
                 case HttpURLConnection.HTTP_INTERNAL_ERROR:
                     Log.d("result: ", result.getString("msg"));
-                    showdialog_exit_username();
+                    showdialogExitUsername();
                     break;
                 default:
                     //注册失败
                     Log.d("result: ", result.getString("msg"));
-                    showdialog_fail_connect();
+                    showdialogFailConnect();
                     break;
             }
         }
@@ -162,6 +156,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      * {@inheritDoc}
      */
     public void onClick(View view) {
+        /**
+         * The Gpa of a student.
+         */
+        double gpa;
+        String usname, psword, repsword;
         switch (view.getId()) {
             case R.id.ensure_button:
                 usname = register_username.getText().toString();
@@ -173,8 +172,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 else {
                     Log.d("PASSWORD: ", psword);
                     Log.d("PASSWORD2: ", repsword);
-                    showdialog_dif_password();
+                    showdialogDifPassword();
                 }
+                break;
+            case R.id.login_button:
+                break;
+            default:
+                break;
         }
     }
 }

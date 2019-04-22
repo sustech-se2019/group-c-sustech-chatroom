@@ -9,7 +9,7 @@ public class ChatActivity extends AppCompatActivity {
     /**
      * The Outside fragment.
      */
-    private OutsideFragment outsideFragment = OutsideFragment.newInstance();
+    OutsideFragment outsideFragment = OutsideFragment.newInstance();
 
     @Override
     /**

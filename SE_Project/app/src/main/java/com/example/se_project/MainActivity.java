@@ -15,8 +15,6 @@ import android.content.DialogInterface;
 
 import com.alibaba.fastjson.JSONObject;
 
-import org.w3c.dom.Text;
-
 import java.net.HttpURLConnection;
 /**
  * Main activity of the application.
@@ -25,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private Button login, register,ensure_register;
     private TextView login_username, login_password;
     AlertDialog alertdialog1;
     @Override
@@ -33,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * {@inheritDoc}
      */
     protected void onCreate(Bundle savedInstanceState) {
+        Button login, register,ensure_register;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         login = findViewById(R.id.login_button);
@@ -53,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * To show wrong password dialog.
      */
-    private void showdialog_wrong_password()
+    void showdialogWrongPassword()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * To show username not exist dialog.
      */
-    private void showdialog_no_username()
+    void showdialogNoUsername()
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
         AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
@@ -77,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * When click "确定",cancle dialog.
      */
-    private DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
+    private final DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
     {@Override
 
     public void onClick(DialogInterface arg0,int arg1)
@@ -104,18 +102,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                intent.setClass(MainActivity.this, RegisterActivity.class);
                MainActivity.this.startActivity(intent);
                break;
+            case R.id.ensure_button:
+                break;
+            default:
+                break;
         }
     }
     /**
      * Handle the login in message in {@link JSONObject} type.
      */
     @SuppressLint("HandlerLeak")
-    private Handler handler = new Handler() {
+    final Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
-            Intent intent = new Intent();
 
             switch (result.getIntValue("status")) {
 
@@ -127,9 +128,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     MainActivity.this.startActivity(intent1);
                     Log.d("result: ", result.getString("data"));
                     break;
+                case HttpURLConnection.HTTP_ACCEPTED:
+                    break;
                 default:
                     //登陆失败
-                    showdialog_wrong_password();
+                    showdialogWrongPassword();
                     Log.d("result", result.getString("msg"));
 
                     break;
@@ -140,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * Get information of login and send to server.
      */
-    private void login(final String username, final String password ) {
+    void login(final String username, final String password ) {
         final String request_url = this.getString(R.string.IM_Server_Url) + "/login";
         new Thread(new Runnable() {
             @Override

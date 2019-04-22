@@ -1,6 +1,5 @@
 package com.example.se_project;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.BufferedWriter;
@@ -12,7 +11,8 @@ import java.net.URL;
 /**
  * This class is to deal with http request of json object ({@link JSONObject}).
  */
-public class HttpRequest {
+public final class HttpRequest {
+    private HttpRequest(){}
     /**
      * To produce a {@link JSONObject} request by url and json.
      *
@@ -46,7 +46,7 @@ public class HttpRequest {
         StringBuffer out = new StringBuffer();
         byte[] b = new byte[4096];
         for (int n; (n = in.read(b)) != -1;) {
-            out.append(new String(b,0,n));
+            out.append(new String(b,n));
         }
         return out.toString();
     }

@@ -32,3 +32,4 @@ dependencies {
     testImplementation "org.mockito:mockito-core:2.8.9"
     androidTestImplementation "org.mockito:mockito-android:2.8.9"
 }
+apply from:'/code_quality_tools/quality.gradle'

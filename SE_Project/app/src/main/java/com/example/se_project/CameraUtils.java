@@ -137,13 +137,14 @@ public class CameraUtils {
 
         // Pick the smallest of those big enough. If there is no one big enough, pick the
         // largest of those not big enough.
-        if (bigEnough.size() > 0) {
-            return Collections.min(bigEnough, new CompareSizesByArea());
-        } else if (notBigEnough.size() > 0) {
-            return Collections.max(notBigEnough, new CompareSizesByArea());
-        } else {
+        if (bigEnough.isEmpty()&&notBigEnough.isEmpty()) {
             Log.e(TAG, "Couldn't find any suitable preview size");
             return choices[0];
+        } else  {
+            if (notBigEnough.isEmpty())
+                return Collections.min(bigEnough, new CompareSizesByArea());
+            else
+                return Collections.max(notBigEnough, new CompareSizesByArea());
         }
     }
 
