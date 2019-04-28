@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--主布局（纵向排列）-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#4169E1">
+        <TextView
+                android:id="@+id/friend_list_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:text="Friends"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:background="#4169E1">
+
+        <Button
+                android:id="@+id/add_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textAllCaps="false"
+                android:text="Add"/>
+    </LinearLayout>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <!--输入框-->
+        <EditText
+                android:id="@+id/input_old_friend_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:hint="id/name"
+                android:maxLines="2"/>
+
+        <!--发送按钮-->
+        <Button
+                android:id="@+id/search_friendlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Search"/>
+
+    </LinearLayout>
+    <!--聊天对话框部分
+      android:divider="#0000"透明分隔线-->
+    <ListView
+            android:id="@+id/friend_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="#0000"/>
+
+    <!--输入框部分（横排排列）-->
+
+</LinearLayout>
+
