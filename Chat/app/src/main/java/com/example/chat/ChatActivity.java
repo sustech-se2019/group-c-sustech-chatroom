@@ -3,6 +3,7 @@ package com.example.chat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -52,6 +53,17 @@ public class ChatActivity extends AppCompatActivity {
                 }
             }
         });
+        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                view.findViewById(R.id.entry).setVisibility(View.GONE);
+                getWindow().setFlags(
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.outside, CameraFragment.newInstance()).commit();
+            }
+        });
 
     }
 
@@ -65,5 +77,15 @@ public class ChatActivity extends AppCompatActivity {
         msgList.add(msg2);
         Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
         msgList.add(msg3);
+    }
+
+    @Override
+    /**
+     * {@inheritDoc}
+     */
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.getWindow().clearFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 }
