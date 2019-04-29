@@ -40,10 +40,10 @@ The result of checkstyle:
 ![image](img/checkstyle.png)   
 ****
 The result of findbugs:
-![image](https://github.com/sustech-se2019/main-project-repository-sustech-chatroom/master/img/findbugs.png)   
+![image](img/findbugs.png)   
 ****
 The result of PMD:
-![image](https://github.com/sustech-se2019/main-project-repository-sustech-chatroom/master/img/PMD.png)   
+![image](img/PMD.png)   
 Out project only have this error because the original API of camera is big and complex. After our decoupling, it still seems to be a god class to PMD. But most of method it used is override or private, we can't really depart it into many parts and preserving our functional requirement.
 
 e)
