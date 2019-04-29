@@ -37,7 +37,7 @@ b) Test scenario
 d) Checkstyle, PMD, Findbugs   
 
 The result of checkstyle:
-![image](https://github.com/sustech-se2019/main-project-repository-sustech-chatroom/master/img/checkstyle.png)   
+![image](img/checkstyle.png)   
 ****
 The result of findbugs:
 ![image](https://github.com/sustech-se2019/main-project-repository-sustech-chatroom/master/img/findbugs.png)   
