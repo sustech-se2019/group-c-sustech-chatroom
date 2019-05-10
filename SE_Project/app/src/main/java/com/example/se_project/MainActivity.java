@@ -171,4 +171,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    /**
+     * Get information of translate and send to NMT server.
+     */
+    void translate(final String sentence) {
+        final String server_url = this.getString(R.string.NMT_Server_Url);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                String request_url = server_url;
+                if (Utils.checkString(sentence))
+                {
+                    request_url += "/en2zh";
+                }else{
+                    request_url += "/zh2en";
+                }
+                try {
+                    JSONObject json_data = new JSONObject();
+                    json_data.put("sentence", sentence);
+
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    handler.sendMessage(message);
+
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",0);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    handler.sendMessage(message);
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
+
+
+
+
 }

@@ -30,25 +30,18 @@ public final class HttpRequest {
         connection.setUseCaches(false);
         connection.setRequestProperty("Content-Type", "application/json;charset=utf-8");//设置参数类型是json格式
         connection.connect();
-
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
         writer.write(json.toString());
         writer.close();
-
-        int responseCode = connection.getResponseCode();
         InputStream inputStream = connection.getInputStream();
         String result = inputStream2String(inputStream);//将流转换为字符串。
-
         return JSONObject.parseObject(result);
     }
 
     private static String inputStream2String (InputStream in) throws IOException {
-        StringBuffer out = new StringBuffer();
-        byte[] b = new byte[4096];
-        for (int n; (n = in.read(b)) != -1;) {
-            out.append(new String(b,n));
-        }
-        return out.toString();
+        byte[] bytes = new byte[in.available()];
+        in.read(bytes);
+        return new String(bytes);
     }
 
 }

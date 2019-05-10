@@ -1,5 +1,6 @@
 package com.example.se_project;
 
+import android.support.test.annotation.UiThreadTest;
 import android.support.test.rule.ActivityTestRule;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,8 +14,9 @@ import static org.junit.Assert.*;
 public class MainActivityTest {
     
     @Rule
-    public ActivityTestRule<MainActivity> rule = new ActivityTestRule<MainActivity>(MainActivity.class);
-    
+    public ActivityTestRule<MainActivity> rule = new ActivityTestRule <MainActivity>(MainActivity.class);
+
+    @UiThreadTest
     @Test
     public void onClickLoginSuccess() {
         MainActivity mainActivity = rule.getActivity();
@@ -30,6 +32,7 @@ public class MainActivityTest {
         Assert.assertNull(mainActivity.alertdialog1);
     }
 
+    @UiThreadTest
     @Test
     public void onClickLoginFail() {
         MainActivity mainActivity = rule.getActivity();
