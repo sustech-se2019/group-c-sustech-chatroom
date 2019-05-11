@@ -28,83 +28,83 @@ public class MsgTest {
 
     }
 
-    @Test
-    public void testMsg2(){
-        try {
-            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
-            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
-            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
-            fs[2].setAccessible(true);
-            fs[3].setAccessible(true);
-            assertEquals(null,fs[2].get(msg));
-            assertEquals(0,fs[3].get(msg));
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Test
-    public void testsetContent1(){
-        try {
-            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
-            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
-            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
-            fs[2].setAccessible(true);
-            assertEquals(null,fs[2].get(msg));
-            msg.setContent("test");
-            assertEquals("test",fs[2].get(msg));
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @Test
-    public void testsetContent2(){
-        try {
-            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
-            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
-            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
-            fs[2].setAccessible(true);
-            assertEquals(null,fs[2].get(msg));
-            msg.setContent("test123");
-            assertEquals("test123",fs[2].get(msg));
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Test
-    public void testsetType1(){
-        try {
-            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
-            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
-            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
-            fs[3].setAccessible(true);
-            assertEquals(0,fs[3].get(msg));
-            msg.setType(1);
-            assertEquals(1,fs[3].get(msg));
-        } catch (InstantiationException | IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Test
+//    public void testMsg2(){
+//        try {
+//            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
+//            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
+//            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
+//            fs[2].setAccessible(true);
+//            fs[3].setAccessible(true);
+//            assertEquals(null,fs[2].get(msg));
+//            assertEquals(0,fs[3].get(msg));
+//        } catch (InstantiationException | IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (IllegalArgumentException e) {
+//            e.printStackTrace();
+//        } catch (SecurityException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//    @Test
+//    public void testsetContent1(){
+//        try {
+//            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
+//            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
+//            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
+//            fs[2].setAccessible(true);
+//            assertEquals(null,fs[2].get(msg));
+//            msg.setContent("test");
+//            assertEquals("test",fs[2].get(msg));
+//        } catch (InstantiationException | IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (IllegalArgumentException e) {
+//            e.printStackTrace();
+//        } catch (SecurityException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+//
+//    @Test
+//    public void testsetContent2(){
+//        try {
+//            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
+//            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
+//            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
+//            fs[2].setAccessible(true);
+//            assertEquals(null,fs[2].get(msg));
+//            msg.setContent("test123");
+//            assertEquals("test123",fs[2].get(msg));
+//        } catch (InstantiationException | IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (IllegalArgumentException e) {
+//            e.printStackTrace();
+//        } catch (SecurityException e) {
+//            e.printStackTrace();
+//        }
+//    }
+//
+//    @Test
+//    public void testsetType1(){
+//        try {
+//            Class<?> clazz = Msg.class;// 获取PrivateClass整个类
+//            Msg msg = (Msg) clazz.newInstance();// 创建一个实例
+//            Field[] fs = clazz.getDeclaredFields();// 获取PrivateClass所有属性
+//            fs[3].setAccessible(true);
+//            assertEquals(0,fs[3].get(msg));
+//            msg.setType(1);
+//            assertEquals(1,fs[3].get(msg));
+//        } catch (InstantiationException | IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (IllegalArgumentException e) {
+//            e.printStackTrace();
+//        } catch (SecurityException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Test
     public void testgetContent1(){

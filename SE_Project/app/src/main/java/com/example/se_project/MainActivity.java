@@ -155,6 +155,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     json_data.put("password", password);
 
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("login",result.toString());
                     handler.sendMessage(message);
 
                 } catch (Exception e) {

@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/androidTest/java/com/example/se_project/MainActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/androidTest/java/com/example/se_project/MainActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/HttpRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/test/java/com/example/se_project/HttpRequestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/test/java/com/example/se_project/HttpRequestTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Controller/LoginAndRegistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Controller/LoginAndRegistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/DaoImpl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/DaoImpl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/pojo/Users.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/pojo/Users.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/pojo/vo/UsersVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/pojo/vo/UsersVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/utils/JSONResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/utils/JSONResult.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/utils/MD5Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/utils/MD5Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sim/Controller/LoginAndRegistControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sim/Controller/LoginAndRegistControllerTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,7 +30,7 @@
       <file leaf-file-name="LoginAndRegistController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="456">
               <caret line="36" column="29" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -73,17 +57,17 @@
       <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="19">
               <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JSONResult.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JSONResult.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+            <state relative-caret-position="19">
+              <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -124,17 +108,22 @@
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="228">
+              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginAndRegistControllerTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginAndRegistControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="-76">
+              <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2346#2347#0" expanded="true" />
+                <element signature="e#2380#2381#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -241,9 +230,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="211" />
-    <option name="y" value="92" />
-    <option name="width" value="1409" />
+    <option name="x" value="278" />
+    <option name="y" value="209" />
+    <option name="width" value="1532" />
     <option name="height" value="844" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -252,7 +241,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -368,51 +359,12 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="DaoImpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sim" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -472,7 +424,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginAndRegistControllerTest.testLogin2">
+  <component name="RunManager" selected="JUnit.LoginAndRegistControllerTest.testLogin1">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method>
@@ -493,6 +445,29 @@
       <option name="MAIN_CLASS_NAME" value="sim.Controller.LoginAndRegistControllerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="LoginAndRegistControllerTest.testLogin1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="sim.Controller" />
+      <option name="MAIN_CLASS_NAME" value="sim.Controller.LoginAndRegistControllerTest" />
+      <option name="METHOD_NAME" value="testLogin1" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -539,29 +514,6 @@
       <option name="MAIN_CLASS_NAME" value="sim.DaoImpl.UserDaoImplTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="UserDaoImplTest.queryUsernameIsExistWrong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SIM-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sim.DaoImpl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="sim.DaoImpl" />
-      <option name="MAIN_CLASS_NAME" value="sim.DaoImpl.UserDaoImplTest" />
-      <option name="METHOD_NAME" value="queryUsernameIsExistWrong" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -641,17 +593,17 @@
     <list>
       <item itemvalue="Spring Boot.Application (1)" />
       <item itemvalue="JUnit.LoginAndRegistControllerTest" />
-      <item itemvalue="JUnit.UserDaoImplTest.queryUsernameIsExistWrong" />
       <item itemvalue="JUnit.UserDaoImplTest" />
       <item itemvalue="JUnit.LoginAndRegistControllerTest.testLogin2" />
+      <item itemvalue="JUnit.LoginAndRegistControllerTest.testLogin1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginAndRegistControllerTest.testLogin1" />
+        <item itemvalue="Spring Boot.Application (1)" />
         <item itemvalue="JUnit.LoginAndRegistControllerTest.testLogin2" />
         <item itemvalue="JUnit.LoginAndRegistControllerTest" />
-        <item itemvalue="Spring Boot.Application (1)" />
         <item itemvalue="JUnit.UserDaoImplTest" />
-        <item itemvalue="JUnit.UserDaoImplTest.queryUsernameIsExistWrong" />
       </list>
     </recent_temporary>
   </component>
@@ -681,6 +633,7 @@
       <workItem from="1556027970190" duration="27000" />
       <workItem from="1556521215071" duration="1563000" />
       <workItem from="1557458836121" duration="1262000" />
+      <workItem from="1557584064824" duration="2835000" />
     </task>
     <task id="LOCAL-00001" summary="Fix tested bug.">
       <created>1555684820646</created>
@@ -693,9 +646,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDaoImplTest - 2019.04.19 at 21h 46m 37s.xml">
-      <configuration name="UserDaoImplTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="UserDaoImplTest - 2019.04.19 at 21h 48m 26s.xml">
       <configuration name="UserDaoImplTest" configurationId="JUnit" />
     </history-entry>
@@ -723,9 +673,12 @@
     <history-entry file="LoginAndRegistControllerTest_testLogin2 - 2019.04.22 at 14h 26m 12s.xml">
       <configuration name="LoginAndRegistControllerTest.testLogin2" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LoginAndRegistControllerTest_testLogin1 - 2019.05.11 at 23h 11m 21s.xml">
+      <configuration name="LoginAndRegistControllerTest.testLogin1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66439000" />
+    <option name="totallyTimeSpent" value="69274000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,12 +690,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="211" y="92" width="1409" height="844" extended-state="0" />
+    <frame x="414" y="124" width="1532" height="844" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50085473" side_tool="true" weight="0.34196186" />
-      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.16901408" />
+      <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.1548913" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
@@ -753,15 +707,16 @@
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3287858" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3267442" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3287858" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" weight="0.2848837" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.2419128" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32742155" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26093403" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24252717" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.32991454" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -772,7 +727,6 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.3267442" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -924,13 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -941,20 +888,6 @@
             <element signature="e#800#801#0" expanded="true" />
             <element signature="e#882#883#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -985,16 +918,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="456">
           <caret line="36" column="29" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1004,8 +930,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="100" column="25" lean-forward="true" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        <state relative-caret-position="19">
+          <caret line="100" column="25" selection-start-line="100" selection-start-column="25" selection-end-line="100" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-76">
+          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2346#2347#0" expanded="true" />
+            <element signature="e#2380#2381#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
