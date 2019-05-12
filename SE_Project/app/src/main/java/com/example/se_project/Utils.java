@@ -1,5 +1,7 @@
 package com.example.se_project;
 
+import com.alibaba.fastjson.JSONObject;
+
 public class Utils {
 
     /**
@@ -27,6 +29,23 @@ public class Utils {
             }
         }
         return true;//英文
+    }
+
+    public static JSONObject getJsonMsg(int action, JSONObject chatMsg, String extand){
+        JSONObject json = new JSONObject();
+        json.put("action",action);
+        json.put("chatMsg",chatMsg);
+        json.put("extand",extand);
+        return json;
+    }
+
+    public static JSONObject getChatMsg(String senderId, String receiverId, String msg) {
+
+        JSONObject json = new JSONObject();
+        json.put("msg",msg);
+        json.put("receiverId",receiverId);
+        json.put("senderId",senderId);
+        return json;
     }
 
 }

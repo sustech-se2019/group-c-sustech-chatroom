@@ -46,6 +46,7 @@ public class ChatActivity extends AppCompatActivity {
     private Button send;
     private MsgAdapter adapter;
     private List<Msg> msgList = new ArrayList<Msg>();
+    private int pos;
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -93,8 +94,33 @@ public class ChatActivity extends AppCompatActivity {
         initListView();
     }
 
+    /**
+     * Handle the login in message in {@link JSONObject} type.
+     */
+    @SuppressLint("HandlerLeak")
+    final Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            JSONObject result = (JSONObject)msg.obj;
 
-
+            switch (result.getIntValue("status")) {
+                case 200:
+                    //Log.d("内容",content);
+                    //得到翻译内容：
+                    String translated = result.getString("data");
+                    msgList.get(pos).setContent(translated);
+                    refreshFavListItems();
+                    break;
+                case 500:
+                    Log.d("result", result.getString("msg"));
+                    break;
+                default:
+                    Log.d("result", result.getString("msg"));
+                    break;
+            }
+        }
+    };
 
 
 
@@ -150,7 +176,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         });*/
 
-
     }
 
 
@@ -175,27 +200,16 @@ public class ChatActivity extends AppCompatActivity {
             }
             case CONTEXTMENU_TRANSLATION: {
                 //请求翻译
-                int pos = menuInfo.position;
+                pos = menuInfo.position;
                 String content = msgList.get(pos).getContent(); //待翻译内容
                 //Log.d("内容",content);
+                translate(content);
 
-                //得到翻译内容：
-                String translated = "哈哈哈";
-                msgList.get(pos).setContent(translated);
-                refreshFavListItems();
             }
 
         }
         return false;
     }
-
-
-
-
-
-
-
-
 
 
     @Override
@@ -210,8 +224,8 @@ public class ChatActivity extends AppCompatActivity {
 
     /**
      * Get information of translate and send to NMT server.
-     *//*
-    void translate(final String sentence) {
+     */
+    private void translate(final String sentence) {
         final String server_url = this.getString(R.string.NMT_Server_Url);
 
         new Thread(new Runnable() {
@@ -234,8 +248,8 @@ public class ChatActivity extends AppCompatActivity {
 
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
-                    result_json.put("status",0);
-                    result_json.put("msg","连接服务器失败...");
+                    result_json.put("status",500);
+                    result_json.put("msg","请求失败...");
                     message.obj = result_json;
                     handler.sendMessage(message);
                     e.printStackTrace();
@@ -243,7 +257,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         }).start();
 
-    }*/
+    }
 
 
 

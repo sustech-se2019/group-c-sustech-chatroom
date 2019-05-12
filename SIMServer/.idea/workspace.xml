@@ -4,44 +4,16 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="Implement chat function of sever part.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/enums/SearchFriendsStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/DataContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/HeartBeatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/UserChannelRel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/ChatHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/netty/ChatHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/utils/SpringUtilsTest.java" afterDir="false" />
+    <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/AppData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Chat/WSClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/ChatActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Controller/LoginAndRegistController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/DaoImpl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/DaoImpl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sim/Controller/LoginAndRegistControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sim/Controller/LoginAndRegistControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sim/DaoImpl/UserDaoImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sim/DaoImpl/UserDaoImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -71,7 +43,7 @@
       <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="133">
               <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,29 +52,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatClientTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+            <state relative-caret-position="248">
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#677#678#0" expanded="true" />
-                <element signature="e#1151#1152#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1492#1493#0" expanded="true" />
-                <element signature="e#1518#1519#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MsgTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../SE_Project/app/src/test/java/com/example/se_project/MsgTest.java">
+      <file leaf-file-name="UsersVO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+            <state relative-caret-position="209">
+              <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WSServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#472#473#0" expanded="true" />
+                <element signature="e#513#514#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatClientTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-885">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -110,11 +111,26 @@
       <file leaf-file-name="UserChannelRel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/UserChannelRel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
+            <state relative-caret-position="209">
               <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
               <folding>
                 <element signature="e#284#285#0" expanded="true" />
                 <element signature="e#321#322#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JSONResult.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1216">
+              <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
+              <folding>
+                <element signature="e#1183#1184#0" expanded="true" />
+                <element signature="e#1226#1227#0" expanded="true" />
+                <element signature="e#1340#1341#0" expanded="true" />
+                <element signature="e#1383#1384#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,59 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatMsg.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/ChatMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-              <folding>
-                <element signature="e#711#712#0" expanded="true" />
-                <element signature="e#730#731#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataContent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/DataContent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3714#3715#0" expanded="true" />
-                <element signature="e#3779#3780#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChatHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MsgActionEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="1444">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -262,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/ChatHistory.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/ChatHistory.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" />
@@ -276,7 +243,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/SpringUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/utils/SpringUtilsTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/NettyBooter.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Application.java" />
@@ -284,6 +250,8 @@
         <option value="$PROJECT_DIR$/src/main/java/sim/netty/ChatMsg.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" />
       </list>
     </option>
   </component>
@@ -321,9 +289,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="281" />
-    <option name="y" value="82" />
-    <option name="width" value="1559" />
+    <option name="x" value="446" />
+    <option name="y" value="96" />
+    <option name="width" value="1393" />
     <option name="height" value="932" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -332,23 +300,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
-              <item name="sim" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -536,6 +487,23 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
+              <item name="sim" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -601,7 +569,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application (1)">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="ChatClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sim.ChatClientTest" />
       <module name="SIM-Server" />
@@ -756,7 +724,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.Application (1)" />
+      <item itemvalue="Spring Boot.Application" />
       <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest1" />
       <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest2" />
       <item itemvalue="JUnit.SpringUtilsTest" />
@@ -764,8 +732,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Application" />
         <item itemvalue="Application.ChatClientTest" />
-        <item itemvalue="Spring Boot.Application (1)" />
         <item itemvalue="JUnit.SpringUtilsTest" />
         <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest2" />
         <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest1" />
@@ -798,7 +766,8 @@
       <workItem from="1556027970190" duration="27000" />
       <workItem from="1556521215071" duration="1563000" />
       <workItem from="1557458836121" duration="1262000" />
-      <workItem from="1557584064824" duration="33645000" />
+      <workItem from="1557584064824" duration="36241000" />
+      <workItem from="1557678488586" duration="2234000" />
     </task>
     <task id="LOCAL-00001" summary="Fix tested bug.">
       <created>1555684820646</created>
@@ -807,7 +776,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555684820646</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implement chat function of sever part.">
+      <created>1557670648616</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557670648616</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -843,9 +819,9 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100084000" />
+    <option name="totallyTimeSpent" value="104914000" />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -855,7 +831,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="281" y="82" width="1559" height="932" extended-state="0" />
+    <frame x="411" y="42" width="1393" height="932" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
@@ -871,20 +847,19 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3287858" />
-      <window_info active="true" anchor="bottom" id="Messages" order="9" visible="true" weight="0.32415518" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3279099" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32415518" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.3287858" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" weight="0.31163955" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.31163955" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32742155" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2621748" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29932484" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.32991454" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.32896176" />
@@ -893,6 +868,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
     </layout>
@@ -935,7 +911,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Implement chat function of sever part." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/codec/Passwd.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/codec/Md5.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/codec/Hex.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/github/bingoohuang/java-utils/0.0.22/java-utils-0.0.22.jar!/com/github/bingoohuang/utils/codec/Digest.class" />
@@ -954,9 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -974,29 +946,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="132" column="31" lean-forward="true" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2346#2347#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2524#2525#0" expanded="true" />
-            <element signature="e#2561#2562#0" expanded="true" />
-            <element signature="e#2603#2604#0" expanded="true" />
-            <element signature="e#2650#2651#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,9 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-248">
           <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1038,26 +988,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="33" />
-          <folding>
-            <element signature="e#1183#1184#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-766">
           <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1079,13 +1013,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#680#681#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1093,9 +1020,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="25" selection-start-line="25" selection-end-line="26" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,13 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,9 +1041,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1141,9 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1151,13 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -1175,28 +1079,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#513#514#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/NettyBooter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/NettyBooter.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -1225,10 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
           <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="e#2078#2079#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,25 +1132,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="150" lean-forward="true" selection-start-line="150" selection-end-line="150" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3714#3715#0" expanded="true" />
-            <element signature="e#3779#3780#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1279,44 +1143,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-          <folding>
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="76" column="40" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1518#1519#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SE_Project/app/src/test/java/com/example/se_project/MsgTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="25" column="32" lean-forward="true" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/UserChannelRel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-          </folding>
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1329,8 +1162,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="87" column="20" selection-start-line="87" selection-start-column="20" selection-end-line="87" selection-end-column="20" />
+        <state relative-caret-position="1444">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/UserChannelRel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1216">
+          <caret line="72" column="7" selection-start-line="72" selection-start-column="7" selection-end-line="72" selection-end-column="7" />
+          <folding>
+            <element signature="e#1183#1184#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1340#1341#0" expanded="true" />
+            <element signature="e#1383#1384#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#513#514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="19" selection-end-line="77" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-885">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
