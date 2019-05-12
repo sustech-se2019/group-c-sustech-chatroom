@@ -8,16 +8,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import sim.Dao.UserDao;
+import sim.pojo.ChatHistory;
 import sim.pojo.Users;
 import sim.pojo.vo.UsersVO;
 import sim.utils.JSONResult;
-import sim.utils.MD5Utils;
 import org.n3r.idworker.Sid;
+
+import java.util.List;
+
 /**
  * The Login and regist controller,witch is used to reply the request and update server.
  */
 @RestController
-public class LoginAndRegistController {
+public class UserController {
 
     @Autowired
     private UserDao userDao;
@@ -84,5 +87,22 @@ public class LoginAndRegistController {
             return JSONResult.errorMsg("用户已存在...");
         }
 
+    }
+
+    /**
+     *
+     * @Description: 用户手机端获取未签收的消息列表
+     */
+    @PostMapping("/getUnReadMsgList")
+    public JSONResult getUnReadMsgList(String acceptUserId) {
+        // 0. userId 判断不能为空
+        if (StringUtils.isBlank(acceptUserId)) {
+            return JSONResult.errorMsg("");
+        }
+
+        // 查询列表
+        List<ChatHistory> unreadMsgList = userDao.getUnReadMsgList(acceptUserId);
+
+        return JSONResult.ok(unreadMsgList);
     }
 }

@@ -18,7 +18,7 @@ public class JsonUtils {
      * transform object into json
      * <p>Title: pojoToJson</p>
      * <p>Description: </p>
-     * @param Object data
+     * @param data
      * @return String
      */
     public static String objectToJson(Object data) {
@@ -35,7 +35,7 @@ public class JsonUtils {
      * transform json to object
      * 
      * @param jsonData json数据
-     * @param clazz 对象中的object类型
+     * @param beanType 对象中的object类型
      * @return
      */
     public static <T> T jsonToPojo(String jsonData, Class<T> beanType) {
