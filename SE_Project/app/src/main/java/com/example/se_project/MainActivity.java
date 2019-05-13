@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    private TextView login_username, login_password;
     private CheckBox userRemember, passwordRemember;
     private SharedPreferences sp;
+    private TextView login_username, login_password;
     AlertDialog alertdialog1;
     @Override
     /**
@@ -45,12 +45,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         login = findViewById(R.id.login_button);
         register = findViewById(R.id.register_button);
         //ensure_register = findViewById(R.id.ensure_button);
-        sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
-        boolean isUserRemember = sp.getBoolean("isUserRemember",false);
-        boolean isPassworkRemember = sp.getBoolean("isPasswordRemember",false);
 
         login_username = findViewById(R.id.username);
         login_password = findViewById(R.id.password);
+
+        sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
+        boolean isUserRemember = sp.getBoolean("isUserRemember",false);
+        boolean isPassworkRemember = sp.getBoolean("isPasswordRemember",false);
+
         userRemember = findViewById(R.id.Login_Remember_Usname);
         passwordRemember = findViewById(R.id.Login_Remember_Password);
 
@@ -62,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             login_password.setText(sp.getString("password_remember",""));
             passwordRemember.setChecked(true);
         }
-
         login.setOnClickListener(this);
         register.setOnClickListener(this);
         //ensure_register.setOnClickListener(this);
@@ -155,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (result.getIntValue("status")) {
                 case 200:
                     //登录成功
+
                     SharedPreferences.Editor editor = sp.edit();
                     if(userRemember.isChecked()){
                         editor.putBoolean("isUserRemember",true);
