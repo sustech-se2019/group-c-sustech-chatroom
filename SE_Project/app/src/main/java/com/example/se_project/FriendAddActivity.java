@@ -1,7 +1,9 @@
 package com.example.se_project;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -95,6 +97,29 @@ public class FriendAddActivity extends AppCompatActivity {
     }
 
 
+    @SuppressLint("HandlerLeak")
+    final Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            JSONObject result = (JSONObject)msg.obj;
+
+
+            if(!result.getString("status").equals("200")){
+                showdialogMsg(result.getString("msg"));
+            }else{
+                User user = new User();
+                user.setId(JSONObject.parseObject(result.getString("data")).getString("id"));
+                user.setGpa(Double.parseDouble(JSONObject.parseObject(result.getString("data")).getString("gpa")));
+                user.setName(JSONObject.parseObject(result.getString("data")).getString("username"));
+                userList.clear();
+                userList.add(user);
+                Log.d("加入", user.getName());
+                reflesh();
+            }
+
+        }
+    };
 
     private void searchUserByName(String name){
         final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe()
@@ -107,20 +132,9 @@ public class FriendAddActivity extends AppCompatActivity {
                     JSONObject json_data = new JSONObject();
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
                     JSONObject result = (JSONObject)message.obj;
-                    Log.d("search friend to add",result.toString());
-                    Log.d("六",result.getString("status"));
-                    if(!result.getString("status").equals("200")){
-                        showdialogMsg("456");
-                    }else{
-                        User user = new User();
-                        user.setId(JSONObject.parseObject(result.getString("data")).getString("id"));
-                        user.setGpa(Double.parseDouble(JSONObject.parseObject(result.getString("data")).getString("gpa")));
-                        user.setName(JSONObject.parseObject(result.getString("data")).getString("username"));
-                        userList.clear();
-                        userList.add(user);
-                        Log.d("加入", user.getName());
-                        reflesh();
-                    }
+
+                    handler.sendMessage(message);
+
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
                     result_json.put("status",500);
