@@ -44,14 +44,13 @@ public class UserController {
 
         Users userResult = userDao.queryUserForLogin(user.getUsername(),
                 user.getPassword());
-        if (userResult != null) {
-
+        if (userResult == null) {
+            return JSONResult.errorMsg("用户名或密码不正确...");
+        }else{
             UsersVO userVO = new UsersVO();
             BeanUtils.copyProperties(userResult, userVO);
 
             return JSONResult.ok(userVO);
-        }else{
-            return JSONResult.errorMsg("用户名或密码不正确...");
         }
 
     }
@@ -72,21 +71,19 @@ public class UserController {
         }
 
         Boolean userExit = userDao.queryUsernameIsExist(user.getUsername());
-        if (!userExit) {
+        if (userExit) {
+            return JSONResult.errorMsg("用户已存在...");
+        }else{
             user.setId(Sid.nextShort());
             user.setNickname(user.getUsername());
             Users userResult = userDao.createUser(user);
-            if (userResult != null){
+            if (userResult == null){
+                return JSONResult.errorMsg("创建用户失败...");
+            }else{
                 UsersVO userVO = new UsersVO();
                 BeanUtils.copyProperties(userResult, userVO);
-
                 return JSONResult.ok(userVO);
-            }else{
-                return JSONResult.errorMsg("创建用户失败...");
             }
-
-        }else{
-            return JSONResult.errorMsg("用户已存在...");
         }
 
     }
