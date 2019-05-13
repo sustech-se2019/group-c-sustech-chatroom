@@ -88,6 +88,5 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
         TextView rightMsg;
         ImageView leftImage;
         ImageView rightImage;
-
     }
 }
