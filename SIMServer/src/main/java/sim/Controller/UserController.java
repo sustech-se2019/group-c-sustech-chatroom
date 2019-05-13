@@ -54,6 +54,7 @@ public class UserController {
         }
 
     }
+
     /**
      * Regist json result. Reply to request.
      *
@@ -88,7 +89,14 @@ public class UserController {
 
     }
 
-
+    /**
+     * Search user with self id and friend user name.
+     *
+     * @param myUserId id of current user
+     * @param friendUsername the friend username
+     * @return {@link JSONResult} message.
+     * @throws Exception the exception
+     */
     @PostMapping("/search")
     public JSONResult searchUser(String myUserId, String friendUsername)
             throws Exception {
@@ -113,7 +121,14 @@ public class UserController {
 
 
 
-
+    /**
+     * Send friend request from from my user id to friend user name.
+     *
+     * @param myUserId id of current user
+     * @param friendUsername the friend username
+     * @return {@link JSONResult} message.
+     * @throws Exception the exception
+     */
     @PostMapping("/addFriendRequest")
     public JSONResult addFriendRequest(String myUserId, String friendUsername)
             throws Exception {
@@ -140,6 +155,13 @@ public class UserController {
 
 
 
+    /**
+     * Send friend request from from my user id to friend user name.
+     *
+     * @param userId id of current user
+     * @return {@link JSONResult} message.
+     * @throws Exception the exception
+     */
     @PostMapping("/queryFriendRequests")
     public JSONResult queryFriendRequests(String userId) {
 
@@ -152,6 +174,15 @@ public class UserController {
         return JSONResult.ok(userDao.queryFriendRequestList(userId));
     }
 
+
+    /**
+     * Send friend request from from my user id to friend user name.
+     * @param acceptUserId the user id of accepter
+     * @param sendUserId the user id of sender
+     * @param operType 0 for decline;1 for accept
+     * @return {@link JSONResult} message.
+     * @throws Exception the exception
+     */
     @PostMapping("/operFriendRequest")
     public JSONResult operFriendRequest(String acceptUserId, String sendUserId,
                                              Integer operType) {
