@@ -23,14 +23,6 @@
         android:layout_height="wrap_content"
         android:gravity="left"
         android:background="#4169E1">
-        <Button
-            android:id="@+id/back_to_friendlist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textAllCaps="false"
-            android:textSize="20dp"
-            android:text="Back"/>
     </LinearLayout>
 
     <LinearLayout

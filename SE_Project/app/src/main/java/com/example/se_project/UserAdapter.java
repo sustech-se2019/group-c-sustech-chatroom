@@ -1,14 +1,19 @@
 package com.example.se_project;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
+
+import static android.support.v4.content.ContextCompat.startActivity;
+import static android.support.v4.content.ContextCompat.startForegroundService;
 
 /**
  * Created by cpj on 2016/3/15.
@@ -17,20 +22,12 @@ public class UserAdapter extends ArrayAdapter<User>{
 
     private int resourceId;
 
-    public UserAdapter(Context context, int textViewResourceId,
+    public UserAdapter(Context context, int userViewResourceId,
                        List<User> objects){
-        super(context, textViewResourceId, objects);
-        resourceId = textViewResourceId;
-    }
 
-    /**
-     * 功能描述：这个方法在每个子项滚动到屏幕内的时候被调用
-     *         1.首先通过 getItem()获取当前项的ToolBar实例
-     *         2.使用LayoutInflater将这个子布局项加载并传入我们的主布局
-     *         3.调用View的findViewById()分别获取到左右Layout、左右Msg的实例
-     *         4.调用它们的setText()来显示文字
-     *         5.最后返回布局
-     * */
+        super(context, userViewResourceId, objects);
+        resourceId = userViewResourceId;
+    }
     public View getView(int position, View convertView, ViewGroup parent){
         User user = getItem(position);
         /*
@@ -50,6 +47,7 @@ public class UserAdapter extends ArrayAdapter<User>{
             viewHolder = new ViewHolder();
             viewHolder.layout = (LinearLayout) view.findViewById(R.id.user_add_layout);
             viewHolder.name = (TextView) view.findViewById(R.id.user_name);
+            viewHolder.image = (ImageView) view.findViewById(R.id.user_image);
             view.setTag(viewHolder);
 
         } else {
@@ -58,19 +56,17 @@ public class UserAdapter extends ArrayAdapter<User>{
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        /*接受与发送消息的分类处理*/
-        //如果为收到的消息，则显示左边的消息布局，将右边的消息布局隐藏
+        /*display the user*/
         viewHolder.layout.setVisibility(View.VISIBLE);
         viewHolder.name.setText(user.getName());
-
+        viewHolder.image.setImageResource(user.getProfilePictureID());
         return view;
     }
 
     //新增内部类ViewHolder，用于对控件的实例进行缓存。
     class ViewHolder{
-
         LinearLayout layout;
         TextView name;
-
+        ImageView image;
     }
 }

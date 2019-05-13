@@ -18,8 +18,11 @@ import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.se_project.Chat.WSClient;
 
 import java.net.HttpURLConnection;
+import java.net.URI;
+
 /**
  * Main activity of the application.
  */
@@ -90,6 +93,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
+
+    /**
+     * To show username not exist dialog.
+     */
+    void showdialogMsg(String msg)
+    {
+        //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
+        AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
+        alertdialogbuilder.setMessage(msg);
+        alertdialogbuilder.setPositiveButton("确定", click1);
+        alertdialog1=alertdialogbuilder.create();
+        alertdialog1.show();
+    }
     /**
      * When click "确定",cancle dialog.
      */
@@ -137,8 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             JSONObject result = (JSONObject)msg.obj;
 
             switch (result.getIntValue("status")) {
-
-                case HttpURLConnection.HTTP_OK:
+                case 200:
                     //登录成功
                     SharedPreferences.Editor editor = sp.edit();
                     if(userRemember.isChecked()){
@@ -157,14 +172,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     editor.apply();
                     Intent intent1 = new Intent();
                     intent1.setClass(MainActivity.this, ChatActivity.class);
+
+                    JSONObject userInfo = JSONObject.parseObject(result.getString("data"));
+                    AppData.getInstance().getMe().setId(userInfo.getString("id"));
+                    AppData.getInstance().getMe().setName(userInfo.getString("username"));
+                    AppData.getInstance().getMe().setGpa(userInfo.getDouble("gpa"));
+
+
+
                     MainActivity.this.startActivity(intent1);
                     Log.d("result: ", result.getString("data"));
                     break;
-                case HttpURLConnection.HTTP_ACCEPTED:
+                case 500:
+                    //登陆失败
+                    showdialogMsg(result.getString("msg"));
                     break;
                 default:
-                    //登陆失败
-                    showdialogWrongPassword();
                     Log.d("result", result.getString("msg"));
                     break;
             }
@@ -186,11 +209,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     json_data.put("password", password);
 
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("login",result.toString());
                     handler.sendMessage(message);
 
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
-                    result_json.put("status",0);
+                    result_json.put("status",500);
                     result_json.put("msg","连接服务器失败...");
                     message.obj = result_json;
                     handler.sendMessage(message);
@@ -201,41 +226,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-
-    /**
-     * Get information of translate and send to NMT server.
-     */
-    void translate(final String sentence) {
-        final String server_url = this.getString(R.string.NMT_Server_Url);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Message message = new Message();
-                String request_url = server_url;
-                if (Utils.checkString(sentence))
-                {
-                    request_url += "/en2zh";
-                }else{
-                    request_url += "/zh2en";
-                }
-                try {
-                    JSONObject json_data = new JSONObject();
-                    json_data.put("sentence", sentence);
-
-                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
-                    handler.sendMessage(message);
-
-                } catch (Exception e) {
-                    JSONObject result_json = new JSONObject();
-                    result_json.put("status",0);
-                    result_json.put("msg","连接服务器失败...");
-                    message.obj = result_json;
-                    handler.sendMessage(message);
-                    e.printStackTrace();
-                }
-            }
-        }).start();
+    private void creadWebSocket() {
+        try{
+            URI Uri= new URI(this.getString(R.string.WebSocket_Server_Url));
+            AppData.getInstance().setWs(new WSClient(Uri));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 

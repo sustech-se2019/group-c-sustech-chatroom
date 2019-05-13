@@ -13,6 +13,11 @@ public class Msg {
         this.type = type;
     }
 
+    public Msg(){
+        this.content = null;
+        this.type = 0;
+    }
+
     public String getContent() {
         return content;
     }
@@ -20,4 +25,13 @@ public class Msg {
     public int getType() {
         return type;
     }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setType(int type){
+        this.type = type;
+    }
+
 }

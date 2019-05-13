@@ -1,13 +1,17 @@
 package com.example.se_project;
 
+import android.util.Log;
+
 import com.alibaba.fastjson.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 /**
  * This class is to deal with http request of json object ({@link JSONObject}).
  */
@@ -22,6 +26,7 @@ public final class HttpRequest {
      * @throws Exception the exception of {@link java.net.MalformedURLException},{@link IOException},{@link java.net.ProtocolException}
      */
     public static JSONObject jsonRequest(String url_String, JSONObject json) throws Exception{
+        String result = "";
         URL url = new URL(url_String);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
@@ -32,16 +37,19 @@ public final class HttpRequest {
         connection.connect();
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
         writer.write(json.toString());
+        writer.flush();
         writer.close();
-        InputStream inputStream = connection.getInputStream();
-        String result = inputStream2String(inputStream);//将流转换为字符串。
+        int HttpResult =connection.getResponseCode();
+        if(HttpResult == HttpURLConnection.HTTP_OK){
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    connection.getInputStream(),"utf-8"));
+            result = br.readLine();
+            br.close();
+        }else{
+            throw new Exception();
+        }
+        System.out.println(result);
         return JSONObject.parseObject(result);
-    }
-
-    private static String inputStream2String (InputStream in) throws IOException {
-        byte[] bytes = new byte[in.available()];
-        in.read(bytes);
-        return new String(bytes);
     }
 
 }
