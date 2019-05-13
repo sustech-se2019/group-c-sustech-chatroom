@@ -2,11 +2,17 @@ package com.example.se_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +22,7 @@ public class FriendAddActivity extends AppCompatActivity {
     private EditText inputText;
     private Button search;
     private Button back;
+    private Button add;
     private UserAddAdapter adapter;
     private List<User> userList = new ArrayList<User>();
 
@@ -26,10 +33,11 @@ public class FriendAddActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.friend_add_activity);
-        initUsers();//初始化消息数据
+        initFriends();//初始化消息数据
         adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
         inputText = (EditText)findViewById(R.id.input_user_name);
         search = (Button)findViewById(R.id.search_user);
+        add = (Button)findViewById(R.id.add_request);
         userListView = (ListView)findViewById(R.id.user_list_view);
         userListView.setAdapter(adapter);
 
@@ -49,12 +57,10 @@ public class FriendAddActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(FriendAddActivity.this,FriendActivity.class);
-        startActivity(intent);
         finish();
     }
 
-    private void initUsers(){
+    private void initFriends(){
         User user1 = new User("a", 1);
         userList.add(user1);
         User user2 = new User("b", 2);
@@ -64,6 +70,37 @@ public class FriendAddActivity extends AppCompatActivity {
         User user4 = new User("d", 4);
         userList.add(user4);
     }
+
     private void searchUserByName(String name){
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe()
+                +"&friendUsername="+name;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("search friend to add",result.toString());
+                    if(result.getString("status") != "200"){
+                        Toast.makeText(FriendAddActivity.this, result.getString("data"),Toast.LENGTH_LONG).show() ;
+                    }else{
+                        User user = new User();
+                        user.setId(JSONObject.parseObject(result.getString("data")).getString("id"));
+                        user.setGpa(Double.parseDouble(JSONObject.parseObject(result.getString("data")).getString("gpa")));
+                        user.setName(JSONObject.parseObject(result.getString("data")).getString("username"));
+                        userList.clear();
+                        userList.add(user);
+                    }
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
