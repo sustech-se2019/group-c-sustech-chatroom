@@ -47,6 +47,7 @@ public class ChatActivity extends AppCompatActivity {
     private MsgAdapter adapter;
     private List<Msg> msgList = new ArrayList<Msg>();
     private int pos;
+    private User chatUser;
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -55,9 +56,9 @@ public class ChatActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.chat_activity);
-
+        chatUser=(User)getIntent().getSerializableExtra("ChatUser");
         initMsgs();//初始化消息数据
-        adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList);
+        adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList,chatUser);
         inputText = (EditText)findViewById(R.id.input_msg);
         send = (Button)findViewById(R.id.send_msg);
         msgListView = (ListView)findViewById(R.id.msg_list_view);
@@ -122,8 +123,6 @@ public class ChatActivity extends AppCompatActivity {
         }
     };
 
-
-
     /**
      * 初始化消息数据
      * */
@@ -138,7 +137,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
     private void refreshFavListItems() {
-        adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList);
+        adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList,chatUser);
         msgListView.setAdapter(adapter);
     }
 
@@ -217,9 +216,7 @@ public class ChatActivity extends AppCompatActivity {
      * {@inheritDoc}
      */
     public void onBackPressed() {
-        super.onBackPressed();
-        this.getWindow().clearFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        finish();
     }
 
     /**

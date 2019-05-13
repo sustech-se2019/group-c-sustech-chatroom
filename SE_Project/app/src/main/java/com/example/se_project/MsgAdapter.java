@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
@@ -15,11 +16,12 @@ import java.util.List;
 public class MsgAdapter extends ArrayAdapter<Msg>{
 
     private int resourceId;
-
+    private User chatUser;
     public MsgAdapter(Context context, int textViewResourceId,
-                      List<Msg> objects){
+                      List<Msg> objects,User chatUser){
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
+        this.chatUser=chatUser;
     }
 
     /**
@@ -51,7 +53,8 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
             viewHolder.rightLayout = (LinearLayout) view.findViewById(R.id.right_msg_layout);
             viewHolder.leftMsg = (TextView) view.findViewById(R.id.left_msg);
             viewHolder.rightMsg = (TextView) view.findViewById(R.id.right_msg);
-
+            viewHolder.leftImage=(ImageView) view.findViewById(R.id.left_chat_user_image);
+            viewHolder.rightImage=(ImageView) view.findViewById(R.id.right_chat_user_image);
             view.setTag(viewHolder);
 
         } else {
@@ -66,22 +69,25 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
             viewHolder.leftLayout.setVisibility(View.VISIBLE);
             viewHolder.rightLayout.setVisibility(View.GONE);
             viewHolder.leftMsg.setText(msg.getContent());
+            viewHolder.leftImage.setImageResource(chatUser.getProfilePictureID());
 
         } else if(msg.getType() == Msg.TYPE_SENT){
             viewHolder.rightLayout.setVisibility(View.VISIBLE);
             viewHolder.leftLayout.setVisibility(View.GONE);
             viewHolder.rightMsg.setText(msg.getContent());
+            viewHolder.leftImage.setImageResource(AppData.getInstance().getMe().getProfilePictureID());
         }
-
         return view;
     }
 
     //新增内部类ViewHolder，用于对控件的实例进行缓存。
     class ViewHolder{
-
         LinearLayout leftLayout;
         LinearLayout rightLayout;
         TextView leftMsg;
         TextView rightMsg;
+        ImageView leftImage;
+        ImageView rightImage;
+
     }
 }

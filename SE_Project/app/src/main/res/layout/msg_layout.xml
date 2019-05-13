@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left">
         <ImageView
-            android:id="@+id/yourImage"
+            android:id="@+id/left_chat_user_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/gpa0"/>
@@ -40,7 +40,7 @@
             android:layout_margin="10dp"
             android:textColor="#a40d88"/>
         <ImageView
-            android:id="@+id/myImage"
+            android:id="@+id/right_chat_user_image"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/gpa0"/>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -33,7 +34,15 @@ public class FriendActivity extends AppCompatActivity {
         add = (Button)findViewById(R.id.add_activity);
         userListView = (ListView)findViewById(R.id.friend_list_view);
         userListView.setAdapter(adapter);
-
+        userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(FriendActivity.this,ChatActivity.class);
+                User chatUser=(User)userListView.getItemAtPosition(position);
+                intent.putExtra("ChatUser",chatUser);
+                startActivity(intent);
+            }
+        });
         //发送按钮的点击事件
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,5 +73,9 @@ public class FriendActivity extends AppCompatActivity {
         userList.add(user3);
     }
     private void searchFriendByName(String name){
+    }
+    private void startChat(User user){
+        Intent intent = new Intent(FriendActivity.this,ChatActivity.class);
+        startActivity(intent);
     }
 }

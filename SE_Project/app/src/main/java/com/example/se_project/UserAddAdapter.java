@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.List;
@@ -17,13 +18,11 @@ import java.util.List;
 public class UserAddAdapter extends ArrayAdapter<User>{
 
     private int resourceId;
-    Context context;
 
     public UserAddAdapter(Context context, int textViewResourceId,
                           List<User> objects){
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
-        this.context=context;
     }
 
     /**
@@ -54,6 +53,7 @@ public class UserAddAdapter extends ArrayAdapter<User>{
             viewHolder.layout = (LinearLayout) view.findViewById(R.id.user_add_layout);
             viewHolder.name = (TextView) view.findViewById(R.id.user_name);
             viewHolder.button=(Button) view.findViewById(R.id.add_request);
+            viewHolder.image=(ImageView) view.findViewById(R.id.add_user_image) ;
             view.setTag(viewHolder);
 
         } else {
@@ -69,7 +69,7 @@ public class UserAddAdapter extends ArrayAdapter<User>{
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialog1 = new AlertDialog.Builder(context)
+                AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
                         .setTitle("Warning")//标题
                         .setMessage("No one want to be your friend")//内容
                         .setIcon(R.mipmap.ic_launcher)//图标
@@ -77,6 +77,7 @@ public class UserAddAdapter extends ArrayAdapter<User>{
                 alertDialog1.show();
             }
         });
+        viewHolder.image.setImageResource(user.getProfilePictureID());
         return view;
     }
 
@@ -85,5 +86,6 @@ public class UserAddAdapter extends ArrayAdapter<User>{
         LinearLayout layout;
         TextView name;
         Button button;
+        ImageView image;
     }
 }

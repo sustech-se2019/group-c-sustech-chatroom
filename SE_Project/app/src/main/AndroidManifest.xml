@@ -18,10 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/MaterialTheme">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".FriendActivity"></activity>
         <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".FriendAddActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".FriendActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -30,7 +30,6 @@ public class FriendAddActivity extends AppCompatActivity {
         adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
         inputText = (EditText)findViewById(R.id.input_user_name);
         search = (Button)findViewById(R.id.search_user);
-        back = (Button)findViewById(R.id.back_to_friendlist);
         userListView = (ListView)findViewById(R.id.user_list_view);
         userListView.setAdapter(adapter);
 
@@ -46,12 +45,11 @@ public class FriendAddActivity extends AppCompatActivity {
                 userListView.setSelection(0);//将ListView定位到最后一行
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 
     private void initFriends(){
