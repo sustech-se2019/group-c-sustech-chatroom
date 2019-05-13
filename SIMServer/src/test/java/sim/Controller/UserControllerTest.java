@@ -7,6 +7,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.junit.Assert;
 import org.junit.Test;
 public class UserControllerTest {
 
@@ -228,5 +229,43 @@ public class UserControllerTest {
         regist("uhdiwei","uhihii", 3.4);
     }
 
+    @Test
+    public void getUnReadMsgListTest1(){
+        String url = ServerUrl + "/getUnReadMsgList?acceptUserId=1";
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(url);
+        String response = null;
+        try {
+            StringEntity s = new StringEntity("");
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            Assert.assertEquals(200,res.getStatusLine().getStatusCode());
 
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void getUnReadMsgListTest2(){
+        String url = ServerUrl + "/getUnReadMsgList?acceptUserId=";
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(url);
+        String response = null;
+        try {
+            StringEntity s = new StringEntity("");
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            response = EntityUtils.toString(res.getEntity());
+            System.out.println(response);
+            Assert.assertEquals("{\"status\":500,\"msg\":\"\",\"data\":null,\"ok\":false}",response);
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

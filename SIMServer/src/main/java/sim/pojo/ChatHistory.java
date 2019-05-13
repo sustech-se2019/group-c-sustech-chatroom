@@ -22,8 +22,8 @@ public class ChatHistory {
     @Column(name = "send_time")
     private Date sendTime;
 
-    @Column(name = "read_time")
-    private Date readTime;
+    @Column(name = "sign_flag")
+    private Integer signFlag;
 
     /**
      * @return msg_id
@@ -96,16 +96,16 @@ public class ChatHistory {
     }
 
     /**
-     * @return read_time
+     * @return sign_flag
      */
-    public Date getReadTime() {
-        return readTime;
+    public Integer getSignFlag() {
+        return signFlag;
     }
 
     /**
-     * @param readTime
+     * @param signFlag
      */
-    public void setReadTime(Date readTime) {
-        this.readTime = readTime;
+    public void setSignFlag(Integer signFlag) {
+        this.signFlag = signFlag;
     }
 }

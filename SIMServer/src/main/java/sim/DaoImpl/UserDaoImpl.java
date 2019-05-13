@@ -2,17 +2,18 @@ package sim.DaoImpl;
 
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import sim.enums.MsgActionEnum;
-import sim.mapper.FriendRequestMapper;
-import sim.mapper.UsersMapper;
-import sim.mapper.FriendListMapper;
-import sim.mapper.UsersMapperCustom;
+import sim.enums.MsgSignFlagEnum;
+import sim.mapper.*;
+import sim.netty.ChatMsg;
 import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
+import sim.pojo.ChatHistory;
 import sim.pojo.FriendRequest;
 import sim.pojo.vo.FriendRequestVO;
 import sim.pojo.vo.MyFriendsVO;
@@ -37,6 +38,8 @@ public class UserDaoImpl implements UserDao {
     private UsersMapper userMapper;
     @Autowired(required = false)
     private UsersMapperCustom usersMapperCustom;
+    @Autowired(required = false)
+    private ChatHistoryMapper chatHistoryMapper;
     @Autowired(required = false)
     private FriendListMapper friendListMapper;
     @Autowired(required = false)
@@ -211,6 +214,7 @@ public class UserDaoImpl implements UserDao {
         userMapper.updateByPrimaryKeySelective(user);
         return queryUserById(user.getId());
     }
+
     /**
      * Query user by id, if exist return that user.
      *
@@ -221,5 +225,55 @@ public class UserDaoImpl implements UserDao {
     @Override
     public Users queryUserById(String userId) {
         return userMapper.selectByPrimaryKey(userId);
+    }
+
+    /**
+     * @param chatMsg
+     * @Description: 保存聊天消息到数据库
+     */
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public String saveMsg(ChatMsg chatMsg) {
+
+        ChatHistory msgDB = new ChatHistory();
+        String msgId = Sid.nextShort();
+        msgDB.setMsgId(msgId);
+        msgDB.setToId(chatMsg.getReceiverId());
+        msgDB.setFromId(chatMsg.getSenderId());
+        msgDB.setSendTime(new Date());
+        msgDB.setSignFlag(MsgSignFlagEnum.unsign.type);
+        msgDB.setMsg(chatMsg.getMsg());
+
+        chatHistoryMapper.insert(msgDB);
+
+        return msgId;
+    }
+
+    /**
+     * @param msgIdList
+     * @Description: 批量签收消息
+     */
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public void updateMsgSigned(List<String> msgIdList) {
+        usersMapperCustom.batchUpdateMsgSigned(msgIdList);
+    }
+
+    /**
+     * @param toId
+     * @Description: 获取未签收消息列表
+     */
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<ChatHistory> getUnReadMsgList(String toId) {
+
+        Example chatExample = new Example(ChatHistory.class);
+        Criteria chatCriteria = chatExample.createCriteria();
+        chatCriteria.andEqualTo("signFlag", 0);
+        chatCriteria.andEqualTo("toId", toId);
+
+        List<ChatHistory> result = chatHistoryMapper.selectByExample(chatExample);
+
+        return result;
     }
 }

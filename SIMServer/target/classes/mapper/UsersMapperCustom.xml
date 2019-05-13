@@ -37,4 +37,14 @@
 		where
 			mf.owner_id = #{userId}
 	</select>
+
+	<!-- 批处理更新消息为已签收 -->
+	<update id="batchUpdateMsgSigned">
+
+		update chat_history set sign_flag = 1 where msg_id in
+		<foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+
+	</update>
 </mapper>

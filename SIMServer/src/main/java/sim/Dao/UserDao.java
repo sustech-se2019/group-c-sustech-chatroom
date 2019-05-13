@@ -1,5 +1,7 @@
 package sim.Dao;
 
+import sim.netty.ChatMsg;
+import sim.pojo.ChatHistory;
 import sim.pojo.Users;
 import sim.pojo.vo.FriendRequestVO;
 import sim.pojo.vo.MyFriendsVO;
@@ -65,4 +67,19 @@ public interface UserDao {
     public void passFriendRequest(String sendUserId, String acceptUserId);
 
     public List<MyFriendsVO> queryMyFriends(String userId);
+
+    /**
+     * @Description: 保存聊天消息到数据库
+     */
+    public String saveMsg(ChatMsg chatMsg);
+
+    /**
+     * @Description: 批量签收消息
+     */
+    public void updateMsgSigned(List<String> msgIdList);
+
+    /**
+     * @Description: 获取未签收消息列表
+     */
+    public List<ChatHistory> getUnReadMsgList(String acceptUserId);
 }

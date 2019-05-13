@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import sim.Dao.UserDao;
 import sim.enums.OperatorFriendRequestTypeEnum;
+import sim.pojo.ChatHistory;
 import sim.pojo.Users;
 import sim.pojo.vo.MyFriendsVO;
 import sim.pojo.vo.UsersVO;
@@ -201,5 +202,22 @@ public class UserController {
         List<MyFriendsVO> myFirends = userDao.queryMyFriends(userId);
 
         return JSONResult.ok(myFirends);
+    }
+
+    /**
+     *
+     * @Description: 用户手机端获取未签收的消息列表
+     */
+    @PostMapping("/getUnReadMsgList")
+    public JSONResult getUnReadMsgList(String acceptUserId) {
+        // 0. userId 判断不能为空
+        if (StringUtils.isBlank(acceptUserId)) {
+            return JSONResult.errorMsg("");
+        }
+
+        // 查询列表
+        List<ChatHistory> unreadMsgList = userDao.getUnReadMsgList(acceptUserId);
+
+        return JSONResult.ok(unreadMsgList);
     }
 }
