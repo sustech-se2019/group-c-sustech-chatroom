@@ -82,7 +82,16 @@ public class FriendActivity extends AppCompatActivity {
                     JSONObject result = (JSONObject)message.obj;
                     Log.d("get friend list",result.toString());
                     JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
-                    userList = jsonArray.toJavaList(User.class);
+                    userList.clear();
+                    for (Object item:jsonArray) {
+                        JSONObject jsonItem = JSONObject.parseObject((String)item);
+                        User user = new User();
+                        user.setId(jsonItem.getString("id"));
+                        user.setGpa(Double.parseDouble(jsonItem.getString("gpa")));
+                        user.setName(jsonItem.getString("username"));
+                        userList.add(user);
+                    }
+
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
                     result_json.put("status",500);

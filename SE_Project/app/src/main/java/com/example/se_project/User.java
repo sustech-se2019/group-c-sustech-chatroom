@@ -21,12 +21,7 @@ public class User implements Serializable {
     private int profilePictureID;
     private ArrayList<User> friendList=new ArrayList();
     public User(){
-        User user1 = new User("a", 1);
-        friendList.add(user1);
-        User user2 = new User("b", 2);
-        friendList.add(user2);
-        User user3 = new User("c", 3);
-        friendList.add(user3);
+
     }
 
     public User(String name,double gpa){
@@ -128,5 +123,6 @@ public class User implements Serializable {
         return friendList;
     }
     private void refreshFriendList(){
+        
     }
 }

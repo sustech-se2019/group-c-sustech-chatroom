@@ -1,8 +1,10 @@
 package com.example.se_project;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +27,7 @@ public class FriendAddActivity extends AppCompatActivity {
     private Button add;
     private UserAddAdapter adapter;
     private List<User> userList = new ArrayList<User>();
+    AlertDialog alertdialog1;
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -71,6 +74,31 @@ public class FriendAddActivity extends AppCompatActivity {
         userList.add(user4);
     }
 
+    void showdialogMsg(String msg)
+    {
+        //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
+        AlertDialog.Builder alertdialogbuilder=new AlertDialog.Builder(this);
+        alertdialogbuilder.setMessage(msg);
+        alertdialogbuilder.setPositiveButton("确定", click1);
+        alertdialog1=alertdialogbuilder.create();
+        alertdialog1.show();
+    }
+    private final DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
+    {@Override
+
+    public void onClick(DialogInterface arg0,int arg1)
+    {
+        arg0.cancel();
+    }
+    };
+
+    private void reflesh(){
+        adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
+        userListView.setAdapter(adapter);
+    }
+
+
+
     private void searchUserByName(String name){
         final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe()
                 +"&friendUsername="+name;
@@ -83,8 +111,9 @@ public class FriendAddActivity extends AppCompatActivity {
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
                     JSONObject result = (JSONObject)message.obj;
                     Log.d("search friend to add",result.toString());
-                    if(result.getString("status") != "200"){
-                        Toast.makeText(FriendAddActivity.this, result.getString("data"),Toast.LENGTH_LONG).show() ;
+                    Log.d("六",result.getString("status"));
+                    if(!result.getString("status").equals("200")){
+                        showdialogMsg("456");
                     }else{
                         User user = new User();
                         user.setId(JSONObject.parseObject(result.getString("data")).getString("id"));
@@ -92,6 +121,8 @@ public class FriendAddActivity extends AppCompatActivity {
                         user.setName(JSONObject.parseObject(result.getString("data")).getString("username"));
                         userList.clear();
                         userList.add(user);
+                        Log.d("加入", user.getName());
+                        reflesh();
                     }
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
