@@ -1,7 +1,9 @@
 package com.example.se_project;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.widget.ListView;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,8 +72,29 @@ public class FriendActivity extends AppCompatActivity {
         });
     }
 
+
+
+    @SuppressLint("HandlerLeak")
+    final Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            JSONObject result = (JSONObject)msg.obj;
+
+
+
+
+
+        }
+    };
+
+
+
+
+
+
     private void initFriends(){
-        final String request_url = this.getString(R.string.IM_Server_Url) + "/myFriends?userId="+AppData.getInstance().getMe();
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/myFriends?userId="+AppData.getInstance().getMe().getId();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -81,14 +105,18 @@ public class FriendActivity extends AppCompatActivity {
                     JSONObject result = (JSONObject)message.obj;
                     Log.d("get friend list",result.toString());
                     JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
+
                     userList.clear();
                     for (Object item:jsonArray) {
-                        JSONObject jsonItem = JSONObject.parseObject((String)item);
+                        JSONObject jsonItem = JSONObject.parseObject(item.toString());
+
                         User user = new User();
                         user.setId(jsonItem.getString("id"));
-                        user.setGpa(Double.parseDouble(jsonItem.getString("gpa")));
-                        user.setName(jsonItem.getString("username"));
+                        user.setGpa(4.0);
+                        user.setName(jsonItem.getString("friendUsername"));
                         userList.add(user);
+
+
                     }
 
                 } catch (Exception e) {
@@ -103,6 +131,8 @@ public class FriendActivity extends AppCompatActivity {
     }
     private void searchFriendByName(String name){
     }
+
+
     private void startChat(User user){
         Intent intent = new Intent(FriendActivity.this,ChatActivity.class);
         startActivity(intent);
