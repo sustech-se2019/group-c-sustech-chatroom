@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="Implement chat function of sever part.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/HeartBeatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/netty/ChatHandlerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/sim/utils/SpringUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Chat/ChatHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/ChatHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/ChatHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ChatHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ChatHistoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UsersMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UsersMapperCustom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/DaoImpl/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/DaoImpl/UserDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/mapper/UsersMapperCustom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/mapper/UsersMapperCustom.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/pojo/ChatHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/pojo/ChatHistory.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,11 +36,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="73" column="43" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
+            <state relative-caret-position="255">
+              <caret line="214" column="37" selection-start-line="214" selection-start-column="37" selection-end-line="214" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +64,8 @@
       <file leaf-file-name="UserControllerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
+            <state relative-caret-position="127">
+              <caret line="231" column="9" lean-forward="true" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -99,7 +73,7 @@
       <file leaf-file-name="UserDaoImplTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
+            <state relative-caret-position="2394">
               <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
             </state>
           </provider>
@@ -123,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatClientTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChatClientTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1032">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="374">
+              <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,16 +122,16 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersMapperCustom.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
+      <file leaf-file-name="MsgActionEnum.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+            <state relative-caret-position="152">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -300,8 +274,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="335" />
-    <option name="y" value="25" />
+    <option name="x" value="458" />
+    <option name="y" value="40" />
     <option name="width" value="1393" />
     <option name="height" value="988" />
   </component>
@@ -841,7 +815,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ChatClientTest">
+  <component name="RunManager" selected="JUnit.UserControllerTest.getUnReadMsgListTest1">
     <configuration name="ChatClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sim.ChatClientTest" />
       <module name="SIM-Server" />
@@ -858,29 +832,6 @@
       <method>
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="LoginAndRegistControllerTest.getUnReadMsgListTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SIM-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sim.Controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="sim.Controller" />
-      <option name="MAIN_CLASS_NAME" value="sim.Controller.LoginAndRegistControllerTest" />
-      <option name="METHOD_NAME" value="getUnReadMsgListTest1" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="LoginAndRegistControllerTest.getUnReadMsgListTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
@@ -919,6 +870,29 @@
       <option name="MAIN_CLASS_NAME" value="sim.utils.SpringUtilsTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="UserControllerTest.getUnReadMsgListTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="sim.Controller" />
+      <option name="MAIN_CLASS_NAME" value="sim.Controller.UserControllerTest" />
+      <option name="METHOD_NAME" value="getUnReadMsgListTest1" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -997,18 +971,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.ChatClientTest" />
-      <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest1" />
       <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest2" />
       <item itemvalue="JUnit.SpringUtilsTest" />
       <item itemvalue="Spring Boot.Application" />
+      <item itemvalue="JUnit.UserControllerTest.getUnReadMsgListTest1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserControllerTest.getUnReadMsgListTest1" />
         <item itemvalue="Application.ChatClientTest" />
         <item itemvalue="Spring Boot.Application" />
         <item itemvalue="JUnit.SpringUtilsTest" />
         <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest2" />
-        <item itemvalue="JUnit.LoginAndRegistControllerTest.getUnReadMsgListTest1" />
       </list>
     </recent_temporary>
   </component>
@@ -1059,9 +1033,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LoginAndRegistControllerTest_getUnReadMsgListTest1 - 2019.05.12 at 17h 33m 55s.xml">
-      <configuration name="LoginAndRegistControllerTest.getUnReadMsgListTest1" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LoginAndRegistControllerTest_getUnReadMsgListTest2 - 2019.05.12 at 17h 34m 18s.xml">
       <configuration name="LoginAndRegistControllerTest.getUnReadMsgListTest2" configurationId="JUnit" />
     </history-entry>
@@ -1089,9 +1060,12 @@
     <history-entry file="SpringUtilsTest - 2019.05.12 at 18h 00m 21s.xml">
       <configuration name="SpringUtilsTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="UserControllerTest_getUnReadMsgListTest1 - 2019.05.13 at 19h 26m 13s.xml">
+      <configuration name="UserControllerTest.getUnReadMsgListTest1" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107588000" />
+    <option name="totallyTimeSpent" value="110932000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1103,7 +1077,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="335" y="25" width="1393" height="988" extended-state="0" />
+    <frame x="458" y="40" width="1393" height="988" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
@@ -1125,8 +1099,8 @@
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="15" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.22222222" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.30643275" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.31695905" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.43976608" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32742155" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29932484" />
@@ -1182,9 +1156,9 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" weight="0.4507389" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" id="Database" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="UI Designer" order="4" />
+      <window_info id="Web" order="7" side_tool="true" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
@@ -1192,24 +1166,24 @@
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32896176" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50085473" side_tool="true" weight="0.34196186" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3287858" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3262745" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="EvoSuite" order="11" weight="0.32970026" />
       <window_info anchor="bottom" id="Java Enterprise" order="16" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3287858" />
       <window_info anchor="right" id="Maven Projects" order="7" visible="true" weight="0.16901408" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26104745" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3262745" />
+      <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3287858" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Bean Validation" order="11" weight="0.32991454" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1266,13 +1240,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="132" column="31" lean-forward="true" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/LoginAndRegistControllerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sim/pojo/UsersTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2046">
@@ -1380,16 +1348,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="209" column="7" lean-forward="true" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1404,13 +1362,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1537,16 +1488,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="269" column="5" selection-start-line="269" selection-start-column="5" selection-end-line="269" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
+        <state relative-caret-position="2394">
           <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
         </state>
       </provider>
@@ -1565,13 +1509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1579,13 +1516,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1032">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="214" column="37" selection-start-line="214" selection-start-column="37" selection-end-line="214" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="231" column="9" lean-forward="true" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="12" selection-end-column="27" />
         </state>
       </provider>
     </entry>

@@ -8,7 +8,6 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,11 +16,15 @@ import android.widget.TextView;
 import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.WSClient;
 
-import java.net.HttpURLConnection;
 import java.net.URI;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Main activity of the application.
@@ -181,7 +184,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AppData.getInstance().getMe().setName(userInfo.getString("username"));
                     AppData.getInstance().getMe().setGpa(userInfo.getDouble("gpa"));
 
-
+                    if (AppData.getInstance().getWsClient() == null)
+                        creadWebSocket();
 
                     MainActivity.this.startActivity(intent1);
                     Log.d("result: ", result.getString("data"));
@@ -229,10 +233,55 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    /**
+     * Get information of login and send to server.
+     */
+    void getUnReadMsg() {
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/getUnReadMsgList?acceptUserId="
+                + AppData.getInstance().getMe().getId();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("login",result.toString());
+
+                    JSONArray msgList = JSONArray.parseArray(result.getString("data"));
+                    List<String> signList = new ArrayList<>();
+                    for (Object item: msgList) {
+                        JSONObject e = JSONObject.parseObject((String)item);
+                        if (e.getString("toId") == AppData.getInstance().getMe().getId())
+                        {
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSZ");
+                            AppData.getInstance().reciveChatMsg(e.getString("fromId"),
+                                          e.getString("msg"),
+                                          e.getString("msgId"),
+                                          sdf.parse(e.getString("sendTime")));
+                            signList.add(e.getString("msgId"));
+                        }
+                    }
+                    if (signList)
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    handler.sendMessage(message);
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
+
     private void creadWebSocket() {
         try{
             URI Uri= new URI(this.getString(R.string.WebSocket_Server_Url));
-            AppData.getInstance().setWs(new WSClient(Uri));
+            AppData.getInstance().setWsClient(new WSClient(Uri));
         }catch (Exception e){
             e.printStackTrace();
         }

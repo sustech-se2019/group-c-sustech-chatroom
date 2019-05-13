@@ -11,6 +11,18 @@ import java.net.URI;
 
 public class WSClient extends WebSocketClient {
 
+//    CONNECT(1, "第一次(或重连)初始化连接"),
+//	CHAT(2, "聊天消息"),
+//	SIGNED(3, "消息签收"),
+//	KEEPALIVE(4, "客户端保持心跳"),
+//	PULL_FRIEND(5, "拉取好友");
+
+    public static final int CONNECT = 1;//第一次(或重连)初始化连接
+    public static final int CHAT = 2;//聊天消息
+    public static final int SIGNED = 3;//消息签收
+    public static final int KEEPALIVE = 4;//客户端保持心跳
+    public static final int PULL_FRIEND = 5;//拉取好友
+
     public WSClient(URI serverURI ) {
         super( serverURI );
     }
@@ -22,7 +34,7 @@ public class WSClient extends WebSocketClient {
     public void onOpen( ServerHandshake handshakedata ) {
 
         JSONObject chatMsg = Utils.getChatMsg(sendId,"","");
-        JSONObject jsonMsg = Utils.getJsonMsg(1, chatMsg, null);
+        JSONObject jsonMsg = Utils.getJsonMsg(CONNECT, chatMsg, null);
         System.out.println("Send onOpen Msg: " + jsonMsg);
         send(jsonMsg.toString());
         // if you plan to refuse connection based on ip or httpfields overload: onWebsocketHandshakeReceivedAsClient
@@ -62,9 +74,10 @@ public class WSClient extends WebSocketClient {
     public void sendMsg( String msg ){
 
         JSONObject chatMsg = Utils.getChatMsg(sendId,"1",msg);
-        JSONObject jsonMsg = Utils.getJsonMsg(2, chatMsg, null);
+        JSONObject jsonMsg = Utils.getJsonMsg(CHAT, chatMsg, null);
         System.out.println("Send Msg: " + jsonMsg);
         send(jsonMsg.toString());
+
     }
 
 }
