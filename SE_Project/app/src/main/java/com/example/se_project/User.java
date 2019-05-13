@@ -1,7 +1,19 @@
 package com.example.se_project;
 
+import android.graphics.drawable.Drawable;
+import android.os.Message;
+import android.util.Log;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -78,13 +90,44 @@ public class User implements Serializable {
         return potraitnum;
     }
     public boolean addFriend(User user){
-        this.refreshFriendList();
-        for(int i=0;i<friendList.size();i++) {
-            if (user.getName().equals( friendList.get(i).getName())) {
-                return false;
+        final String request_url = "http://10.21.72.100:8081" + "/addFriendRequest?myUserId="+AppData.getInstance().getMe().getId()+"&friendUsername="+user.getName();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    if(!result.get("status").equals("200")){
+                        return;
+                    }
+
+                    String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
+                            +"&friendUsername="+name;
+
+                    Message message1 = new Message();
+                    JSONObject json_data1 = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url_1, json_data1);
+                    JSONObject result1 = (JSONObject)message.obj;
+
+                    String accept = JSONObject.parseObject(result.getString("data")).getString("id");
+
+                    String request_url_2 = "http://10.21.72.100:8081"+ "/operFriendRequest?acceptUserId="+accept
+                            +"&sendUserId="+AppData.getInstance().getMe().getId()+"&operType=1";
+                    Message message2 = new Message();
+                    JSONObject json_data2 = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url_2, json_data2);
+                    refreshFriendList();
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
             }
-        }
-        friendList.add(user);
+        }).start();
         return true;
     }
     public boolean deleteFriend(User user){
@@ -116,6 +159,35 @@ public class User implements Serializable {
         return friendList;
     }
     private void refreshFriendList(){
-        
+        final String request_url = "http://10.21.72.100:8081" + "/myFriends?userId="+AppData.getInstance().getMe().getId();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("get friend list",result.toString());
+                    JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
+                    friendList.clear();
+                    for (Object item:jsonArray) {
+                        JSONObject jsonItem = JSONObject.parseObject((String)item);
+                        User user = new User();
+                        user.setId(jsonItem.getString("id"));
+                        user.setGpa(4.0);
+                        user.setName(jsonItem.getString("friendUsername"));
+                        friendList.add(user);
+                    }
+
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 }
