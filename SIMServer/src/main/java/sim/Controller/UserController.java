@@ -3,7 +3,6 @@ package sim.Controller;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +13,6 @@ import sim.pojo.Users;
 import sim.pojo.vo.MyFriendsVO;
 import sim.pojo.vo.UsersVO;
 import sim.utils.JSONResult;
-import sim.utils.MD5Utils;
 import org.n3r.idworker.Sid;
 import sim.enums.SearchFriendsStatusEnum;
 
@@ -181,7 +179,7 @@ public class UserController {
             userDao.deleteFriendRequest(sendUserId, acceptUserId);
         } else if (operType == OperatorFriendRequestTypeEnum.PASS.type) {
             // 3. 判断如果是通过好友请求，则互相增加好友记录到数据库对应的表
-            //	   然后删除好友请求的数据库表记录
+            // 然后删除好友请求的数据库表记录
             userDao.passFriendRequest(sendUserId, acceptUserId);
         }
 
