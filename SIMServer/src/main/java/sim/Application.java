@@ -8,6 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import sim.netty.WSServer;
 import sim.utils.SpringUtil;
 import tk.mybatis.spring.annotation.MapperScan;
+
 /**
  * To run the application.
  */

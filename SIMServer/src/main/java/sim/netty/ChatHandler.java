@@ -1,15 +1,5 @@
 package sim.netty;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-
-import sim.utils.SpringUtil;
-import sim.enums.MsgActionEnum;
-import sim.Dao.UserDao;
-import sim.utils.JsonUtils;
-
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -17,6 +7,14 @@ import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import org.apache.commons.lang3.StringUtils;
+import sim.Dao.UserDao;
+import sim.enums.MsgActionEnum;
+import sim.utils.JsonUtils;
+import sim.utils.SpringUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

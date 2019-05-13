@@ -60,7 +60,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.41</version>
+            <version>8.0.15</version>
         </dependency>
 
         <dependency>
@@ -130,6 +130,8 @@
             <artifactId>Java-WebSocket</artifactId>
             <version>1.4.0</version>
         </dependency>
+
+
     </dependencies>
 
 </project>

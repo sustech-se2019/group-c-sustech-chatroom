@@ -1,9 +1,8 @@
 package sim.pojo;
 
+
 import javax.persistence.Id;
-/**
- * The type Users, witch contains all the user information.
- */
+
 public class Users {
     @Id
     private String id;

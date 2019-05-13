@@ -3,21 +3,16 @@ package sim.DaoImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import sim.Application;
 import sim.Dao.UserDao;
-import sim.enums.MsgSignFlagEnum;
-import sim.mapper.ChatHistoryMapper;
 import sim.netty.ChatMsg;
-import sim.pojo.ChatHistory;
 import sim.pojo.Users;
 import sun.usagetracker.UsageTrackerClient;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -168,6 +163,4 @@ public class UserDaoImplTest {
         int b = userDao.getUnReadMsgList("2").size();
         Assert.assertEquals(a,b);
     }
-
-
 }

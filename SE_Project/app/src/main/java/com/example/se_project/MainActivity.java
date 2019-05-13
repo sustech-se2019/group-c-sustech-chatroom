@@ -264,7 +264,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             signList.add(e.getString("msgId"));
                         }
                     }
-                    //if (signList)
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
                     result_json.put("status",500);

@@ -1,8 +1,8 @@
 package sim.netty;
 
-import java.util.HashMap;
-
 import io.netty.channel.Channel;
+
+import java.util.HashMap;
 
 /**
  * @Description: 用户id和channel的关联关系处理
