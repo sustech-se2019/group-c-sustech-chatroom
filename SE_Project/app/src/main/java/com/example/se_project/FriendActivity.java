@@ -2,13 +2,19 @@ package com.example.se_project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +24,7 @@ public class FriendActivity extends AppCompatActivity {
     private Button search;
     private Button add;
     private UserAdapter adapter;
-    private List<User> userList;
+    private List<User> userList = new ArrayList<User>();
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -60,21 +66,32 @@ public class FriendActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FriendActivity.this,FriendAddActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
 
     private void initFriends(){
-        userList=AppData.getInstance().getMe().getFriendList();
-        /*
-        User user1 = new User("a", 1);
-        userList.add(user1);
-        User user2 = new User("b", 2);
-        userList.add(user2);
-        User user3 = new User("c", 3);
-        userList.add(user3);
-        */
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/myFriends?userId="+AppData.getInstance().getMe();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("get friend list",result.toString());
+                    JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
+                    userList = jsonArray.toJavaList(User.class);
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
     private void searchFriendByName(String name){
     }
