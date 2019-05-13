@@ -1,14 +1,18 @@
 package com.example.se_project;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 import android.support.v7.app.AlertDialog;
 import android.content.DialogInterface;
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private TextView login_username, login_password;
+    private CheckBox userRemember, passwordRemember;
+    private SharedPreferences sp;
     AlertDialog alertdialog1;
     @Override
     /**
@@ -36,11 +42,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         login = findViewById(R.id.login_button);
         register = findViewById(R.id.register_button);
         //ensure_register = findViewById(R.id.ensure_button);
-
+        sp = this.getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+        boolean isUserRemember = sp.getBoolean("isUserRemember",false);
+        boolean isPassworkRemember = sp.getBoolean("isPasswordRemember",false);
 
         login_username = findViewById(R.id.username);
         login_password = findViewById(R.id.password);
+        userRemember = findViewById(R.id.Login_Remember_Usname);
+        passwordRemember = findViewById(R.id.Login_Remember_Password);
 
+        if(isUserRemember){
+            login_username.setText(sp.getString("user_remember",""));
+            userRemember.setChecked(true);
+        }
+        if(isPassworkRemember){
+            login_password.setText(sp.getString("password_remember",""));
+            passwordRemember.setChecked(true);
+        }
 
         login.setOnClickListener(this);
         register.setOnClickListener(this);
@@ -122,7 +140,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 case HttpURLConnection.HTTP_OK:
                     //登录成功
+                    SharedPreferences.Editor editor = sp.edit();
+                    if(userRemember.isChecked()){
+                        editor.putBoolean("isUserRemember",true);
+                        editor.putString("user_remember",login_username.getText().toString());
+                    }else{
+                        editor.clear();
+                    }
 
+                    if(passwordRemember.isChecked()){
+                        editor.putBoolean("isPasswordRemember",true);
+                        editor.putString("password_remember",login_password.getText().toString());
+                    }else{
+                        editor.clear();
+                    }
+                    editor.apply();
                     Intent intent1 = new Intent();
                     intent1.setClass(MainActivity.this, ChatActivity.class);
                     MainActivity.this.startActivity(intent1);
@@ -134,7 +166,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     //登陆失败
                     showdialogWrongPassword();
                     Log.d("result", result.getString("msg"));
-
                     break;
             }
         }
