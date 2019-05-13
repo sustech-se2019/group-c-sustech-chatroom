@@ -1,7 +1,6 @@
 package com.example.se_project;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,18 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import android.app.Activity;
-import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 import com.alibaba.fastjson.JSONObject;
 

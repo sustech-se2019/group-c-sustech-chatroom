@@ -1,7 +1,5 @@
 package com.example.se_project;
 
-import android.util.Log;
-
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.BufferedReader;

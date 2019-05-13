@@ -1,14 +1,7 @@
 package com.example.se_project;
 
-import android.graphics.drawable.Drawable;
-
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
