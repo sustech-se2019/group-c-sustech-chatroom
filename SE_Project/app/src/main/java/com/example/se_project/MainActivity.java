@@ -23,6 +23,7 @@ import com.example.se_project.Chat.WSClient;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -176,7 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     editor.apply();
                     Intent intent1 = new Intent();
-                    intent1.setClass(MainActivity.this, ChatActivity.class);
+                    intent1.setClass(MainActivity.this, FriendActivity.class);
 
                     JSONObject userInfo = JSONObject.parseObject(result.getString("data"));
                     AppData.getInstance().getMe().setId(userInfo.getString("id"));
