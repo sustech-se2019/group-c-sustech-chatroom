@@ -5,39 +5,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
-@Table(name = "chat_history")
-public class ChatHistory {
+@Table(name = "friend_request")
+public class FriendRequest {
     @Id
-    @Column(name = "msg_id")
-    private String msgId;
-
     @Column(name = "from_id")
     private String fromId;
 
+    @Id
     @Column(name = "to_id")
     private String toId;
 
     private String msg;
 
-    @Column(name = "send_time")
-    private Date sendTime;
-
-    @Column(name = "read_time")
-    private Date readTime;
-
-    /**
-     * @return msg_id
-     */
-    public String getMsgId() {
-        return msgId;
-    }
-
-    /**
-     * @param msgId
-     */
-    public void setMsgId(String msgId) {
-        this.msgId = msgId;
-    }
+    private Date date;
 
     /**
      * @return from_id
@@ -82,30 +62,16 @@ public class ChatHistory {
     }
 
     /**
-     * @return send_time
+     * @return date
      */
-    public Date getSendTime() {
-        return sendTime;
+    public Date getDate() {
+        return date;
     }
 
     /**
-     * @param sendTime
+     * @param date
      */
-    public void setSendTime(Date sendTime) {
-        this.sendTime = sendTime;
-    }
-
-    /**
-     * @return read_time
-     */
-    public Date getReadTime() {
-        return readTime;
-    }
-
-    /**
-     * @param readTime
-     */
-    public void setReadTime(Date readTime) {
-        this.readTime = readTime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

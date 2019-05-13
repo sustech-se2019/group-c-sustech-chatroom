@@ -1,8 +1,8 @@
 package sim.Dao;
 
-import sim.netty.ChatMsg;
-import sim.pojo.ChatHistory;
 import sim.pojo.Users;
+import sim.pojo.vo.FriendRequestVO;
+import sim.pojo.vo.MyFriendsVO;
 
 import java.util.List;
 
@@ -47,27 +47,22 @@ public interface UserDao {
      * @Description: change user information
      */
     public Users updateUserInfo(Users user);
-    /**
-     * query user by id.
-     *
-     * @param userId the user ID
-     * @return the users
-     * @Description: query user by id and return users
-     */
+
+
+
     public Users queryUserById(String userId);
 
-    /**
-     * @Description: 保存聊天消息到数据库
-     */
-    public String saveMsg(ChatMsg chatMsg);
+    public Integer preconditionSearchFriends(String myUserId, String friendUsername);
 
-    /**
-     * @Description: 批量签收消息
-     */
-    public void updateMsgSigned(List<String> msgIdList);
+    public Users queryUserInfoByUsername(String username);
 
-    /**
-     * @Description: 获取未签收消息列表
-     */
-    public List<ChatHistory> getUnReadMsgList(String acceptUserId);
+    public void sendFriendRequest(String myUserId, String friendUsername);
+
+    public List<FriendRequestVO> queryFriendRequestList(String acceptUserId);
+
+    public void deleteFriendRequest(String sendUserId, String acceptUserId);
+
+    public void passFriendRequest(String sendUserId, String acceptUserId);
+
+    public List<MyFriendsVO> queryMyFriends(String userId);
 }
