@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import java.util.List;
 
@@ -18,7 +19,7 @@ import java.util.List;
 public class UserAddAdapter extends ArrayAdapter<User>{
 
     private int resourceId;
-
+    private UserAddAdapter userAddAdapter=this;
     public UserAddAdapter(Context context, int textViewResourceId,
                           List<User> objects){
         super(context, textViewResourceId, objects);
@@ -47,7 +48,6 @@ public class UserAddAdapter extends ArrayAdapter<User>{
         /*加载自定义布局与控件实例*/
         if(convertView == null){
             view = LayoutInflater.from(getContext()).inflate(resourceId, null);
-
             //创建控件实例并进行缓存
             viewHolder = new ViewHolder();
             viewHolder.layout = (LinearLayout) view.findViewById(R.id.user_add_layout);
@@ -66,15 +66,26 @@ public class UserAddAdapter extends ArrayAdapter<User>{
         //如果为收到的消息，则显示左边的消息布局，将右边的消息布局隐藏
         viewHolder.layout.setVisibility(View.VISIBLE);
         viewHolder.name.setText(user.getName());
+        viewHolder.button.setTag(user);
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
-                        .setTitle("Warning")//标题
-                        .setMessage("No one want to be your friend")//内容
-                        .setIcon(R.mipmap.ic_launcher)//图标
-                        .create();
-                alertDialog1.show();
+                if(AppData.getInstance().getMe().addFriend((User)v.getTag())==true) {
+                    userAddAdapter.notifyDataSetChanged();
+                    AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
+                            .setTitle("Good News")//标题
+                            .setMessage("AAAAAAAA")//内容
+                            .setIcon(R.mipmap.ic_launcher)//图标
+                            .create();
+                    alertDialog1.show();
+                }else{
+                    AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
+                            .setTitle("Warning")//标题
+                            .setMessage("No one want to be your friend")//内容
+                            .setIcon(R.mipmap.ic_launcher)//图标
+                            .create();
+                    alertDialog1.show();
+                }
             }
         });
         viewHolder.image.setImageResource(user.getProfilePictureID());

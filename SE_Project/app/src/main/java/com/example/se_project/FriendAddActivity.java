@@ -26,7 +26,7 @@ public class FriendAddActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.friend_add_activity);
-        initFriends();//初始化消息数据
+        initUsers();//初始化消息数据
         adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
         inputText = (EditText)findViewById(R.id.input_user_name);
         search = (Button)findViewById(R.id.search_user);
@@ -49,10 +49,12 @@ public class FriendAddActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        Intent intent = new Intent(FriendAddActivity.this,FriendActivity.class);
+        startActivity(intent);
         finish();
     }
 
-    private void initFriends(){
+    private void initUsers(){
         User user1 = new User("a", 1);
         userList.add(user1);
         User user2 = new User("b", 2);

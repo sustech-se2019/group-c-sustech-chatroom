@@ -18,7 +18,7 @@ public class FriendActivity extends AppCompatActivity {
     private Button search;
     private Button add;
     private UserAdapter adapter;
-    private List<User> userList = new ArrayList<User>();
+    private List<User> userList;
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -60,17 +60,21 @@ public class FriendActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FriendActivity.this,FriendAddActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
 
     private void initFriends(){
+        userList=AppData.getInstance().getMe().getFriendList();
+        /*
         User user1 = new User("a", 1);
         userList.add(user1);
         User user2 = new User("b", 2);
         userList.add(user2);
         User user3 = new User("c", 3);
         userList.add(user3);
+        */
     }
     private void searchFriendByName(String name){
     }
