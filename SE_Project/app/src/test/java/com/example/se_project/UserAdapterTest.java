@@ -1,5 +1,4 @@
 package com.example.se_project;
-import android.widget.ArrayAdapter;
 
 import org.junit.Test;
 
