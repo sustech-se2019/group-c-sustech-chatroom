@@ -65,6 +65,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="5dp"
+            android:textColor="@color/white"
             android:text="Add Friends"
             android:background="@drawable/button2"
             android:textAllCaps="false" />
@@ -95,7 +96,9 @@
             android:textAllCaps="false"
             android:layout_marginVertical="10dp"
             android:layout_marginHorizontal="5dp"
+            android:textColor="@color/white"
             android:background="@drawable/button2"
+
             android:text="Search"/>
 
     </LinearLayout>
