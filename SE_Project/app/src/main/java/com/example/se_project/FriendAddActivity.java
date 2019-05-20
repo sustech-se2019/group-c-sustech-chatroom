@@ -103,8 +103,6 @@ public class FriendAddActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
-
-
             if(!result.getString("status").equals("200")){
                 showdialogMsg(result.getString("msg"));
             }else{

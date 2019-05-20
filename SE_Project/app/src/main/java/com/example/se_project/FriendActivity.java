@@ -28,6 +28,13 @@ public class FriendActivity extends AppCompatActivity {
     private UserAdapter adapter;
     private List<User> userList = new ArrayList<User>();
 
+    protected void onStart(){
+        super.onStart();
+        initFriends();
+        adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
+        userListView.setAdapter(adapter);
+    }
+
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -35,7 +42,7 @@ public class FriendActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.friend_activity);
-        initFriends();//初始化消息数据
+        //initFriends();//初始化消息数据
         adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
         inputText = (EditText)findViewById(R.id.input_old_friend_name);
         search = (Button)findViewById(R.id.search_friendlist);
@@ -63,6 +70,7 @@ public class FriendActivity extends AppCompatActivity {
                 userListView.setSelection(0);//将ListView定位到最后一行
             }
         });
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,11 +88,6 @@ public class FriendActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
-
-
-
-
-
         }
     };
 
