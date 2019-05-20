@@ -11,6 +11,7 @@ public class Msg {
     private String content;//消息内容
     private  int type;//消息类型
     private Date sendTime;
+    private String msgId;
 
     public  Msg(String content, int type){
         this.content = content;
@@ -18,10 +19,18 @@ public class Msg {
         this.sendTime = new Date(System.currentTimeMillis());
     }
 
-    public Msg(String content, int type, Date sendTime) {
+    public Msg(String content, int type, Date sendTime, String msgId) {
         this.content = content;
         this.type = type;
         this.sendTime = sendTime;
+        this.msgId = msgId;
+    }
+
+    public Msg(String content, int type, String msgId) {
+        this.content = content;
+        this.type = type;
+        this.msgId = msgId;
+        this.sendTime = new Date(System.currentTimeMillis());
     }
 
     public Date getSendTime() {

@@ -19,8 +19,10 @@ import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.se_project.Chat.ChatHistory;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -37,7 +39,7 @@ public class ChatActivity extends AppCompatActivity {
     private EditText inputText;
     private Button send;
     private MsgAdapter adapter;
-    private List<Msg> msgList = new ArrayList<Msg>();
+    private List<Msg> msgList;
     private int pos;
     private User chatUser;
 
@@ -48,7 +50,7 @@ public class ChatActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.chat_activity);
-        chatUser=(User)getIntent().getSerializableExtra("ChatUser");
+        chatUser=AppData.getInstance().getChattingFriend();
         initMsgs();//初始化消息数据
         adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList,chatUser);
         inputText = (EditText)findViewById(R.id.input_msg);
@@ -63,11 +65,10 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String content = inputText.getText().toString();
                 if(!content.equals("")){
-                    Msg msg;
-                    msg = new Msg(content, Msg.TYPE_SENT);
-                    msgList.add(msg);
-                    adapter.notifyDataSetChanged();//当有消息时刷新
-                    msgListView.setSelection(msgList.size());//将ListView定位到最后一行
+                    AppData.getInstance().sendChatMsg(content);
+
+                    refreshView();
+
                     inputText.setText("");//清空输入框的内容
                 }
             }
@@ -85,6 +86,13 @@ public class ChatActivity extends AppCompatActivity {
         });
 
         initListView();
+        AppData.getInstance().setChatHandler(handler);
+    }
+
+
+    public void refreshView(){
+        adapter.notifyDataSetChanged();//当有消息时刷新
+        msgListView.setSelection(msgList.size());//将ListView定位到最后一行
     }
 
     /**
@@ -108,6 +116,9 @@ public class ChatActivity extends AppCompatActivity {
                 case 500:
                     Log.d("result", result.getString("msg"));
                     break;
+                case 800:
+                    refreshView();
+                    break;
                 default:
                     Log.d("result", result.getString("msg"));
                     break;
@@ -119,12 +130,24 @@ public class ChatActivity extends AppCompatActivity {
      * 初始化消息数据
      * */
     private void initMsgs(){
-        Msg msg1 = new Msg("Hello cpj.", Msg.TYPE_RECEIVED);
-        msgList.add(msg1);
-        Msg msg2 = new Msg("Hello Who is that?", Msg.TYPE_SENT);
-        msgList.add(msg2);
-        Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
-        msgList.add(msg3);
+        ChatHistory history = AppData.getInstance().getChatHistory().get(chatUser.getId());
+        if (history == null)
+        {
+            history = new ChatHistory();
+            history.setFriendId(chatUser.getId());
+            history.setMyId(AppData.getInstance().getMe().getId());
+            history.setLastTime(new Date(System.currentTimeMillis()));
+//            history.setMsgList(new ArrayList<Msg>());
+            AppData.getInstance().getChatHistory().put(chatUser.getId(),history);
+        }
+        msgList = history.getMsgList();
+
+//        Msg msg1 = new Msg("Hello cpj.", Msg.TYPE_RECEIVED);
+//        msgList.add(msg1);
+//        Msg msg2 = new Msg("Hello Who is that?", Msg.TYPE_SENT);
+//        msgList.add(msg2);
+//        Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
+//        msgList.add(msg3);
     }
 
 
@@ -249,8 +272,19 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
+    public ListView getMsgListView() {
+        return msgListView;
+    }
 
+    public void setMsgListView(ListView msgListView) {
+        this.msgListView = msgListView;
+    }
 
+    public MsgAdapter getAdapter() {
+        return adapter;
+    }
 
-
+    public void setAdapter(MsgAdapter adapter) {
+        this.adapter = adapter;
+    }
 }
