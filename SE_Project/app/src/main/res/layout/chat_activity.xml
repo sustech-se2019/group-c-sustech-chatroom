@@ -17,10 +17,11 @@
             android:background="#4169E1">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="60dp"
                 android:gravity="center"
                 android:textSize="20dp"
-                android:textColor="#000"
+                android:background="@drawable/style2"
+                android:textColor="@color/white"
                 android:text="Chat"/>
         </LinearLayout>
         <!--聊天对话框部分
@@ -30,13 +31,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@color/aliceblue"
             android:divider="#0000">
         </ListView>
 
         <!--输入框部分（横排排列）-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp"
+            android:background="@color/aliceblue"
+            >
+
 
             <!--输入框-->
             <EditText
@@ -44,7 +49,8 @@
                 android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_weight="1"
-                android:hint="Type something here"
+                android:layout_gravity="center_vertical"
+                android:hint="Type here"
                 android:maxLines="2"/>
 
             <!--发送按钮-->
@@ -53,6 +59,9 @@
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:textAllCaps="false"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/button_style1"
+                android:textColor="@color/white"
                 android:text="Send"/>
 
             <Button
@@ -60,8 +69,21 @@
                 android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:id="@+id/camera"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/button_style1"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
+                />
 
+            <Button
+                android:text="Image"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:id="@+id/Image"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/button_style1"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
                 />
 
         </LinearLayout>
