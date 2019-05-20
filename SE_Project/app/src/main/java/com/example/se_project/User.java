@@ -91,6 +91,8 @@ public class User implements Serializable {
     }
     public boolean addFriend(User user){
         final String request_url = "http://10.21.72.100:8081" + "/addFriendRequest?myUserId="+AppData.getInstance().getMe().getId()+"&friendUsername="+user.getName();
+        final String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
+                +"&friendUsername="+user.getName();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -99,20 +101,23 @@ public class User implements Serializable {
                     JSONObject json_data = new JSONObject();
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
                     JSONObject result = (JSONObject)message.obj;
-                    if(!result.get("status").equals("200")){
+                    Log.d("111    ",result.toString());
+                    if(result.getInteger("status")!= 200){
+                        Log.d("111    ",result.toString());
                         return;
                     }
+                    Log.d("555    ",result.toString());
 
-                    String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
-                            +"&friendUsername="+name;
 
                     Message message1 = new Message();
                     JSONObject json_data1 = new JSONObject();
                     message.obj = HttpRequest.jsonRequest(request_url_1, json_data1);
                     JSONObject result1 = (JSONObject)message.obj;
 
-                    String accept = JSONObject.parseObject(result.getString("data")).getString("id");
+                    Log.d("556     ",result1.toString());
+                    String accept = JSONObject.parseObject(result1.getString("data")).getString("id");
 
+                    Log.d("557     ",accept.toString());
                     String request_url_2 = "http://10.21.72.100:8081"+ "/operFriendRequest?acceptUserId="+accept
                             +"&sendUserId="+AppData.getInstance().getMe().getId()+"&operType=1";
                     Message message2 = new Message();
@@ -158,6 +163,9 @@ public class User implements Serializable {
         this.refreshFriendList();
         return friendList;
     }
+
+
+
     private void refreshFriendList(){
         final String request_url = "http://10.21.72.100:8081" + "/myFriends?userId="+AppData.getInstance().getMe().getId();
         new Thread(new Runnable() {

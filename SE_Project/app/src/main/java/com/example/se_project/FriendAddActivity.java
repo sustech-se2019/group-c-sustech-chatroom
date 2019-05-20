@@ -122,7 +122,7 @@ public class FriendAddActivity extends AppCompatActivity {
     };
 
     private void searchUserByName(String name){
-        final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe()
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe().getId()
                 +"&friendUsername="+name;
         new Thread(new Runnable() {
             @Override
