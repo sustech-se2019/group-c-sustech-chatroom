@@ -8,6 +8,7 @@ public class FriendRequestVO {
     private String sendUserId;
     private String sendUsername;
     private String sendNickname;
+    private String sendGpa;
     
 	public String getSendUserId() {
 		return sendUserId;
@@ -26,5 +27,13 @@ public class FriendRequestVO {
 	}
 	public void setSendNickname(String sendNickname) {
 		this.sendNickname = sendNickname;
+	}
+
+	public String getSendGpa() {
+		return sendGpa;
+	}
+
+	public void setSendGpa(String sendGpa) {
+		this.sendGpa = sendGpa;
 	}
 }

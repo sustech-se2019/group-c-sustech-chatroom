@@ -4,6 +4,7 @@ public class MyFriendsVO {
     private String friendUserId;
     private String friendUsername;
     private String friendNickname;
+    private String friendGpa;
     
 	public String getFriendUserId() {
 		return friendUserId;
@@ -23,6 +24,12 @@ public class MyFriendsVO {
 	public void setFriendNickname(String friendNickname) {
 		this.friendNickname = friendNickname;
 	}
-    
-    
+
+	public String getFriendGpa() {
+		return friendGpa;
+	}
+
+	public void setFriendGpa(String friendGpa) {
+		this.friendGpa = friendGpa;
+	}
 }
