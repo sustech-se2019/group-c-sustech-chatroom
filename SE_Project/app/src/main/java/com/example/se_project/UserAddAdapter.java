@@ -73,7 +73,7 @@ public class UserAddAdapter extends ArrayAdapter<User>{
                     userAddAdapter.notifyDataSetChanged();
                     AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
                             .setTitle("Good News")//标题
-                            .setMessage("AAAAAAAA")//内容
+                            .setMessage("Successful add friend")//内容
                             .setIcon(R.mipmap.ic_launcher)//图标
                             .create();
                     alertDialog1.show();
