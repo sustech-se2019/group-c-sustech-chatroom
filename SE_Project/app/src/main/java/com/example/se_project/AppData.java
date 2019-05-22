@@ -29,6 +29,7 @@ public class AppData {
     private Map<String, ChatHistory> chatHistory = new HashMap<>();
     private List<User> friendList = new ArrayList<>();
     private Handler chatHandler;
+    private List<Moments> momentsList;
 
     private void refreshChat(){
         if (chatHandler == null)
@@ -39,7 +40,9 @@ public class AppData {
         message.obj = result_json;
         chatHandler.sendMessage(message);
     }
-
+    public List<Moments> getMomentsList(){
+        return momentsList;
+    }
     public void sendChatMsg(String msg){
         ChatHistory history = chatHistory.get(chattingFriend.getId());
         if (wsClient.isOpen())
