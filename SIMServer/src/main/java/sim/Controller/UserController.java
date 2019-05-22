@@ -1,18 +1,28 @@
 package sim.Controller;
 
+import com.alibaba.fastjson.JSONObject;
+import io.netty.channel.Channel;
+import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import sim.Dao.UserDao;
+import sim.enums.MsgActionEnum;
 import sim.enums.OperatorFriendRequestTypeEnum;
+import sim.netty.ChatHandler;
+import sim.netty.ChatMsg;
+import sim.netty.DataContent;
+import sim.netty.UserChannelRel;
 import sim.pojo.ChatHistory;
 import sim.pojo.Users;
+import sim.pojo.ImageVO;
 import sim.pojo.vo.MyFriendsVO;
 import sim.pojo.vo.UsersVO;
-import sim.utils.JSONResult;
+import sim.utils.*;
 import org.n3r.idworker.Sid;
 import sim.enums.SearchFriendsStatusEnum;
 
@@ -26,6 +36,8 @@ public class UserController {
 
     @Autowired
     private UserDao userDao;
+    @Autowired
+    private FastDFSClient fastDFSClient;
     /**
      * Login json result.
      *
@@ -101,6 +113,7 @@ public class UserController {
     public JSONResult searchUser(String myUserId, String friendUsername)
             throws Exception {
 
+
         // 0. 判断 myUserId friendUsername 不能为空
         if (myUserId == null || friendUsername == null) {
             return JSONResult.errorMsg("");
@@ -138,7 +151,7 @@ public class UserController {
                 || friendUsername == null) {
             return JSONResult.errorMsg("");
         }
-
+        System.out.println("addFriendRequest: "+myUserId+" "+friendUsername);
         // 前置条件 - 1. 搜索的用户如果不存在，返回[无此用户]
         // 前置条件 - 2. 搜索账号是你自己，返回[不能添加自己]
         // 前置条件 - 3. 搜索的朋友已经是你的好友，返回[该用户已经是你的好友]
@@ -188,6 +201,7 @@ public class UserController {
                                              Integer operType) {
 
         // 0. acceptUserId sendUserId operType 判断不能为空
+        System.out.println("operFriendRequest");
         System.out.println(acceptUserId);
         System.out.println(sendUserId);
         System.out.println(operType);
@@ -245,5 +259,75 @@ public class UserController {
         List<ChatHistory> unreadMsgList = userDao.getUnReadMsgList(acceptUserId);
 
         return JSONResult.ok(unreadMsgList);
+    }
+
+    /**
+     *
+     * @Description: 用户发送图片
+     */
+    @PostMapping("/sendBase64")
+    public JSONResult sendBase64(@RequestBody ImageVO imageVO){
+        // 获取前端传过来的base64字符串, 然后转换为文件对象再上传
+        String base64Data = imageVO.getImageData();
+        String userFacePath = "src/main/resources/image/" + imageVO.getUserId() + "chatImage64.png";
+        try{
+            FileUtils.base64ToFile(userFacePath, base64Data);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+        // 上传文件到fastdfs
+        String url = null;
+        MultipartFile faceFile = FileUtils.fileToMultipart(userFacePath);
+        try{
+            url = fastDFSClient.uploadBase64(faceFile);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        System.out.println(url);
+
+//		"dhawuidhwaiuh3u89u98432.png"
+//		"dhawuidhwaiuh3u89u98432_80x80.png"
+
+        // 获取缩略图的url
+        String thump = "_80x80.";
+        String arr[] = url.split("\\.");
+        String SmallImagUrl = arr[0] + thump + arr[1];
+
+        JSONObject result = new JSONObject();
+        result.put("BigImage",url);
+        result.put("SmallImage",SmallImagUrl);
+
+        // 保存消息到数据库，并且标记为 未签收
+        ChatMsg chatMsg = new ChatMsg();
+        chatMsg.setSenderId(imageVO.getUserId());
+        chatMsg.setReceiverId(imageVO.getRecvId());
+        chatMsg.setMsg(result.toString());
+        chatMsg.setType(1);
+        String msgId = userDao.saveMsg(chatMsg);
+        chatMsg.setMsgId(msgId);
+
+        DataContent dataContentMsg = new DataContent();
+        dataContentMsg.setChatMsg(chatMsg);
+        dataContentMsg.setAction(MsgActionEnum.CHAT.type);
+
+        // 发送消息
+        // 从全局用户Channel关系中获取接受方的channel
+        Channel receiverChannel = UserChannelRel.get(imageVO.getRecvId());
+        if (receiverChannel != null) {
+
+            // 当receiverChannel不为空的时候，从ChannelGroup去查找对应的channel是否存在
+            Channel findChannel = ChatHandler.users.find(receiverChannel.id());
+            if (findChannel != null) {
+                // 用户在线
+                receiverChannel.writeAndFlush(
+                        new TextWebSocketFrame(
+                                JsonUtils.objectToJson(dataContentMsg)));
+            }
+        }
+
+        return JSONResult.ok(result);
     }
 }

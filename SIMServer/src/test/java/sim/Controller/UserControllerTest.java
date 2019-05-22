@@ -7,8 +7,18 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.apache.http.util.TextUtils;
 import org.junit.Assert;
 import org.junit.Test;
+import sim.pojo.ImageVO;
+import sim.utils.FileUtils;
+import sun.misc.BASE64Encoder;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Base64;
+
 public class UserControllerTest {
 
     private static String ServerUrl = "http://127.0.0.1:8081/";
@@ -268,4 +278,69 @@ public class UserControllerTest {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * @Description: 根据图片地址转换为base64编码字符串
+     * @Author:
+     * @CreateTime:
+     * @return
+     */
+    public static String getImageStr(String imgFile) {
+        InputStream inputStream = null;
+        byte[] data = null;
+        try {
+            inputStream = new FileInputStream(imgFile);
+            data = new byte[inputStream.available()];
+            inputStream.read(data);
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        // 加密
+        BASE64Encoder encoder = new BASE64Encoder();
+        return encoder.encode(data).replace("\r\n","");
+    }
+
+
+    @Test
+    public void base64ToFileTest() throws Exception{
+        String base64Image = getImageStr("src/test/java/sim/Controller/sustech.png");
+
+        ImageVO imageVO = new ImageVO();
+        imageVO.setUserId("0");
+        imageVO.setRecvId("1");
+        imageVO.setImageData(base64Image);
+        String base64Data = imageVO.getImageData();
+        String userFacePath = "src/main/resources/image/" + imageVO.getUserId() + "chatImage64.png";
+        Assert.assertTrue(FileUtils.base64ToFile(userFacePath, base64Data));
+    }
+
+    @Test
+    public void sendImageTest(){
+        String base64Image = getImageStr("src/test/java/sim/Controller/sustech.png");
+//        System.out.println(base64Image);
+
+        JSONObject data = new JSONObject();
+        data.put("userId","0");
+        data.put("recvId","1");
+        data.put("imageData",base64Image);
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(ServerUrl+"sendBase64");
+        String response = null;
+        try {
+            StringEntity s = new StringEntity(data.toJSONString());
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            if(res.getStatusLine().getStatusCode() == 200){
+                response = EntityUtils.toString(res.getEntity());// 返回json格式
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(response);
+
+    }
+
 }

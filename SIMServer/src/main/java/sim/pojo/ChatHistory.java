@@ -1,9 +1,7 @@
 package sim.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.Date;
+import javax.persistence.*;
 
 @Table(name = "chat_history")
 public class ChatHistory {
@@ -24,6 +22,8 @@ public class ChatHistory {
 
     @Column(name = "sign_flag")
     private Integer signFlag;
+
+    private Integer type;
 
     /**
      * @return msg_id
@@ -107,5 +107,19 @@ public class ChatHistory {
      */
     public void setSignFlag(Integer signFlag) {
         this.signFlag = signFlag;
+    }
+
+    /**
+     * @return type
+     */
+    public Integer getType() {
+        return type;
+    }
+
+    /**
+     * @param type
+     */
+    public void setType(Integer type) {
+        this.type = type;
     }
 }
