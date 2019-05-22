@@ -30,6 +30,11 @@
         <activity android:name=".FriendActivity" android:launchMode="standard">
 
         </activity>
+
     </application>
 
+    <!--读写内存块权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--调用相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
 </manifest>

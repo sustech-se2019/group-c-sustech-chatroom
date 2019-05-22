@@ -1,15 +1,32 @@
 package com.example.se_project;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.content.ContentUris;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import android.view.ContextMenu;
@@ -17,13 +34,18 @@ import android.view.MenuItem;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.ChatHistory;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import static com.example.se_project.R.id.Image;
 
 /**
  * Created by cpj on 2016/3/15.
@@ -42,6 +64,14 @@ public class ChatActivity extends AppCompatActivity {
     private List<Msg> msgList;
     private int pos;
     private User chatUser;
+    private File mPhotoFile;
+    private String mPhotoPath;
+    private Button library;
+    private Button camera;
+    private ImageView mImageView;
+    private static final int REQUEST_SYSTEM_PIC = 1;
+    private static final int CAMERA_RESULT = 2;
+
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -59,31 +89,52 @@ public class ChatActivity extends AppCompatActivity {
         msgListView.setAdapter(adapter);
         registerForContextMenu(msgListView);
 
-        //发送按钮的点击事件
-        send.setOnClickListener(new View.OnClickListener() {
+
+        camera = (Button)findViewById( R.id.camera );
+        library = (Button) findViewById(Image);
+        library.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                String content = inputText.getText().toString();
-                if(!content.equals("")){
-                    AppData.getInstance().sendChatMsg(content);
-
-                    refreshView();
-
-                    inputText.setText("");//清空输入框的内容
+                if (ContextCompat.checkSelfPermission(ChatActivity.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(ChatActivity.this, new
+                            String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                } else {
+//打开系统相册
+                    openAlbum();
                 }
             }
         });
-        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                view.findViewById(R.id.entry).setVisibility(View.GONE);
-                getWindow().setFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.outside, CameraFragment.newInstance()).commit();
-            }
-        });
+
+
+
+
+//        //发送按钮的点击事件
+//        send.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String content = inputText.getText().toString();
+//                if(!content.equals("")){
+//                    AppData.getInstance().sendChatMsg(content);
+//
+//                    refreshView();
+//
+//                    inputText.setText("");//清空输入框的内容
+//                }
+//            }
+//        });
+//        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                view.findViewById(R.id.entry).setVisibility(View.GONE);
+//                getWindow().setFlags(
+//                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//                getSupportFragmentManager().beginTransaction()
+//                        .add(R.id.outside, CameraFragment.newInstance()).commit();
+//            }
+//        });
 
         initListView();
         AppData.getInstance().setChatHandler(handler);
@@ -286,5 +337,119 @@ public class ChatActivity extends AppCompatActivity {
 
     public void setAdapter(MsgAdapter adapter) {
         this.adapter = adapter;
+    }public String getSDPath(){
+        File sdDir = null;
+        boolean sdCardExist = Environment.getExternalStorageState()
+                .equals(android.os.Environment.MEDIA_MOUNTED);   //判断sd卡是否存在
+        if   (sdCardExist)
+        {
+            sdDir = Environment.getExternalStorageDirectory();//获取跟目录
+        }
+        return sdDir.toString();
+
     }
+
+
+    private String getPhotoFileName() {
+        Date date = new Date(System.currentTimeMillis());
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "'IMG'_yyyyMMdd_HHmmss");
+        return dateFormat.format(date)  +".jpg";
+    }
+
+    //打开系统相册
+    private void openAlbum() {
+        Intent intent = new Intent("android.intent.action.GET_CONTENT");
+        intent.setType("image/*");
+        startActivityForResult(intent, REQUEST_SYSTEM_PIC);//打开系统相册
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 1:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    openAlbum();
+                } else {
+                    Toast.makeText(this, "You denied the permission", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //相册照片
+        if (requestCode == REQUEST_SYSTEM_PIC && resultCode == RESULT_OK && null != data) {
+            if (Build.VERSION.SDK_INT >= 19) {
+                handleImageOnKitkat(data);
+            } else {
+                handleImageBeforeKitkat(data);
+            }
+        }
+        //相机照片
+        if (requestCode == CAMERA_RESULT) {
+            Bitmap bitmap = BitmapFactory.decodeFile(mPhotoPath, null);
+            mImageView.setImageBitmap(bitmap);
+        }
+    }
+    @TargetApi(19)
+    private void handleImageOnKitkat(Intent data) {
+        String imagePath = null;
+        Uri uri = data.getData();
+        if (DocumentsContract.isDocumentUri(this, uri)) {
+            //如果是document类型的uri，则通过document id处理
+            String docId = DocumentsContract.getDocumentId(uri);
+            if ("com.android.providers.media.documents".equals(uri.getAuthority())) {
+                String id = docId.split(":")[1];
+                String selection = MediaStore.Images.Media._ID + "=" + id;
+                imagePath = getImagePath( MediaStore.Images.Media.EXTERNAL_CONTENT_URI, selection);
+            } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
+                Uri contentUri = ContentUris.withAppendedId(Uri.parse("content:" +
+                        "//downloads/public_downloads"), Long.valueOf(docId));
+                imagePath = getImagePath(contentUri, null);
+            }
+        } else if ("content".equalsIgnoreCase(uri.getScheme())) {
+            //如果是content类型的uri，则使用普通方式处理
+            imagePath = getImagePath(uri, null);
+        } else if ("file".equalsIgnoreCase(uri.getScheme())) {
+            //如果是File类型的uri，直接获取图片路径即可
+            imagePath = uri.getPath();
+        }
+        //根据图片路径显示图片
+        displayImage(imagePath);
+
+    }
+
+    private void handleImageBeforeKitkat(Intent data) {
+        Uri uri = data.getData();
+        String imagePath = getImagePath(uri, null);
+        displayImage(imagePath);
+
+    }
+    private String getImagePath(Uri uri, String selection) {
+        String path = null;
+        //通过uri和selection来获取真实的图片路径
+        Cursor cursor = getContentResolver().query(uri, null, selection, null, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                path = cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+            }
+            cursor.close();
+        }
+        return path;
+    }
+    private void displayImage(String imagePath) {
+        if (imagePath != null) {
+            Bitmap bitmap = BitmapFactory.decodeFile(imagePath);
+            mImageView.setImageBitmap(bitmap);
+        } else {
+            Toast.makeText(this, "failed to get image", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 }
