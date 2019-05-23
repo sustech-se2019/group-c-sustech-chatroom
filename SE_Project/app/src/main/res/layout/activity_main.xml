@@ -60,17 +60,24 @@
             android:id="@+id/Login_Remember_Usname"
             android:layout_width="140dp"
             android:layout_height="20dp"
+            android:gravity="center"
+            android:layout_gravity = "center"
             android:checked="false"
             android:text="Save Username"
-            android:layout_marginHorizontal="35dp"
             android:textSize="15dp" />
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
         <CheckBox
             android:id="@+id/Login_Remember_Password"
             android:layout_width="140dp"
             android:layout_height="20dp"
             android:checked="false"
-            android:layout_marginHorizontal="35dp"
+            android:gravity="center"
+            android:layout_gravity = "center"
             android:text="Save Password"
             android:textSize="15dp" />
 

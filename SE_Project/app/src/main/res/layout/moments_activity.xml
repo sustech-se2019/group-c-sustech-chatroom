@@ -30,7 +30,7 @@
                     android:id="@+id/user_name_moments"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:text="奥巴马"
                     android:textAllCaps="false"
