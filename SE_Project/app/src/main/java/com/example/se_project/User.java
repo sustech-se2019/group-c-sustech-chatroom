@@ -24,6 +24,7 @@ public class User implements Serializable {
     private String name;
     private double gpa;
     private String id;
+    private String nickName;
     private int potraitnum; //头像ID
     private int profilePictureID;
     private ArrayList<User> friendList=new ArrayList();
@@ -223,5 +224,13 @@ public class User implements Serializable {
     }
     public List<Moments> getMomentsList(){
         return momentsList;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 }

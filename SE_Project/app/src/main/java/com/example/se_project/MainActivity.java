@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AppData.getInstance().getMe().setId(userInfo.getString("id"));
                     AppData.getInstance().getMe().setName(userInfo.getString("username"));
                     AppData.getInstance().getMe().setGpa(userInfo.getDouble("gpa"));
+                    AppData.getInstance().getMe().setNickName(userInfo.getString("nickname"));
                     AppData.getInstance().getFriendList().clear();
                     AppData.getInstance().getChatHistory().clear();
 
