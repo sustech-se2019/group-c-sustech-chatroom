@@ -73,6 +73,9 @@ public interface UserDao {
      */
     public String saveMsg(ChatMsg chatMsg);
 
+    public void deleteFriend(String userId1, String userId2);
+
+    public boolean checkWhetherFriend(String userId1,String userId2);
     /**
      * @Description: 批量签收消息
      */

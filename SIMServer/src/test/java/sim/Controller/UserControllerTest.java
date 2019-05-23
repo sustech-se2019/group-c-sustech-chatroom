@@ -7,17 +7,15 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.util.TextUtils;
 import org.junit.Assert;
 import org.junit.Test;
-import sim.pojo.ImageVO;
+import sim.pojo.vo.ImageVO;
 import sim.utils.FileUtils;
 import sun.misc.BASE64Encoder;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Base64;
 
 public class UserControllerTest {
 
@@ -149,6 +147,28 @@ public class UserControllerTest {
         System.out.println(response);
     }
 
+    public void deletemyfriends(String userId1, String userId2){
+        JSONObject data = new JSONObject();
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(ServerUrl+"/deleteFriend?userId1="+userId1
+                +"&userId2="+userId2);
+        String response = null;
+        try {
+            StringEntity s = new StringEntity(data.toJSONString());
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            if(res.getStatusLine().getStatusCode() == 200){
+                response = EntityUtils.toString(res.getEntity());// 返回json格式：
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(response);
+    }
+
+
     public void findFriends(String myUserId, String friendUsername){
         JSONObject data = new JSONObject();
         CloseableHttpClient httpclient = HttpClientBuilder.create().build();
@@ -168,6 +188,11 @@ public class UserControllerTest {
             throw new RuntimeException(e);
         }
         System.out.println(response);
+    }
+
+    @Test
+    public void testDeleteFriend1(){
+        deletemyfriends("190523D8MFXS63R4","190523D8P5H1XGC0");
     }
 
     @Test

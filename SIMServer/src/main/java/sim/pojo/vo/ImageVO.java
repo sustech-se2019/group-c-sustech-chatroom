@@ -1,4 +1,4 @@
-package sim.pojo;
+package sim.pojo.vo;
 
 public class ImageVO {
     private String userId;

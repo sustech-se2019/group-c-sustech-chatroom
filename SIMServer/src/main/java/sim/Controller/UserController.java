@@ -19,7 +19,7 @@ import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
 import sim.pojo.ChatHistory;
 import sim.pojo.Users;
-import sim.pojo.ImageVO;
+import sim.pojo.vo.ImageVO;
 import sim.pojo.vo.MyFriendsVO;
 import sim.pojo.vo.UsersVO;
 import sim.utils.*;
@@ -187,6 +187,20 @@ public class UserController {
         return JSONResult.ok(userDao.queryFriendRequestList(userId));
     }
 
+
+    @PostMapping("/deleteFriend")
+    public JSONResult deleteFriend(String userId1,String userId2){
+        if (userId1==null || userId2 == null) {
+            return JSONResult.errorMsg("");
+        }
+        if(userDao.checkWhetherFriend(userId1,userId2)){
+            userDao.deleteFriend(userId1,userId2);
+            userDao.deleteFriend(userId2,userId1);
+        }else{
+            return JSONResult.errorMsg("Not your friends");
+        }
+        return JSONResult.ok();
+    }
 
     /**
      * Send friend request from from my user id to friend user name.
