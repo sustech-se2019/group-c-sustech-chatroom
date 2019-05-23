@@ -49,7 +49,6 @@ public class FriendActivity extends AppCompatActivity {
         setContentView(R.layout.friend_activity);
         //initFriends();//初始化消息数据
         adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-        inputText = (EditText)findViewById(R.id.input_old_friend_name);
         search = (Button)findViewById(R.id.search_friendlist);
         add = (Button)findViewById(R.id.add_activity);
         userListView = (ListView)findViewById(R.id.friend_list_view);
