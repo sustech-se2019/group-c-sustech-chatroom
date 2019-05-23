@@ -32,17 +32,14 @@ public class UploadActivityTest {
         }
     }
 
-/*   @Test
+    @Test
     @UiThreadTest
     public void testOnClick2(){
-        try{
-            UploadActivity uploadActivity = rule.getActivity();View view = new View(uploadActivity);
-            view.setId(R.id.upload_image);
-        }catch(NoSuchFieldException|IllegalAccessException e){
-            e.printStackTrace();
-        }
+        UploadActivity uploadActivity = rule.getActivity();
+        View view = new View(uploadActivity);
+        view.setId(R.id.upload_image);
+        uploadActivity.onClick(view);
     }
-    */
 
 
 }
