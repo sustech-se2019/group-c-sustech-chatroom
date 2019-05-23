@@ -4,6 +4,8 @@ import android.support.test.annotation.UiThreadTest;
 import android.support.test.rule.ActivityTestRule;
 import android.view.View;
 
+import com.example.se_project.Chat.WSClient;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.powermock.api.mockito.PowerMockito;
@@ -23,7 +25,7 @@ public class UploadActivityTest {
     @UiThreadTest
     public void testOnClick1(){
         try{
-            UploadActivity uploadActivity = PowerMockito.mock(UploadActivity.class);
+            UploadActivity uploadActivity = new UploadActivity();
             View view = new View(uploadActivity);
             view.setId(R.id.choose_image);
             uploadActivity.onClick(view);
