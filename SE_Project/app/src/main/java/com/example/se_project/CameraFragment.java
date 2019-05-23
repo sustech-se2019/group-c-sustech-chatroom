@@ -236,6 +236,13 @@ public class CameraFragment extends Fragment
         cameraUtils.stopBackgroundThread();
         super.onPause();
     }
+    
+    /**
+     * Back pressed handle in fragment
+     */
+    protected void onBackPressed(){
+        getActivity().getSupportFragmentManager().popBackStack();
+    }
 
     /**
      * Shows a {@link Toast} on the UI thread.
