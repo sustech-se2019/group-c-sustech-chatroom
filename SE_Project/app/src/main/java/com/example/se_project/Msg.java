@@ -62,4 +62,11 @@ public class Msg {
         this.type = type;
     }
 
+    public String getMsgId() {
+        return msgId;
+    }
+
+    public void setMsgId(String msgId) {
+        this.msgId = msgId;
+    }
 }

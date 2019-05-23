@@ -16,6 +16,13 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/gpa0"/>
+        <ImageView
+            android:id="@+id/left_image_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
         <TextView
             android:id="@+id/left_msg"
             android:layout_width="wrap_content"
@@ -39,6 +46,13 @@
             android:layout_gravity="center"
             android:layout_margin="10dp"
             android:textColor="#0D2EA4"/>
+        <ImageView
+            android:id="@+id/right_image_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"/>
         <ImageView
             android:id="@+id/right_chat_user_image"
             android:layout_width="40dp"

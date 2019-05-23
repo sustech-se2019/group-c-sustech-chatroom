@@ -1,11 +1,13 @@
 package com.example.se_project;
 
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.ChatHistory;
+import com.example.se_project.Chat.ImageMsg;
 import com.example.se_project.Chat.WSClient;
 
 import java.util.ArrayList;
@@ -31,6 +33,9 @@ public class AppData {
     private Handler chatHandler;
     private List<Moments> momentsList;
 
+    private Context context;
+    private Context chatContext;
+
     private void refreshChat(){
         if (chatHandler == null)
             return;
@@ -51,7 +56,7 @@ public class AppData {
             Msg m = new Msg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
             history.getMsgList().add(m);
         }
-
+        refreshChat();
     }
 
     public void reciveChatMsg(String friendId, String msg, String msgId, Date time){
@@ -84,6 +89,32 @@ public class AppData {
         }
 
         Msg m = new Msg(msg, Msg.TYPE_RECEIVED, msgId);
+        history.getMsgList().add(m);
+        refreshChat();
+    }
+
+    public void sendImageMsg(String msg){
+        ChatHistory history = chatHistory.get(chattingFriend.getId());
+
+        ImageMsg m = new ImageMsg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
+        history.getMsgList().add(m);
+        refreshChat();
+    }
+
+    public void reciveImageMsg(String friendId, String msg, String msgId, Date time){
+        if (time == null)
+            time = new Date(System.currentTimeMillis());
+        ChatHistory history = chatHistory.get(friendId);
+        if (history == null)
+        {
+            history = new ChatHistory();
+            history.setFriendId(friendId);
+            history.setMyId(me.getId());
+            history.setLastTime(time);
+            chatHistory.put(friendId, history);
+        }
+        System.out.println("reciveImageMsg: "+msg);
+        Msg m = new ImageMsg(msg, Msg.TYPE_RECEIVED, time, msgId);
         history.getMsgList().add(m);
         refreshChat();
     }
@@ -134,5 +165,21 @@ public class AppData {
 
     public void setChatHandler(Handler chatHandler) {
         this.chatHandler = chatHandler;
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    public Context getChatContext() {
+        return chatContext;
+    }
+
+    public void setChatContext(Context chatContext) {
+        this.chatContext = chatContext;
     }
 }

@@ -1,14 +1,6 @@
 package com.example.se_project;
 
-import android.view.WindowManager;
-
-import com.example.se_project.Chat.WSClient;
-
-import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-
-import java.net.URI;
 
 import static org.junit.Assert.*;
 

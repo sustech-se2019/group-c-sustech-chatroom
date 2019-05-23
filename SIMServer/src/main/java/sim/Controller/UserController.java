@@ -254,10 +254,11 @@ public class UserController {
         if (StringUtils.isBlank(acceptUserId)) {
             return JSONResult.errorMsg("");
         }
+        System.out.println("getUnReadMsgList"+acceptUserId);
 
         // 查询列表
         List<ChatHistory> unreadMsgList = userDao.getUnReadMsgList(acceptUserId);
-
+        System.out.println(unreadMsgList.toString());
         return JSONResult.ok(unreadMsgList);
     }
 

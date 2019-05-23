@@ -1,7 +1,15 @@
 package com.example.se_project;
 
+import android.os.Environment;
+import android.util.DisplayMetrics;
+import android.util.Log;
+
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.example.se_project.AppData;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Utils {
 
@@ -57,5 +65,34 @@ public class Utils {
 
         return json;
     }
+
+    /**
+     * 复制文件
+     * @param filename 文件名
+     * @param bytes 数据
+     */
+    public static void copy(String filename, byte[] bytes) {
+        try {
+            //如果手机已插入sd卡,且app具有读写sd卡的权限
+            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+                FileOutputStream output = null;
+                output = new FileOutputStream(filename);
+                output.write(bytes);
+                Log.d("copy: success，" , filename);
+                output.close();
+            } else {
+                Log.d("copy:fail, " , filename);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int getScreenWidth(){
+        DisplayMetrics dm =
+                AppData.getInstance().getContext().getResources().getDisplayMetrics();
+        return dm.widthPixels;
+    }
+
 
 }

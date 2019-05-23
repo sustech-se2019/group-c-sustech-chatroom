@@ -72,8 +72,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         register.setOnClickListener(this);
         //ensure_register.setOnClickListener(this);
 
-
+        if (AppData.getInstance().getWsClient() != null){
+            AppData.getInstance().getWsClient().close();
+        }
     }
+
+
     /**
      * To show wrong password dialog.
      */
@@ -186,6 +190,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AppData.getInstance().getFriendList().clear();
                     AppData.getInstance().getChatHistory().clear();
 
+                    AppData.getInstance().setContext(getApplicationContext());
 
                     creadWebSocket();
 
@@ -256,15 +261,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     JSONArray msgList = JSONArray.parseArray(result.getString("data"));
                     List<String> signList = new ArrayList<>();
                     for (Object item: msgList) {
-                        JSONObject e = (JSONObject)item;
-                        if (e.getString("toId").equals(AppData.getInstance().getMe().getId()))
+                        JSONObject chatMsg = (JSONObject)item;
+                        if (chatMsg.getString("toId").equals(AppData.getInstance().getMe().getId()))
                         {
                             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSZ");
-                            AppData.getInstance().reciveChatMsg(e.getString("fromId"),
-                                    e.getString("msg"),
-                                    e.getString("msgId"),
-                                    sdf.parse(e.getString("sendTime")));
-                            signList.add(e.getString("msgId"));
+
+                            int type = chatMsg.getIntValue("type");
+
+                            if (type == 1){
+                                AppData.getInstance().reciveImageMsg(chatMsg.getString("fromId"),
+                                        chatMsg.getString("msg"),
+                                        chatMsg.getString("msgId"),
+                                        sdf.parse(chatMsg.getString("sendTime")));
+                            }else {
+                                AppData.getInstance().reciveChatMsg(chatMsg.getString("fromId"),
+                                        chatMsg.getString("msg"),
+                                        chatMsg.getString("msgId"),
+                                        sdf.parse(chatMsg.getString("sendTime")));
+                            }
+
+                            signList.add(chatMsg.getString("msgId"));
                         }
                     }
                     if (signList.size() > 0){

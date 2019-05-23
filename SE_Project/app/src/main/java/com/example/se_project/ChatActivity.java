@@ -1,25 +1,10 @@
 package com.example.se_project;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.content.ContentUris;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -34,14 +19,11 @@ import android.view.MenuItem;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.ChatHistory;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -77,6 +59,7 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        AppData.getInstance().setChatContext(this);
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
@@ -97,43 +80,43 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.Image:
-                        Intent intent = new Intent();
-                        intent.setClass(ChatActivity.this, UploadActivity.class);
-                        ChatActivity.this.startActivity(intent);
-                }
+            switch (v.getId()){
+                case R.id.Image:
+                    Intent intent = new Intent();
+                    intent.setClass(ChatActivity.this, UploadActivity.class);
+                    ChatActivity.this.startActivity(intent);
+            }
             }
         });
 
 
 
 
-//        //发送按钮的点击事件
-//        send.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String content = inputText.getText().toString();
-//                if(!content.equals("")){
-//                    AppData.getInstance().sendChatMsg(content);
-//
-//                    refreshView();
-//
-//                    inputText.setText("");//清空输入框的内容
-//                }
-//            }
-//        });
-       findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               cameraFragment = CameraFragment.newInstance();
-               getWindow().setFlags(
-                       WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                       WindowManager.LayoutParams.FLAG_FULLSCREEN);
-               getSupportFragmentManager().beginTransaction()
-                       .add(R.id.outside, cameraFragment).addToBackStack(null).commit();
-           }
-       });
+        //发送按钮的点击事件
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String content = inputText.getText().toString();
+                if(!content.equals("")){
+                    AppData.getInstance().sendChatMsg(content);
+
+                    refreshView();
+
+                    inputText.setText("");//清空输入框的内容
+                }
+            }
+        });
+        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                view.findViewById(R.id.entry).setVisibility(View.GONE);
+                getWindow().setFlags(
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.outside, CameraFragment.newInstance()).commit();
+            }
+        });
 
         initListView();
         AppData.getInstance().setChatHandler(handler);
@@ -192,12 +175,6 @@ public class ChatActivity extends AppCompatActivity {
         }
         msgList = history.getMsgList();
 
-//        Msg msg1 = new Msg("Hello cpj.", Msg.TYPE_RECEIVED);
-//        msgList.add(msg1);
-//        Msg msg2 = new Msg("Hello Who is that?", Msg.TYPE_SENT);
-//        msgList.add(msg2);
-//        Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
-//        msgList.add(msg3);
     }
 
 
