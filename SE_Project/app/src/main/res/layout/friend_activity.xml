@@ -49,7 +49,7 @@
                 android:id="@+id/user_name2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
                 android:text="奥巴马"
                 android:textAllCaps="false"
@@ -63,6 +63,18 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="5dp">
+
+        <Button
+                android:id="@+id/add_activity"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="10dp"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:background="@drawable/invite"
+                android:textAllCaps="false" />
         <Button
             android:id="@+id/moments"
             android:layout_width="35dp"
@@ -73,17 +85,7 @@
             android:textSize="30dp"
             android:background="@drawable/moment"
             android:textAllCaps="false" />
-        <Button
-            android:id="@+id/add_activity"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:background="@drawable/invite"
-            android:textAllCaps="false" />
+
          <Button
                 android:id="@+id/search_friendlist"
                 android:layout_width="35dp"

@@ -61,7 +61,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
         prgDialog= new ProgressDialog(this);
         prgDialog.setCancelable(false);
 
-        editTextName = (EditText) findViewById(R.id.editText);
+
         findViewById(R.id.choose_image).setOnClickListener(this);
         findViewById(R.id.upload_image).setOnClickListener(this);
 
