@@ -122,17 +122,16 @@ public class ChatActivity extends AppCompatActivity {
 //                }
 //            }
 //        });
-//        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                view.findViewById(R.id.entry).setVisibility(View.GONE);
-//                getWindow().setFlags(
-//                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//                getSupportFragmentManager().beginTransaction()
-//                        .add(R.id.outside, CameraFragment.newInstance()).commit();
-//            }
-//        });
+       findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               getWindow().setFlags(
+                       WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                       WindowManager.LayoutParams.FLAG_FULLSCREEN);
+               getSupportFragmentManager().beginTransaction()
+                       .add(R.id.outside, CameraFragment.newInstance()).addToBackStack(null).commit();
+           }
+       });
 
         initListView();
         AppData.getInstance().setChatHandler(handler);
