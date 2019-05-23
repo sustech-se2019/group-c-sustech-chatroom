@@ -103,23 +103,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/aliceblue">
-
-        <!--输入框-->
-        <EditText
-            android:id="@+id/input_old_friend_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:layout_marginVertical="10dp"
-            android:hint="id/name"
-            android:maxLines="2"/>
-
-
-
-
-    </LinearLayout>
+        android:background="@color/aliceblue"/>
     <!--聊天对话框部分
       android:divider="#0000"透明分隔线-->
     <ListView
@@ -128,6 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:background="@color/aliceblue"
         android:divider="#0000"/>
 
     <!--输入框部分（横排排列）-->
