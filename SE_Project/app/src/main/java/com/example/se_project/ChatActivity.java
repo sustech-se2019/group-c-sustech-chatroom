@@ -279,7 +279,8 @@ public class ChatActivity extends AppCompatActivity {
      * {@inheritDoc}
      */
     public void onBackPressed() {
-        finish();
+        if (cameraFragment != null ) cameraFragment.onBackPressed();
+        else finish();
     }
 
     /**
