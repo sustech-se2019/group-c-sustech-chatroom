@@ -26,6 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="500dp"
             android:layout_gravity="top"
+            android:gravity="top"
+                android:hint="share your moment here"
             android:background="@color/lightblue"
             android:maxLines="2"/>
         </LinearLayout>
