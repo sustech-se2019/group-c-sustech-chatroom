@@ -5,13 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.ContactsContract;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -28,6 +32,8 @@ public class FriendActivity extends AppCompatActivity {
     private Button moment;
     private UserAdapter adapter;
     private List<User> userList = AppData.getInstance().getFriendList();
+    private TextView NickName;
+    private ImageView Portrait;
 
     protected void onStart(){
         super.onStart();
@@ -87,6 +93,19 @@ public class FriendActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        User me  = AppData.getInstance().getMe();
+        String name = me.getNickName();
+        int portait = me.getProfilePictureID();
+
+        NickName = findViewById(R.id.user_name2);
+        Portrait = findViewById(R.id.user_portait);
+
+        NickName.setText(name);
+        Portrait.setImageResource(portait);
+
+
+
     }
 
 

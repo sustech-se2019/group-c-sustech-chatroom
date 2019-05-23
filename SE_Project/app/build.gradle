@@ -35,7 +35,7 @@ dependencies {
     testImplementation "org.mockito:mockito-core:2.8.9"
     androidTestImplementation "org.mockito:mockito-android:2.8.9"
     implementation "org.java-websocket:Java-WebSocket:1.4.0"
-    compile 'org.slf4j:slf4j-nop:1.7.2'
+
     //glide 图片加载
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
