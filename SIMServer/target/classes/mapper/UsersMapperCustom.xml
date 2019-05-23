@@ -40,6 +40,31 @@
 			mf.owner_id = #{userId}
 	</select>
 
+	<select id="viewMoment" resultType="sim.pojo.MomentContent"
+			parameterType="String">
+            select
+				mc.moment_id as momentId,
+				mc.sender_id as senderId,
+				mc.content as content,
+				mc.send_time as sendTime
+			from
+				moment_content  mc
+			WHERE
+				mc.sender_id IN (
+				select
+					mf.friend_id as id
+				from
+					friend_list  mf
+				where
+					mf.owner_id = #{userId}
+			)
+				or
+				mc.sender_id = #{userId}
+			ORDER by
+				sendTime desc;
+	</select>
+
+
 	<!-- 批处理更新消息为已签收 -->
 	<update id="batchUpdateMsgSigned">
 

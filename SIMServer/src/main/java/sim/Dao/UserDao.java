@@ -2,6 +2,7 @@ package sim.Dao;
 
 import sim.netty.ChatMsg;
 import sim.pojo.ChatHistory;
+import sim.pojo.MomentContent;
 import sim.pojo.Users;
 import sim.pojo.vo.FriendRequestVO;
 import sim.pojo.vo.MyFriendsVO;
@@ -40,6 +41,10 @@ public interface UserDao {
      * @Description: register user
      */
     public Users createUser(Users user);
+
+    public List<MomentContent> pullMoment(String userId);
+
+    public MomentContent createMoment(MomentContent momentContent);
 
     /**
      * Update user info users.
@@ -80,6 +85,8 @@ public interface UserDao {
      * @Description: 批量签收消息
      */
     public void updateMsgSigned(List<String> msgIdList);
+
+
 
     /**
      * @Description: 获取未签收消息列表

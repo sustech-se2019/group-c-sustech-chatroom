@@ -13,16 +13,13 @@ import sim.mapper.*;
 import sim.netty.ChatMsg;
 import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
-import sim.pojo.ChatHistory;
-import sim.pojo.FriendRequest;
+import sim.pojo.*;
 import sim.pojo.vo.FriendRequestVO;
 import sim.pojo.vo.MyFriendsVO;
 import sim.utils.JsonUtils;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
 import sim.Dao.UserDao;
-import sim.pojo.Users;
-import sim.pojo.FriendList;
 import sim.enums.SearchFriendsStatusEnum;
 
 import java.util.Date;
@@ -44,6 +41,8 @@ public class UserDaoImpl implements UserDao {
     private FriendListMapper friendListMapper;
     @Autowired(required = false)
     private FriendRequestMapper friendRequestMapper;
+    @Autowired(required = false)
+    private MomentContentMapper momentContentMapper;
 
     @Override
     public void sendFriendRequest(String myUserId, String friendUsername) {
@@ -133,6 +132,7 @@ public class UserDaoImpl implements UserDao {
         return result != null;
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public void deleteFriend(String userId1, String userId2) {
         Example mfe = new Example(FriendList.class);
@@ -141,6 +141,21 @@ public class UserDaoImpl implements UserDao {
         mfc.andEqualTo("friendId", userId2);
         FriendList myFriendsRel = friendListMapper.selectOneByExample(mfe);
         friendListMapper.delete(myFriendsRel);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<MomentContent> pullMoment(String userId) {
+        List<MomentContent> res = usersMapperCustom.viewMoment(userId);
+        return res;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public MomentContent createMoment(MomentContent momentContent) {
+        momentContentMapper.insert(momentContent);
+
+        return momentContent;
     }
 
     /**

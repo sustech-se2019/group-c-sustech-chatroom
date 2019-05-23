@@ -18,6 +18,7 @@ import sim.netty.ChatMsg;
 import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
 import sim.pojo.ChatHistory;
+import sim.pojo.MomentContent;
 import sim.pojo.Users;
 import sim.pojo.vo.ImageVO;
 import sim.pojo.vo.MyFriendsVO;
@@ -187,6 +188,28 @@ public class UserController {
         return JSONResult.ok(userDao.queryFriendRequestList(userId));
     }
 
+
+    @PostMapping("/postMoment")
+    public JSONResult postMoment(@RequestBody MomentContent momentContent){
+        if(momentContent.getSenderId() == null || momentContent.getContent() == null){
+            return JSONResult.errorMsg("");
+        }
+        momentContent.setMomentId(Sid.nextShort());
+        MomentContent momentResult = userDao.createMoment(momentContent);
+        if(momentResult == null){
+            return JSONResult.errorMsg("发布朋友圈失败...");
+        }else{
+            return JSONResult.ok(momentResult);
+        }
+    }
+
+    @PostMapping("/pullMoment")
+    public JSONResult pullMoment(String userId){
+        if(userId == null){
+            return JSONResult.errorMsg("");
+        }
+        return JSONResult.ok(userDao.pullMoment(userId));
+    }
 
     @PostMapping("/deleteFriend")
     public JSONResult deleteFriend(String userId1,String userId2){

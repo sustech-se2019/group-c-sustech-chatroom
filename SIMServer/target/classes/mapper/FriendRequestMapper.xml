@@ -8,7 +8,7 @@
     <id column="from_id" jdbcType="VARCHAR" property="fromId" />
     <id column="to_id" jdbcType="VARCHAR" property="toId" />
     <result column="msg" jdbcType="VARCHAR" property="msg" />
-    <result column="date" jdbcType="TIMESTAMP" property="date" />
+    <result column="sendTime" jdbcType="TIMESTAMP" property="sendTime" />
   </resultMap>
 
 </mapper>

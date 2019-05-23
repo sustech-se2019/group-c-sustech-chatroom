@@ -16,6 +16,8 @@ import sun.misc.BASE64Encoder;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class UserControllerTest {
 
@@ -50,6 +52,51 @@ public class UserControllerTest {
         data.put("password",pwd);
         CloseableHttpClient httpclient = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(ServerUrl+"regist");
+        String response = null;
+        try {
+            StringEntity s = new StringEntity(data.toJSONString());
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            if(res.getStatusLine().getStatusCode() == 200){
+                response = EntityUtils.toString(res.getEntity());// 返回json格式：
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(response);
+    }
+
+    private static void postMoment(String senderId, String content){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");//设置日期格式
+
+        JSONObject data = new JSONObject();
+        data.put("senderId",senderId);
+        data.put("content",content);
+        data.put("sendTime",df.format(new Date()).toString());
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(ServerUrl+"postMoment");
+        String response = null;
+        try {
+            StringEntity s = new StringEntity(data.toJSONString());
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            if(res.getStatusLine().getStatusCode() == 200){
+                response = EntityUtils.toString(res.getEntity());// 返回json格式：
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(response);
+    }
+
+    private static void pullMoment(String userId){
+        JSONObject data = new JSONObject();
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(ServerUrl+"/pullMoment?userId="+userId);
         String response = null;
         try {
             StringEntity s = new StringEntity(data.toJSONString());
@@ -147,6 +194,8 @@ public class UserControllerTest {
         System.out.println(response);
     }
 
+
+
     public void deletemyfriends(String userId1, String userId2){
         JSONObject data = new JSONObject();
         CloseableHttpClient httpclient = HttpClientBuilder.create().build();
@@ -193,6 +242,16 @@ public class UserControllerTest {
     @Test
     public void testDeleteFriend1(){
         deletemyfriends("190523D8MFXS63R4","190523D8P5H1XGC0");
+    }
+
+    @Test
+    public void testPullMoment1(){
+        pullMoment("190523D8P5H1XGC0");
+    }
+
+    @Test
+    public void testPostMoment1(){
+        postMoment("190523D8P5H1XGC0","handsome");
     }
 
     @Test

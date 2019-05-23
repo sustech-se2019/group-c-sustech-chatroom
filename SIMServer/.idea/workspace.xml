@@ -5,35 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="Complete image send function.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentCommentsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentImgMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentComments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentImg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentThumbUp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MomentCommentsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MomentImgMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/MomentThumbUpMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/ImageVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/ImageVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FriendListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FriendListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FriendRequestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FriendRequestMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ChatHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ChatHistoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/FriendListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/FriendListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/FriendRequestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/FriendRequestMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UsersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UsersMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sim/Controller/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sim/Controller/UserControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/sim/DaoImpl/UserDaoImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/sim/DaoImpl/UserDaoImplTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,33 +42,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="156" column="67" lean-forward="true" selection-start-line="156" selection-start-column="67" selection-end-line="156" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#findFriends#0;class#UserControllerTest#0" />
-                <element signature="e#7952#7953#0" expanded="true" />
-                <element signature="e#7985#7986#0" expanded="true" />
-                <element signature="e#8054#8055#0" expanded="true" />
-                <element signature="e#8091#8092#0" expanded="true" />
-                <element signature="e#8133#8134#0" expanded="true" />
-                <element signature="e#8180#8181#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="190" column="21" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="31" />
+            <state relative-caret-position="406">
+              <caret line="210" column="47" selection-start-line="210" selection-start-column="47" selection-end-line="210" selection-end-column="47" />
               <folding>
                 <element signature="method#login#0;class#UserController#0" />
-                <element signature="method#regist#0;class#UserController#0" />
                 <element signature="method#searchUser#0;class#UserController#0" />
                 <element signature="method#addFriendRequest#0;class#UserController#0" />
                 <element signature="method#myFriends#0;class#UserController#0" />
@@ -100,10 +60,113 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="164">
+              <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3556">
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#findFriends#0;class#UserControllerTest#0" />
+                <element signature="e#7952#7953#0" expanded="true" />
+                <element signature="e#8022#8023#0" expanded="true" />
+                <element signature="e#10060#10061#0" expanded="true" />
+                <element signature="e#10088#10089#0" expanded="true" />
+                <element signature="e#9002#9003#0" expanded="true" />
+                <element signature="e#9059#9060#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <folding>
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#574#575#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#690#691#0" expanded="true" />
+                <element signature="e#721#722#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
+                <element signature="e#848#849#0" expanded="true" />
+                <element signature="e#921#922#0" expanded="true" />
+                <element signature="e#951#952#0" expanded="true" />
+                <element signature="e#1035#1036#0" expanded="true" />
+                <element signature="e#1073#1074#0" expanded="true" />
+                <element signature="e#1138#1139#0" expanded="true" />
+                <element signature="e#1165#1166#0" expanded="true" />
+                <element signature="e#1238#1239#0" expanded="true" />
+                <element signature="e#1270#1271#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="149" column="19" lean-forward="true" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
+              <folding>
+                <element signature="method#saveMsg#0;class#UserDaoImpl#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -162,8 +225,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/sim/utils/MyMapper.java" />
-        <option value="$PROJECT_DIR$/target/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java" />
         <option value="$PROJECT_DIR$/target/classes/application.properties" />
@@ -188,7 +249,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Application.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/utils/SpringUtilsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/netty/ChatMsg.java" />
@@ -198,7 +258,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/FastDFSClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/FastdfsImporter.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/FriendRequestVO.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/MyFriendsVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java" />
@@ -209,10 +268,14 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/FriendListMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/FriendRequestMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UsersMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" />
       </list>
     </option>
   </component>
@@ -484,6 +547,7 @@
     <property name="mvn_location" value="C:\Program Files\apache-maven-3.5.3\bin\mvn.cmd" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.54022986" />
@@ -533,7 +597,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserControllerTest.testDeleteFriend1">
+  <component name="RunManager" selected="JUnit.UserControllerTest.testPullMoment1">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sim.Application" />
       <module name="SIM-Server" />
@@ -572,7 +636,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserControllerTest.testRegist2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserControllerTest.testPostMoment1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SIM-Server" />
       <extension name="coverage">
         <pattern>
@@ -582,7 +646,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="sim.Controller" />
       <option name="MAIN_CLASS_NAME" value="sim.Controller.UserControllerTest" />
-      <option name="METHOD_NAME" value="testRegist2" />
+      <option name="METHOD_NAME" value="testPostMoment1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testPullMoment1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SIM-Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sim.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="sim.Controller" />
+      <option name="MAIN_CLASS_NAME" value="sim.Controller.UserControllerTest" />
+      <option name="METHOD_NAME" value="testPullMoment1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -629,19 +711,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="SIM-Server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sim.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="sim.Application" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" />
@@ -653,19 +722,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="JUnit.UserControllerTest.testRegist2" />
       <item itemvalue="Application.Application" />
       <item itemvalue="JUnit.UserControllerTest.testRegist3" />
       <item itemvalue="JUnit.UserControllerTest.testDeleteFriend1" />
+      <item itemvalue="JUnit.UserControllerTest.testPostMoment1" />
+      <item itemvalue="JUnit.UserControllerTest.testPullMoment1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserControllerTest.testDeleteFriend1" />
+        <item itemvalue="JUnit.UserControllerTest.testPullMoment1" />
         <item itemvalue="Application.Application" />
+        <item itemvalue="JUnit.UserControllerTest.testPostMoment1" />
+        <item itemvalue="JUnit.UserControllerTest.testDeleteFriend1" />
         <item itemvalue="JUnit.UserControllerTest.testRegist3" />
-        <item itemvalue="JUnit.UserControllerTest.testRegist2" />
-        <item itemvalue="Spring Boot.Application" />
       </list>
     </recent_temporary>
   </component>
@@ -702,7 +771,7 @@
       <workItem from="1557759627147" duration="945000" />
       <workItem from="1558603562217" duration="6000" />
       <workItem from="1558605264654" duration="97000" />
-      <workItem from="1558605412240" duration="4210000" />
+      <workItem from="1558605412240" duration="10521000" />
     </task>
     <task id="LOCAL-00001" summary="Fix tested bug.">
       <created>1555684820646</created>
@@ -743,39 +812,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpringUtilsTest - 2019.05.12 at 17h 55m 25s.xml">
-      <configuration name="SpringUtilsTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPostMoment1 - 2019.05.23 at 20h 46m 07s.xml">
+      <configuration name="UserControllerTest.testPostMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringUtilsTest - 2019.05.12 at 17h 58m 41s.xml">
-      <configuration name="SpringUtilsTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPostMoment1 - 2019.05.23 at 21h 18m 10s.xml">
+      <configuration name="UserControllerTest.testPostMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringUtilsTest - 2019.05.12 at 17h 59m 54s.xml">
-      <configuration name="SpringUtilsTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPostMoment1 - 2019.05.23 at 21h 18m 15s.xml">
+      <configuration name="UserControllerTest.testPostMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SpringUtilsTest - 2019.05.12 at 18h 00m 21s.xml">
-      <configuration name="SpringUtilsTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPostMoment1 - 2019.05.23 at 21h 19m 30s.xml">
+      <configuration name="UserControllerTest.testPostMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_getUnReadMsgListTest1 - 2019.05.13 at 19h 26m 13s.xml">
-      <configuration name="UserControllerTest.getUnReadMsgListTest1" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPostMoment1 - 2019.05.23 at 21h 20m 01s.xml">
+      <configuration name="UserControllerTest.testPostMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_sendImageTest - 2019.05.23 at 01h 47m 24s.xml">
-      <configuration name="UserControllerTest.sendImageTest" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPullMoment1 - 2019.05.23 at 21h 22m 31s.xml">
+      <configuration name="UserControllerTest.testPullMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testRegist2 - 2019.05.23 at 18h 32m 27s.xml">
-      <configuration name="UserControllerTest.testRegist2" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPullMoment1 - 2019.05.23 at 21h 32m 14s.xml">
+      <configuration name="UserControllerTest.testPullMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testRegist2 - 2019.05.23 at 18h 38m 55s.xml">
-      <configuration name="UserControllerTest.testRegist2" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPullMoment1 - 2019.05.23 at 21h 33m 07s.xml">
+      <configuration name="UserControllerTest.testPullMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testRegist3 - 2019.05.23 at 18h 39m 06s.xml">
-      <configuration name="UserControllerTest.testRegist3" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPullMoment1 - 2019.05.23 at 21h 43m 55s.xml">
+      <configuration name="UserControllerTest.testPullMoment1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserControllerTest_testDeleteFriend1 - 2019.05.23 at 19h 07m 34s.xml">
-      <configuration name="UserControllerTest.testDeleteFriend1" configurationId="JUnit" />
+    <history-entry file="UserControllerTest_testPullMoment1 - 2019.05.23 at 21h 45m 14s.xml">
+      <configuration name="UserControllerTest.testPullMoment1" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125378000" />
+    <option name="totallyTimeSpent" value="131689000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -799,9 +868,9 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.42790335" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.34729064" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.38503507" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3998358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3279099" />
@@ -811,10 +880,11 @@
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32313725" />
       <window_info anchor="bottom" id="EvoSuite" order="11" weight="0.32970026" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" weight="0.32735777" />
+      <window_info anchor="bottom" id="Version Control" order="13" weight="0.3448276" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.32735777" />
       <window_info anchor="bottom" id="Inspection Results" order="15" weight="0.32896176" />
       <window_info anchor="bottom" id="Java Enterprise" order="16" weight="0.32969603" />
+      <window_info anchor="right" id="Preview" weight="0.6792144" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -924,34 +994,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="154" column="35" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/netty/ChatHandlerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/utils/SpringUtilsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1024,13 +1066,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MyFriendsVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -1040,13 +1075,6 @@
             <element signature="e#768#769#0" expanded="true" />
             <element signature="e#801#802#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1135,13 +1163,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentImg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -1160,35 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/Users.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-          <folding>
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#329#330#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#456#457#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#1042#1043#0" expanded="true" />
-            <element signature="e#1082#1083#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1395#1396#0" expanded="true" />
-            <element signature="e#1488#1489#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1264,9 +1256,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MomentImgMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1277,13 +1266,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1301,32 +1283,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/../SE_Project/app/src/main/res/layout/moments_send_activity.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SE_Project/app/src/main/res/layout/friend_activity.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#329#330#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#882#883#0" expanded="true" />
+            <element signature="e#913#914#0" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1082#1083#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1226#1227#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1395#1396#0" expanded="true" />
+            <element signature="e#1488#1489#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1618#1619#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="149" column="19" lean-forward="true" selection-start-line="149" selection-start-column="19" selection-end-line="149" selection-end-column="19" />
           <folding>
-            <element signature="e#7827#7828#0" expanded="true" />
-            <element signature="e#7887#7888#0" expanded="true" />
             <element signature="method#saveMsg#0;class#UserDaoImpl#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
+        <state relative-caret-position="240">
+          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#951#952#0" expanded="true" />
+            <element signature="e#1035#1036#0" expanded="true" />
+            <element signature="e#1073#1074#0" expanded="true" />
+            <element signature="e#1138#1139#0" expanded="true" />
+            <element signature="e#1165#1166#0" expanded="true" />
+            <element signature="e#1238#1239#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3556">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#findFriends#0;class#UserControllerTest#0" />
+            <element signature="e#7952#7953#0" expanded="true" />
+            <element signature="e#8022#8023#0" expanded="true" />
+            <element signature="e#10060#10061#0" expanded="true" />
+            <element signature="e#10088#10089#0" expanded="true" />
+            <element signature="e#9002#9003#0" expanded="true" />
+            <element signature="e#9059#9060#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="190" column="21" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="31" />
+        <state relative-caret-position="406">
+          <caret line="210" column="47" selection-start-line="210" selection-start-column="47" selection-end-line="210" selection-end-column="47" />
           <folding>
             <element signature="method#login#0;class#UserController#0" />
-            <element signature="method#regist#0;class#UserController#0" />
             <element signature="method#searchUser#0;class#UserController#0" />
             <element signature="method#addFriendRequest#0;class#UserController#0" />
             <element signature="method#myFriends#0;class#UserController#0" />
@@ -1338,25 +1429,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="175">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="156" column="67" lean-forward="true" selection-start-line="156" selection-start-column="67" selection-end-line="156" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findFriends#0;class#UserControllerTest#0" />
-            <element signature="e#7952#7953#0" expanded="true" />
-            <element signature="e#7985#7986#0" expanded="true" />
-            <element signature="e#8054#8055#0" expanded="true" />
-            <element signature="e#8091#8092#0" expanded="true" />
-            <element signature="e#8133#8134#0" expanded="true" />
-            <element signature="e#8180#8181#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="164">
+          <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
         </state>
       </provider>
     </entry>

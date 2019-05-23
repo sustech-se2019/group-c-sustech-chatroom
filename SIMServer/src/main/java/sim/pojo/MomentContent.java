@@ -16,7 +16,8 @@ public class MomentContent {
 
     private String content;
 
-    private Date date;
+    @Column(name = "send_time")
+    private Date sendTime;
 
     /**
      * @return moment_id
@@ -61,16 +62,16 @@ public class MomentContent {
     }
 
     /**
-     * @return date
+     * @return sendTime
      */
-    public Date getDate() {
-        return date;
+    public Date getSendTime() {
+        return sendTime;
     }
 
     /**
-     * @param date
+     * @param sendTime
      */
-    public void setDate(Date date) {
-        this.date = date;
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
     }
 }
