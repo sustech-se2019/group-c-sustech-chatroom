@@ -241,7 +241,7 @@ public class CameraFragment extends Fragment
                 @Override
                 public void run() {
                     Toast.makeText(activity, text, Toast.LENGTH_SHORT).show();
-                    activity.onBackPressed();
+                    getActivity().getSupportFragmentManager().popBackStack();
                 }
             });
         }
