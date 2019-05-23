@@ -25,7 +25,7 @@
             <EditText
             android:id="@+id/input_moments"
             android:layout_width="match_parent"
-            android:layout_height="600"
+            android:layout_height="600dp"
             android:layout_gravity="top"
             android:gravity="top"
                 android:hint="share your moment here"
