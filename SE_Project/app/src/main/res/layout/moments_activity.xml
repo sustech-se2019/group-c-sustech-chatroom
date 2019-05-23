@@ -17,8 +17,9 @@
                 android:background="@drawable/style2"
                 android:orientation="vertical"
                 android:layout_marginHorizontal="10dp">
+
                 <ImageView
-                    android:id="@+id/user_portait"
+                    android:id="@+id/user_portait_moments"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
@@ -26,7 +27,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:src="@drawable/gpa0" />
                 <TextView
-                    android:id="@+id/user_name"
+                    android:id="@+id/user_name_moments"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

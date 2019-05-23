@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.ChatHistory;
@@ -54,6 +55,7 @@ public class ChatActivity extends AppCompatActivity {
     private CameraFragment cameraFragment;
     private static final int REQUEST_SYSTEM_PIC = 1;
     private static final int CAMERA_RESULT = 2;
+    private TextView NickName;
 
 
     protected void onCreate(Bundle saveInstanceState){
@@ -72,6 +74,16 @@ public class ChatActivity extends AppCompatActivity {
         msgListView = (ListView)findViewById(R.id.msg_list_view);
         msgListView.setAdapter(adapter);
         registerForContextMenu(msgListView);
+
+
+        User me  = AppData.getInstance().getMe();
+        String name = me.getNickName();
+        int portait = me.getProfilePictureID();
+
+        NickName = findViewById(R.id.Chat_who);
+
+
+        NickName.setText(name);
 
 
         camera = (Button)findViewById( R.id.camera );
