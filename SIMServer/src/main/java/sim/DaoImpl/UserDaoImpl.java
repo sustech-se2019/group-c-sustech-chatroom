@@ -243,6 +243,7 @@ public class UserDaoImpl implements UserDao {
         msgDB.setSendTime(new Date());
         msgDB.setSignFlag(MsgSignFlagEnum.unsign.type);
         msgDB.setMsg(chatMsg.getMsg());
+        msgDB.setType(chatMsg.getType());
 
         chatHistoryMapper.insert(msgDB);
 
@@ -256,6 +257,8 @@ public class UserDaoImpl implements UserDao {
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void updateMsgSigned(List<String> msgIdList) {
+        System.out.println("updateMsgSigned");
+        System.out.println(msgIdList);
         usersMapperCustom.batchUpdateMsgSigned(msgIdList);
     }
 

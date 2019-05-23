@@ -139,7 +139,7 @@ public class CameraUtils {
         // largest of those not big enough.
         if (bigEnough.isEmpty()&&notBigEnough.isEmpty()) {
             Log.e(TAG, "Couldn't find any suitable preview size");
-            return choices[0];
+            return new Size(textureViewHeight, textureViewWidth);
         } else  {
             if (notBigEnough.isEmpty())
                 return Collections.min(bigEnough, new CompareSizesByArea());

@@ -3,6 +3,7 @@ package com.example.se_project;
 import android.graphics.drawable.Drawable;
 import android.os.Message;
 import android.util.Log;
+import android.widget.LinearLayout;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -13,6 +14,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,6 +27,7 @@ public class User implements Serializable {
     private int potraitnum; //头像ID
     private int profilePictureID;
     private ArrayList<User> friendList=new ArrayList();
+    private ArrayList<Moments> momentsList=new ArrayList<>();
     public User(){
 
     }
@@ -91,6 +94,8 @@ public class User implements Serializable {
     }
     public boolean addFriend(User user){
         final String request_url = "http://10.21.72.100:8081" + "/addFriendRequest?myUserId="+AppData.getInstance().getMe().getId()+"&friendUsername="+user.getName();
+        final String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
+                +"&friendUsername="+user.getName();
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -99,20 +104,23 @@ public class User implements Serializable {
                     JSONObject json_data = new JSONObject();
                     message.obj = HttpRequest.jsonRequest(request_url, json_data);
                     JSONObject result = (JSONObject)message.obj;
-                    if(!result.get("status").equals("200")){
+                    Log.d("111    ",result.toString());
+                    if(result.getInteger("status")!= 200){
+                        Log.d("111    ",result.toString());
                         return;
                     }
+                    Log.d("555    ",result.toString());
 
-                    String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
-                            +"&friendUsername="+name;
 
                     Message message1 = new Message();
                     JSONObject json_data1 = new JSONObject();
                     message.obj = HttpRequest.jsonRequest(request_url_1, json_data1);
                     JSONObject result1 = (JSONObject)message.obj;
 
-                    String accept = JSONObject.parseObject(result.getString("data")).getString("id");
+                    Log.d("556     ",result1.toString());
+                    String accept = JSONObject.parseObject(result1.getString("data")).getString("id");
 
+                    Log.d("557     ",accept.toString());
                     String request_url_2 = "http://10.21.72.100:8081"+ "/operFriendRequest?acceptUserId="+accept
                             +"&sendUserId="+AppData.getInstance().getMe().getId()+"&operType=1";
                     Message message2 = new Message();
@@ -158,6 +166,9 @@ public class User implements Serializable {
         this.refreshFriendList();
         return friendList;
     }
+
+
+
     private void refreshFriendList(){
         final String request_url = "http://10.21.72.100:8081" + "/myFriends?userId="+AppData.getInstance().getMe().getId();
         new Thread(new Runnable() {
@@ -189,5 +200,28 @@ public class User implements Serializable {
                 }
             }
         }).start();
+    }
+    public boolean addGood(Moments moment){
+        double a=Math.random();
+        if(a>0.5){
+            moment.addGood();
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public Moments sendMoments(String text){
+        Moments moment=null;
+        double a=Math.random();
+        if(a>0.5){
+            moment=new Moments(this,text,0);
+            this.momentsList.add(0,moment);
+            return moment;
+        }else{
+            return moment;
+        }
+    }
+    public List<Moments> getMomentsList(){
+        return momentsList;
     }
 }

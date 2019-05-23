@@ -10,17 +10,18 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by cpj on 2016/3/15.
  */
-public class UserAddAdapter extends ArrayAdapter<User>{
+public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializable {
 
     private int resourceId;
-    private UserAddAdapter userAddAdapter=this;
-    public UserAddAdapter(Context context, int textViewResourceId,
-                          List<User> objects){
+    public MomentsAdapter(Context context, int textViewResourceId,
+                          List<Moments> objects){
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
     }
@@ -34,7 +35,7 @@ public class UserAddAdapter extends ArrayAdapter<User>{
      *         5.最后返回布局
      * */
     public View getView(int position, View convertView, ViewGroup parent){
-        User user = getItem(position);
+        Moments moments = getItem(position);
         /*
          * 新增内部类ViewHolder，用于对控件的实例进行缓存。
          * 1.当convertView为空时，创建一个ViewHolder对象，并将控件的实例对象存放在ViewHolder里。
@@ -49,12 +50,11 @@ public class UserAddAdapter extends ArrayAdapter<User>{
             view = LayoutInflater.from(getContext()).inflate(resourceId, null);
             //创建控件实例并进行缓存
             viewHolder = new ViewHolder();
-            viewHolder.layout = (LinearLayout) view.findViewById(R.id.user_add_layout);
-            viewHolder.name = (TextView) view.findViewById(R.id.user_name);
-            viewHolder.button=(Button) view.findViewById(R.id.add_request);
-            viewHolder.image=(ImageView) view.findViewById(R.id.add_user_image) ;
+            viewHolder.text = (TextView) view.findViewById(R.id.moments_text);
+            viewHolder.button=(Button) view.findViewById(R.id.good);
+            viewHolder.image=(ImageView) view.findViewById(R.id.moments_profile_picture) ;
+            viewHolder.goodNum=(TextView)view.findViewById(R.id.good_num) ;
             view.setTag(viewHolder);
-
         } else {
             //convertView参数用于将之前加载好的布局进行缓存，以便之后可以进行复用（提高效率）
             view = convertView;
@@ -63,39 +63,39 @@ public class UserAddAdapter extends ArrayAdapter<User>{
 
         /*接受与发送消息的分类处理*/
         //如果为收到的消息，则显示左边的消息布局，将右边的消息布局隐藏
-        viewHolder.layout.setVisibility(View.VISIBLE);
-        viewHolder.name.setText(user.getName());
-        viewHolder.button.setTag(user);
+        viewHolder.button.setTag(moments);
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(AppData.getInstance().getMe().addFriend((User)v.getTag())==true) {
-                    userAddAdapter.notifyDataSetChanged();
-                    AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
+                if(AppData.getInstance().getMe().addGood((Moments)v.getTag())==true) {
+                    MomentsAdapter.this.notifyDataSetChanged();
+                    AlertDialog alertDialog1 = new AlertDialog.Builder(MomentsAdapter.this.getContext())
                             .setTitle("Good News")//标题
-                            .setMessage("Successful add friend")//内容
+                            .setMessage("success")//内容
                             .setIcon(R.mipmap.ic_launcher)//图标
                             .create();
                     alertDialog1.show();
                 }else{
-                    AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
+                    AlertDialog alertDialog1 = new AlertDialog.Builder(MomentsAdapter.this.getContext())
                             .setTitle("Warning")//标题
-                            .setMessage("No one want to be your friend")//内容
+                            .setMessage("fail")//内容
                             .setIcon(R.mipmap.ic_launcher)//图标
                             .create();
                     alertDialog1.show();
                 }
             }
         });
-        viewHolder.image.setImageResource(user.getProfilePictureID());
+        viewHolder.goodNum.setText(String.valueOf(moments.getGoodnum()));
+        viewHolder.text.setText(moments.getText());
+        viewHolder.image.setImageResource(moments.getUser().getProfilePictureID());
         return view;
     }
 
     //新增内部类ViewHolder，用于对控件的实例进行缓存。
-    class ViewHolder{
-        LinearLayout layout;
-        TextView name;
+    class ViewHolder implements Serializable{
+        TextView text;
         Button button;
         ImageView image;
+        TextView goodNum;
     }
 }

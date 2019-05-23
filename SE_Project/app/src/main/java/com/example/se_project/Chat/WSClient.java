@@ -1,13 +1,20 @@
 package com.example.se_project.Chat;
 
+import android.util.JsonReader;
+import android.util.Log;
+
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.AppData;
+import com.example.se_project.MainActivity;
 import com.example.se_project.Utils;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WSClient extends WebSocketClient {
 
@@ -27,22 +34,37 @@ public class WSClient extends WebSocketClient {
         super( serverURI );
     }
 
-    private String sendId = AppData.getInstance().getMe().getId();
+    private String myId = AppData.getInstance().getMe().getId();
     private int heartBeatTime = 10000;
 
     @Override
     public void onOpen( ServerHandshake handshakedata ) {
 
-        JSONObject chatMsg = Utils.getChatMsg(sendId,"","");
+        JSONObject chatMsg = Utils.getChatMsg(myId,"","");
         JSONObject jsonMsg = Utils.getJsonMsg(CONNECT, chatMsg, null);
         System.out.println("Send onOpen Msg: " + jsonMsg);
         send(jsonMsg.toString());
+        startHeartBeat();
         // if you plan to refuse connection based on ip or httpfields overload: onWebsocketHandshakeReceivedAsClient
     }
 
     @Override
     public void onMessage( String message ) {
-        System.out.println(sendId + " received: " + message );
+        JSONObject json = JSONObject.parseObject(message);
+        if (json.getIntValue("action") == WSClient.CHAT)
+        {
+            JSONObject chatMsg = JSONObject.parseObject(json.getString("chatMsg"));
+            if (chatMsg.getString("receiverId").equals(myId))
+            {
+                AppData.getInstance().reciveChatMsg(chatMsg.getString("senderId"),
+                                                    chatMsg.getString("msg"),
+                                                    chatMsg.getString("msgId"));
+                List<String> list = new ArrayList<>();
+                list.add(chatMsg.getString("msgId"));
+                AppData.getInstance().getWsClient().signMsg(list);
+            }
+        }
+        System.out.println(myId + " received: " + message );
     }
 
     @Override
@@ -57,27 +79,65 @@ public class WSClient extends WebSocketClient {
         // if the error is fatal then onClose will be called additionally
     }
 
-    private Runnable heartBeat = new Runnable() {
-        @Override
-        public void run(){
+    private int checkConnection(){
+        if (isClosed())
+        {
             try{
-                Thread.sleep(heartBeatTime);
-                sendPing();
+                URI Uri = new URI("ws://10.21.72.100:8088/ws");
+                AppData.getInstance().setWsClient(new WSClient(Uri));
+                AppData.getInstance().getWsClient().connect();
+                Log.d("creadWebSocket","finish");
+                return 0;
             }catch (Exception e){
                 e.printStackTrace();
             }
-
         }
-    };
+        return 1;
+    }
+
+    /**
+     * Get information of login and send to server.
+     */
+    private void startHeartBeat( ) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try{
+                    while(true){
+                        Log.d("startHeartBeat","");
+                        Thread.sleep(heartBeatTime);
+                        if (checkConnection() == 1)
+                            sendPing();
+                        else
+                            break;
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
 
 
-    public void sendMsg( String msg ){
+    public void sendMsg(String friendId, String msg ){
 
-        JSONObject chatMsg = Utils.getChatMsg(sendId,"1",msg);
-        JSONObject jsonMsg = Utils.getJsonMsg(CHAT, chatMsg, null);
+        JSONObject chatMsg = Utils.getChatMsg(myId,friendId,msg);
+        JSONObject jsonMsg = Utils.getJsonMsg(CHAT, chatMsg, "null");
         System.out.println("Send Msg: " + jsonMsg);
+        checkConnection();
         send(jsonMsg.toString());
 
+    }
+
+    public void signMsg(List<String> list){
+        JSONArray msgIdList = new JSONArray();
+        msgIdList.addAll(list);
+        JSONObject chatMsg = Utils.getChatMsg(myId,null,"");
+        JSONObject jsonMsg = Utils.getJsonMsg(SIGNED, chatMsg, msgIdList.toString());
+        System.out.println("Send Msg: " + jsonMsg);
+        checkConnection();
+        send(jsonMsg.toString());
     }
 
 }

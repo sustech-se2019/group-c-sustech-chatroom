@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:textColor="#a40d88"/>
+            android:textColor="#0D2EA4"/>
 
     </LinearLayout>
     <!--右chat-->
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:textColor="#a40d88"/>
+            android:textColor="#0D2EA4"/>
         <ImageView
             android:id="@+id/right_chat_user_image"
             android:layout_width="40dp"

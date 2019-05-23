@@ -1,15 +1,32 @@
 package com.example.se_project;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
+import android.content.ContentUris;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.DocumentsContract;
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import android.view.ContextMenu;
@@ -17,11 +34,18 @@ import android.view.MenuItem;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.se_project.Chat.ChatHistory;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import static com.example.se_project.R.id.Image;
 
 /**
  * Created by cpj on 2016/3/15.
@@ -37,9 +61,17 @@ public class ChatActivity extends AppCompatActivity {
     private EditText inputText;
     private Button send;
     private MsgAdapter adapter;
-    private List<Msg> msgList = new ArrayList<Msg>();
+    private List<Msg> msgList;
     private int pos;
     private User chatUser;
+    private File mPhotoFile;
+    private String mPhotoPath;
+    private Button library;
+    private Button camera;
+    private ImageView mImageView;
+    private static final int REQUEST_SYSTEM_PIC = 1;
+    private static final int CAMERA_RESULT = 2;
+
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -48,7 +80,7 @@ public class ChatActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.chat_activity);
-        chatUser=(User)getIntent().getSerializableExtra("ChatUser");
+        chatUser=AppData.getInstance().getChattingFriend();
         initMsgs();//初始化消息数据
         adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList,chatUser);
         inputText = (EditText)findViewById(R.id.input_msg);
@@ -57,34 +89,58 @@ public class ChatActivity extends AppCompatActivity {
         msgListView.setAdapter(adapter);
         registerForContextMenu(msgListView);
 
-        //发送按钮的点击事件
-        send.setOnClickListener(new View.OnClickListener() {
+
+        camera = (Button)findViewById( R.id.camera );
+        library = (Button) findViewById(Image);
+        library.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                String content = inputText.getText().toString();
-                if(!content.equals("")){
-                    Msg msg;
-                    msg = new Msg(content, Msg.TYPE_SENT);
-                    msgList.add(msg);
-                    adapter.notifyDataSetChanged();//当有消息时刷新
-                    msgListView.setSelection(msgList.size());//将ListView定位到最后一行
-                    inputText.setText("");//清空输入框的内容
+                switch (v.getId()){
+                    case R.id.Image:
+                        Intent intent = new Intent();
+                        intent.setClass(ChatActivity.this, UploadActivity.class);
+                        ChatActivity.this.startActivity(intent);
                 }
             }
         });
-        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                view.findViewById(R.id.entry).setVisibility(View.GONE);
-                getWindow().setFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                getSupportFragmentManager().beginTransaction()
-                        .add(R.id.outside, CameraFragment.newInstance()).commit();
-            }
-        });
+
+
+
+
+//        //发送按钮的点击事件
+//        send.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String content = inputText.getText().toString();
+//                if(!content.equals("")){
+//                    AppData.getInstance().sendChatMsg(content);
+//
+//                    refreshView();
+//
+//                    inputText.setText("");//清空输入框的内容
+//                }
+//            }
+//        });
+       findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               getWindow().setFlags(
+                       WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                       WindowManager.LayoutParams.FLAG_FULLSCREEN);
+               getSupportFragmentManager().beginTransaction()
+                       .add(R.id.outside, CameraFragment.newInstance()).addToBackStack(null).commit();
+           }
+       });
 
         initListView();
+        AppData.getInstance().setChatHandler(handler);
+    }
+
+
+    public void refreshView(){
+        adapter.notifyDataSetChanged();//当有消息时刷新
+        msgListView.setSelection(msgList.size());//将ListView定位到最后一行
     }
 
     /**
@@ -108,6 +164,9 @@ public class ChatActivity extends AppCompatActivity {
                 case 500:
                     Log.d("result", result.getString("msg"));
                     break;
+                case 800:
+                    refreshView();
+                    break;
                 default:
                     Log.d("result", result.getString("msg"));
                     break;
@@ -119,12 +178,24 @@ public class ChatActivity extends AppCompatActivity {
      * 初始化消息数据
      * */
     private void initMsgs(){
-        Msg msg1 = new Msg("Hello cpj.", Msg.TYPE_RECEIVED);
-        msgList.add(msg1);
-        Msg msg2 = new Msg("Hello Who is that?", Msg.TYPE_SENT);
-        msgList.add(msg2);
-        Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
-        msgList.add(msg3);
+        ChatHistory history = AppData.getInstance().getChatHistory().get(chatUser.getId());
+        if (history == null)
+        {
+            history = new ChatHistory();
+            history.setFriendId(chatUser.getId());
+            history.setMyId(AppData.getInstance().getMe().getId());
+            history.setLastTime(new Date(System.currentTimeMillis()));
+//            history.setMsgList(new ArrayList<Msg>());
+            AppData.getInstance().getChatHistory().put(chatUser.getId(),history);
+        }
+        msgList = history.getMsgList();
+
+//        Msg msg1 = new Msg("Hello cpj.", Msg.TYPE_RECEIVED);
+//        msgList.add(msg1);
+//        Msg msg2 = new Msg("Hello Who is that?", Msg.TYPE_SENT);
+//        msgList.add(msg2);
+//        Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
+//        msgList.add(msg3);
     }
 
 
@@ -249,7 +320,21 @@ public class ChatActivity extends AppCompatActivity {
     }
 
 
+    public ListView getMsgListView() {
+        return msgListView;
+    }
 
+    public void setMsgListView(ListView msgListView) {
+        this.msgListView = msgListView;
+    }
+
+    public MsgAdapter getAdapter() {
+        return adapter;
+    }
+
+    public void setAdapter(MsgAdapter adapter) {
+        this.adapter = adapter;
+    }
 
 
 

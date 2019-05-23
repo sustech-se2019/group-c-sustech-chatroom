@@ -183,10 +183,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AppData.getInstance().getMe().setId(userInfo.getString("id"));
                     AppData.getInstance().getMe().setName(userInfo.getString("username"));
                     AppData.getInstance().getMe().setGpa(userInfo.getDouble("gpa"));
+                    AppData.getInstance().getFriendList().clear();
+                    AppData.getInstance().getChatHistory().clear();
 
-                    if (AppData.getInstance().getWsClient() == null)
-                        creadWebSocket();
 
+                    creadWebSocket();
+
+                    getUnReadMsg();
                     MainActivity.this.startActivity(intent1);
                     Log.d("result: ", result.getString("data"));
                     break;
@@ -253,8 +256,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     JSONArray msgList = JSONArray.parseArray(result.getString("data"));
                     List<String> signList = new ArrayList<>();
                     for (Object item: msgList) {
-                        JSONObject e = JSONObject.parseObject((String)item);
-                        if (e.getString("toId") == AppData.getInstance().getMe().getId())
+                        JSONObject e = (JSONObject)item;
+                        if (e.getString("toId").equals(AppData.getInstance().getMe().getId()))
                         {
                             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSZ");
                             AppData.getInstance().reciveChatMsg(e.getString("fromId"),
@@ -263,6 +266,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     sdf.parse(e.getString("sendTime")));
                             signList.add(e.getString("msgId"));
                         }
+                    }
+                    if (signList.size() > 0){
+                        System.out.println(signList);
+                        AppData.getInstance().getWsClient().signMsg(signList);
                     }
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
@@ -277,10 +284,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void creadWebSocket() {
+    public void creadWebSocket() {
+        Log.d("creadWebSocket","");
         try{
-            URI Uri= new URI(this.getString(R.string.WebSocket_Server_Url));
+            URI Uri = new URI(this.getString(R.string.WebSocket_Server_Url));
             AppData.getInstance().setWsClient(new WSClient(Uri));
+            AppData.getInstance().getWsClient().connect();
+            Log.d("creadWebSocket","finish");
         }catch (Exception e){
             e.printStackTrace();
         }

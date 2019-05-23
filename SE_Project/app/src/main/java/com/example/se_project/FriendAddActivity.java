@@ -103,8 +103,6 @@ public class FriendAddActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
-
-
             if(!result.getString("status").equals("200")){
                 showdialogMsg(result.getString("msg"));
             }else{
@@ -122,7 +120,7 @@ public class FriendAddActivity extends AppCompatActivity {
     };
 
     private void searchUserByName(String name){
-        final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe()
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/search?myUserId="+AppData.getInstance().getMe().getId()
                 +"&friendUsername="+name;
         new Thread(new Runnable() {
             @Override

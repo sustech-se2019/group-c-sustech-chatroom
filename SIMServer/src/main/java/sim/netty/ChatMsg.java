@@ -10,7 +10,8 @@ public class ChatMsg implements Serializable {
 	private String receiverId;		// 接受者的用户id
 	private String msg;				// 聊天内容
 	private String msgId;			// 用于消息的签收
-	
+	private int type = 0;			// 0:普通消息 1:图片消息
+
 	public String getSenderId() {
 		return senderId;
 	}
@@ -35,5 +36,12 @@ public class ChatMsg implements Serializable {
 	public void setMsgId(String msgId) {
 		this.msgId = msgId;
 	}
-	
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
 }

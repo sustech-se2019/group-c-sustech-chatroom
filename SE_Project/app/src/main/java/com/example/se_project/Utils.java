@@ -1,5 +1,6 @@
 package com.example.se_project;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 public class Utils {
@@ -39,12 +40,21 @@ public class Utils {
         return json;
     }
 
+    public static JSONObject getChatMsg(String senderId, String receiverId, JSONArray msg){
+        JSONObject json = new JSONObject();
+        json.put("msg",msg);
+        json.put("receiverId",receiverId);
+        json.put("senderId",senderId);
+        return json;
+    }
+
     public static JSONObject getChatMsg(String senderId, String receiverId, String msg) {
 
         JSONObject json = new JSONObject();
         json.put("msg",msg);
         json.put("receiverId",receiverId);
         json.put("senderId",senderId);
+
         return json;
     }
 

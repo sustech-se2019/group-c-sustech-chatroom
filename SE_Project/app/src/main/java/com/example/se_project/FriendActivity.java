@@ -26,7 +26,14 @@ public class FriendActivity extends AppCompatActivity {
     private Button search;
     private Button add;
     private UserAdapter adapter;
-    private List<User> userList = new ArrayList<User>();
+    private List<User> userList = AppData.getInstance().getFriendList();
+
+    protected void onStart(){
+        super.onStart();
+        initFriends();
+        adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
+        userListView.setAdapter(adapter);
+    }
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -35,7 +42,7 @@ public class FriendActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         setContentView(R.layout.friend_activity);
-        initFriends();//初始化消息数据
+        //initFriends();//初始化消息数据
         adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
         inputText = (EditText)findViewById(R.id.input_old_friend_name);
         search = (Button)findViewById(R.id.search_friendlist);
@@ -48,6 +55,7 @@ public class FriendActivity extends AppCompatActivity {
                 Intent intent=new Intent(FriendActivity.this,ChatActivity.class);
                 User chatUser=(User)userListView.getItemAtPosition(position);
                 intent.putExtra("ChatUser",chatUser);
+                AppData.getInstance().setChattingFriend(chatUser);
                 startActivity(intent);
             }
         });
@@ -63,6 +71,7 @@ public class FriendActivity extends AppCompatActivity {
                 userListView.setSelection(0);//将ListView定位到最后一行
             }
         });
+
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,11 +89,6 @@ public class FriendActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
-
-
-
-
-
         }
     };
 
@@ -108,14 +112,13 @@ public class FriendActivity extends AppCompatActivity {
 
                     userList.clear();
                     for (Object item:jsonArray) {
-                        JSONObject jsonItem = JSONObject.parseObject(item.toString());
-
+                        JSONObject jsonItem = (JSONObject)item;
+                        System.out.println(jsonItem.toString());
                         User user = new User();
-                        user.setId(jsonItem.getString("id"));
-                        user.setGpa(4.0);
+                        user.setId(jsonItem.getString("friendUserId"));
+                        user.setGpa(jsonItem.getDouble("friendGpa"));
                         user.setName(jsonItem.getString("friendUsername"));
                         userList.add(user);
-
 
                     }
 
