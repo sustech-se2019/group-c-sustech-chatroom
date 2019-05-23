@@ -4,22 +4,8 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/AppData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/AppData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Chat/WSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Chat/WSClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/ChatActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/UploadActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/UploadActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Utils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/test/java/com/example/se_project/UtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/test/java/com/example/se_project/UtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UsersMapperCustom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UsersMapperCustom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/pojo/vo/FriendRequestVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/pojo/vo/FriendRequestVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/pojo/vo/MyFriendsVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/pojo/vo/MyFriendsVO.class" afterDir="false" />
+    <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="Complete image send function.">
+      <change afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/Utils/Utils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -114,7 +100,7 @@
       <file leaf-file-name="FileUtils.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
+            <state relative-caret-position="230">
               <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
             </state>
           </provider>
@@ -300,8 +286,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="346" />
-    <option name="y" value="125" />
+    <option name="x" value="309" />
+    <option name="y" value="27" />
     <option name="width" value="1527" />
     <option name="height" value="1005" />
   </component>
@@ -962,7 +948,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558547744328</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Complete image send function.">
+      <created>1558599438062</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558599438063</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -998,7 +991,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120591000" />
+    <option name="totallyTimeSpent" value="121065000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1010,7 +1003,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="346" y="125" width="1527" height="1005" extended-state="0" />
+    <frame x="309" y="27" width="1527" height="1005" extended-state="0" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
@@ -1124,7 +1117,8 @@
     <MESSAGE value="Implement chat function of sever part." />
     <MESSAGE value="save" />
     <MESSAGE value="Implement Image send function of sever part." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Image send function of sever part." />
+    <MESSAGE value="Complete image send function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete image send function." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1599,7 +1593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
+        <state relative-caret-position="230">
           <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
         </state>
       </provider>
