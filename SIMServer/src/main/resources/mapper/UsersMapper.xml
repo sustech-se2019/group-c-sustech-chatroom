@@ -12,4 +12,5 @@
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
     <result column="gpa" jdbcType="DOUBLE" property="gpa" />
   </resultMap>
+
 </mapper>

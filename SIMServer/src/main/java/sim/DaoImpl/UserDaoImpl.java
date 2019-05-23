@@ -91,6 +91,21 @@ public class UserDaoImpl implements UserDao {
         return SearchFriendsStatusEnum.SUCCESS.status;
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public boolean checkWhetherFriend(String userId1,String userId2){
+        Example mfe = new Example(FriendList.class);
+        Criteria mfc = mfe.createCriteria();
+        mfc.andEqualTo("ownerId", userId1);
+        mfc.andEqualTo("friendId", userId2);
+        FriendList myFriendsRel = friendListMapper.selectOneByExample(mfe);
+        if (myFriendsRel != null) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
@@ -117,6 +132,17 @@ public class UserDaoImpl implements UserDao {
 
         return result != null;
     }
+
+    @Override
+    public void deleteFriend(String userId1, String userId2) {
+        Example mfe = new Example(FriendList.class);
+        Criteria mfc = mfe.createCriteria();
+        mfc.andEqualTo("ownerId", userId1);
+        mfc.andEqualTo("friendId", userId2);
+        FriendList myFriendsRel = friendListMapper.selectOneByExample(mfe);
+        friendListMapper.delete(myFriendsRel);
+    }
+
     /**
      * implement queryUserForLogin()
      *
@@ -144,7 +170,7 @@ public class UserDaoImpl implements UserDao {
 
 
     @Transactional(propagation = Propagation.REQUIRED)
-    private void saveFriends(String sendUserId, String acceptUserId) {
+    public void saveFriends(String sendUserId, String acceptUserId) {
         FriendList myFriends = new FriendList();
 
         myFriends.setOwnerId(sendUserId);
