@@ -76,6 +76,7 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
+        AppData.getInstance().setChatContext(this);
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
@@ -110,31 +111,31 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-//        //发送按钮的点击事件
-//        send.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String content = inputText.getText().toString();
-//                if(!content.equals("")){
-//                    AppData.getInstance().sendChatMsg(content);
-//
-//                    refreshView();
-//
-//                    inputText.setText("");//清空输入框的内容
-//                }
-//            }
-//        });
-//        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                view.findViewById(R.id.entry).setVisibility(View.GONE);
-//                getWindow().setFlags(
-//                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-//                getSupportFragmentManager().beginTransaction()
-//                        .add(R.id.outside, CameraFragment.newInstance()).commit();
-//            }
-//        });
+        //发送按钮的点击事件
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String content = inputText.getText().toString();
+                if(!content.equals("")){
+                    AppData.getInstance().sendChatMsg(content);
+
+                    refreshView();
+
+                    inputText.setText("");//清空输入框的内容
+                }
+            }
+        });
+        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                view.findViewById(R.id.entry).setVisibility(View.GONE);
+                getWindow().setFlags(
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.outside, CameraFragment.newInstance()).commit();
+            }
+        });
 
         initListView();
         AppData.getInstance().setChatHandler(handler);
@@ -193,12 +194,6 @@ public class ChatActivity extends AppCompatActivity {
         }
         msgList = history.getMsgList();
 
-//        Msg msg1 = new Msg("Hello cpj.", Msg.TYPE_RECEIVED);
-//        msgList.add(msg1);
-//        Msg msg2 = new Msg("Hello Who is that?", Msg.TYPE_SENT);
-//        msgList.add(msg2);
-//        Msg msg3 = new Msg("This is pengpeng,Nice talking to you.", Msg.TYPE_RECEIVED);
-//        msgList.add(msg3);
     }
 
 

@@ -56,12 +56,21 @@ public class WSClient extends WebSocketClient {
             JSONObject chatMsg = JSONObject.parseObject(json.getString("chatMsg"));
             if (chatMsg.getString("receiverId").equals(myId))
             {
-                AppData.getInstance().reciveChatMsg(chatMsg.getString("senderId"),
-                                                    chatMsg.getString("msg"),
-                                                    chatMsg.getString("msgId"));
+                int type = chatMsg.getIntValue("type");
+
+                if (type == 1){
+                    AppData.getInstance().reciveImageMsg(chatMsg.getString("senderId"),
+                            chatMsg.getString("msg"),
+                            chatMsg.getString("msgId"),null);
+                }else {
+                    AppData.getInstance().reciveChatMsg(chatMsg.getString("senderId"),
+                            chatMsg.getString("msg"),
+                            chatMsg.getString("msgId"));
+                }
                 List<String> list = new ArrayList<>();
                 list.add(chatMsg.getString("msgId"));
                 AppData.getInstance().getWsClient().signMsg(list);
+
             }
         }
         System.out.println(myId + " received: " + message );

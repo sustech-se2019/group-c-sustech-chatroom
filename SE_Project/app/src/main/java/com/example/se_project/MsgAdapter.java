@@ -8,6 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.example.se_project.Chat.ImageMsg;
+
 import java.util.List;
 
 /**
@@ -53,6 +57,8 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
             viewHolder.rightLayout = (LinearLayout) view.findViewById(R.id.right_msg_layout);
             viewHolder.leftMsg = (TextView) view.findViewById(R.id.left_msg);
             viewHolder.rightMsg = (TextView) view.findViewById(R.id.right_msg);
+            viewHolder.leftImageMsg=(ImageView) view.findViewById(R.id.left_image_msg);
+            viewHolder.rightImageMsg=(ImageView) view.findViewById(R.id.right_image_msg);
             viewHolder.leftImage=(ImageView) view.findViewById(R.id.left_chat_user_image);
             viewHolder.rightImage=(ImageView) view.findViewById(R.id.right_chat_user_image);
             view.setTag(viewHolder);
@@ -68,13 +74,36 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
         if(msg.getType() == Msg.TYPE_RECEIVED){
             viewHolder.leftLayout.setVisibility(View.VISIBLE);
             viewHolder.rightLayout.setVisibility(View.GONE);
-            viewHolder.leftMsg.setText(msg.getContent());
+
+            if (msg.getClass().equals(ImageMsg.class)) {
+                viewHolder.leftMsg.setVisibility(View.GONE);
+                String url = ((ImageMsg) msg).getBigImage();
+                Glide.with(AppData.getInstance().getChatContext())
+                        .load(url)
+                        .into(viewHolder.leftImageMsg);
+            }else {
+                viewHolder.leftImageMsg.setVisibility(View.GONE);
+                viewHolder.leftMsg.setText(msg.getContent());
+            }
+
             viewHolder.leftImage.setImageResource(chatUser.getProfilePictureID());
 
         } else if(msg.getType() == Msg.TYPE_SENT){
             viewHolder.rightLayout.setVisibility(View.VISIBLE);
             viewHolder.leftLayout.setVisibility(View.GONE);
-            viewHolder.rightMsg.setText(msg.getContent());
+
+
+            if (msg.getClass().equals(ImageMsg.class)) {
+                viewHolder.rightMsg.setVisibility(View.GONE);
+                String url = ((ImageMsg) msg).getBigImage();
+                Glide.with(AppData.getInstance().getChatContext())
+                        .load(url)
+                        .into(viewHolder.rightImageMsg);
+            }else {
+                viewHolder.rightImageMsg.setVisibility(View.GONE);
+                viewHolder.rightMsg.setText(msg.getContent());
+            }
+
             viewHolder.leftImage.setImageResource(AppData.getInstance().getMe().getProfilePictureID());
         }
         return view;
@@ -86,6 +115,8 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
         LinearLayout rightLayout;
         TextView leftMsg;
         TextView rightMsg;
+        ImageView leftImageMsg;
+        ImageView rightImageMsg;
         ImageView leftImage;
         ImageView rightImage;
     }
