@@ -133,19 +133,22 @@ public class FileUtils {
 	}
 
 	public static boolean base64ToFile(String filePath, String base64Data)  throws Exception {
-		String dataPrix = "";
+
         String data = "";
         
         if(base64Data == null || "".equals(base64Data)){
             return false;
         }else{
-            String [] d = base64Data.split("base64,");
-            if(d != null && d.length == 2){
-                dataPrix = d[0];
+            String [] d = base64Data.replace("\r\n","")
+					.replace("\n","")
+					.split("base64,");
+            if(d.length == 2){
                 data = d[1];
-            }else{
-                return false;
-            }
+            }else if(d.length == 1){
+				data = d[0];
+            }else {
+            	return false;
+			}
         }
 
         // 因为BASE64Decoder的jar问题，此处使用spring框架提供的工具包

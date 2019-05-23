@@ -8,7 +8,8 @@
 		select
 			sender.id as sendUserId,
 			sender.username as sendUsername,
-			sender.nickname as sendNickname
+			sender.nickname as sendNickname,
+			sender.gpa as sendGpa
 		from
 			friend_request fr
 		left join
@@ -27,7 +28,8 @@
 		select
 			u.id as friendUserId,
 			u.username as friendUsername,
-			u.nickname as friendNickname
+			u.nickname as friendNickname,
+			u.gpa as friendGpa
 		from
 			friend_list mf
 		left join

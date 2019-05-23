@@ -85,7 +85,10 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 			UserDao userDao = (UserDao)SpringUtil.getBean("userDaoImpl");
 			// 扩展字段在signed类型的消息中，代表需要去签收的消息id，逗号间隔
 			String msgIdsStr = dataContent.getExtand();
-			String msgIds[] = msgIdsStr.split(",");
+			String msgIds[] = msgIdsStr.replace("[","")
+									.replace("]","")
+									.replace("\"","")
+									.split(",");
 			
 			List<String> msgIdList = new ArrayList<>();
 			for (String mid : msgIds) {
