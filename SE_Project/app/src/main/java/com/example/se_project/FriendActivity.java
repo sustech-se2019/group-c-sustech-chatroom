@@ -25,6 +25,7 @@ public class FriendActivity extends AppCompatActivity {
     private EditText inputText;
     private Button search;
     private Button add;
+    private Button moment;
     private UserAdapter adapter;
     private List<User> userList = AppData.getInstance().getFriendList();
 
@@ -48,6 +49,7 @@ public class FriendActivity extends AppCompatActivity {
         search = (Button)findViewById(R.id.search_friendlist);
         add = (Button)findViewById(R.id.add_activity);
         userListView = (ListView)findViewById(R.id.friend_list_view);
+        moment=(Button)findViewById(R.id.moments);
         userListView.setAdapter(adapter);
         userListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -71,7 +73,13 @@ public class FriendActivity extends AppCompatActivity {
                 userListView.setSelection(0);//将ListView定位到最后一行
             }
         });
-
+        moment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FriendActivity.this,MomentsActivity.class);
+                startActivity(intent);
+            }
+        });
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +90,11 @@ public class FriendActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
 
     @SuppressLint("HandlerLeak")
     final Handler handler = new Handler() {
