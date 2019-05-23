@@ -5,7 +5,7 @@ import android.util.Log;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.AppData;
-import com.example.se_project.Utils.Utils;
+import com.example.se_project.Utils;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;

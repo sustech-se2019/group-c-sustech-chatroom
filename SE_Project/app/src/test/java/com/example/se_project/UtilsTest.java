@@ -1,7 +1,5 @@
 package com.example.se_project;
 
-import com.example.se_project.Utils.Utils;
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;

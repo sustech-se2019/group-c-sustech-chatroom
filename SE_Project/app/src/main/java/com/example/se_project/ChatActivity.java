@@ -22,7 +22,6 @@ import android.widget.AdapterView;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.ChatHistory;
-import com.example.se_project.Utils.Utils;
 
 import java.io.File;
 import java.util.Date;

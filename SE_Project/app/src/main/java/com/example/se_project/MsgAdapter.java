@@ -1,8 +1,6 @@
 package com.example.se_project;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.se_project.Chat.ImageMsg;
-import com.example.se_project.Utils.Utils;
 
 import java.util.List;
 
