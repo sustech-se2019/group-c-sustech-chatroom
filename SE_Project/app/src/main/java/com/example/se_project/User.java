@@ -1,21 +1,14 @@
 package com.example.se_project;
 
-import android.graphics.drawable.Drawable;
 import android.os.Message;
 import android.util.Log;
-import android.widget.LinearLayout;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Random;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -77,7 +70,7 @@ public class User implements Serializable {
         }
     }
     private void setProfilePictureID(){
-        profilePictureID=R.drawable.gpa0;
+        profilePictureID= R.drawable.gpa0;
         if(potraitnum==3)
             profilePictureID=R.drawable.gpa3;
         else if(potraitnum==2)
@@ -168,7 +161,15 @@ public class User implements Serializable {
         return friendList;
     }
 
-
+    private void refreshFriends(){
+        if (AppData.getInstance().getFriendHandler() == null)
+            return;
+        Message message = new Message();
+        JSONObject result_json = new JSONObject();
+        result_json.put("status",800);
+        message.obj = result_json;
+        AppData.getInstance().getFriendHandler().sendMessage(message);
+    }
 
     private void refreshFriendList(){
         final String request_url = "http://10.21.72.100:8081" + "/myFriends?userId="+AppData.getInstance().getMe().getId();
@@ -191,7 +192,7 @@ public class User implements Serializable {
                         user.setName(jsonItem.getString("friendUsername"));
                         friendList.add(user);
                     }
-
+                    refreshFriends();
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
                     result_json.put("status",500);

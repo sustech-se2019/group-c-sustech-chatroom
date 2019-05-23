@@ -72,8 +72,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         register.setOnClickListener(this);
         //ensure_register.setOnClickListener(this);
 
+
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
         if (AppData.getInstance().getWsClient() != null){
             AppData.getInstance().getWsClient().close();
+            AppData.getInstance().setWsClient(null);
         }
     }
 
@@ -180,8 +187,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         editor.clear();
                     }
                     editor.apply();
-                    Intent intent1 = new Intent();
-                    intent1.setClass(MainActivity.this, FriendActivity.class);
+
 
                     JSONObject userInfo = JSONObject.parseObject(result.getString("data"));
                     AppData.getInstance().getMe().setId(userInfo.getString("id"));
@@ -192,10 +198,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AppData.getInstance().getChatHistory().clear();
 
                     AppData.getInstance().setContext(getApplicationContext());
-
+                    initFriends();
                     creadWebSocket();
 
                     getUnReadMsg();
+
+                    Intent intent1 = new Intent();
+                    intent1.setClass(MainActivity.this, FriendActivity.class);
                     MainActivity.this.startActivity(intent1);
                     Log.d("result: ", result.getString("data"));
                     break;
@@ -299,6 +308,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }).start();
 
+    }
+
+    private void initFriends(){
+        final String request_url = this.getString(R.string.IM_Server_Url) + "/myFriends?userId="+AppData.getInstance().getMe().getId();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("get friend list",result.toString());
+                    JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
+
+                    AppData.getInstance().getFriendList().clear();
+                    for (Object item:jsonArray) {
+                        JSONObject jsonItem = (JSONObject)item;
+                        System.out.println(jsonItem.toString());
+                        User user = new User();
+                        user.setId(jsonItem.getString("friendUserId"));
+                        user.setGpa(jsonItem.getDouble("friendGpa"));
+                        user.setName(jsonItem.getString("friendUsername"));
+                        AppData.getInstance().getFriendList().add(user);
+
+                    }
+
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     public void creadWebSocket() {

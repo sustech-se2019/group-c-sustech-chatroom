@@ -8,6 +8,7 @@ import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import org.apache.commons.lang3.StringUtils;
+import sim.Controller.UserController;
 import sim.Dao.UserDao;
 import sim.enums.MsgActionEnum;
 import sim.utils.JsonUtils;
@@ -45,10 +46,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 			String senderId = dataContent.getChatMsg().getSenderId();
 			UserChannelRel.put(senderId, currentChannel);
 			
-			// 测试
-			for (Channel c : users) {
-				System.out.println(c.id().asLongText());
-			}
+
 			UserChannelRel.output();
 		} else if (action == MsgActionEnum.CHAT.type) {
 			//  2.2  聊天类型的消息，把聊天记录保存到数据库，同时标记消息的签收状态[未签收]
@@ -122,11 +120,13 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 	@Override
 	public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
 		
-		String channelId = ctx.channel().id().asShortText();
+		String channelId = ctx.channel().id().asLongText();
 		System.out.println("客户端被移除，channelId为：" + channelId);
 		
 		// 当触发handlerRemoved，ChannelGroup会自动移除对应客户端的channel
 		users.remove(ctx.channel());
+		String userId = UserChannelRel.remove(channelId);
+		UserController.loginList.remove(userId);
 	}
 
 	@Override
@@ -135,5 +135,8 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 		// 发生异常之后关闭连接（关闭channel），随后从ChannelGroup中移除
 		ctx.channel().close();
 		users.remove(ctx.channel());
+		String userId = UserChannelRel.remove(ctx.channel().id().asLongText());
+		UserController.loginList.remove(userId);
+
 	}
 }

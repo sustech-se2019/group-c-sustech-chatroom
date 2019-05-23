@@ -26,6 +26,7 @@ import sim.utils.*;
 import org.n3r.idworker.Sid;
 import sim.enums.SearchFriendsStatusEnum;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,6 +34,8 @@ import java.util.List;
  */
 @RestController
 public class UserController {
+
+    public static List<String> loginList = new ArrayList<>();
 
     @Autowired
     private UserDao userDao;
@@ -54,14 +57,19 @@ public class UserController {
             return JSONResult.errorMsg("用户名或密码不能为空...");
         }
 
+
+
         Users userResult = userDao.queryUserForLogin(user.getUsername(),
                 user.getPassword());
+
         if (userResult == null) {
             return JSONResult.errorMsg("用户名或密码不正确...");
         }else{
+            if (loginList.contains(userResult.getId()))
+                return JSONResult.errorMsg("用户已登录...");
             UsersVO userVO = new UsersVO();
             BeanUtils.copyProperties(userResult, userVO);
-
+            loginList.add(userResult.getId());
             return JSONResult.ok(userVO);
         }
 
@@ -290,7 +298,6 @@ public class UserController {
         }catch (Exception e){
             e.printStackTrace();
         }
-
 
         // 上传文件到fastdfs
         String url = null;

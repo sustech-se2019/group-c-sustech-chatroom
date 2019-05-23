@@ -32,6 +32,7 @@ public class AppData {
     private List<User> friendList = new ArrayList<>();
     private Handler chatHandler;
     private List<Moments> momentsList;
+    private Handler friendHandler;
 
     private Context context;
     private Context chatContext;
@@ -181,5 +182,13 @@ public class AppData {
 
     public void setChatContext(Context chatContext) {
         this.chatContext = chatContext;
+    }
+
+    public Handler getFriendHandler() {
+        return friendHandler;
+    }
+
+    public void setFriendHandler(Handler friendHandler) {
+        this.friendHandler = friendHandler;
     }
 }

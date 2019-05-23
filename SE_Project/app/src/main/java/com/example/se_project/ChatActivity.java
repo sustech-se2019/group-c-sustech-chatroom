@@ -129,7 +129,7 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     /**
-     * Handle the login in message in {@link JSONObject} type.
+     * Handle the chat in message in {@link JSONObject} type.
      */
     @SuppressLint("HandlerLeak")
     final Handler handler = new Handler() {

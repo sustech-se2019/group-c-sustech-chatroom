@@ -37,7 +37,7 @@ public class FriendActivity extends AppCompatActivity {
 
     protected void onStart(){
         super.onStart();
-        initFriends();
+
         adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
         userListView.setAdapter(adapter);
     }
@@ -105,8 +105,32 @@ public class FriendActivity extends AppCompatActivity {
         Portrait.setImageResource(portait);
 
 
-
+        AppData.getInstance().setFriendHandler(handler);
     }
+
+
+    public void refreshView(){
+        adapter.notifyDataSetChanged();//当有消息时刷新
+    }
+
+    /**
+     * Handle the chat in message in {@link JSONObject} type.
+     */
+    @SuppressLint("HandlerLeak")
+    final Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            JSONObject result = (JSONObject)msg.obj;
+            switch (result.getIntValue("status")) {
+                case 800:
+                    refreshView();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
 
     @Override
@@ -115,55 +139,13 @@ public class FriendActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    @SuppressLint("HandlerLeak")
-    final Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            JSONObject result = (JSONObject)msg.obj;
-        }
-    };
 
 
 
 
 
 
-    private void initFriends(){
-        final String request_url = this.getString(R.string.IM_Server_Url) + "/myFriends?userId="+AppData.getInstance().getMe().getId();
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Message message = new Message();
-                try {
-                    JSONObject json_data = new JSONObject();
-                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
-                    JSONObject result = (JSONObject)message.obj;
-                    Log.d("get friend list",result.toString());
-                    JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
 
-                    userList.clear();
-                    for (Object item:jsonArray) {
-                        JSONObject jsonItem = (JSONObject)item;
-                        System.out.println(jsonItem.toString());
-                        User user = new User();
-                        user.setId(jsonItem.getString("friendUserId"));
-                        user.setGpa(jsonItem.getDouble("friendGpa"));
-                        user.setName(jsonItem.getString("friendUsername"));
-                        userList.add(user);
-
-                    }
-
-                } catch (Exception e) {
-                    JSONObject result_json = new JSONObject();
-                    result_json.put("status",500);
-                    result_json.put("msg","连接服务器失败...");
-                    message.obj = result_json;
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
     private void searchFriendByName(String name){
     }
 
