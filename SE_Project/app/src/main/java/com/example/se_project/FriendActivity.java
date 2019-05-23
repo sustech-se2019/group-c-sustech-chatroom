@@ -68,12 +68,12 @@ public class FriendActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String content = inputText.getText().toString();
-                searchFriendByName(content);    //update userList
-                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-                userListView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();//当有消息时刷新
-                userListView.setSelection(0);//将ListView定位到最后一行
+//                String content = inputText.getText().toString();
+//                searchFriendByName(content);    //update userList
+//                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
+//                userListView.setAdapter(adapter);
+//                adapter.notifyDataSetChanged();//当有消息时刷新
+//                userListView.setSelection(0);//将ListView定位到最后一行
             }
         });
         moment.setOnClickListener(new View.OnClickListener() {
