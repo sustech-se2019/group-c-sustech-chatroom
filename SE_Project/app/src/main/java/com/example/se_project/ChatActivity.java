@@ -69,6 +69,7 @@ public class ChatActivity extends AppCompatActivity {
     private Button library;
     private Button camera;
     private ImageView mImageView;
+    private CameraFragment cameraFragment;
     private static final int REQUEST_SYSTEM_PIC = 1;
     private static final int CAMERA_RESULT = 2;
 
@@ -125,11 +126,12 @@ public class ChatActivity extends AppCompatActivity {
        findViewById(R.id.camera).setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               cameraFragment = CameraFragment.newInstance();
                getWindow().setFlags(
                        WindowManager.LayoutParams.FLAG_FULLSCREEN,
                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
                getSupportFragmentManager().beginTransaction()
-                       .add(R.id.outside, CameraFragment.newInstance()).addToBackStack(null).commit();
+                       .add(R.id.outside, cameraFragment).addToBackStack(null).commit();
            }
        });
 
@@ -279,7 +281,8 @@ public class ChatActivity extends AppCompatActivity {
      * {@inheritDoc}
      */
     public void onBackPressed() {
-        finish();
+        if (cameraFragment != null ) cameraFragment.onBackPressed();
+        else finish();
     }
 
     /**
