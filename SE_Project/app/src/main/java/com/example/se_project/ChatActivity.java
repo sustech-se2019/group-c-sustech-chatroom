@@ -51,6 +51,7 @@ public class ChatActivity extends AppCompatActivity {
     private Button library;
     private Button camera;
     private ImageView mImageView;
+    private CameraFragment cameraFragment;
     private static final int REQUEST_SYSTEM_PIC = 1;
     private static final int CAMERA_RESULT = 2;
 
@@ -257,7 +258,8 @@ public class ChatActivity extends AppCompatActivity {
      * {@inheritDoc}
      */
     public void onBackPressed() {
-        finish();
+        if (cameraFragment != null ) cameraFragment.onBackPressed();
+        else finish();
     }
 
     /**
