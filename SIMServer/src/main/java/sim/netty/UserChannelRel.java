@@ -25,4 +25,20 @@ public class UserChannelRel {
 							+ ", ChannelId: " + entry.getValue().id().asLongText());
 		}
 	}
+
+	public static String remove(String Channel){
+		String userId = null;
+		for (HashMap.Entry<String, Channel> entry : manager.entrySet()) {
+			if(Channel.equals(entry.getValue().id().asLongText())){
+				userId = entry.getKey();
+				break;
+			}
+		}
+		System.out.println("Remove UserId: " + userId
+				+ ", ChannelId: " + Channel);
+		if (userId != null){
+			manager.remove(userId);
+		}
+		return userId;
+	}
 }
