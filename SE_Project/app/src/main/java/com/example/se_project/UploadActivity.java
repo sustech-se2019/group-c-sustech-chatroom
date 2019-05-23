@@ -45,6 +45,9 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private Bitmap bitmap;
     private String imgPath;
 
+    private boolean getPermission;
+    private boolean permissionGranted;
+    private boolean permissionDenied;
     //要申请的权限
     private String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
@@ -85,6 +88,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         //框架要求必须这么写
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+        getPermission=true;
     }
 
 
@@ -93,12 +97,13 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
 
         Toast.makeText(this, "相关权限获取成功", Toast.LENGTH_SHORT).show();
-
+        permissionGranted=true;
     }
     //用户未同意权限
     @Override
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
         Toast.makeText(this, "请同意相关权限，否则功能无法使用", Toast.LENGTH_SHORT).show();
+        permissionDenied=true;
     }
 
 
@@ -255,4 +260,17 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
             prgDialog .dismiss();
         }
     }
+
+    public boolean isGetPermission() {
+        return getPermission;
+    }
+
+    public boolean isPermissionGranted() {
+        return permissionGranted;
+    }
+
+    public boolean isPermissionDenied() {
+        return permissionDenied;
+    }
+
 }
