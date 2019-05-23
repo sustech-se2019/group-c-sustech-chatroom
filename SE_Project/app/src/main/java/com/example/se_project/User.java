@@ -3,6 +3,7 @@ package com.example.se_project;
 import android.graphics.drawable.Drawable;
 import android.os.Message;
 import android.util.Log;
+import android.widget.LinearLayout;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -13,6 +14,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,6 +27,7 @@ public class User implements Serializable {
     private int potraitnum; //头像ID
     private int profilePictureID;
     private ArrayList<User> friendList=new ArrayList();
+    private ArrayList<Moments> momentsList=new ArrayList<>();
     public User(){
 
     }
@@ -197,5 +200,28 @@ public class User implements Serializable {
                 }
             }
         }).start();
+    }
+    public boolean addGood(Moments moment){
+        double a=Math.random();
+        if(a>0.5){
+            moment.addGood();
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public Moments sendMoments(String text){
+        Moments moment=null;
+        double a=Math.random();
+        if(a>0.5){
+            moment=new Moments(this,text,0);
+            this.momentsList.add(0,moment);
+            return moment;
+        }else{
+            return moment;
+        }
+    }
+    public List<Moments> getMomentsList(){
+        return momentsList;
     }
 }
