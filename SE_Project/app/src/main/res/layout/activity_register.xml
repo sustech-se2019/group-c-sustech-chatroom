@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -32,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="请输入您的用户名" />
+            android:hint="Please input your username" />
     </LinearLayout>
 
 
@@ -47,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="请输入您的密码" />
+            android:hint="Please input your password" />
 
     </LinearLayout>
     <LinearLayout
@@ -61,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="请再次输入您的密码" />
+            android:hint="Please input your password again" />
 
     </LinearLayout>
     <LinearLayout
@@ -75,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="请输入您的GPA" />
+            android:hint="Please input your GPA" />
 
     </LinearLayout>
 
@@ -92,7 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="确定"
+            android:text="OK"
             android:textColor="#F3ECEC"
             android:background="@drawable/button_style1"
             android:textSize="18sp" />

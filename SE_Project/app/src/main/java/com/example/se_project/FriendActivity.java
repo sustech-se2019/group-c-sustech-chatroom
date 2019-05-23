@@ -37,9 +37,7 @@ public class FriendActivity extends AppCompatActivity {
 
     protected void onStart(){
         super.onStart();
-
-        adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-        userListView.setAdapter(adapter);
+        refreshView();
     }
 
     protected void onCreate(Bundle saveInstanceState){
@@ -51,7 +49,6 @@ public class FriendActivity extends AppCompatActivity {
         setContentView(R.layout.friend_activity);
         //initFriends();//初始化消息数据
         adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-        inputText = (EditText)findViewById(R.id.input_old_friend_name);
         search = (Button)findViewById(R.id.search_friendlist);
         add = (Button)findViewById(R.id.add_activity);
         userListView = (ListView)findViewById(R.id.friend_list_view);
@@ -71,12 +68,12 @@ public class FriendActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String content = inputText.getText().toString();
-                searchFriendByName(content);    //update userList
-                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-                userListView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();//当有消息时刷新
-                userListView.setSelection(0);//将ListView定位到最后一行
+//                String content = inputText.getText().toString();
+//                searchFriendByName(content);    //update userList
+//                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
+//                userListView.setAdapter(adapter);
+//                adapter.notifyDataSetChanged();//当有消息时刷新
+//                userListView.setSelection(0);//将ListView定位到最后一行
             }
         });
         moment.setOnClickListener(new View.OnClickListener() {
@@ -138,11 +135,6 @@ public class FriendActivity extends AppCompatActivity {
         super.onResume();
         adapter.notifyDataSetChanged();
     }
-
-
-
-
-
 
 
 

@@ -36,6 +36,11 @@
             android:divider="#0000">
         </ListView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/white"
+            ></LinearLayout>
         <!--输入框部分（横排排列）-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,32 +62,34 @@
             <!--发送按钮-->
             <Button
                 android:id="@+id/send_msg"
-                android:layout_width="80dp"
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:textAllCaps="false"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/button_style1"
-                android:textColor="@color/white"
-                android:text="Send"/>
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/send"
+                android:textColor="@color/white" />
 
             <Button
-                android:text="@string/entry_button_name"
-                android:layout_width="80dp"
+
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/camera"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/button_style1"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/camera"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 />
 
             <Button
-                android:text="Image"
-                android:layout_width="80dp"
+
+                android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:id="@+id/Image"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/button_style1"
+                android:layout_marginHorizontal="5dp"
+                android:background="@drawable/picture"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 />

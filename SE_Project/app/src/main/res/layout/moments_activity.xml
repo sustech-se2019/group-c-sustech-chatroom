@@ -8,7 +8,7 @@
         android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:background="@drawable/style2"
             >
             <LinearLayout
@@ -30,11 +30,11 @@
                     android:id="@+id/user_name_moments"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:text="奥巴马"
                     android:textAllCaps="false"
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
             </LinearLayout>
 
             <Button
