@@ -37,9 +37,7 @@ public class FriendActivity extends AppCompatActivity {
 
     protected void onStart(){
         super.onStart();
-
-        adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-        userListView.setAdapter(adapter);
+        refreshView();
     }
 
     protected void onCreate(Bundle saveInstanceState){
@@ -138,11 +136,6 @@ public class FriendActivity extends AppCompatActivity {
         super.onResume();
         adapter.notifyDataSetChanged();
     }
-
-
-
-
-
 
 
 

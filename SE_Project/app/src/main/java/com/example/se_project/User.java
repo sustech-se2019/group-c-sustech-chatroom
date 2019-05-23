@@ -20,7 +20,7 @@ public class User implements Serializable {
     private String nickName;
     private int potraitnum; //头像ID
     private int profilePictureID;
-    private ArrayList<User> friendList=new ArrayList();
+    private List<User> friendList=new ArrayList<>();
     private ArrayList<Moments> momentsList=new ArrayList<>();
     public User(){
 
@@ -83,9 +83,11 @@ public class User implements Serializable {
     public int getProfilePictureID(){
         return profilePictureID;
     }
+
     public int getPotraitnum(){
         return potraitnum;
     }
+
     public boolean addFriend(User user){
         final String request_url = "http://10.21.72.100:8081" + "/addFriendRequest?myUserId="+AppData.getInstance().getMe().getId()+"&friendUsername="+user.getName();
         final String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
@@ -134,9 +136,10 @@ public class User implements Serializable {
     }
     public boolean deleteFriend(User user){
         this.refreshFriendList();
-        for(int i=0;i<friendList.size();i++) {
-            if (user.getId() == friendList.get(i).getId()) {
-                friendList.remove(i);
+        List<User> list= AppData.getInstance().getFriendList();
+        for(int i=0;i<list.size();i++) {
+            if (user.getId() == list.get(i).getId()) {
+                list.remove(i);
                 //add
                 return true;
             }
@@ -148,15 +151,16 @@ public class User implements Serializable {
         Pattern pattern=Pattern.compile(name);
         Matcher matcher;
         ArrayList<User> resultList=new ArrayList<>();
-        for(int i=0;i<friendList.size();i++) {
-            matcher = pattern.matcher((friendList.get(i)).getName());
+        List<User> list= AppData.getInstance().getFriendList();
+        for(int i=0;i<list.size();i++) {
+            matcher = pattern.matcher((list.get(i)).getName());
             if (matcher.find()) {
-                resultList.add(friendList.get(i));
+                resultList.add(list.get(i));
             }
         }
         return resultList;
     }
-    public ArrayList<User> getFriendList(){
+    public List<User> getFriendList(){
         this.refreshFriendList();
         return friendList;
     }
@@ -183,15 +187,17 @@ public class User implements Serializable {
                     JSONObject result = (JSONObject)message.obj;
                     Log.d("get friend list",result.toString());
                     JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
-                    friendList.clear();
+
+                    AppData.getInstance().getFriendList().clear();
                     for (Object item:jsonArray) {
-                        JSONObject jsonItem = JSONObject.parseObject((String)item);
+                        JSONObject jsonItem = (JSONObject)item;
                         User user = new User();
                         user.setId(jsonItem.getString("id"));
                         user.setGpa(4.0);
                         user.setName(jsonItem.getString("friendUsername"));
-                        friendList.add(user);
+                        AppData.getInstance().getFriendList().add(user);
                     }
+                    Log.d("refreshFriendList",AppData.getInstance().getFriendList().toString());
                     refreshFriends();
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
