@@ -56,7 +56,7 @@ public class AppData {
             Msg m = new Msg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
             history.getMsgList().add(m);
         }
-
+        refreshChat();
     }
 
     public void reciveChatMsg(String friendId, String msg, String msgId, Date time){
@@ -89,6 +89,14 @@ public class AppData {
         }
 
         Msg m = new Msg(msg, Msg.TYPE_RECEIVED, msgId);
+        history.getMsgList().add(m);
+        refreshChat();
+    }
+
+    public void sendImageMsg(String msg){
+        ChatHistory history = chatHistory.get(chattingFriend.getId());
+
+        ImageMsg m = new ImageMsg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
         history.getMsgList().add(m);
         refreshChat();
     }

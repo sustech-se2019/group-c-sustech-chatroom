@@ -72,8 +72,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         register.setOnClickListener(this);
         //ensure_register.setOnClickListener(this);
 
-
+        if (AppData.getInstance().getWsClient() != null){
+            AppData.getInstance().getWsClient().close();
+        }
     }
+
+
     /**
      * To show wrong password dialog.
      */

@@ -1,13 +1,11 @@
 package com.example.se_project.Chat;
 
-import android.util.JsonReader;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.AppData;
-import com.example.se_project.MainActivity;
-import com.example.se_project.Utils;
+import com.example.se_project.Utils.Utils;
 
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;

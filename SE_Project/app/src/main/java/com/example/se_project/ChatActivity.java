@@ -1,25 +1,10 @@
 package com.example.se_project;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.content.ContentUris;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -34,14 +19,12 @@ import android.view.MenuItem;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.View.OnCreateContextMenuListener;
 import android.widget.AdapterView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.se_project.Chat.ChatHistory;
+import com.example.se_project.Utils.Utils;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -97,12 +80,12 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                switch (v.getId()){
-                    case R.id.Image:
-                        Intent intent = new Intent();
-                        intent.setClass(ChatActivity.this, UploadActivity.class);
-                        ChatActivity.this.startActivity(intent);
-                }
+            switch (v.getId()){
+                case R.id.Image:
+                    Intent intent = new Intent();
+                    intent.setClass(ChatActivity.this, UploadActivity.class);
+                    ChatActivity.this.startActivity(intent);
+            }
             }
         });
 

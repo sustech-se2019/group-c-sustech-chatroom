@@ -63,14 +63,7 @@ public class FriendAddActivity extends AppCompatActivity {
     }
 
     private void initFriends(){
-        User user1 = new User("a", 1);
-        userList.add(user1);
-        User user2 = new User("b", 2);
-        userList.add(user2);
-        User user3 = new User("c", 3);
-        userList.add(user3);
-        User user4 = new User("d", 4);
-        userList.add(user4);
+
     }
 
     void showdialogMsg(String msg)

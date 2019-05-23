@@ -1,6 +1,8 @@
 package com.example.se_project;
 
 import android.content.Context;
+import android.graphics.Point;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.se_project.Chat.ImageMsg;
+import com.example.se_project.Utils.Utils;
 
 import java.util.List;
 
@@ -76,13 +79,18 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
             viewHolder.rightLayout.setVisibility(View.GONE);
 
             if (msg.getClass().equals(ImageMsg.class)) {
-                viewHolder.leftMsg.setVisibility(View.GONE);
+//                viewHolder.leftMsg.setVisibility(View.GONE);
                 String url = ((ImageMsg) msg).getBigImage();
+                int width = Utils.getScreenWidth();
+                viewHolder.leftImageMsg.setMaxWidth(width/2);
+                viewHolder.leftImageMsg.setMaxHeight(width/2*5);
+
                 Glide.with(AppData.getInstance().getChatContext())
                         .load(url)
                         .into(viewHolder.leftImageMsg);
+
             }else {
-                viewHolder.leftImageMsg.setVisibility(View.GONE);
+//                viewHolder.leftImageMsg.setVisibility(View.GONE);
                 viewHolder.leftMsg.setText(msg.getContent());
             }
 
@@ -94,13 +102,17 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
 
 
             if (msg.getClass().equals(ImageMsg.class)) {
-                viewHolder.rightMsg.setVisibility(View.GONE);
+//                viewHolder.rightMsg.setVisibility(View.GONE);
                 String url = ((ImageMsg) msg).getBigImage();
+                int width = Utils.getScreenWidth();
+                viewHolder.rightImageMsg.setMaxWidth(width/2);
+                viewHolder.rightImageMsg.setMaxHeight(width/2*5);
+
                 Glide.with(AppData.getInstance().getChatContext())
                         .load(url)
                         .into(viewHolder.rightImageMsg);
             }else {
-                viewHolder.rightImageMsg.setVisibility(View.GONE);
+//                viewHolder.rightImageMsg.setVisibility(View.GONE);
                 viewHolder.rightMsg.setText(msg.getContent());
             }
 
