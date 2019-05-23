@@ -21,6 +21,8 @@ public class MomentsActivity extends AppCompatActivity {
     private ArrayAdapter adapter;
     private List<Moments> momentsList=AppData.getInstance().getMe().getMomentsList();;
     AlertDialog alertdialog1;
+    private TextView NickName;
+    private ImageView Portrait;
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -44,6 +46,17 @@ public class MomentsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        User me  = AppData.getInstance().getMe();
+        String name = me.getNickName();
+        int portait = me.getProfilePictureID();
+
+        NickName = findViewById(R.id.user_name_moments);
+        Portrait = findViewById(R.id.user_portait_moments);
+
+        NickName.setText(name);
+        Portrait.setImageResource(portait);
+
+
     }
 
     @Override

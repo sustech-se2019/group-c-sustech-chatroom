@@ -17,6 +17,7 @@
             android:background="#4169E1">
             <TextView
                 android:layout_width="match_parent"
+                android:id="@+id/Chat_who"
                 android:layout_height="60dp"
                 android:gravity="center"
                 android:textSize="20dp"

@@ -11,18 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"/>
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_margin="16dp"
-        android:background="@color/aliceblue"/>
-
     <Button
         android:id="@+id/choose_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/button_style1"
+        android:layout_marginVertical="50dp"
         android:textColor="@color/white"
         android:text="Choose Image"/>
 
