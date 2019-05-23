@@ -178,7 +178,7 @@ public class CameraFragment extends Fragment
      * {@inheritDoc}
      */
     public void onViewCreated(final View view, Bundle savedInstanceState) {
-        view.findViewById(R.id.killcamera).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.close_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().getWindow().clearFlags(
