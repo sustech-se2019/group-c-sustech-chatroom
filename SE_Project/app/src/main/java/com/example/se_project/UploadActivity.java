@@ -39,7 +39,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private EditText editTextName;
     private ProgressDialog prgDialog;
 
-    private int RESULT_LOAD_IMG = 1;
+    private static final int RESULT_LOAD_IMG = 1;
     //private RequestParams params = new RequestParams();
     private String encodedString;
     private Bitmap bitmap;
@@ -49,7 +49,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private boolean permissionGranted;
     private boolean permissionDenied;
     //要申请的权限
-    private String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+    private final String[] permissions = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
 
     @Override
@@ -116,6 +116,8 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.upload_image:
                 uploadImage();
                 break;
+            default:
+                break;
         }
     }
 
@@ -156,16 +158,16 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
 
     //开始上传图片
     private void uploadImage() {
-        if (imgPath != null && !imgPath.isEmpty()) {
+        if (imgPath == null || imgPath.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "You must select image from gallery before you try to upload",
+                    Toast.LENGTH_LONG).show();
+        } else {
             prgDialog.setMessage("Converting Image to Binary Data");
             prgDialog.show();
             String userId = AppData.getInstance().getMe().getId();
             String recvId = AppData.getInstance().getChattingFriend().getId();
             String base64 = path2Base64(imgPath);
             upload(userId, recvId, base64);
-        } else {
-            Toast.makeText(getApplicationContext(), "You must select image from gallery before you try to upload",
-                    Toast.LENGTH_LONG).show();
         }
     }
 

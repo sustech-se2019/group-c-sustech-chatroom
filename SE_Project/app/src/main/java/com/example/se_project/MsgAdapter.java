@@ -19,8 +19,9 @@ import java.util.List;
  */
 public class MsgAdapter extends ArrayAdapter<Msg>{
 
-    private int resourceId;
-    private User chatUser;
+    private final int resourceId;
+    private final User chatUser;
+
     public MsgAdapter(Context context, int textViewResourceId,
                       List<Msg> objects,User chatUser){
         super(context, textViewResourceId, objects);

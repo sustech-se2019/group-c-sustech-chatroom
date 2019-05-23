@@ -19,12 +19,6 @@ import java.util.Map;
 
 public class AppData {
 
-    private static AppData singletonData = new AppData();
-
-    public static AppData getInstance(){
-        return singletonData;
-    }
-
     private User me = new User();
     private WSClient wsClient;
     private User chattingFriend = new User();
@@ -36,6 +30,12 @@ public class AppData {
 
     private Context context;
     private Context chatContext;
+
+    private static AppData singletonData = new AppData();
+
+    public static AppData getInstance(){
+        return singletonData;
+    }
 
     private void refreshChat(){
         if (chatHandler == null)
@@ -103,6 +103,7 @@ public class AppData {
     }
 
     public void reciveImageMsg(String friendId, String msg, String msgId, Date time){
+
         if (time == null)
             time = new Date(System.currentTimeMillis());
         ChatHistory history = chatHistory.get(friendId);

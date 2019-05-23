@@ -203,7 +203,7 @@ public class CameraFragment extends Fragment
      */
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA);
         Date date = new Date(System.currentTimeMillis());
         mFile = new File(getActivity().getExternalFilesDir(null), simpleDateFormat.format(date)+".jpg");
     }

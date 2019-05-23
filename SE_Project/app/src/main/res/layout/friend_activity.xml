@@ -36,7 +36,7 @@
             >
 
             <ImageView
-                android:id="@+id/user_portait"
+                android:id="@+id/user_portrait"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"

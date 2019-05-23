@@ -20,8 +20,8 @@ public class User implements Serializable {
     private String nickName;
     private int potraitnum; //头像ID
     private int profilePictureID;
-    private List<User> friendList=new ArrayList<>();
-    private ArrayList<Moments> momentsList=new ArrayList<>();
+    private final List<User> friendList=new ArrayList<>();
+    private final ArrayList<Moments> momentsList=new ArrayList<>();
     public User(){
 
     }

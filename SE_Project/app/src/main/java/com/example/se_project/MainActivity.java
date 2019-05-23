@@ -10,15 +10,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.support.v7.app.AlertDialog;
-import android.content.DialogInterface;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -27,15 +23,13 @@ import com.example.se_project.Chat.WSClient;
 import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Main activity of the application.
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-
-
 
     private CheckBox userRemember, passwordRemember;
     private SharedPreferences sp;
@@ -175,7 +169,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             switch (result.getIntValue("status")) {
                 case 200:
                     //登录成功
-
                     SharedPreferences.Editor editor = sp.edit();
                     if(userRemember.isChecked()){
                         editor.putBoolean("isUserRemember",true);
@@ -192,7 +185,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                     editor.apply();
 
-
                     JSONObject userInfo = JSONObject.parseObject(result.getString("data"));
                     AppData.getInstance().getMe().setId(userInfo.getString("id"));
                     AppData.getInstance().getMe().setName(userInfo.getString("username"));
@@ -200,7 +192,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     AppData.getInstance().getMe().setNickName(userInfo.getString("nickname"));
                     AppData.getInstance().getFriendList().clear();
                     AppData.getInstance().getChatHistory().clear();
-
                     AppData.getInstance().setContext(getApplicationContext());
                     initFriends();
                     creadWebSocket();
@@ -278,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         JSONObject chatMsg = (JSONObject)item;
                         if (chatMsg.getString("toId").equals(AppData.getInstance().getMe().getId()))
                         {
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSZ");
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSZ", Locale.CHINA);
 
                             int type = chatMsg.getIntValue("type");
 
@@ -297,8 +288,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             signList.add(chatMsg.getString("msgId"));
                         }
                     }
-                    if (signList.size() > 0){
-                        System.out.println(signList);
+                    if (!signList.isEmpty()){
                         AppData.getInstance().getWsClient().signMsg(signList);
                     }
                 } catch (Exception e) {

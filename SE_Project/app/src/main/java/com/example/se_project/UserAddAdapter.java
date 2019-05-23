@@ -17,8 +17,8 @@ import java.util.List;
  */
 public class UserAddAdapter extends ArrayAdapter<User>{
 
-    private int resourceId;
-    private UserAddAdapter userAddAdapter=this;
+    private final int resourceId;
+    private final UserAddAdapter userAddAdapter=this;
     public UserAddAdapter(Context context, int textViewResourceId,
                           List<User> objects){
         super(context, textViewResourceId, objects);
@@ -69,7 +69,7 @@ public class UserAddAdapter extends ArrayAdapter<User>{
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(AppData.getInstance().getMe().addFriend((User)v.getTag())==true) {
+                if(AppData.getInstance().getMe().addFriend((User)v.getTag())) {
                     userAddAdapter.notifyDataSetChanged();
                     AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
                             .setTitle("Good News")//标题

@@ -12,7 +12,6 @@ public class ChatHistory {
     private String myId;
     private Date lastTime;
     private List<Msg> msgList = new ArrayList<Msg>(){
-        @Override
         public boolean add(Msg e){
             lastTime = e.getSendTime();
             return super.add(e);

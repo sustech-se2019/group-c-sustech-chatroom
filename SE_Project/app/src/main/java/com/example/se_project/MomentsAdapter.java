@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.Serializable;
@@ -19,7 +18,7 @@ import java.util.List;
  */
 public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializable {
 
-    private int resourceId;
+    private final int resourceId;
     public MomentsAdapter(Context context, int textViewResourceId,
                           List<Moments> objects){
         super(context, textViewResourceId, objects);
@@ -67,7 +66,7 @@ public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializabl
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(AppData.getInstance().getMe().addGood((Moments)v.getTag())==true) {
+                if(AppData.getInstance().getMe().addGood((Moments)v.getTag())) {
                     MomentsAdapter.this.notifyDataSetChanged();
                     AlertDialog alertDialog1 = new AlertDialog.Builder(MomentsAdapter.this.getContext())
                             .setTitle("Good News")//标题

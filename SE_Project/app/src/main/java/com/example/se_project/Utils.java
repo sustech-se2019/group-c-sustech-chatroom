@@ -1,12 +1,10 @@
 package com.example.se_project;
 
 import android.os.Environment;
-import android.util.DisplayMetrics;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.example.se_project.AppData;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,11 +20,7 @@ public class Utils {
      */
     //英文占1byte，非英文（可认为是中文）占2byte，根据这个特性来判断字符
     public static boolean checkChar(char ch) {
-        if ((ch + "").getBytes().length == 1) {
-            return true;//英文
-        } else {
-            return false;//不是英文
-        }
+        return (ch + "").getBytes().length == 1;//英文
     }
 
     public static boolean checkString(String str) {
@@ -89,10 +83,7 @@ public class Utils {
     }
 
     public static int getScreenWidth(){
-        DisplayMetrics dm =
-                AppData.getInstance().getContext().getResources().getDisplayMetrics();
-        return dm.widthPixels;
+        return AppData.getInstance().getContext().getResources().getDisplayMetrics().widthPixels;
     }
-
 
 }

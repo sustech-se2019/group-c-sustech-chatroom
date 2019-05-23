@@ -14,15 +14,9 @@ import android.widget.TextView;
 import java.util.List;
 
 public class MomentsActivity extends AppCompatActivity {
-    private ListView momentsListView;
-    private TextView userName;
-    private ImageView portait;
-    private Button editMoments;
     private ArrayAdapter adapter;
-    private List<Moments> momentsList=AppData.getInstance().getMe().getMomentsList();;
+    private final List<Moments> momentsList=AppData.getInstance().getMe().getMomentsList();;
     AlertDialog alertdialog1;
-    private TextView NickName;
-    private ImageView Portrait;
 
     protected void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
@@ -32,10 +26,10 @@ public class MomentsActivity extends AppCompatActivity {
         }
         setContentView(R.layout.moments_activity);
         adapter = new MomentsAdapter(MomentsActivity.this, R.layout.moments_layout, momentsList);
-        userName = (TextView) findViewById(R.id.user_name);
-        portait = (ImageView) findViewById(R.id.user_portait);
-        editMoments = (Button)findViewById(R.id.edit_moment);
-        momentsListView = (ListView)findViewById(R.id.moments_list_view);
+        TextView userName = findViewById(R.id.user_name);
+        ImageView portrait = findViewById(R.id.user_portrait);
+        Button editMoments = findViewById(R.id.edit_moment);
+        ListView momentsListView = (ListView)findViewById(R.id.moments_list_view);
         momentsListView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         //发送按钮的点击事件
@@ -48,13 +42,13 @@ public class MomentsActivity extends AppCompatActivity {
         });
         User me  = AppData.getInstance().getMe();
         String name = me.getNickName();
-        int portait = me.getProfilePictureID();
+        int portraitID = me.getProfilePictureID();
 
-        NickName = findViewById(R.id.user_name_moments);
-        Portrait = findViewById(R.id.user_portait_moments);
+        TextView NickName = findViewById(R.id.user_name_moments);
+        ImageView Portrait = findViewById(R.id.user_portait_moments);
 
         NickName.setText(name);
-        Portrait.setImageResource(portait);
+        Portrait.setImageResource(portraitID);
 
 
     }

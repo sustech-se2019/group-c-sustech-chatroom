@@ -18,14 +18,12 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FriendAddActivity extends AppCompatActivity {
+public class FriendAddActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView userListView;
     private EditText inputText;
-    private Button search;
     private Button back;
-    private Button add;
     private UserAddAdapter adapter;
-    private List<User> userList = new ArrayList<User>();
+    private final List<User> userList = new ArrayList<User>();
     AlertDialog alertdialog1;
 
     protected void onCreate(Bundle saveInstanceState){
@@ -38,28 +36,26 @@ public class FriendAddActivity extends AppCompatActivity {
         initFriends();//初始化消息数据
         adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
         inputText = (EditText)findViewById(R.id.input_user_name);
-        search = (Button)findViewById(R.id.search_user);
-        add = (Button)findViewById(R.id.add_request);
+        Button add = (Button)findViewById(R.id.add_request);
         userListView = (ListView)findViewById(R.id.user_list_view);
         userListView.setAdapter(adapter);
 
-        //发送按钮的点击事件
-        search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
+    public void onClick(View view) {
+        if(view.getId()==R.id.search_user){
                 String content = inputText.getText().toString();
                 searchUserByName(content);    //update userList
                 adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
                 userListView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();//当有消息时刷新
                 userListView.setSelection(0);//将ListView定位到最后一行
-            }
-        });
-    }
-
-    @Override
-    public void onBackPressed() {
-        finish();
+        }
     }
 
     private void initFriends(){
@@ -96,9 +92,7 @@ public class FriendAddActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             JSONObject result = (JSONObject)msg.obj;
-            if(!result.getString("status").equals("200")){
-                showdialogMsg(result.getString("msg"));
-            }else{
+            if(result.getString("status").equals("200")){
                 User user = new User();
                 user.setId(JSONObject.parseObject(result.getString("data")).getString("id"));
                 user.setGpa(Double.parseDouble(JSONObject.parseObject(result.getString("data")).getString("gpa")));
@@ -107,6 +101,8 @@ public class FriendAddActivity extends AppCompatActivity {
                 userList.add(user);
                 Log.d("加入", user.getName());
                 reflesh();
+            }else{
+                showdialogMsg(result.getString("msg"));
             }
 
         }

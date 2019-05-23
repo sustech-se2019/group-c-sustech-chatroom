@@ -27,13 +27,12 @@ public class WSClient extends WebSocketClient {
     public static final int SIGNED = 3;//消息签收
     public static final int KEEPALIVE = 4;//客户端保持心跳
     public static final int PULL_FRIEND = 5;//拉取好友
+    private static final int HEARTBEATTIME = 10000;
+    private final String myId = AppData.getInstance().getMe().getId();
 
     public WSClient(URI serverURI ) {
         super( serverURI );
     }
-
-    private String myId = AppData.getInstance().getMe().getId();
-    private int heartBeatTime = 10000;
 
     @Override
     public void onOpen( ServerHandshake handshakedata ) {
@@ -112,7 +111,7 @@ public class WSClient extends WebSocketClient {
                 try{
                     while(true){
                         Log.d("startHeartBeat","");
-                        Thread.sleep(heartBeatTime);
+                        Thread.sleep(HEARTBEATTIME);
                         if (checkConnection() == 1)
                             sendPing();
                         else
