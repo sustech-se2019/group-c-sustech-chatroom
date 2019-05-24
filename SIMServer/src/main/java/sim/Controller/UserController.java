@@ -19,6 +19,7 @@ import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
 import sim.pojo.ChatHistory;
 import sim.pojo.MomentContent;
+import sim.pojo.MomentThumbUp;
 import sim.pojo.Users;
 import sim.pojo.vo.ImageVO;
 import sim.pojo.vo.MyFriendsVO;
@@ -194,6 +195,18 @@ public class UserController {
 
         // 1. 查询用户接受到的朋友申请
         return JSONResult.ok(userDao.queryFriendRequestList(userId));
+    }
+
+
+    @PostMapping("/thumbUpMoment")
+    public JSONResult thumbUpMoment(@RequestBody MomentThumbUp momentThumbUp){
+        if(momentThumbUp.getFromId() == null || momentThumbUp.getMomentId() == null){
+            return JSONResult.errorMsg("");
+        }
+        if(userDao.checkAlreadyThumbUp(momentThumbUp)){
+            userDao.thumbUpMoment(momentThumbUp);
+        }
+        return JSONResult.ok(momentThumbUp);
     }
 
 

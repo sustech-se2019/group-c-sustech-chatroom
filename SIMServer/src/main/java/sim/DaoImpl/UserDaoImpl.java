@@ -43,6 +43,8 @@ public class UserDaoImpl implements UserDao {
     private FriendRequestMapper friendRequestMapper;
     @Autowired(required = false)
     private MomentContentMapper momentContentMapper;
+    @Autowired(required = false)
+    private MomentThumbUpMapper momentThumbUpMapper;
 
     @Override
     public void sendFriendRequest(String myUserId, String friendUsername) {
@@ -157,6 +159,26 @@ public class UserDaoImpl implements UserDao {
 
         return momentContent;
     }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public MomentThumbUp thumbUpMoment(MomentThumbUp momentThumbUp){
+        momentThumbUpMapper.insert(momentThumbUp);
+
+        return momentThumbUp;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public boolean checkAlreadyThumbUp(MomentThumbUp momentThumbUp){
+        if(momentThumbUpMapper.selectOne(momentThumbUp) == null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
 
     /**
      * implement queryUserForLogin()

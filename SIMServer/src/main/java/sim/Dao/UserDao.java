@@ -3,6 +3,7 @@ package sim.Dao;
 import sim.netty.ChatMsg;
 import sim.pojo.ChatHistory;
 import sim.pojo.MomentContent;
+import sim.pojo.MomentThumbUp;
 import sim.pojo.Users;
 import sim.pojo.vo.FriendRequestVO;
 import sim.pojo.vo.MyFriendsVO;
@@ -46,6 +47,7 @@ public interface UserDao {
 
     public MomentContent createMoment(MomentContent momentContent);
 
+    public boolean checkAlreadyThumbUp(MomentThumbUp momentThumbUp);
     /**
      * Update user info users.
      *
@@ -55,7 +57,7 @@ public interface UserDao {
      */
     public Users updateUserInfo(Users user);
 
-
+    public MomentThumbUp thumbUpMoment(MomentThumbUp momentThumbUp);
 
     public Users queryUserById(String userId);
 
