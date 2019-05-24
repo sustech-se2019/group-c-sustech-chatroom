@@ -64,39 +64,7 @@
             android:layout_centerVertical="true"
             android:layout_marginHorizontal="5dp">
 
-        <Button
-                android:id="@+id/add_activity"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginHorizontal="10dp"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:background="@drawable/invite"
-                android:textAllCaps="false" />
-        <Button
-            android:id="@+id/moments"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:background="@drawable/moment"
-            android:textAllCaps="false" />
 
-         <Button
-                android:id="@+id/search_friendlist"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginHorizontal="10dp"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:background="@drawable/refresh"
-                android:textAllCaps="false" />
         </LinearLayout>
 
     </RelativeLayout>
@@ -117,5 +85,53 @@
 
     <!--输入框部分（横排排列）-->
 
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/style2"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/add_activity"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/invite"
+            android:textAllCaps="false"
+            android:layout_alignParentLeft="true"/>
+        <Button
+            android:id="@+id/moments"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/moment"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/search_friendlist"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:background="@drawable/refresh"
+            android:textAllCaps="false"
+            android:gravity="center" />
+    </RelativeLayout>
+
 </LinearLayout>
+
+
 
