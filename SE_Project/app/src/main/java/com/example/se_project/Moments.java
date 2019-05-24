@@ -7,7 +7,7 @@ import android.os.Message;
 import android.util.Log;
 
 import com.alibaba.fastjson.JSONObject;
-
+import java.util.Date;
 import java.io.Serializable;
 
 /**
@@ -18,6 +18,16 @@ public class Moments implements Serializable {
     private String text;
     private String momentId;
     private int goodNum;
+
+    public Date getSendTime() {
+        return sendTime;
+    }
+
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
+    }
+
+    private Date sendTime;
     public Moments(User user, String text,int goodNum){
         this.user=user;
         this.text=text;

@@ -21,14 +21,14 @@
         android:networkSecurityConfig="@xml/network_security">
         <activity android:name=".RegisterActivity" android:launchMode="standard"></activity>
         <activity android:name=".ChatActivity" android:launchMode="standard">
-
-        </activity>
-        <activity android:name=".MainActivity" android:launchMode="standard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" android:launchMode="standard">
+
         </activity>
         <activity android:name=".FriendAddActivity" android:launchMode="standard"></activity>
         <activity android:name=".FriendActivity" android:launchMode="standard">

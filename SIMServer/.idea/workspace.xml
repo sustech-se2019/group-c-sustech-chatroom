@@ -4,19 +4,12 @@
     <option name="GROUP_BY_SEVERITY" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="Complete image send function.">
+    <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/CameraFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/CameraFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/ChatActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ChatHistoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ChatHistoryMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/Controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sim/netty/ChatHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/sim/netty/ChatHandler.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,20 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1999">
-              <caret line="239" column="100" selection-start-line="239" selection-start-column="100" selection-end-line="239" selection-end-column="100" />
+            <state relative-caret-position="2850">
+              <caret line="203" column="54" selection-start-line="203" selection-start-column="54" selection-end-line="203" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MsgSignFlagEnum.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java">
+      <file leaf-file-name="MomentContentVO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            <state relative-caret-position="95">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -85,13 +78,13 @@
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+            <state relative-caret-position="247">
+              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="57">
@@ -206,6 +199,7 @@
       <find>field list</find>
       <find>type</find>
       <find>dele</find>
+      <find>del</find>
     </findStrings>
     <replaceStrings>
       <replace>sim</replace>
@@ -273,8 +267,8 @@
         <option value="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ChatHistoryMapper.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" />
         <option value="$PROJECT_DIR$/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -311,7 +305,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="697" />
     <option name="y" value="181" />
     <option name="width" value="1230" />
@@ -881,7 +875,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558599438063</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge server.">
+      <created>1558696841853</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558696841854</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -917,7 +918,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144358000" />
+    <option name="totallyTimeSpent" value="148258000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,7 +930,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="3" />
@@ -952,10 +953,10 @@
       <window_info anchor="bottom" id="Java Enterprise" order="16" weight="0.32969603" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3448276" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.16901408" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991453" visible="true" weight="0.28277355" />
       <window_info anchor="bottom" id="Spring" order="14" weight="0.32735777" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32969603" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29957357" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21801706" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.32991454" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.34729064" />
@@ -1077,14 +1078,14 @@
     <MESSAGE value="save" />
     <MESSAGE value="Implement Image send function of sever part." />
     <MESSAGE value="Complete image send function." />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete image send function." />
+    <MESSAGE value="Merge server." />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge server." />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -1333,20 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1999">
-          <caret line="239" column="100" selection-start-line="239" selection-start-column="100" selection-end-line="239" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1430,6 +1417,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="203" column="54" selection-start-line="203" selection-start-column="54" selection-end-line="203" selection-end-column="54" />
         </state>
       </provider>
     </entry>

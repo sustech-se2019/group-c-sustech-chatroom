@@ -293,11 +293,12 @@ public class User implements Serializable {
                     JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
                     for (Object item:jsonArray) {
                         JSONObject jsonItem = (JSONObject)item;
-
+                        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
                         Moments moments = new Moments(AppData.getInstance().getFriend(jsonItem.getString("senderId")),jsonItem.getString("content"),0);
                         JSONArray jsonArraytmp = (JSONArray) JSONArray.parse(jsonItem.getString("thumbUpList"));
                         moments.setGoodNum(jsonArraytmp.size());
                         moments.setMomentId(jsonItem.getString("momentId"));
+                        moments.setSendTime(df.parse(jsonItem.getString("sendTime")));
                         momentsList.add(moments);
                     }
                     Message msg = new Message();
