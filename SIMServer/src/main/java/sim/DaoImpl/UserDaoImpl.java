@@ -10,14 +10,25 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import sim.enums.MsgActionEnum;
 import sim.enums.MsgSignFlagEnum;
-import sim.mapper.*;
+import sim.mapper.ChatHistoryMapper;
+import sim.mapper.FriendListMapper;
+import sim.mapper.UsersMapper;
+import sim.mapper.UsersMapperCustom;
+import sim.mapper.FriendRequestMapper;
+import sim.mapper.MomentContentMapper;
+import sim.mapper.MomentThumbUpMapper;
 import sim.netty.ChatMsg;
 import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
-import sim.pojo.*;
+import sim.pojo.FriendList;
+import sim.pojo.FriendRequest;
+import sim.pojo.MomentContent;
+import sim.pojo.Users;
 import sim.pojo.vo.FriendRequestVO;
 import sim.pojo.vo.MomentContentVO;
 import sim.pojo.vo.MyFriendsVO;
+import sim.pojo.MomentThumbUp;
+import sim.pojo.ChatHistory;
 import sim.utils.JsonUtils;
 import tk.mybatis.mapper.entity.Example;
 import tk.mybatis.mapper.entity.Example.Criteria;
@@ -103,11 +114,7 @@ public class UserDaoImpl implements UserDao {
         mfc.andEqualTo("ownerId", userId1);
         mfc.andEqualTo("friendId", userId2);
         FriendList myFriendsRel = friendListMapper.selectOneByExample(mfe);
-        if (myFriendsRel != null) {
-            return true;
-        }else{
-            return false;
-        }
+        return (myFriendsRel != null);
     }
 
 
@@ -183,11 +190,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public boolean checkAlreadyThumbUp(MomentThumbUp momentThumbUp){
-        if(momentThumbUpMapper.selectOne(momentThumbUp) == null){
-            return true;
-        }else{
-            return false;
-        }
+        return momentThumbUpMapper.selectOne(momentThumbUp) == null;
     }
 
 
@@ -266,8 +269,7 @@ public class UserDaoImpl implements UserDao {
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public List<MyFriendsVO> queryMyFriends(String userId) {
-        List<MyFriendsVO> myFirends = usersMapperCustom.queryMyFriends(userId);
-        return myFirends;
+        return usersMapperCustom.queryMyFriends(userId);
     }
 
     /**
@@ -356,8 +358,6 @@ public class UserDaoImpl implements UserDao {
         chatCriteria.andEqualTo("signFlag", 0);
         chatCriteria.andEqualTo("toId", toId);
 
-        List<ChatHistory> result = chatHistoryMapper.selectByExample(chatExample);
-
-        return result;
+        return chatHistoryMapper.selectByExample(chatExample);
     }
 }

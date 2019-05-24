@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SIM-Server" />
         <module name="SIMServer" />
+        <module name="SIM-Server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

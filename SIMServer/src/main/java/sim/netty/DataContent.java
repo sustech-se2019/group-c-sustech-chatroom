@@ -7,11 +7,11 @@ import java.io.Serializable;
  */
 public class DataContent implements Serializable {
 
-	private static final long serialVersionUID = 8021381444738260454L;
+    private static final long serialVersionUID = 8021381444738260454L;
 
-	private Integer action;		// 动作类型
-	private ChatMsg chatMsg;	// 用户的聊天内容entity
-	private String extand;		// 扩展字段
+    private Integer action;     //动作类型
+    private ChatMsg chatMsg;    //用户的聊天内容entity
+    private String extand;      //扩展字段
 
     /**
      * Gets action.
@@ -19,8 +19,8 @@ public class DataContent implements Serializable {
      * @return the action
      */
     public Integer getAction() {
-		return action;
-	}
+        return action;
+    }
 
     /**
      * Sets action.
@@ -28,8 +28,8 @@ public class DataContent implements Serializable {
      * @param action the action
      */
     public void setAction(Integer action) {
-		this.action = action;
-	}
+        this.action = action;
+    }
 
     /**
      * Gets chat msg.
@@ -37,8 +37,8 @@ public class DataContent implements Serializable {
      * @return the chat msg
      */
     public ChatMsg getChatMsg() {
-		return chatMsg;
-	}
+        return chatMsg;
+    }
 
     /**
      * Sets chat msg.
@@ -46,8 +46,8 @@ public class DataContent implements Serializable {
      * @param chatMsg the chat msg
      */
     public void setChatMsg(ChatMsg chatMsg) {
-		this.chatMsg = chatMsg;
-	}
+        this.chatMsg = chatMsg;
+    }
 
     /**
      * Gets extand.
@@ -55,8 +55,8 @@ public class DataContent implements Serializable {
      * @return the extand
      */
     public String getExtand() {
-		return extand;
-	}
+        return extand;
+    }
 
     /**
      * Sets extand.
@@ -64,6 +64,6 @@ public class DataContent implements Serializable {
      * @param extand the extand
      */
     public void setExtand(String extand) {
-		this.extand = extand;
-	}
+        this.extand = extand;
+    }
 }
