@@ -73,9 +73,10 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         User me = AppData.getInstance().getMe();
         String name = me.getNickName();
 //        int portraitID = me.getProfilePictureID();
-
-        NickName.setText(name);
-
+        if (AppData.getInstance().getChattingFriend() != null)
+            NickName.setText(AppData.getInstance().getChattingFriend().getNickName());
+        else
+            NickName.setText(AppData.getInstance().getMe().getNickName());
         initListView();
         AppData.getInstance().setChatHandler(handler);
     }
