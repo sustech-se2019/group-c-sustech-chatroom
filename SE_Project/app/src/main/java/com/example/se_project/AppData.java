@@ -27,6 +27,7 @@ public class AppData {
     private Handler chatHandler;
     private List<Moments> momentsList;
     private Handler friendHandler;
+    private Handler momentsHandler;
 
     private Handler friendAddHandler;
 
@@ -227,4 +228,5 @@ public class AppData {
         this.momentsHandler = momentsHandler;
 
     }
+
 }
