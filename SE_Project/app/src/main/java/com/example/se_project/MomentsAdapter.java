@@ -19,6 +19,7 @@ import java.util.List;
 public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializable {
 
     private final int resourceId;
+    private MomentsAdapter adapter=this;
     public MomentsAdapter(Context context, int textViewResourceId,
                           List<Moments> objects){
         super(context, textViewResourceId, objects);
@@ -34,7 +35,7 @@ public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializabl
      *         5.最后返回布局
      * */
     public View getView(int position, View convertView, ViewGroup parent){
-        Moments moments = getItem(position);
+        final Moments moments = getItem(position);
         /*
          * 新增内部类ViewHolder，用于对控件的实例进行缓存。
          * 1.当convertView为空时，创建一个ViewHolder对象，并将控件的实例对象存放在ViewHolder里。
@@ -66,25 +67,13 @@ public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializabl
         viewHolder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(AppData.getInstance().getMe().addGood((Moments)v.getTag())) {
-                    MomentsAdapter.this.notifyDataSetChanged();
-                    AlertDialog alertDialog1 = new AlertDialog.Builder(MomentsAdapter.this.getContext())
-                            .setTitle("Good News")//标题
-                            .setMessage("success")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
-                            .create();
-                    alertDialog1.show();
-                }else{
-                    AlertDialog alertDialog1 = new AlertDialog.Builder(MomentsAdapter.this.getContext())
-                            .setTitle("Warning")//标题
-                            .setMessage("fail")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
-                            .create();
-                    alertDialog1.show();
-                }
+                if (moments != null)
+                    AppData.getInstance().getMe().thumbUpMoment(moments.getMomentId());
+                moments.addGood();
+                adapter.notifyDataSetChanged();
             }
         });
-        viewHolder.goodNum.setText(String.valueOf(moments.getGoodnum()));
+        viewHolder.goodNum.setText(String.valueOf(moments.getGoodNum()));
         viewHolder.text.setText(moments.getText());
         viewHolder.image.setImageResource(moments.getUser().getProfilePictureID());
         return view;

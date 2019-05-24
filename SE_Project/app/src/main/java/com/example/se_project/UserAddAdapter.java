@@ -3,6 +3,7 @@ package com.example.se_project;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+
+import com.alibaba.fastjson.JSONObject;
+
 import java.util.List;
 
 /**
@@ -78,6 +83,16 @@ public class UserAddAdapter extends ArrayAdapter<User>{
                             .setMessage("Successful add friend")//内容
                             .create();
                     alertDialog1.show();
+                    Message message = new Message();
+                    JSONObject json = new JSONObject();
+                    try{
+                        json.put("status",800);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    message.obj = json;
+                    AppData.getInstance().getFriendAddHandler().sendMessage(message);
+
                 }else{
                     AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
                             .setTitle("Warning")//标题
