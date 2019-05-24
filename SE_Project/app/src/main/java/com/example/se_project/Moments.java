@@ -1,14 +1,8 @@
 package com.example.se_project;
 
 
-import android.annotation.SuppressLint;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
-
-import com.alibaba.fastjson.JSONObject;
-import java.util.Date;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Moments class contains all the information of a moment.

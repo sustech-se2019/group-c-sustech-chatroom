@@ -45,7 +45,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     private ListView msgListView;
     private EditText inputText;
     private MsgAdapter adapter;
-    private List<Msg> msgList;
+    List<Msg> msgList;
     private int pos;
     private User chatUser;
     private File mPhotoFile;

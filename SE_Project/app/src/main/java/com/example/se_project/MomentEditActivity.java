@@ -1,14 +1,9 @@
 package com.example.se_project;
 
-import android.app.AlertDialog;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-
-import com.alibaba.fastjson.JSONObject;
 
 /**
  * Create a new Activity to edit moments..
