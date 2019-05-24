@@ -72,16 +72,14 @@ public class UserAddAdapter extends ArrayAdapter<User>{
                 if(AppData.getInstance().getMe().addFriend((User)v.getTag())) {
                     userAddAdapter.notifyDataSetChanged();
                     AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
-                            .setTitle("Good News")//标题
+                            .setTitle("Successful")//标题
                             .setMessage("Successful add friend")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
                             .create();
                     alertDialog1.show();
                 }else{
                     AlertDialog alertDialog1 = new AlertDialog.Builder(UserAddAdapter.super.getContext())
                             .setTitle("Warning")//标题
                             .setMessage("No one want to be your friend")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
                             .create();
                     alertDialog1.show();
                 }

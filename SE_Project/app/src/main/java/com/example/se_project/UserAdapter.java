@@ -69,7 +69,6 @@ public class UserAdapter extends ArrayAdapter<User>{
                     AlertDialog alertDialog1 = new AlertDialog.Builder(UserAdapter.super.getContext())
                             .setTitle("Good News")//标题
                             .setMessage("Delete success")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
                             .create();
                     alertDialog1.show();
                 }else{
