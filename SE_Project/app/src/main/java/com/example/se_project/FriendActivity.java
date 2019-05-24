@@ -97,8 +97,6 @@ public class FriendActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search_friendlist:
-                String content = inputText.getText().toString();
-                searchFriendByName(content);    //update userList
                 adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
                 userListView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();//当有消息时刷新
