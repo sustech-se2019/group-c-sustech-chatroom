@@ -19,9 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
+/**
+ * The type MomentsActivity is used show moments.
+ */
 public class MomentsActivity extends AppCompatActivity {
     private ArrayAdapter adapter;
     private final List<Moments> momentsList=AppData.getInstance().getMe().getMomentsList();;
+    /**
+     * The Alertdialog 1.
+     */
     AlertDialog alertdialog1;
 
     protected void onCreate(Bundle saveInstanceState){

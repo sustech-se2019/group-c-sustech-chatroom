@@ -13,13 +13,21 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Created by cpj on 2016/3/15.
+ * This adapter is used in list view in friend activity.
  */
 public class UserAdapter extends ArrayAdapter<User>{
 
     private final int resourceId;
     private List<User> objects;
     private UserAdapter userAdapter=this;
+
+    /**
+     * Instantiates a new User adapter.
+     *
+     * @param context            the context
+     * @param userViewResourceId the user view resource id
+     * @param objects            the objects
+     */
     public UserAdapter(Context context, int userViewResourceId,
                        List<User> objects){
 
@@ -27,14 +35,21 @@ public class UserAdapter extends ArrayAdapter<User>{
         resourceId = userViewResourceId;
         this.objects=objects;
     }
+    /**
+     * Function Description: This method is called when each subitem scrolls to the screen
+     *
+     * 1. First, get the ToolBar instance of the current item through getItem ().
+     *
+     * 2. Use Layout Inflate to load and pass this sub-layout item into our main layout
+     *
+     * 3. Call FindViewById () of View to get examples of left and right Layout and Msg respectively.
+     *
+     * 4. Call their setText () to display text
+     *
+     * 5. Final return to layout
+     * */
     public View getView(int position, View convertView, ViewGroup parent){
         User user = getItem(position);
-        /*
-         * 新增内部类ViewHolder，用于对控件的实例进行缓存。
-         * 1.当convertView为空时，创建一个ViewHolder对象，并将控件的实例对象存放在ViewHolder里。
-         * 2.然后调用View的setTag()方法，将ViewHolder对象存储在View中。
-         * 3.当convertView不为空时，调用View的getTag()方法把ViewHolder重新取出来。
-         * */
         View view;
         ViewHolder viewHolder;
 
@@ -83,11 +98,26 @@ public class UserAdapter extends ArrayAdapter<User>{
         return view;
     }
 
-    //新增内部类ViewHolder，用于对控件的实例进行缓存。
+    /**
+     * The type View holder.
+     */
+//新增内部类ViewHolder，用于对控件的实例进行缓存。
     class ViewHolder{
+        /**
+         * The Layout.
+         */
         LinearLayout layout;
+        /**
+         * The Name.
+         */
         TextView name;
+        /**
+         * The Image.
+         */
         ImageView image;
+        /**
+         * The Button.
+         */
         Button button;
     }
 }

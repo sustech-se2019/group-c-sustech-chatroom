@@ -15,6 +15,7 @@ import java.net.URL;
  */
 public final class HttpRequest {
     private HttpRequest(){}
+
     /**
      * To produce a {@link JSONObject} request by url and json.
      *

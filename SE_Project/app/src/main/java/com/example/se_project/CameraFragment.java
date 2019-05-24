@@ -80,7 +80,13 @@ public class CameraFragment extends Fragment
      */
     CameraUtils cameraUtils = new CameraUtils();
 
+    /**
+     * The Request camera permission.
+     */
     static final int REQUEST_CAMERA_PERMISSION = 1;
+    /**
+     * The Fragment dialog.
+     */
     static final String FRAGMENT_DIALOG = "dialog";
 
     /**
@@ -126,7 +132,7 @@ public class CameraFragment extends Fragment
     /**
      * The current state of camera state for taking pictures.
      *
-     * @see #mCaptureCallback
+     * @see #mCaptureCallback #mCaptureCallback
      */
     int mState = STATE_PREVIEW;
 
@@ -264,6 +270,9 @@ public class CameraFragment extends Fragment
         }
     }
 
+    /**
+     * Request camera permission.
+     */
     void requestCameraPermission() {
         if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
             new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
@@ -404,6 +413,9 @@ public class CameraFragment extends Fragment
 
     /**
      * Opens the camera specified by {@link CameraFragment#mCameraId}.
+     *
+     * @param width  the width
+     * @param height the height
      */
     void openCamera(int width, int height) {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
@@ -842,6 +854,12 @@ public class CameraFragment extends Fragment
          */
         private final File mFile;
 
+        /**
+         * Instantiates a new Image saver.
+         *
+         * @param image the image
+         * @param file  the file
+         */
         ImageSaver(Image image, File file) {
             mImage = image;
             mFile = file;
@@ -871,7 +889,6 @@ public class CameraFragment extends Fragment
         }
 
     }
-
 
 
     /**

@@ -14,12 +14,20 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by cpj on 2016/3/15.
+ * This is adapt to list view in moments activity.
  */
 public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializable {
 
     private final int resourceId;
     private MomentsAdapter adapter=this;
+
+    /**
+     * Instantiates a new Moments adapter.
+     *
+     * @param context            the context
+     * @param textViewResourceId the text view resource id
+     * @param objects            the objects
+     */
     public MomentsAdapter(Context context, int textViewResourceId,
                           List<Moments> objects){
         super(context, textViewResourceId, objects);
@@ -27,21 +35,20 @@ public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializabl
     }
 
     /**
-     * 功能描述：这个方法在每个子项滚动到屏幕内的时候被调用
-     *         1.首先通过 getItem()获取当前项的ToolBar实例
-     *         2.使用LayoutInflater将这个子布局项加载并传入我们的主布局
-     *         3.调用View的findViewById()分别获取到左右Layout、左右Msg的实例
-     *         4.调用它们的setText()来显示文字
-     *         5.最后返回布局
+     * Function Description: This method is called when each subitem scrolls to the screen
+     *
+     * 1. First, get the ToolBar instance of the current item through getItem ().
+     *
+     * 2. Use Layout Inflate to load and pass this sub-layout item into our main layout
+     *
+     * 3. Call FindViewById () of View to get examples of left and right Layout and Msg respectively.
+     *
+     * 4. Call their setText () to display text
+     *
+     * 5. Final return to layout
      * */
     public View getView(int position, View convertView, ViewGroup parent){
         final Moments moments = getItem(position);
-        /*
-         * 新增内部类ViewHolder，用于对控件的实例进行缓存。
-         * 1.当convertView为空时，创建一个ViewHolder对象，并将控件的实例对象存放在ViewHolder里。
-         * 2.然后调用View的setTag()方法，将ViewHolder对象存储在View中。
-         * 3.当convertView不为空时，调用View的getTag()方法把ViewHolder重新取出来。
-         * */
         View view;
         ViewHolder viewHolder;
 
@@ -79,11 +86,26 @@ public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializabl
         return view;
     }
 
-    //新增内部类ViewHolder，用于对控件的实例进行缓存。
+    /**
+     * The type View holder.
+     */
+//新增内部类ViewHolder，用于对控件的实例进行缓存。
     class ViewHolder implements Serializable{
+        /**
+         * The Text.
+         */
         TextView text;
+        /**
+         * The Button.
+         */
         Button button;
+        /**
+         * The Image.
+         */
         ImageView image;
+        /**
+         * The Good num.
+         */
         TextView goodNum;
     }
 }

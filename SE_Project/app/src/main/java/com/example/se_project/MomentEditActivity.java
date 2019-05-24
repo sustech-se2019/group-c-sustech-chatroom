@@ -10,6 +10,9 @@ import android.widget.EditText;
 
 import com.alibaba.fastjson.JSONObject;
 
+/**
+ * Create a new Activity to edit moments..
+ */
 public class MomentEditActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText inputMoments;
     private final MomentEditActivity momentEdit = this;

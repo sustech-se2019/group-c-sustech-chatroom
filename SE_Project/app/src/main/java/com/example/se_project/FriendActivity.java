@@ -18,6 +18,10 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.util.List;
 
+/**
+ * The type FriendActivity is used to show the user friend list.
+ * It contains some button and a {@link ListView} to show friend.
+ */
 public class FriendActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView userListView;
     private EditText inputText;
@@ -69,6 +73,9 @@ public class FriendActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
+    /**
+     * Refresh view.
+     */
     public void refreshView(){
         adapter.notifyDataSetChanged();//当有消息时刷新
     }

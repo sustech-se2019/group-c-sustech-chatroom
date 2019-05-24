@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
 
 import java.net.HttpURLConnection;
+
 /**
  * {@link AppCompatActivity} is an activity type. This class used to control Register activity.
  */
@@ -44,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         ensure = findViewById(R.id.ensure_button);
         ensure.setOnClickListener(this);
     }
+
     /**
      * If the second password is different from the first one, it will show a different password {@link AlertDialog}.
      */
@@ -55,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
+
     /**
      * If the user name is already exist, it will show a duplicate user name {@link AlertDialog}.
      */
@@ -78,6 +81,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         alertdialog1 = alertdialogbuilder.create();
         alertdialog1.show();
     }
+
     /**
      * If click "确定", {@link AlertDialog} will be canceled.
      */
@@ -88,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             arg0.cancel();
         }
     };
- 
+
     /**
      * To handle with the register message of {@link JSONObject}.
      */

@@ -15,6 +15,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+/**
+ * The type User saving user information.
+ */
 public class User implements Serializable {
     private String name;
     private double gpa;
@@ -24,10 +27,20 @@ public class User implements Serializable {
     private int profilePictureID;
     private final List<User> friendList=new ArrayList<>();
     private final ArrayList<Moments> momentsList=new ArrayList<>();
+
+    /**
+     * Instantiates a new User.
+     */
     public User(){
 
     }
 
+    /**
+     * Instantiates a new User.
+     *
+     * @param name the name
+     * @param gpa  the gpa
+     */
     public User(String name,double gpa){
         this.gpa=gpa;
         this.name=name;
@@ -35,27 +48,58 @@ public class User implements Serializable {
         this.setProfilePictureID();
     }
 
+    /**
+     * Get name string.
+     *
+     * @return the string
+     */
     public String getName(){
         return name;
     }
+
+    /**
+     * Get gpa double.
+     *
+     * @return the double
+     */
     public double getGpa(){
         return gpa;
     }
 
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Sets gpa.
+     *
+     * @param gpa the gpa
+     */
     public void setGpa(double gpa) {
         this.gpa = gpa;
         this.setPotraitnum();
         this.setProfilePictureID();
     }
 
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
     public String getId() {
         return id;
     }
 
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
     public void setId(String id) {
         this.id = id;
     }
@@ -82,14 +126,31 @@ public class User implements Serializable {
         else if(potraitnum==0)
             profilePictureID=R.drawable.gpa0;
     }
+
+    /**
+     * Get profile picture id int.
+     *
+     * @return the int
+     */
     public int getProfilePictureID(){
         return profilePictureID;
     }
 
+    /**
+     * Get potraitnum int.
+     *
+     * @return the int
+     */
     public int getPotraitnum(){
         return potraitnum;
     }
 
+    /**
+     * Add friend boolean.
+     *
+     * @param user the user
+     * @return the boolean
+     */
     public boolean addFriend(User user){
         final String request_url = "http://10.21.72.100:8081" + "/addFriendRequest?myUserId="+AppData.getInstance().getMe().getId()+"&friendUsername="+user.getName();
         final String request_url_1 = "http://10.21.72.100:8081" + "/search?myUserId="+AppData.getInstance().getMe().getId()
@@ -137,6 +198,12 @@ public class User implements Serializable {
         return true;
     }
 
+    /**
+     * Delete friend boolean.
+     *
+     * @param user the user
+     * @return the boolean
+     */
     public boolean deleteFriend(User user){
         Log.d("Name名字名字名字       ", user.getId());
         Log.d("我的名字       ", AppData.getInstance().getMe().getName());
@@ -168,7 +235,14 @@ public class User implements Serializable {
         }).start();
         return true;
     }
-    /*public boolean deleteFriend(User user){
+
+    /**
+     * Search friend array list.
+     *
+     * @param name the name
+     * @return the array list
+     */
+/*public boolean deleteFriend(User user){
         this.refreshFriendList();
         List<User> list= AppData.getInstance().getFriendList();
         for(int i=0;i<list.size();i++) {
@@ -194,6 +268,12 @@ public class User implements Serializable {
         }
         return resultList;
     }
+
+    /**
+     * Get friend list list.
+     *
+     * @return the list
+     */
     public List<User> getFriendList(){
         this.refreshFriendList();
         return friendList;
@@ -243,10 +323,21 @@ public class User implements Serializable {
             }
         }).start();
     }
+
+    /**
+     * Add good.
+     *
+     * @param moment the moment
+     */
     public void addGood(Moments moment){
         moment.addGood();
     }
 
+    /**
+     * Send moments.
+     *
+     * @param text the text
+     */
     public void sendMoments(String text){
         if(text == null || text.length() == 0)
             return;
@@ -278,7 +369,9 @@ public class User implements Serializable {
     }
 
 
-
+    /**
+     * Refresh moments list.
+     */
     public void refreshMomentsList(){
         momentsList.clear();
         final String request_url = "http://10.21.72.100:8081" + "/pullMoment?userId="+AppData.getInstance().getMe().id;
@@ -319,6 +412,8 @@ public class User implements Serializable {
 
     /**
      * Get information of addGood and send to server.
+     *
+     * @param momentId the moment id
      */
     void thumbUpMoment( final  String momentId) {
         final String request_url = AppData.getInstance().getContext().getString(R.string.IM_Server_Url) + "/thumbUpMoment";
@@ -348,14 +443,29 @@ public class User implements Serializable {
 
     }
 
+    /**
+     * Get moments list list.
+     *
+     * @return the list
+     */
     public List<Moments> getMomentsList(){
         return momentsList;
     }
 
+    /**
+     * Gets nick name.
+     *
+     * @return the nick name
+     */
     public String getNickName() {
         return nickName;
     }
 
+    /**
+     * Sets nick name.
+     *
+     * @param nickName the nick name
+     */
     public void setNickName(String nickName) {
         this.nickName = nickName;
     }

@@ -2,7 +2,9 @@ sim
 sim.Controller
 sim.Dao
 sim.DaoImpl
+sim.enums
 sim.mapper
+sim.netty
 sim.pojo
 sim.pojo.vo
 sim.utils

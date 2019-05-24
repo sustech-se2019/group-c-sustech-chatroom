@@ -33,6 +33,9 @@ import java.util.List;
 import pub.devrel.easypermissions.EasyPermissions;
 
 
+/**
+ * The type Upload activity.
+ */
 @SuppressLint("NewApi")
 
 public class UploadActivity extends AppCompatActivity implements View.OnClickListener, EasyPermissions.PermissionCallbacks {
@@ -267,14 +270,29 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    /**
+     * Is get permission boolean.
+     *
+     * @return the boolean
+     */
     public boolean isGetPermission() {
         return getPermission;
     }
 
+    /**
+     * Is permission granted boolean.
+     *
+     * @return the boolean
+     */
     public boolean isPermissionGranted() {
         return permissionGranted;
     }
 
+    /**
+     * Is permission denied boolean.
+     *
+     * @return the boolean
+     */
     public boolean isPermissionDenied() {
         return permissionDenied;
     }

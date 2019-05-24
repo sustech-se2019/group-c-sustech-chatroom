@@ -18,12 +18,18 @@ import com.alibaba.fastjson.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type FriendAddActivity is used to search for user and add it as friend.
+ */
 public class FriendAddActivity extends AppCompatActivity implements View.OnClickListener {
     private ListView userListView;
     private EditText inputText;
     private Button back;
     private UserAddAdapter adapter;
     private final List<User> userList = new ArrayList<User>();
+    /**
+     * The Alertdialog 1.
+     */
     AlertDialog alertdialog1;
 
     protected void onCreate(Bundle saveInstanceState){
@@ -65,6 +71,11 @@ public class FriendAddActivity extends AppCompatActivity implements View.OnClick
 
     }
 
+    /**
+     * Showdialog msg.
+     *
+     * @param msg the msg
+     */
     void showdialogMsg(String msg)
     {
         //Toast.makeText(this,"clickme",Toast.LENGTH_LONG).show();
@@ -89,6 +100,9 @@ public class FriendAddActivity extends AppCompatActivity implements View.OnClick
     }
 
 
+    /**
+     * The Handler.
+     */
     @SuppressLint("HandlerLeak")
     final Handler handler = new Handler() {
         @Override

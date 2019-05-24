@@ -29,10 +29,17 @@ import java.util.List;
 
 /**
  * Created by cpj on 2016/3/15.
+ * Modify it and implement chat in app.
  */
 public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /**
+     * The constant CONTEXTMENU_DELETEITEM.
+     */
     protected static final int CONTEXTMENU_DELETEITEM = 0;
+    /**
+     * The constant CONTEXTMENU_TRANSLATION.
+     */
     protected static final int CONTEXTMENU_TRANSLATION = 1;
 
     private ListView msgListView;
@@ -82,6 +89,9 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    /**
+     * Refresh view.
+     */
     public void refreshView(){
         adapter.notifyDataSetChanged();//当有消息时刷新
         msgListView.setSelection(msgList.size());//将ListView定位到最后一行
@@ -285,18 +295,38 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    /**
+     * Gets msg list view.
+     *
+     * @return the msg list view
+     */
     public ListView getMsgListView() {
         return msgListView;
     }
 
+    /**
+     * Sets msg list view.
+     *
+     * @param msgListView the msg list view
+     */
     public void setMsgListView(ListView msgListView) {
         this.msgListView = msgListView;
     }
 
+    /**
+     * Gets adapter.
+     *
+     * @return the adapter
+     */
     public MsgAdapter getAdapter() {
         return adapter;
     }
 
+    /**
+     * Sets adapter.
+     *
+     * @param adapter the adapter
+     */
     public void setAdapter(MsgAdapter adapter) {
         this.adapter = adapter;
     }

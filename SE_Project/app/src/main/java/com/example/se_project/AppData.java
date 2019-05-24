@@ -17,6 +17,10 @@ import java.util.List;
 import java.util.Map;
 
 
+/**
+ * The type AppData save the user information and app information in app.
+ * It also contains some methods to request things from server.
+ */
 public class AppData {
 
     private User me = new User();
@@ -37,11 +41,22 @@ public class AppData {
 
     private static AppData singletonData = new AppData();
 
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
     public static AppData getInstance() {
         return singletonData;
     }
 
 
+    /**
+     * Gets friend.
+     *
+     * @param userId the user id
+     * @return the friend
+     */
     public User getFriend(String userId) {
         if (userId.equals(me.getId())) {
             return me;
@@ -66,10 +81,20 @@ public class AppData {
         chatHandler.sendMessage(message);
     }
 
+    /**
+     * Gets moments list.
+     *
+     * @return the moments list
+     */
     public List<Moments> getMomentsList() {
         return momentsList;
     }
 
+    /**
+     * Send chat msg.
+     *
+     * @param msg the msg
+     */
     public void sendChatMsg(String msg) {
         ChatHistory history = chatHistory.get(chattingFriend.getId());
         if (wsClient.isOpen() && chattingFriend.getId() != null) {
@@ -80,6 +105,14 @@ public class AppData {
         refreshChat();
     }
 
+    /**
+     * Recive chat msg.
+     *
+     * @param friendId the friend id
+     * @param msg      the msg
+     * @param msgId    the msg id
+     * @param time     the time
+     */
     public void reciveChatMsg(String friendId, String msg, String msgId, Date time) {
         ChatHistory history = chatHistory.get(friendId);
         if (history == null) {
@@ -96,6 +129,13 @@ public class AppData {
         refreshChat();
     }
 
+    /**
+     * Recive chat msg.
+     *
+     * @param friendId the friend id
+     * @param msg      the msg
+     * @param msgId    the msg id
+     */
     public void reciveChatMsg(String friendId, String msg, String msgId) {
         ChatHistory history = chatHistory.get(friendId);
         if (history == null) {
@@ -112,6 +152,11 @@ public class AppData {
         refreshChat();
     }
 
+    /**
+     * Send image msg.
+     *
+     * @param msg the msg
+     */
     public void sendImageMsg(String msg) {
         ChatHistory history = chatHistory.get(chattingFriend.getId());
 
@@ -120,6 +165,14 @@ public class AppData {
         refreshChat();
     }
 
+    /**
+     * Recive image msg.
+     *
+     * @param friendId the friend id
+     * @param msg      the msg
+     * @param msgId    the msg id
+     * @param time     the time
+     */
     public void reciveImageMsg(String friendId, String msg, String msgId, Date time) {
 
         if (time == null)
@@ -138,90 +191,200 @@ public class AppData {
         refreshChat();
     }
 
+    /**
+     * Gets me.
+     *
+     * @return the me
+     */
     public User getMe() {
         return me;
     }
 
+    /**
+     * Gets ws client.
+     *
+     * @return the ws client
+     */
     public WSClient getWsClient() {
         return wsClient;
     }
 
+    /**
+     * Sets ws client.
+     *
+     * @param wsClient the ws client
+     */
     public void setWsClient(WSClient wsClient) {
         this.wsClient = wsClient;
     }
 
+    /**
+     * Sets me.
+     *
+     * @param me the me
+     */
     public void setMe(User me) {
         this.me = me;
     }
 
+    /**
+     * Gets friend list.
+     *
+     * @return the friend list
+     */
     public List<User> getFriendList() {
         return friendList;
     }
 
+    /**
+     * Sets friend list.
+     *
+     * @param friendList the friend list
+     */
     public void setFriendList(List<User> friendList) {
         this.friendList = friendList;
     }
 
+    /**
+     * Gets chatting friend.
+     *
+     * @return the chatting friend
+     */
     public User getChattingFriend() {
         return chattingFriend;
     }
 
+    /**
+     * Sets chatting friend.
+     *
+     * @param chattingFriend the chatting friend
+     */
     public void setChattingFriend(User chattingFriend) {
         this.chattingFriend = chattingFriend;
     }
 
+    /**
+     * Gets chat history.
+     *
+     * @return the chat history
+     */
     public Map<String, ChatHistory> getChatHistory() {
         return chatHistory;
     }
 
+    /**
+     * Sets chat history.
+     *
+     * @param chatHistory the chat history
+     */
     public void setChatHistory(Map<String, ChatHistory> chatHistory) {
         this.chatHistory = chatHistory;
     }
 
+    /**
+     * Gets chat handler.
+     *
+     * @return the chat handler
+     */
     public Handler getChatHandler() {
         return chatHandler;
     }
 
+    /**
+     * Sets chat handler.
+     *
+     * @param chatHandler the chat handler
+     */
     public void setChatHandler(Handler chatHandler) {
         this.chatHandler = chatHandler;
     }
 
+    /**
+     * Gets context.
+     *
+     * @return the context
+     */
     public Context getContext() {
         return context;
     }
 
+    /**
+     * Sets context.
+     *
+     * @param context the context
+     */
     public void setContext(Context context) {
         this.context = context;
     }
 
+    /**
+     * Gets chat context.
+     *
+     * @return the chat context
+     */
     public Context getChatContext() {
         return chatContext;
     }
 
+    /**
+     * Sets chat context.
+     *
+     * @param chatContext the chat context
+     */
     public void setChatContext(Context chatContext) {
         this.chatContext = chatContext;
     }
 
+    /**
+     * Gets friend handler.
+     *
+     * @return the friend handler
+     */
     public Handler getFriendHandler() {
         return friendHandler;
     }
 
+    /**
+     * Sets friend handler.
+     *
+     * @param friendHandler the friend handler
+     */
     public void setFriendHandler(Handler friendHandler) {
         this.friendHandler = friendHandler;
     }
 
+    /**
+     * Gets friend add handler.
+     *
+     * @return the friend add handler
+     */
     public Handler getFriendAddHandler() {
         return friendAddHandler;
     }
 
+    /**
+     * Sets friend add handler.
+     *
+     * @param friendAddHandler the friend add handler
+     */
     public void setFriendAddHandler(Handler friendAddHandler) {
         this.friendAddHandler = friendAddHandler;
     }
 
+    /**
+     * Gets moments handler.
+     *
+     * @return the moments handler
+     */
     public Handler getMomentsHandler () {
         return momentsHandler;
     }
 
+    /**
+     * Set moments handler.
+     *
+     * @param momentsHandler the moments handler
+     */
     public void setMomentsHandler (Handler momentsHandler){
         this.momentsHandler = momentsHandler;
 

@@ -14,6 +14,10 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The type WSClient {@link WebSocketClient} is used to keep connection between server and app.
+ * It also ensure the chat.
+ */
 public class WSClient extends WebSocketClient {
 
 //    CONNECT(1, "第一次(或重连)初始化连接"),
@@ -22,14 +26,34 @@ public class WSClient extends WebSocketClient {
 //    KEEPALIVE(4, "客户端保持心跳"),
 //    PULL_FRIEND(5, "拉取好友");
 
+    /**
+     * The constant CONNECT.
+     */
     public static final int CONNECT = 1;//第一次(或重连)初始化连接
+    /**
+     * The constant CHAT.
+     */
     public static final int CHAT = 2;//聊天消息
+    /**
+     * The constant SIGNED.
+     */
     public static final int SIGNED = 3;//消息签收
+    /**
+     * The constant KEEPALIVE.
+     */
     public static final int KEEPALIVE = 4;//客户端保持心跳
+    /**
+     * The constant PULL_FRIEND.
+     */
     public static final int PULL_FRIEND = 5;//拉取好友
     private static final int HEARTBEATTIME = 10000;
     private final String myId = AppData.getInstance().getMe().getId();
 
+    /**
+     * Instantiates a new Ws client.
+     *
+     * @param serverURI the server uri
+     */
     public WSClient(URI serverURI ) {
         super( serverURI );
     }
@@ -126,6 +150,12 @@ public class WSClient extends WebSocketClient {
     }
 
 
+    /**
+     * Send msg.
+     *
+     * @param friendId the friend id
+     * @param msg      the msg
+     */
     public void sendMsg(String friendId, String msg ){
 
         JSONObject chatMsg = Utils.getChatMsg(myId,friendId,msg);
@@ -136,6 +166,11 @@ public class WSClient extends WebSocketClient {
 
     }
 
+    /**
+     * Sign msg.
+     *
+     * @param list the list
+     */
     public void signMsg(List<String> list){
         JSONArray msgIdList = new JSONArray();
         msgIdList.addAll(list);

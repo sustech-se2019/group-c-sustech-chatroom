@@ -27,13 +27,16 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * Main activity of the application.
+ * Main activity of the application, login activity.
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private CheckBox userRemember, passwordRemember;
     private SharedPreferences sp;
     private TextView login_username, login_password;
+    /**
+     * The Alertdialog 1.
+     */
     AlertDialog alertdialog1;
     @Override
     /**
@@ -95,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         alertdialog1=alertdialogbuilder.create();
         alertdialog1.show();
     }
+
     /**
      * To show username not exist dialog.
      */
@@ -110,6 +114,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * To show username not exist dialog.
+     *
+     * @param msg the msg
      */
     void showdialogMsg(String msg)
     {
@@ -156,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+
     /**
      * Handle the login in message in {@link JSONObject} type.
      */
@@ -216,6 +223,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /**
      * Get information of login and send to server.
+     *
+     * @param username the username
+     * @param password the password
      */
     void login(final String username, final String password ) {
         final String request_url = this.getString(R.string.IM_Server_Url) + "/login";
@@ -340,6 +350,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }).start();
     }
 
+    /**
+     * Cread web socket.
+     */
     public void creadWebSocket() {
         Log.d("creadWebSocket","");
         try{
