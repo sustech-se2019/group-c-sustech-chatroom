@@ -17,7 +17,7 @@ public class WSServer {
         /**
          * The Instance.
          */
-        static final WSServer instance = new WSServer();
+        static final WSServer INSTANCE = new WSServer();
 	}
 
     /**
@@ -26,7 +26,7 @@ public class WSServer {
      * @return the instance
      */
     public static WSServer getInstance() {
-		return SingletionWSServer.instance;
+		return SingletionWSServer.INSTANCE;
 	}
 	
 	private EventLoopGroup mainGroup;

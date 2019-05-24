@@ -24,9 +24,12 @@ import sim.pojo.Users;
 import sim.pojo.vo.ImageVO;
 import sim.pojo.vo.MyFriendsVO;
 import sim.pojo.vo.UsersVO;
-import sim.utils.*;
 import org.n3r.idworker.Sid;
 import sim.enums.SearchFriendsStatusEnum;
+import sim.utils.FastDFSClient;
+import sim.utils.FileUtils;
+import sim.utils.JSONResult;
+import sim.utils.JsonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -390,8 +393,8 @@ public class UserController {
 
         System.out.println(url);
 
-//		"dhawuidhwaiuh3u89u98432.png"
-//		"dhawuidhwaiuh3u89u98432_80x80.png"
+//        "dhawuidhwaiuh3u89u98432.png"
+//        "dhawuidhwaiuh3u89u98432_80x80.png"
 
         // 获取缩略图的url
         String thump = "_80x80.";

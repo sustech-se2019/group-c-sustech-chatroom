@@ -17,6 +17,11 @@
     </option>
   </component>
   <component name="PDMPlugin">
+    <option name="customRuleSets">
+      <list>
+        <option value="C:\Users\dayin\AndroidStudioProjects\main-project-repository-sustech-chatroom\SIMServer\code_quality_tools\pmd.xml" />
+      </list>
+    </option>
     <option name="options">
       <map>
         <entry key="Encoding" value="" />
