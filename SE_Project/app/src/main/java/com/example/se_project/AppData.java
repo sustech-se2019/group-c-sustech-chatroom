@@ -51,7 +51,7 @@ public class AppData {
     }
     public void sendChatMsg(String msg){
         ChatHistory history = chatHistory.get(chattingFriend.getId());
-        if (wsClient.isOpen())
+        if (wsClient.isOpen() && chattingFriend.getId() != null)
         {
             wsClient.sendMsg(chattingFriend.getId(), msg);
             Msg m = new Msg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
