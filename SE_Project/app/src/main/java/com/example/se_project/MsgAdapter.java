@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class MsgAdapter extends ArrayAdapter<Msg>{
 
-    private final int resourceId;
-    private final User chatUser;
+    private int resourceId;
+    private User chatUser;
 
     public MsgAdapter(Context context, int textViewResourceId,
                       List<Msg> objects,User chatUser){
@@ -90,6 +90,7 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
 
             }else {
 //                viewHolder.leftImageMsg.setVisibility(View.GONE);
+                viewHolder.leftImageMsg.setImageBitmap(null);
                 viewHolder.leftMsg.setText(msg.getContent());
             }
 
@@ -113,6 +114,7 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
                         .into(viewHolder.rightImageMsg);
             }else {
 //                viewHolder.rightImageMsg.setVisibility(View.GONE);
+                viewHolder.rightImageMsg.setImageBitmap(null);
                 viewHolder.rightMsg.setText(msg.getContent());
             }
 

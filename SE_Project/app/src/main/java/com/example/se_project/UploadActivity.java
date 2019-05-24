@@ -170,7 +170,8 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
             String userId = AppData.getInstance().getMe().getId();
             String recvId = AppData.getInstance().getChattingFriend().getId();
             String base64 = path2Base64(imgPath);
-            upload(userId, recvId, base64);
+            if(recvId != null)
+                upload(userId, recvId, base64);
         }
     }
 

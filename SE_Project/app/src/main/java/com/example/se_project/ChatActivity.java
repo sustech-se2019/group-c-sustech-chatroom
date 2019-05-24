@@ -102,12 +102,13 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                     //得到翻译内容：
                     String translated = result.getString("data");
                     msgList.get(pos).setContent(translated);
-                    refreshFavListItems();
+                    refreshView();
                     break;
                 case 500:
                     Log.d("result", result.getString("msg"));
                     break;
                 case 800:
+                    System.out.println("Chathandler: " + msgList.toString());
                     refreshView();
                     break;
                 default:
@@ -136,17 +137,11 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    private void refreshFavListItems() {
-        adapter = new MsgAdapter(ChatActivity.this, R.layout.msg_layout, msgList,chatUser);
-        msgListView.setAdapter(adapter);
-    }
-
-
 
     private void initListView() {
         /* Loads the items to the ListView. */
 
-        refreshFavListItems();
+        refreshView();
 
         /* Add Context-Menu listener to the ListView. */
         msgListView.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {
@@ -193,7 +188,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 /* Remove it from the list.*/
                 msgList.remove(favContexted);
 
-                refreshFavListItems();
+                refreshView();
 
                 return true; /* true means: "we handled the event". */
             }
