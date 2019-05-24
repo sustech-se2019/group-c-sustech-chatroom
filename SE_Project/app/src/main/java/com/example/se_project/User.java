@@ -205,8 +205,6 @@ public class User implements Serializable {
      * @return the boolean
      */
     public boolean deleteFriend(User user){
-        Log.d("Name名字名字名字       ", user.getId());
-        Log.d("我的名字       ", AppData.getInstance().getMe().getName());
         final String request_url = "http://10.21.72.100:8081" + "/deleteFriend?userId1="+AppData.getInstance().getMe().getId()+"&userId2="+user.getId();
         new Thread(new Runnable() {
             @Override
@@ -274,7 +272,7 @@ public class User implements Serializable {
      *
      * @return the list
      */
-    public List<User> getFriendList(){
+    protected List<User> getFriendList(){
         this.refreshFriendList();
         return friendList;
     }
@@ -329,7 +327,7 @@ public class User implements Serializable {
      *
      * @param moment the moment
      */
-    public void addGood(Moments moment){
+    protected void addGood(Moments moment){
         moment.addGood();
     }
 
@@ -338,7 +336,7 @@ public class User implements Serializable {
      *
      * @param text the text
      */
-    public void sendMoments(String text){
+    protected void sendMoments(String text){
         if(text == null || text.length() == 0)
             return;
         Moments moment = new Moments(this,text,0);
@@ -372,7 +370,7 @@ public class User implements Serializable {
     /**
      * Refresh moments list.
      */
-    public void refreshMomentsList(){
+    protected void refreshMomentsList(){
         momentsList.clear();
         final String request_url = "http://10.21.72.100:8081" + "/pullMoment?userId="+AppData.getInstance().getMe().id;
         new Thread(new Runnable() {

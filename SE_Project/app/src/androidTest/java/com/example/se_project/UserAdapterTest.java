@@ -43,6 +43,7 @@ public class UserAdapterTest {
             FriendActivity ac = rule.getActivity();
             User user = new User();
             user.setName("123");
+            user.setId("!@3");
             List<User> l = new ArrayList<User>();
             l.add(user);
             UserAdapter userAdapter = new UserAdapter(ac, R.layout.friend_list_layout, l);

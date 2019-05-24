@@ -1,12 +1,11 @@
 package com.example.se_project;
+
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class UserTest {
     @Test
@@ -63,5 +62,56 @@ public class UserTest {
         }
     }
 
+    @Test
+    public void testAddFriend1(){
+        User user1 = new User();
+        User user2 = new User();
+        user2.setId("abc");
+        Assert.assertTrue(user1.addFriend(user2));
+    }
+
+    @Test
+    public void testAddFriend2(){
+        User user1 = new User();
+        User user2 = new User();
+        user2.setId("123");
+        Assert.assertTrue(user1.addFriend(user2));
+    }
+
+    @Test
+    public void testDelFriend1(){
+        User user1 = new User();
+        User user2 = new User();
+        user2.setId("abc");
+        user1.addFriend(user2);
+        Assert.assertTrue(user1.deleteFriend(user2));
+    }
+
+    @Test
+    public void testDelFriend2(){
+        User user1 = new User();
+        User user2 = new User();
+        user2.setId("123");
+        user1.addFriend(user2);
+        Assert.assertTrue(user1.deleteFriend(user2));
+    }
+
+    @Test
+    public void testSearchFriend1(){
+        User user1 = new User();
+        User user2 = new User();
+        user2.setName("abc");
+        user1.addFriend(user2);
+        Assert.assertNotNull(user1.searchFriend("abc"));
+    }
+
+    @Test
+    public void testSearchFriend2(){
+        User user1 = new User();
+        User user2 = new User();
+        user2.setName("123");
+        user1.addFriend(user2);
+        Assert.assertEquals(0,user1.searchFriend("abc").size());
+    }
 
 }
