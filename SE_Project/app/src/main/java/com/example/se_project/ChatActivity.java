@@ -224,6 +224,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.Image:
+
                 Intent intent = new Intent();
                 intent.setClass(ChatActivity.this, UploadActivity.class);
                 ChatActivity.this.startActivity(intent);
