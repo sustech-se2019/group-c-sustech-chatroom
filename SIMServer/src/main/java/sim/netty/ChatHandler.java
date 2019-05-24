@@ -64,6 +64,7 @@ public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame>
 			chatMsg.setMsgId(msgId);
 			
 			DataContent dataContentMsg = new DataContent();
+			dataContentMsg.setAction(MsgActionEnum.CHAT.type);
 			dataContentMsg.setChatMsg(chatMsg);
 			
 			// 发送消息

@@ -242,6 +242,7 @@ public class CameraFragment extends Fragment
      * Back pressed handle in fragment
      */
     protected void onBackPressed(){
+        System.out.println(getActivity().getSupportFragmentManager().getBackStackEntryCount());
         getActivity().getSupportFragmentManager().popBackStack();
     }
 
@@ -385,7 +386,7 @@ public class CameraFragment extends Fragment
         }
 
         @Override
-        /**
+        /**f
          * {@inheritDoc}
          */
         public boolean onSurfaceTextureDestroyed(SurfaceTexture texture) {

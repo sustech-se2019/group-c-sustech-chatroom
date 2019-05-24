@@ -237,6 +237,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 getWindow().setFlags(
                         WindowManager.LayoutParams.FLAG_FULLSCREEN,
                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                System.out.println(getSupportFragmentManager().getBackStackEntryCount());
                 getSupportFragmentManager().beginTransaction()
                         .add(R.id.outside, cameraFragment).addToBackStack(null).commit();
                 break;
