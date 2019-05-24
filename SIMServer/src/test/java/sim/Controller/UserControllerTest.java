@@ -68,6 +68,29 @@ public class UserControllerTest {
         System.out.println(response);
     }
 
+    private static void thumbup(String fromId, String momentId){
+        JSONObject data = new JSONObject();
+        data.put("momentId",momentId);
+        data.put("fromId",fromId);
+        CloseableHttpClient httpclient = HttpClientBuilder.create().build();
+        HttpPost post = new HttpPost(ServerUrl+"thumbUpMoment");
+        String response = null;
+        try {
+            StringEntity s = new StringEntity(data.toJSONString());
+            s.setContentEncoding("UTF-8");
+            s.setContentType("application/json");//发送json数据需要设置contentType
+            post.setEntity(s);
+            HttpResponse res = httpclient.execute(post);
+            if(res.getStatusLine().getStatusCode() == 200){
+                response = EntityUtils.toString(res.getEntity());// 返回json格式：
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(response);
+    }
+
+
     private static void postMoment(String senderId, String content){
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");//设置日期格式
 
@@ -237,6 +260,13 @@ public class UserControllerTest {
             throw new RuntimeException(e);
         }
         System.out.println(response);
+    }
+
+
+
+    @Test
+    public void testThumbup(){
+        thumbup("190523D8P5H1XGC0","190523G641RYRR8H");
     }
 
     @Test
