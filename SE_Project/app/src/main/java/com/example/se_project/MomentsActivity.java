@@ -75,20 +75,9 @@ public class MomentsActivity extends AppCompatActivity {
 //                    操作成功
 
                     AppData.getInstance().getMe().refreshMomentsList();
-                    android.app.AlertDialog alertDialog1 = new android.app.AlertDialog.Builder(adapter.getContext())
-                            .setTitle("Good News")//标题
-                            .setMessage("success")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
-                            .create();
-                    alertDialog1.show();
+
                     break;
                 default:
-                    android.app.AlertDialog alertDialog2 = new android.app.AlertDialog.Builder(adapter.getContext())
-                            .setTitle("Warning")//标题
-                            .setMessage("fail")//内容
-                            .setIcon(R.mipmap.ic_launcher)//图标
-                            .create();
-                    alertDialog2.show();
                     Log.d("result", result.getString("msg"));
                     break;
             }
