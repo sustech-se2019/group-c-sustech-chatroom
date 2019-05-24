@@ -57,15 +57,19 @@
 
 
         </LinearLayout>
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/add_friend_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="Friend"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="5dp">
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
-
-        </LinearLayout>
 
     </RelativeLayout>
     <LinearLayout
@@ -90,7 +94,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/style2"
+        android:background="@drawable/style3"
         android:orientation="horizontal">
         <Button
             android:id="@+id/add_activity"
@@ -98,7 +102,7 @@
             android:layout_height="35dp"
             android:gravity="center"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="40dp"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:background="@drawable/invite"
@@ -110,7 +114,7 @@
             android:layout_height="35dp"
             android:gravity="center"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="40dp"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:background="@drawable/moment"
@@ -123,7 +127,7 @@
             android:layout_height="35dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="10dp"
+            android:layout_marginHorizontal="40dp"
             android:textColor="@color/white"
             android:textSize="30dp"
             android:background="@drawable/refresh"
