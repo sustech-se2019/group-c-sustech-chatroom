@@ -3,6 +3,9 @@ package sim.pojo;
 import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * The type Chat history.
+ */
 @Table(name = "chat_history")
 public class ChatHistory {
     @Id
@@ -26,98 +29,126 @@ public class ChatHistory {
     private Integer type;
 
     /**
-     * @return msg_id
+     * Gets msg id.
+     *
+     * @return msg_id msg id
      */
     public String getMsgId() {
         return msgId;
     }
 
     /**
-     * @param msgId
+     * Sets msg id.
+     *
+     * @param msgId the msg id
      */
     public void setMsgId(String msgId) {
         this.msgId = msgId;
     }
 
     /**
-     * @return from_id
+     * Gets from id.
+     *
+     * @return from_id from id
      */
     public String getFromId() {
         return fromId;
     }
 
     /**
-     * @param fromId
+     * Sets from id.
+     *
+     * @param fromId the from id
      */
     public void setFromId(String fromId) {
         this.fromId = fromId;
     }
 
     /**
-     * @return to_id
+     * Gets to id.
+     *
+     * @return to_id to id
      */
     public String getToId() {
         return toId;
     }
 
     /**
-     * @param toId
+     * Sets to id.
+     *
+     * @param toId the to id
      */
     public void setToId(String toId) {
         this.toId = toId;
     }
 
     /**
-     * @return msg
+     * Gets msg.
+     *
+     * @return msg msg
      */
     public String getMsg() {
         return msg;
     }
 
     /**
-     * @param msg
+     * Sets msg.
+     *
+     * @param msg the msg
      */
     public void setMsg(String msg) {
         this.msg = msg;
     }
 
     /**
-     * @return send_time
+     * Gets send time.
+     *
+     * @return send_time send time
      */
     public Date getSendTime() {
         return sendTime;
     }
 
     /**
-     * @param sendTime
+     * Sets send time.
+     *
+     * @param sendTime the send time
      */
     public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;
     }
 
     /**
-     * @return sign_flag
+     * Gets sign flag.
+     *
+     * @return sign_flag sign flag
      */
     public Integer getSignFlag() {
         return signFlag;
     }
 
     /**
-     * @param signFlag
+     * Sets sign flag.
+     *
+     * @param signFlag the sign flag
      */
     public void setSignFlag(Integer signFlag) {
         this.signFlag = signFlag;
     }
 
     /**
-     * @return type
+     * Gets type.
+     *
+     * @return type type
      */
     public Integer getType() {
         return type;
     }
 
     /**
-     * @param type
+     * Sets type.
+     *
+     * @param type the type
      */
     public void setType(Integer type) {
         this.type = type;

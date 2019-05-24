@@ -37,12 +37,16 @@ import java.util.List;
 @RestController
 public class UserController {
 
+    /**
+     * The constant loginList.
+     */
     public static List<String> loginList = new ArrayList<>();
 
     @Autowired
     private UserDao userDao;
     @Autowired
     private FastDFSClient fastDFSClient;
+
     /**
      * Login json result.
      *
@@ -114,7 +118,7 @@ public class UserController {
     /**
      * Search user with self id and friend user name.
      *
-     * @param myUserId id of current user
+     * @param myUserId       id of current user
      * @param friendUsername the friend username
      * @return {@link JSONResult} message.
      * @throws Exception the exception
@@ -142,12 +146,10 @@ public class UserController {
     }
 
 
-
-
     /**
      * Send friend request from from my user id to friend user name.
      *
-     * @param myUserId id of current user
+     * @param myUserId       id of current user
      * @param friendUsername the friend username
      * @return {@link JSONResult} message.
      * @throws Exception the exception
@@ -177,7 +179,6 @@ public class UserController {
     }
 
 
-
     /**
      * Send friend request from from my user id to friend user name.
      *
@@ -198,6 +199,12 @@ public class UserController {
     }
 
 
+    /**
+     * Thumb up moment json result.
+     *
+     * @param momentThumbUp the moment thumb up
+     * @return the json result
+     */
     @PostMapping("/thumbUpMoment")
     public JSONResult thumbUpMoment(@RequestBody MomentThumbUp momentThumbUp){
         if(momentThumbUp.getFromId() == null || momentThumbUp.getMomentId() == null){
@@ -210,6 +217,12 @@ public class UserController {
     }
 
 
+    /**
+     * Post moment json result.
+     *
+     * @param momentContent the moment content
+     * @return the json result
+     */
     @PostMapping("/postMoment")
     public JSONResult postMoment(@RequestBody MomentContent momentContent){
         if(momentContent.getSenderId() == null || momentContent.getContent() == null){
@@ -224,6 +237,12 @@ public class UserController {
         }
     }
 
+    /**
+     * Pull moment json result.
+     *
+     * @param userId the user id
+     * @return the json result
+     */
     @PostMapping("/pullMoment")
     public JSONResult pullMoment(String userId){
         if(userId == null){
@@ -232,6 +251,13 @@ public class UserController {
         return JSONResult.ok(userDao.pullMoment(userId));
     }
 
+    /**
+     * Delete friend json result.
+     *
+     * @param userId1 the user id 1
+     * @param userId2 the user id 2
+     * @return the json result
+     */
     @PostMapping("/deleteFriend")
     public JSONResult deleteFriend(String userId1,String userId2){
         if (userId1==null || userId2 == null) {
@@ -248,9 +274,10 @@ public class UserController {
 
     /**
      * Send friend request from from my user id to friend user name.
+     *
      * @param acceptUserId the user id of accepter
-     * @param sendUserId the user id of sender
-     * @param operType 0 for decline;1 for accept
+     * @param sendUserId   the user id of sender
+     * @param operType     0 for decline;1 for accept
      * @return {@link JSONResult} message.
      * @throws Exception the exception
      */
@@ -289,6 +316,12 @@ public class UserController {
         return JSONResult.ok(myFirends);
     }
 
+    /**
+     * My friends json result.
+     *
+     * @param userId the user id
+     * @return the json result
+     */
     @PostMapping("/myFriends")
     public JSONResult myFriends(String userId) {
         // 0. userId 判断不能为空
@@ -303,7 +336,10 @@ public class UserController {
     }
 
     /**
+     * Gets un read msg list.
      *
+     * @param acceptUserId the accept user id
+     * @return the un read msg list
      * @Description: 用户手机端获取未签收的消息列表
      */
     @PostMapping("/getUnReadMsgList")
@@ -321,7 +357,10 @@ public class UserController {
     }
 
     /**
+     * Send base 64 json result.
      *
+     * @param imageVO the image vo
+     * @return the json result
      * @Description: 用户发送图片
      */
     @PostMapping("/sendBase64")

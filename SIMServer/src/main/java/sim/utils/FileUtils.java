@@ -15,16 +15,19 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
 import org.springframework.web.multipart.MultipartFile;
 
+/**
+ * The type File utils.
+ */
 @Service
 public class FileUtils {
-	/**
-	 * 根据url拿取file
-	 * 
-	 * @param url
-	 * @param suffix
-	 *            文件后缀名
-	 */
-	public static File createFileByUrl(String url, String suffix) {
+    /**
+     * 根据url拿取file
+     *
+     * @param url    the url
+     * @param suffix 文件后缀名
+     * @return the file
+     */
+    public static File createFileByUrl(String url, String suffix) {
 		byte[] byteFile = getImageFromNetByUrl(url);
 		if (byteFile != null) {
 			File file = getFileFromBytes(byteFile, suffix);
@@ -99,7 +102,13 @@ public class FileUtils {
 		return file;
 	}
 
-	public static MultipartFile createImg(String url) {
+    /**
+     * Create img multipart file.
+     *
+     * @param url the url
+     * @return the multipart file
+     */
+    public static MultipartFile createImg(String url) {
 		try {
 			// File转换成MutipartFile
 			File file = FileUtils.createFileByUrl(url, "jpg");
@@ -112,7 +121,13 @@ public class FileUtils {
 		}
 	}
 
-	public static MultipartFile fileToMultipart(String filePath) {
+    /**
+     * File to multipart multipart file.
+     *
+     * @param filePath the file path
+     * @return the multipart file
+     */
+    public static MultipartFile fileToMultipart(String filePath) {
 		try {
 			// File转换成MutipartFile
 			File file = new File(filePath);
@@ -126,13 +141,26 @@ public class FileUtils {
 		}
 	}
 
-	public static void main(String[] args) {
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
+    public static void main(String[] args) {
 		// WebFileUtils.createFileByUrl("http://122.152.205.72:88/group1/M00/00/01/CpoxxFr7oIaAZ0rOAAC0d3GKDio580.png",
 		// "png");
 		// WebFileUtils.createImg("http://122.152.205.72:88/group1/M00/00/01/CpoxxFr7oIaAZ0rOAAC0d3GKDio580.png");
 	}
 
-	public static boolean base64ToFile(String filePath, String base64Data)  throws Exception {
+    /**
+     * Base 64 to file boolean.
+     *
+     * @param filePath   the file path
+     * @param base64Data the base 64 data
+     * @return the boolean
+     * @throws Exception the exception
+     */
+    public static boolean base64ToFile(String filePath, String base64Data)  throws Exception {
 
         String data = "";
         

@@ -5,6 +5,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+ * The type Moment content.
+ */
 @Table(name = "moment_content")
 public class MomentContent {
     @Id
@@ -20,56 +23,72 @@ public class MomentContent {
     private Date sendTime;
 
     /**
-     * @return moment_id
+     * Gets moment id.
+     *
+     * @return moment_id moment id
      */
     public String getMomentId() {
         return momentId;
     }
 
     /**
-     * @param momentId
+     * Sets moment id.
+     *
+     * @param momentId the moment id
      */
     public void setMomentId(String momentId) {
         this.momentId = momentId;
     }
 
     /**
-     * @return sender_id
+     * Gets sender id.
+     *
+     * @return sender_id sender id
      */
     public String getSenderId() {
         return senderId;
     }
 
     /**
-     * @param senderId
+     * Sets sender id.
+     *
+     * @param senderId the sender id
      */
     public void setSenderId(String senderId) {
         this.senderId = senderId;
     }
 
     /**
-     * @return content
+     * Gets content.
+     *
+     * @return content content
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * @param content
+     * Sets content.
+     *
+     * @param content the content
      */
     public void setContent(String content) {
         this.content = content;
     }
 
     /**
-     * @return sendTime
+     * Gets send time.
+     *
+     * @return sendTime send time
      */
     public Date getSendTime() {
         return sendTime;
     }
 
     /**
-     * @param sendTime
+     * Sets send time.
+     *
+     * @param sendTime the send time
      */
     public void setSendTime(Date sendTime) {
         this.sendTime = sendTime;

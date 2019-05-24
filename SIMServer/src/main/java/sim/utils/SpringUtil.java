@@ -5,6 +5,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 /**
+ * The type Spring util.
+ *
  * @Description: 提供手动获取被spring管理的bean对象
  */
 public class SpringUtil implements ApplicationContextAware {
@@ -18,12 +20,23 @@ public class SpringUtil implements ApplicationContextAware {
 		}
 	}
 
-	// 获取applicationContext
+    /**
+     * Gets application context.
+     *
+     * @return the application context
+     */
+// 获取applicationContext
 	public static ApplicationContext getApplicationContext() {
 		return applicationContext;
 	}
 
-	// 通过name获取 Bean.
+    /**
+     * Gets bean.
+     *
+     * @param name the name
+     * @return the bean
+     */
+// 通过name获取 Bean.
 	public static Object getBean(String name) {
 		return getApplicationContext().getBean(name);
 	}

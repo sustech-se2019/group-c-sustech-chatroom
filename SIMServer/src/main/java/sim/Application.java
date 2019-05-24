@@ -17,6 +17,11 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan(basePackages="sim.mapper")
 @ComponentScan(basePackages= {"sim"})
 public class Application {
+    /**
+     * Gets sping util.
+     *
+     * @return the sping util
+     */
     @Bean
     public SpringUtil getSpingUtil() {
         return new SpringUtil();

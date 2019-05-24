@@ -218,6 +218,12 @@ public class UserDaoImpl implements UserDao {
     }
 
 
+    /**
+     * Save friends.
+     *
+     * @param sendUserId   the send user id
+     * @param acceptUserId the accept user id
+     */
     @Transactional(propagation = Propagation.REQUIRED)
     public void saveFriends(String sendUserId, String acceptUserId) {
         FriendList myFriends = new FriendList();

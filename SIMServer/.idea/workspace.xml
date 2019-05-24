@@ -5,9 +5,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d396022d-25f6-4c8a-84ba-36465c0f82b5" name="Default" comment="Complete image send function.">
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MomentsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/MomentsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SE_Project/app/src/main/java/com/example/se_project/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/FastdfsImporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/FastdfsImporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/enums/SearchFriendsStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/enums/SearchFriendsStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/FriendListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/FriendListMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/FriendRequestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/FriendRequestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentCommentsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentCommentsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentImgMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentImgMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/ChatMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/ChatMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/DataContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/DataContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/HeartBeatHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/HeartBeatHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/UserChannelRel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/UserChannelRel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/WSServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/ChatHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/ChatHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/FriendList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/FriendList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/FriendRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/FriendRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentComments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentComments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentImg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentImg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentThumbUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/MomentThumbUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/FriendRequestVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/FriendRequestVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/ImageVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/ImageVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/MyFriendsVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/MyFriendsVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/FastDFSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/FastDFSClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/JSONResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/MD5Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/MD5Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/MyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/MyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -35,12 +78,12 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="207" column="9" lean-forward="true" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+            <state relative-caret-position="444">
+              <caret line="362" column="30" selection-start-line="362" selection-start-column="30" selection-end-line="362" selection-end-column="30" />
               <folding>
                 <element signature="method#searchUser#0;class#UserController#0" />
                 <element signature="method#addFriendRequest#0;class#UserController#0" />
@@ -53,65 +96,85 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentThumbUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="275">
+              <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="305">
+              <caret line="156" column="57" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="57" />
               <folding>
-                <element signature="e#527#528#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
+                <element signature="method#saveMsg#0;class#UserDaoImpl#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="175">
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1971">
-              <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#findFriends#0;class#UserControllerTest#0" />
-                <element signature="e#11098#11099#0" expanded="true" />
-                <element signature="e#11144#11145#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="100">
+              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -172,14 +235,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/UsersVO.java" />
-        <option value="$PROJECT_DIR$/target/classes/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Controller/LoginAndRegistController.java" />
         <option value="$PROJECT_DIR$/src/test/java/LoginAndRegistTset.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/enums/SearchFriendsStatusEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/JsonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/ChatHistory.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java" />
@@ -192,7 +250,6 @@
         <option value="$PROJECT_DIR$/src/test/java/sim/ChatClient.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/ChatClientTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/ChatTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/utils/SpringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/Application.java" />
         <option value="$PROJECT_DIR$/src/test/java/sim/DaoImpl/UserDaoImplTest.java" />
@@ -220,9 +277,15 @@
         <option value="$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java" />
       </list>
     </option>
   </component>
@@ -261,22 +324,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
-              <item name="sim" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -386,7 +433,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SIMServer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="netty" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SIMServer" type="b2602c69:ProjectViewProjectNode" />
@@ -474,6 +539,22 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="SIMServer" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SIM-Server" type="616d4139:PackageViewModuleNode" />
+              <item name="sim" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -500,7 +581,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.54022986" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="target_folder_evosuite_param" value="src/evo" />
     <property name="time_evosuite_param" value="3" />
   </component>
@@ -721,7 +802,8 @@
       <workItem from="1558605264654" duration="97000" />
       <workItem from="1558605412240" duration="12139000" />
       <workItem from="1558672575928" duration="5014000" />
-      <workItem from="1558690730914" duration="4563000" />
+      <workItem from="1558690730914" duration="5440000" />
+      <workItem from="1558704223521" duration="201000" />
     </task>
     <task id="LOCAL-00001" summary="Fix tested bug.">
       <created>1555684820646</created>
@@ -794,7 +876,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142884000" />
+    <option name="totallyTimeSpent" value="143962000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -807,8 +889,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1913646" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19349681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -943,31 +1026,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/FastdfsImporter.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/FriendRequestVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
-          <folding>
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MyFriendsVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#768#769#0" expanded="true" />
-            <element signature="e#801#802#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/FastDFSClient.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/utils/FileUtils.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/sim/ChatTest.java">
@@ -981,13 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1164,31 +1215,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/MomentContentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1236,13 +1266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UsersMapperCustom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -1257,60 +1280,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="156" column="57" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="57" />
-          <folding>
-            <element signature="e#9326#9327#0" expanded="true" />
-            <element signature="e#9386#9387#0" expanded="true" />
-            <element signature="method#saveMsg#0;class#UserDaoImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="16" column="38" lean-forward="true" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1971">
-          <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findFriends#0;class#UserControllerTest#0" />
-            <element signature="e#11098#11099#0" expanded="true" />
-            <element signature="e#11144#11145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#527#528#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1324,21 +1297,125 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentThumbUp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/ChatHistoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/vo/MomentContentVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/pojo/MomentContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/sim/Controller/UserControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2050">
+          <caret line="99" column="29" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#findFriends#0;class#UserControllerTest#0" />
+            <element signature="e#11098#11099#0" expanded="true" />
+            <element signature="e#11144#11145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentContentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/MomentThumbUpMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/mapper/UsersMapperCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgActionEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/MsgSignFlagEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/enums/OperatorFriendRequestTypeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="49" column="45" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/netty/WSServerInitialzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/Dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="47" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sim/DaoImpl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="156" column="57" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="57" />
+          <folding>
+            <element signature="method#saveMsg#0;class#UserDaoImpl#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sim/Controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="207" column="9" lean-forward="true" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+        <state relative-caret-position="444">
+          <caret line="362" column="30" selection-start-line="362" selection-start-column="30" selection-end-line="362" selection-end-column="30" />
           <folding>
             <element signature="method#searchUser#0;class#UserController#0" />
             <element signature="method#addFriendRequest#0;class#UserController#0" />
