@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -140,12 +141,14 @@ public class AppDataTest {
             user.setId("abc");
             appData.setChattingFriend(user);
             appData.reciveChatMsg(user.getId(),"123","0",new Date(System.currentTimeMillis()));
-            assertNotEquals(new Date(System.currentTimeMillis()),appData.getChatHistory()
+            sleep(500);
+            Date newTime = new Date(System.currentTimeMillis());
+            assertNotEquals(newTime,appData.getChatHistory()
                     .get(user.getId())
                     .getMsgList()
                     .get(0)
                     .getSendTime());
-        }catch(IllegalAccessException | NullPointerException | InstantiationException e){
+        }catch(IllegalAccessException | InterruptedException | NullPointerException | InstantiationException e){
             e.printStackTrace();
         }
     }

@@ -8,8 +8,7 @@ import android.widget.TextView;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.powermock.api.mockito.PowerMockito;
 
 public class MainActivityTest {
     
@@ -35,17 +34,22 @@ public class MainActivityTest {
     @UiThreadTest
     @Test
     public void onClickLoginFail() {
-        MainActivity mainActivity = rule.getActivity();
-        Button login, register;
-        TextView login_username, login_password;
-        login = mainActivity.findViewById(R.id.login_button);
-        register = mainActivity.findViewById(R.id.register_button);
-        login_username = mainActivity.findViewById(R.id.username);
-        login_password = mainActivity.findViewById(R.id.password);
-        login_username.setText("test");
-        login_password.setText("1234567");
-        login.performClick();
-        Assert.assertTrue(mainActivity.alertdialog1.isShowing());
+        try{
+            MainActivity mainActivity = rule.getActivity();
+            Button login, register;
+            TextView login_username, login_password;
+            login = mainActivity.findViewById(R.id.login_button);
+            register = mainActivity.findViewById(R.id.register_button);
+            login_username = mainActivity.findViewById(R.id.username);
+            login_password = mainActivity.findViewById(R.id.password);
+            login_username.setText("test");
+            login_password.setText("1234567");
+            login.performClick();
+            PowerMockito.verifyPrivate(mainActivity).invoke(MainActivity.class.getDeclaredMethod("showdialogMsg", String.class));
+        }catch(java.lang.Exception e){
+            e.printStackTrace();
+        }
+
     }
 
 
