@@ -18,13 +18,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
- * @Description: 处理消息的handler
- * TextWebSocketFrame： 在netty中，是用于为websocket专门处理文本的对象，frame是消息的载体
+ * The type Chat handler.
+ *
+ * @Description: 处理消息的handler  TextWebSocketFrame： 在netty中，是用于为websocket专门处理文本的对象，frame是消息的载体
  */
 public class ChatHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
 
-	// 用于记录和管理所有客户端的channle
+    /**
+     * The constant users.
+     */
+// 用于记录和管理所有客户端的channle
 	public static ChannelGroup users = 
 			new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
 	

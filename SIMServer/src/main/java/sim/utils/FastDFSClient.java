@@ -14,13 +14,23 @@ import com.github.tobato.fastdfs.domain.StorePath;
 import com.github.tobato.fastdfs.exception.FdfsUnsupportStorePathException;
 import com.github.tobato.fastdfs.service.FastFileStorageClient;
 
+/**
+ * The type Fast dfs client.
+ */
 @Component
 public class FastDFSClient {
 
 	@Autowired
 	private FastFileStorageClient storageClient;
-	
-	public String uploadBase64(MultipartFile file) throws IOException {
+
+    /**
+     * Upload base 64 string.
+     *
+     * @param file the file
+     * @return the string
+     * @throws IOException the io exception
+     */
+    public String uploadBase64(MultipartFile file) throws IOException {
 		StorePath storePath = storageClient.uploadImageAndCrtThumbImage(file.getInputStream(), file.getSize(),
 				"png", null);
 		

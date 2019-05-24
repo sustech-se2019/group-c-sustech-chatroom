@@ -1,6 +1,8 @@
 package sim.pojo.vo;
 
 /**
+ * The type Friend request vo.
+ *
  * @Description: 好友请求发送方的信息
  */
 public class FriendRequestVO {
@@ -9,31 +11,76 @@ public class FriendRequestVO {
     private String sendUsername;
     private String sendNickname;
     private String sendGpa;
-    
-	public String getSendUserId() {
+
+    /**
+     * Gets send user id.
+     *
+     * @return the send user id
+     */
+    public String getSendUserId() {
 		return sendUserId;
 	}
-	public void setSendUserId(String sendUserId) {
+
+    /**
+     * Sets send user id.
+     *
+     * @param sendUserId the send user id
+     */
+    public void setSendUserId(String sendUserId) {
 		this.sendUserId = sendUserId;
 	}
-	public String getSendUsername() {
+
+    /**
+     * Gets send username.
+     *
+     * @return the send username
+     */
+    public String getSendUsername() {
 		return sendUsername;
 	}
-	public void setSendUsername(String sendUsername) {
+
+    /**
+     * Sets send username.
+     *
+     * @param sendUsername the send username
+     */
+    public void setSendUsername(String sendUsername) {
 		this.sendUsername = sendUsername;
 	}
-	public String getSendNickname() {
+
+    /**
+     * Gets send nickname.
+     *
+     * @return the send nickname
+     */
+    public String getSendNickname() {
 		return sendNickname;
 	}
-	public void setSendNickname(String sendNickname) {
+
+    /**
+     * Sets send nickname.
+     *
+     * @param sendNickname the send nickname
+     */
+    public void setSendNickname(String sendNickname) {
 		this.sendNickname = sendNickname;
 	}
 
-	public String getSendGpa() {
+    /**
+     * Gets send gpa.
+     *
+     * @return the send gpa
+     */
+    public String getSendGpa() {
 		return sendGpa;
 	}
 
-	public void setSendGpa(String sendGpa) {
+    /**
+     * Sets send gpa.
+     *
+     * @param sendGpa the send gpa
+     */
+    public void setSendGpa(String sendGpa) {
 		this.sendGpa = sendGpa;
 	}
 }

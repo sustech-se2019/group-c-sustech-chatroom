@@ -9,9 +9,8 @@ import com.github.tobato.fastdfs.FdfsClientConfig;
 
 /**
  * 导入FastDFS-Client组件
- * 
- * @author tobato
  *
+ * @author tobato
  */
 @Configuration
 @Import(FdfsClientConfig.class)

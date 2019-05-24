@@ -30,8 +30,9 @@ import tk.mybatis.mapper.common.MySqlMapper;
 /**
  * inherit MyMapper
  *
+ * @param <T> the type parameter
  * @author liuzh
- * @since 2015-09-06 21:53
+ * @since 2015 -09-06 21:53
  */
 public interface MyMapper<T> extends Mapper<T>, MySqlMapper<T> {
     //TODO

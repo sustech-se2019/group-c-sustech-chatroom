@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * The type Friend list.
+ */
 @Table(name = "friend_list")
 public class FriendList {
     @Id
@@ -17,42 +20,54 @@ public class FriendList {
     private String tag;
 
     /**
-     * @return owner_id
+     * Gets owner id.
+     *
+     * @return owner_id owner id
      */
     public String getOwnerId() {
         return ownerId;
     }
 
     /**
-     * @param ownerId
+     * Sets owner id.
+     *
+     * @param ownerId the owner id
      */
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
     /**
-     * @return friend_id
+     * Gets friend id.
+     *
+     * @return friend_id friend id
      */
     public String getFriendId() {
         return friendId;
     }
 
     /**
-     * @param friendId
+     * Sets friend id.
+     *
+     * @param friendId the friend id
      */
     public void setFriendId(String friendId) {
         this.friendId = friendId;
     }
 
     /**
-     * @return tag
+     * Gets tag.
+     *
+     * @return tag tag
      */
     public String getTag() {
         return tag;
     }
 
     /**
-     * @param tag
+     * Sets tag.
+     *
+     * @param tag the tag
      */
     public void setTag(String tag) {
         this.tag = tag;

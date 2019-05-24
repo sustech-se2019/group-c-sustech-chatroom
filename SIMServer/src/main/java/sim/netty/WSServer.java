@@ -7,14 +7,25 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.springframework.stereotype.Component;
 
+/**
+ * The type Ws server.
+ */
 @Component
 public class WSServer {
 
 	private static class SingletionWSServer {
-		static final WSServer instance = new WSServer();
+        /**
+         * The Instance.
+         */
+        static final WSServer instance = new WSServer();
 	}
-	
-	public static WSServer getInstance() {
+
+    /**
+     * Gets instance.
+     *
+     * @return the instance
+     */
+    public static WSServer getInstance() {
 		return SingletionWSServer.instance;
 	}
 	
@@ -22,8 +33,11 @@ public class WSServer {
 	private EventLoopGroup subGroup;
 	private ServerBootstrap server;
 	private ChannelFuture future;
-	
-	public WSServer() {
+
+    /**
+     * Instantiates a new Ws server.
+     */
+    public WSServer() {
 		mainGroup = new NioEventLoopGroup();
 		subGroup = new NioEventLoopGroup();
 		server = new ServerBootstrap();
@@ -31,8 +45,11 @@ public class WSServer {
 			.channel(NioServerSocketChannel.class)
 			.childHandler(new WSServerInitialzer());
 	}
-	
-	public void start() {
+
+    /**
+     * Start.
+     */
+    public void start() {
 		this.future = server.bind(8088);
 		System.out.println("netty websocket server 启动完毕...");
 	}

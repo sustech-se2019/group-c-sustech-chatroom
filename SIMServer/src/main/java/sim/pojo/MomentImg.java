@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * The type Moment img.
+ */
 @Table(name = "moment_img")
 public class MomentImg {
     @Id
@@ -16,42 +19,54 @@ public class MomentImg {
     private Integer rank;
 
     /**
-     * @return moment_id
+     * Gets moment id.
+     *
+     * @return moment_id moment id
      */
     public String getMomentId() {
         return momentId;
     }
 
     /**
-     * @param momentId
+     * Sets moment id.
+     *
+     * @param momentId the moment id
      */
     public void setMomentId(String momentId) {
         this.momentId = momentId;
     }
 
     /**
-     * @return img_path
+     * Gets img path.
+     *
+     * @return img_path img path
      */
     public String getImgPath() {
         return imgPath;
     }
 
     /**
-     * @param imgPath
+     * Sets img path.
+     *
+     * @param imgPath the img path
      */
     public void setImgPath(String imgPath) {
         this.imgPath = imgPath;
     }
 
     /**
-     * @return rank
+     * Gets rank.
+     *
+     * @return rank rank
      */
     public Integer getRank() {
         return rank;
     }
 
     /**
-     * @param rank
+     * Sets rank.
+     *
+     * @param rank the rank
      */
     public void setRank(Integer rank) {
         this.rank = rank;
