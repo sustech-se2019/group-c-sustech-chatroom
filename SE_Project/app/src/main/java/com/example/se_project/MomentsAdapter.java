@@ -19,6 +19,7 @@ import java.util.List;
 public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializable {
 
     private final int resourceId;
+    private MomentsAdapter adapter=this;
     public MomentsAdapter(Context context, int textViewResourceId,
                           List<Moments> objects){
         super(context, textViewResourceId, objects);
@@ -68,6 +69,8 @@ public class MomentsAdapter extends ArrayAdapter<Moments> implements Serializabl
             public void onClick(View v) {
                 if (moments != null)
                     AppData.getInstance().getMe().thumbUpMoment(moments.getMomentId());
+                moments.addGood();
+                adapter.notifyDataSetChanged();
             }
         });
         viewHolder.goodNum.setText(String.valueOf(moments.getGoodNum()));

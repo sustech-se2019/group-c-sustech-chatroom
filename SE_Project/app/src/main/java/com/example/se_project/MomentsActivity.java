@@ -73,8 +73,8 @@ public class MomentsActivity extends AppCompatActivity {
             switch (result.getIntValue("status")) {
                 case 200:
 //                    操作成功
+
                     AppData.getInstance().getMe().refreshMomentsList();
-                    refleshView();
                     android.app.AlertDialog alertDialog1 = new android.app.AlertDialog.Builder(adapter.getContext())
                             .setTitle("Good News")//标题
                             .setMessage("success")//内容
@@ -98,6 +98,7 @@ public class MomentsActivity extends AppCompatActivity {
 
 
     public void refleshView(){
+
         adapter.notifyDataSetChanged();
     }
 
@@ -109,6 +110,7 @@ public class MomentsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        AppData.getInstance().getMe().refreshMomentsList();
         adapter.notifyDataSetChanged();
     }
 }

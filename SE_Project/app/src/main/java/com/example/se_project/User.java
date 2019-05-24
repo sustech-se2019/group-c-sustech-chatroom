@@ -293,11 +293,11 @@ public class User implements Serializable {
                     JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
                     for (Object item:jsonArray) {
                         JSONObject jsonItem = (JSONObject)item;
+
                         Moments moments = new Moments(AppData.getInstance().getFriend(jsonItem.getString("senderId")),jsonItem.getString("content"),0);
                         JSONArray jsonArraytmp = (JSONArray) JSONArray.parse(jsonItem.getString("thumbUpList"));
-                        for (Object item1:jsonArray) {
-                            moments.addGood();
-                        }
+                        moments.setGoodNum(jsonArraytmp.size());
+                        moments.setMomentId(jsonItem.getString("momentId"));
                         momentsList.add(moments);
                     }
 
