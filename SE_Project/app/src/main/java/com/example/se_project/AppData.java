@@ -27,6 +27,7 @@ public class AppData {
     private Handler chatHandler;
     private List<Moments> momentsList;
     private Handler friendHandler;
+    private Handler momentsHandler;
 
     private Context context;
     private Context chatContext;
@@ -36,6 +37,21 @@ public class AppData {
     public static AppData getInstance(){
         return singletonData;
     }
+
+
+    public User getFriend(String userId){
+        if(userId.equals(me.getId())){
+            return me;
+        }else{
+            for(User tmp:friendList){
+                if(tmp.getId().equals(userId)){
+                    return tmp;
+                }
+            }
+            return null;
+        }
+    }
+
 
     private void refreshChat(){
         if (chatHandler == null)
@@ -191,5 +207,13 @@ public class AppData {
 
     public void setFriendHandler(Handler friendHandler) {
         this.friendHandler = friendHandler;
+    }
+
+    public Handler getMomentsHandler() {
+        return momentsHandler;
+    }
+
+    public void setMomentsHandler(Handler momentsHandler) {
+        this.momentsHandler = momentsHandler;
     }
 }

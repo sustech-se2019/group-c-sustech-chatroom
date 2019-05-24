@@ -2,9 +2,13 @@ package com.example.se_project;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+
+import com.alibaba.fastjson.JSONObject;
 
 public class MomentEditActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText inputMoments;
@@ -24,25 +28,17 @@ public class MomentEditActivity extends AppCompatActivity implements View.OnClic
         finish();
     }
 
+
+
+
+
+
+
+
     public void onClick(View view) {
         if( view.getId() == R.id.send_moments ){
-            Moments moment=AppData.getInstance().getMe().sendMoments(inputMoments.getText().toString());
-            if(moment==null){
-                AlertDialog alertDialog1 = new AlertDialog.Builder(momentEdit)
-                        .setTitle("Warning")//标题
-                        .setMessage("fail")//内容
-                        .setIcon(R.mipmap.ic_launcher)//图标
-                        .create();
-                alertDialog1.show();
-            }else{
-                AlertDialog alertDialog1 = new AlertDialog.Builder(momentEdit)
-                        .setTitle("Good News")//标题
-                        .setMessage("success")//内容
-                        .setIcon(R.mipmap.ic_launcher)//图标
-                        .create();
-                alertDialog1.show();
-                finish();
-            }
+            AppData.getInstance().getMe().sendMoments(inputMoments.getText().toString());
         }
+        finish();
     }
 }

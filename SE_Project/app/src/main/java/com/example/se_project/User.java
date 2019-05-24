@@ -7,7 +7,9 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -209,26 +211,106 @@ public class User implements Serializable {
             }
         }).start();
     }
-    public boolean addGood(Moments moment){
-        double a=Math.random();
-        if(a>0.5){
-            moment.addGood();
-            return true;
-        }else{
-            return false;
-        }
+    public void addGood(Moments moment){
+        moment.addGood();
     }
-    public Moments sendMoments(String text){
-        Moments moment=null;
-        double a=Math.random();
-        if(a>0.5){
-            moment=new Moments(this,text,0);
-            this.momentsList.add(0,moment);
-            return moment;
-        }else{
-            return moment;
-        }
+
+    public void sendMoments(String text){
+        if(text == null || text.length() == 0)
+            return;
+        Moments moment = new Moments(this,text,0);
+        final String request_url = "http://10.21.72.100:8081" + "/postMoment";
+        final String content = text;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");//设置日期格式
+                    JSONObject json_data = new JSONObject();
+                    json_data.put("senderId", AppData.getInstance().getMe().id);
+                    json_data.put("content", content);
+                    json_data.put("sendTime",df.format(new Date()).toString());
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    AppData.getInstance().getMomentsHandler().sendMessage(message);
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status", 0);
+                    result_json.put("msg", "连接服务器失败...");
+                    message.obj = result_json;
+                    AppData.getInstance().getMomentsHandler().sendMessage(message);
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
+
+
+
+    public void refreshMomentsList(){
+        momentsList.clear();
+        final String request_url = "http://10.21.72.100:8081" + "/pullMoment?userId="+AppData.getInstance().getMe().id;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    JSONArray jsonArray = (JSONArray) JSONArray.parse(result.getString("data"));
+                    for (Object item:jsonArray) {
+                        JSONObject jsonItem = (JSONObject)item;
+                        Moments moments = new Moments(AppData.getInstance().getFriend(jsonItem.getString("senderId")),jsonItem.getString("content"),0);
+                        JSONArray jsonArraytmp = (JSONArray) JSONArray.parse(jsonItem.getString("thumbUpList"));
+                        for (Object item1:jsonArray) {
+                            moments.addGood();
+                        }
+                        momentsList.add(moments);
+                    }
+
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    /**
+     * Get information of addGood and send to server.
+     */
+    void thumbUpMoment( final  String momentId) {
+        final String request_url = AppData.getInstance().getContext().getString(R.string.IM_Server_Url) + "/thumbUpMoment";
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    json_data.put("momentId", momentId);
+                    json_data.put("fromId", AppData.getInstance().getMe().getId());
+
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("thumbUpMoment",result.toString());
+                    AppData.getInstance().getMomentsHandler().sendMessage(message);
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    AppData.getInstance().getMomentsHandler().sendMessage(message);
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+    }
+
     public List<Moments> getMomentsList(){
         return momentsList;
     }
