@@ -61,6 +61,10 @@ public class FriendActivity extends AppCompatActivity implements View.OnClickLis
         Portrait.setImageResource(portait);
 
         AppData.getInstance().setFriendHandler(handler);
+
+        findViewById(R.id.search_friendlist).setOnClickListener(this);
+        findViewById(R.id.moments).setOnClickListener(this);
+        findViewById(R.id.add_activity).setOnClickListener(this);
     }
 
 

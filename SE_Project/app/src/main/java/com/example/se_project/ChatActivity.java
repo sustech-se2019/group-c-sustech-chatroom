@@ -66,7 +66,11 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         msgListView.setAdapter(adapter);
         registerForContextMenu(msgListView);
 
-        User me  = AppData.getInstance().getMe();
+        findViewById(R.id.Image).setOnClickListener(this);
+        findViewById(R.id.send_msg).setOnClickListener(this);
+        findViewById(R.id.camera).setOnClickListener(this);
+
+        User me = AppData.getInstance().getMe();
         String name = me.getNickName();
 //        int portraitID = me.getProfilePictureID();
 
@@ -233,11 +237,12 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.camera:
+                cameraFragment=CameraFragment.newInstance();
                 getWindow().setFlags(
                         WindowManager.LayoutParams.FLAG_FULLSCREEN,
                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
                 getSupportFragmentManager().beginTransaction()
-                        .add(R.id.outside, CameraFragment.newInstance()).commit();
+                        .add(R.id.outside, cameraFragment).addToBackStack(null).commit();
                 break;
             default:
                 break;

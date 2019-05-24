@@ -16,6 +16,7 @@ public class MomentEditActivity extends AppCompatActivity implements View.OnClic
         }
         setContentView(R.layout.moments_send_activity);
         inputMoments = (EditText) findViewById(R.id.input_moments);
+        findViewById(R.id.send_moments).setOnClickListener(this);
     }
 
     @Override
