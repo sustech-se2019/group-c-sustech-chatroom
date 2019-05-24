@@ -61,6 +61,10 @@ public class FriendActivity extends AppCompatActivity implements View.OnClickLis
         Portrait.setImageResource(portait);
 
         AppData.getInstance().setFriendHandler(handler);
+
+        findViewById(R.id.search_friendlist).setOnClickListener(this);
+        findViewById(R.id.moments).setOnClickListener(this);
+        findViewById(R.id.add_activity).setOnClickListener(this);
     }
 
 
@@ -93,12 +97,12 @@ public class FriendActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search_friendlist:
-//                String content = inputText.getText().toString();
-//                searchFriendByName(content);    //update userList
-//                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-//                userListView.setAdapter(adapter);
-//                adapter.notifyDataSetChanged();//当有消息时刷新
-//                userListView.setSelection(0);//将ListView定位到最后一行
+                String content = inputText.getText().toString();
+                searchFriendByName(content);    //update userList
+                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
+                userListView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();//当有消息时刷新
+                userListView.setSelection(0);//将ListView定位到最后一行
                 break;
             case R.id.moments:
                 Intent intent = new Intent(FriendActivity.this,MomentsActivity.class);

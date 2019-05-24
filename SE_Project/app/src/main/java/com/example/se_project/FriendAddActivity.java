@@ -40,6 +40,8 @@ public class FriendAddActivity extends AppCompatActivity implements View.OnClick
         userListView = (ListView)findViewById(R.id.user_list_view);
         userListView.setAdapter(adapter);
 
+        findViewById(R.id.search_user).setOnClickListener(this);
+
     }
 
     @Override
