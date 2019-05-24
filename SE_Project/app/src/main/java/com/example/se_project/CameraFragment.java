@@ -206,7 +206,7 @@ public class CameraFragment extends Fragment
         super.onActivityCreated(savedInstanceState);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA);
         Date date = new Date(System.currentTimeMillis());
-        mFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath(), simpleDateFormat.format(date)+".jpg");
+        mFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath()+"/Camera/", simpleDateFormat.format(date)+".jpg");
     }
 
     @Override
