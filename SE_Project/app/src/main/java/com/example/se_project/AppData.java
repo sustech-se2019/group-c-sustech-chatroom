@@ -28,10 +28,8 @@ public class AppData {
     private List<Moments> momentsList;
     private Handler friendHandler;
     private Handler momentsHandler;
-
     private Handler friendAddHandler;
 
-    private Handler momentsHandler;
 
 
     private Context context;
