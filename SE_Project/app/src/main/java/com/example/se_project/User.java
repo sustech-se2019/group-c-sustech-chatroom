@@ -136,7 +136,39 @@ public class User implements Serializable {
         }).start();
         return true;
     }
+
     public boolean deleteFriend(User user){
+        Log.d("Name名字名字名字       ", user.getId());
+        Log.d("我的名字       ", AppData.getInstance().getMe().getName());
+        final String request_url = "http://10.21.72.100:8081" + "/deleteFriend?userId1="+AppData.getInstance().getMe().getId()+"&userId2="+user.getId();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Message message = new Message();
+                try {
+                    JSONObject json_data = new JSONObject();
+                    message.obj = HttpRequest.jsonRequest(request_url, json_data);
+                    JSONObject result = (JSONObject)message.obj;
+                    Log.d("111    ",result.toString());
+                    if(result.getInteger("status")!= 200){
+                        Log.d("111    ",result.toString());
+                        return;
+                    }
+                    Log.d("555    ",result.toString());
+
+                    refreshFriendList();
+                } catch (Exception e) {
+                    JSONObject result_json = new JSONObject();
+                    result_json.put("status",500);
+                    result_json.put("msg","连接服务器失败...");
+                    message.obj = result_json;
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        return true;
+    }
+    /*public boolean deleteFriend(User user){
         this.refreshFriendList();
         List<User> list= AppData.getInstance().getFriendList();
         for(int i=0;i<list.size();i++) {
@@ -147,7 +179,7 @@ public class User implements Serializable {
             }
         }
         return false;
-    }
+    }*/
     public ArrayList<User> searchFriend(String name){
         this.refreshFriendList();
         Pattern pattern=Pattern.compile(name);
@@ -194,7 +226,7 @@ public class User implements Serializable {
                     for (Object item:jsonArray) {
                         JSONObject jsonItem = (JSONObject)item;
                         User user = new User();
-                        user.setId(jsonItem.getString("id"));
+                        user.setId(jsonItem.getString("friendUserId"));
                         user.setGpa(4.0);
                         user.setName(jsonItem.getString("friendUsername"));
                         AppData.getInstance().getFriendList().add(user);

@@ -51,10 +51,10 @@ public class MomentsActivity extends AppCompatActivity {
         String name = me.getNickName();
         int portraitID = me.getProfilePictureID();
 
-        TextView NickName = findViewById(R.id.user_name_moments);
+
         ImageView Portrait = findViewById(R.id.user_portait_moments);
 
-        NickName.setText(name);
+
         Portrait.setImageResource(portraitID);
 
 

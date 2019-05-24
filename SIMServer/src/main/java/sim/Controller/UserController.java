@@ -237,7 +237,7 @@ public class UserController {
         if (userId1==null || userId2 == null) {
             return JSONResult.errorMsg("");
         }
-        if(userDao.checkWhetherFriend(userId1,userId2)){
+        if(userDao.checkWhetherFriend(userId1,userId2) || userDao.checkWhetherFriend(userId2,userId1)){
             userDao.deleteFriend(userId1,userId2);
             userDao.deleteFriend(userId2,userId1);
         }else{
