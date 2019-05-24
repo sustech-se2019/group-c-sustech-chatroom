@@ -40,6 +40,21 @@
 			mf.owner_id = #{userId}
 	</select>
 
+	<select id="getMomentThumbUp" resultType="String"
+			parameterType="String">
+		select
+			u.username as thumber
+		from
+			users u
+		join
+			moment_thumb_up mtu
+		on
+			mtu.from_id = u.id
+		where
+			mtu.moment_id = #{momentId}
+		</select>
+
+
 	<select id="viewMoment" resultType="sim.pojo.MomentContent"
 			parameterType="String">
             select

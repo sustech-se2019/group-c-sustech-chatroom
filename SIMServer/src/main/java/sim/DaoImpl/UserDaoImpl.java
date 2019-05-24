@@ -3,6 +3,7 @@ package sim.DaoImpl;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.n3r.idworker.Sid;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -15,6 +16,7 @@ import sim.netty.DataContent;
 import sim.netty.UserChannelRel;
 import sim.pojo.*;
 import sim.pojo.vo.FriendRequestVO;
+import sim.pojo.vo.MomentContentVO;
 import sim.pojo.vo.MyFriendsVO;
 import sim.utils.JsonUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -22,6 +24,7 @@ import tk.mybatis.mapper.entity.Example.Criteria;
 import sim.Dao.UserDao;
 import sim.enums.SearchFriendsStatusEnum;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -147,9 +150,18 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public List<MomentContent> pullMoment(String userId) {
+    public List<MomentContentVO> pullMoment(String userId) {
         List<MomentContent> res = usersMapperCustom.viewMoment(userId);
-        return res;
+        List<MomentContentVO> newRes = new ArrayList<>();
+        for(MomentContent mc : res){
+            MomentContentVO mcvo = new MomentContentVO();
+            BeanUtils.copyProperties(mc,mcvo);
+            System.out.println(mc.getMomentId());
+            mcvo.setThumbUpList(usersMapperCustom.getMomentThumbUp(mc.getMomentId()));
+            newRes.add(mcvo);
+        }
+
+        return newRes;
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
