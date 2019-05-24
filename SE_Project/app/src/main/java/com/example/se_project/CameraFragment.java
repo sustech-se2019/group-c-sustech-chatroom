@@ -49,23 +49,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.Size;
-import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.TextureView;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -164,79 +157,6 @@ public class CameraFragment extends Fragment
         return new CameraFragment();
     }
 
-    @Override
-    /**
-     * {@inheritDoc}
-     */
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_camera, container, false);
-    }
-
-    @Override
-    /**
-     * {@inheritDoc}
-     */
-    public void onViewCreated(final View view, Bundle savedInstanceState) {
-        view.findViewById(R.id.close_camera).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getWindow().clearFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                getActivity().getSupportFragmentManager().popBackStack();
-            }
-        });
-        view.findViewById(R.id.capture).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                takePicture();
-                getActivity().getWindow().clearFlags(
-                        WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            }
-        });
-        mTextureView = view.findViewById(R.id.texture);
-    }
-
-    @Override
-    /**
-     * {@inheritDoc}
-     */
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA);
-        Date date = new Date(System.currentTimeMillis());
-        mFile = new File(getActivity().getExternalFilesDir(null), simpleDateFormat.format(date)+".jpg");
-    }
-
-    @Override
-    /**
-     * {@inheritDoc}
-     */
-    public void onResume() {
-        super.onResume();
-        cameraUtils.startBackgroundThread();
-
-        // When the screen is turned off and turned back on, the SurfaceTexture is already
-        // available, and "onSurfaceTextureAvailable" will not be called. In that case, we can open
-        // a camera and start preview from here (otherwise, we wait until the surface is ready in
-        // the SurfaceTextureListener).
-        if (mTextureView.isAvailable()) {
-            openCamera(mTextureView.getWidth(), mTextureView.getHeight());
-        } else {
-            mTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
-        }
-    }
-
-    @Override
-    /**
-     * {@inheritDoc}
-     */
-    public void onPause() {
-        cameraUtils.closeCamera();
-        cameraUtils.stopBackgroundThread();
-        super.onPause();
-    }
-    
     /**
      * Back pressed handle in fragment
      */
@@ -267,19 +187,6 @@ public class CameraFragment extends Fragment
             new ConfirmationDialog().show(getChildFragmentManager(), FRAGMENT_DIALOG);
         } else {
             requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == REQUEST_CAMERA_PERMISSION) {
-            if (grantResults.length != 1 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                ErrorDialog.newInstance(getString(R.string.request_permission))
-                        .show(getChildFragmentManager(), FRAGMENT_DIALOG);
-            }
-        } else {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 

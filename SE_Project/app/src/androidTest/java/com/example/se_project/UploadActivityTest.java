@@ -4,8 +4,6 @@ import android.support.test.annotation.UiThreadTest;
 import android.support.test.rule.ActivityTestRule;
 import android.view.View;
 
-import com.example.se_project.Chat.WSClient;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.powermock.api.mockito.PowerMockito;
