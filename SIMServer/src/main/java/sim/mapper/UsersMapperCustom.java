@@ -13,6 +13,8 @@ public interface UsersMapperCustom extends MyMapper<Users> {
 
     public List<MomentContent> viewMoment(String usedId);
 
+    public List<String> getMomentThumbUp(String momentId);
+
     public void batchUpdateMsgSigned(List<String> msgIdList);
 
 }

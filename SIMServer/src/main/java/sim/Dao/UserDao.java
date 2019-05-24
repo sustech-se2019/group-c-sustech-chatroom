@@ -6,6 +6,7 @@ import sim.pojo.MomentContent;
 import sim.pojo.MomentThumbUp;
 import sim.pojo.Users;
 import sim.pojo.vo.FriendRequestVO;
+import sim.pojo.vo.MomentContentVO;
 import sim.pojo.vo.MyFriendsVO;
 
 import java.util.List;
@@ -43,7 +44,7 @@ public interface UserDao {
      */
     public Users createUser(Users user);
 
-    public List<MomentContent> pullMoment(String userId);
+    public List<MomentContentVO> pullMoment(String userId);
 
     public MomentContent createMoment(MomentContent momentContent);
 
