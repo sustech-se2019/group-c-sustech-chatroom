@@ -73,21 +73,17 @@ public class MomentsActivity extends AppCompatActivity {
             switch (result.getIntValue("status")) {
                 case 200:
 //                    操作成功
-
                     AppData.getInstance().getMe().refreshMomentsList();
-
                     break;
                 default:
-                    Log.d("result", result.getString("msg"));
+                    refleshView();
                     break;
             }
         }
     };
 
 
-
-    public void refleshView(){
-
+    private void refleshView(){
         adapter.notifyDataSetChanged();
     }
 

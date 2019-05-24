@@ -227,7 +227,7 @@ public class User implements Serializable {
                         JSONObject jsonItem = (JSONObject)item;
                         User user = new User();
                         user.setId(jsonItem.getString("friendUserId"));
-                        user.setGpa(4.0);
+                        user.setGpa(jsonItem.getDouble("friendGpa"));
                         user.setName(jsonItem.getString("friendUsername"));
                         AppData.getInstance().getFriendList().add(user);
                     }
@@ -300,7 +300,11 @@ public class User implements Serializable {
                         moments.setMomentId(jsonItem.getString("momentId"));
                         momentsList.add(moments);
                     }
-
+                    Message msg = new Message();
+                    JSONObject json = new JSONObject();
+                    json.put("status",800);
+                    msg.obj = json;
+                    AppData.getInstance().getMomentsHandler().sendMessage(msg);
                 } catch (Exception e) {
                     JSONObject result_json = new JSONObject();
                     result_json.put("status",500);
