@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
@@ -45,6 +46,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
     private Bitmap bitmap;
     private String imgPath;
 
+
     private boolean getPermission;
     private boolean permissionGranted;
     private boolean permissionDenied;
@@ -63,6 +65,7 @@ public class UploadActivity extends AppCompatActivity implements View.OnClickLis
 
         prgDialog= new ProgressDialog(this);
         prgDialog.setCancelable(false);
+
 
 
         findViewById(R.id.choose_image).setOnClickListener(this);

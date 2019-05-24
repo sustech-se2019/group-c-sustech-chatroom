@@ -83,6 +83,7 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
                 viewHolder.leftImageMsg.setMaxWidth(width/2);
                 viewHolder.leftImageMsg.setMaxHeight(width/2*5);
 
+                viewHolder.leftMsg.setText("");
                 Glide.with(AppData.getInstance().getChatContext())
                         .load(url)
                         .into(viewHolder.leftImageMsg);
@@ -106,6 +107,7 @@ public class MsgAdapter extends ArrayAdapter<Msg>{
                 viewHolder.rightImageMsg.setMaxWidth(width/2);
                 viewHolder.rightImageMsg.setMaxHeight(width/2*5);
 
+                viewHolder.rightMsg.setText("");
                 Glide.with(AppData.getInstance().getChatContext())
                         .load(url)
                         .into(viewHolder.rightImageMsg);
