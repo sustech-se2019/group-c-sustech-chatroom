@@ -9,7 +9,8 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:layout_height="300dp"
+        android:background="@color/aliceblue"/>
 
     <Button
         android:id="@+id/choose_image"
