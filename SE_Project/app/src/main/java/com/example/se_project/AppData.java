@@ -27,32 +27,52 @@ public class AppData {
     private Handler chatHandler;
     private List<Moments> momentsList;
     private Handler friendHandler;
+    private Handler momentsHandler;
+    private Handler friendAddHandler;
+
+
 
     private Context context;
     private Context chatContext;
 
     private static AppData singletonData = new AppData();
 
-    public static AppData getInstance(){
+    public static AppData getInstance() {
         return singletonData;
     }
 
-    private void refreshChat(){
+
+    public User getFriend(String userId) {
+        if (userId.equals(me.getId())) {
+            return me;
+        } else {
+            for (User tmp : friendList) {
+                if (tmp.getId().equals(userId)) {
+                    return tmp;
+                }
+            }
+            return null;
+        }
+    }
+
+
+    private void refreshChat() {
         if (chatHandler == null)
             return;
         Message message = new Message();
         JSONObject result_json = new JSONObject();
-        result_json.put("status",800);
+        result_json.put("status", 800);
         message.obj = result_json;
         chatHandler.sendMessage(message);
     }
-    public List<Moments> getMomentsList(){
+
+    public List<Moments> getMomentsList() {
         return momentsList;
     }
-    public void sendChatMsg(String msg){
+
+    public void sendChatMsg(String msg) {
         ChatHistory history = chatHistory.get(chattingFriend.getId());
-        if (wsClient.isOpen() && chattingFriend.getId() != null)
-        {
+        if (wsClient.isOpen() && chattingFriend.getId() != null) {
             wsClient.sendMsg(chattingFriend.getId(), msg);
             Msg m = new Msg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
             history.getMsgList().add(m);
@@ -60,10 +80,9 @@ public class AppData {
         refreshChat();
     }
 
-    public void reciveChatMsg(String friendId, String msg, String msgId, Date time){
+    public void reciveChatMsg(String friendId, String msg, String msgId, Date time) {
         ChatHistory history = chatHistory.get(friendId);
-        if (history == null)
-        {
+        if (history == null) {
             history = new ChatHistory();
             history.setFriendId(friendId);
             history.setMyId(me.getId());
@@ -71,16 +90,15 @@ public class AppData {
 //            history.setMsgList(new ArrayList<Msg>());
             chatHistory.put(friendId, history);
         }
-        System.out.println("reciveChatMsg: "+msg);
+        System.out.println("reciveChatMsg: " + msg);
         Msg m = new Msg(msg, Msg.TYPE_RECEIVED, time, msgId);
         history.getMsgList().add(m);
         refreshChat();
     }
 
-    public void reciveChatMsg(String friendId, String msg, String msgId){
+    public void reciveChatMsg(String friendId, String msg, String msgId) {
         ChatHistory history = chatHistory.get(friendId);
-        if (history == null)
-        {
+        if (history == null) {
             history = new ChatHistory();
             history.setFriendId(friendId);
             history.setMyId(me.getId());
@@ -94,7 +112,7 @@ public class AppData {
         refreshChat();
     }
 
-    public void sendImageMsg(String msg){
+    public void sendImageMsg(String msg) {
         ChatHistory history = chatHistory.get(chattingFriend.getId());
 
         ImageMsg m = new ImageMsg(msg, Msg.TYPE_SENT, new Date(System.currentTimeMillis()), null);
@@ -102,20 +120,19 @@ public class AppData {
         refreshChat();
     }
 
-    public void reciveImageMsg(String friendId, String msg, String msgId, Date time){
+    public void reciveImageMsg(String friendId, String msg, String msgId, Date time) {
 
         if (time == null)
             time = new Date(System.currentTimeMillis());
         ChatHistory history = chatHistory.get(friendId);
-        if (history == null)
-        {
+        if (history == null) {
             history = new ChatHistory();
             history.setFriendId(friendId);
             history.setMyId(me.getId());
             history.setLastTime(time);
             chatHistory.put(friendId, history);
         }
-        System.out.println("reciveImageMsg: "+msg);
+        System.out.println("reciveImageMsg: " + msg);
         Msg m = new ImageMsg(msg, Msg.TYPE_RECEIVED, time, msgId);
         history.getMsgList().add(m);
         refreshChat();
@@ -192,4 +209,22 @@ public class AppData {
     public void setFriendHandler(Handler friendHandler) {
         this.friendHandler = friendHandler;
     }
+
+    public Handler getFriendAddHandler() {
+        return friendAddHandler;
+    }
+
+    public void setFriendAddHandler(Handler friendAddHandler) {
+        this.friendAddHandler = friendAddHandler;
+    }
+
+    public Handler getMomentsHandler () {
+        return momentsHandler;
+    }
+
+    public void setMomentsHandler (Handler momentsHandler){
+        this.momentsHandler = momentsHandler;
+
+    }
+
 }

@@ -32,6 +32,7 @@ public class FriendAddActivity extends AppCompatActivity implements View.OnClick
         if (getSupportActionBar() != null){
             getSupportActionBar().hide();
         }
+        AppData.getInstance().setFriendAddHandler(handler);
         setContentView(R.layout.friend_add_activity);
         initFriends();//初始化消息数据
         adapter = new UserAddAdapter(FriendAddActivity.this, R.layout.friend_add_layout, userList);
@@ -103,6 +104,8 @@ public class FriendAddActivity extends AppCompatActivity implements View.OnClick
                 userList.add(user);
                 Log.d("加入", user.getName());
                 reflesh();
+            }else if (result.getInteger("status")==800){
+                finish();
             }else{
                 showdialogMsg(result.getString("msg"));
             }

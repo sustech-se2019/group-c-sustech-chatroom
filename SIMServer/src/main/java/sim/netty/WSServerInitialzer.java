@@ -9,6 +9,9 @@ import io.netty.handler.codec.http.websocketx.WebSocketServerProtocolHandler;
 import io.netty.handler.stream.ChunkedWriteHandler;
 import io.netty.handler.timeout.IdleStateHandler;
 
+/**
+ * The type Ws server initialzer.
+ */
 public class WSServerInitialzer extends ChannelInitializer<SocketChannel> {
 
 	@Override

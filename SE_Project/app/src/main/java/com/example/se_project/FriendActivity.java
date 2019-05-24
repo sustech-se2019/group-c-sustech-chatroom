@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -97,10 +98,8 @@ public class FriendActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search_friendlist:
-                adapter = new UserAdapter(FriendActivity.this, R.layout.friend_list_layout, userList);
-                userListView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();//当有消息时刷新
-                userListView.setSelection(0);//将ListView定位到最后一行
+                AppData.getInstance().getMe().getFriendList();
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.moments:
                 Intent intent = new Intent(FriendActivity.this,MomentsActivity.class);

@@ -2,6 +2,9 @@ package sim.netty;
 
 import java.io.Serializable;
 
+/**
+ * The type Data content.
+ */
 public class DataContent implements Serializable {
 
 	private static final long serialVersionUID = 8021381444738260454L;
@@ -9,23 +12,58 @@ public class DataContent implements Serializable {
 	private Integer action;		// 动作类型
 	private ChatMsg chatMsg;	// 用户的聊天内容entity
 	private String extand;		// 扩展字段
-	
-	public Integer getAction() {
+
+    /**
+     * Gets action.
+     *
+     * @return the action
+     */
+    public Integer getAction() {
 		return action;
 	}
-	public void setAction(Integer action) {
+
+    /**
+     * Sets action.
+     *
+     * @param action the action
+     */
+    public void setAction(Integer action) {
 		this.action = action;
 	}
-	public ChatMsg getChatMsg() {
+
+    /**
+     * Gets chat msg.
+     *
+     * @return the chat msg
+     */
+    public ChatMsg getChatMsg() {
 		return chatMsg;
 	}
-	public void setChatMsg(ChatMsg chatMsg) {
+
+    /**
+     * Sets chat msg.
+     *
+     * @param chatMsg the chat msg
+     */
+    public void setChatMsg(ChatMsg chatMsg) {
 		this.chatMsg = chatMsg;
 	}
-	public String getExtand() {
+
+    /**
+     * Gets extand.
+     *
+     * @return the extand
+     */
+    public String getExtand() {
 		return extand;
 	}
-	public void setExtand(String extand) {
+
+    /**
+     * Sets extand.
+     *
+     * @param extand the extand
+     */
+    public void setExtand(String extand) {
 		this.extand = extand;
 	}
 }

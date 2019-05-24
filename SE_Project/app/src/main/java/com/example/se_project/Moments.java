@@ -1,14 +1,22 @@
 package com.example.se_project;
 
 
+import android.annotation.SuppressLint;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
+
+import com.alibaba.fastjson.JSONObject;
+
 import java.io.Serializable;
 
 /**
  * Moments class
  */
 public class Moments implements Serializable {
-    private final User user;
-    private final String text;
+    private User user;
+    private String text;
+    private String momentId;
     private int goodNum;
     public Moments(User user, String text,int goodNum){
         this.user=user;
@@ -21,10 +29,36 @@ public class Moments implements Serializable {
     public String getText(){
         return text;
     }
-    public int getGoodnum(){
-        return goodNum;
-    }
+
     public void addGood(){
         this.goodNum++;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getMomentId() {
+        return momentId;
+    }
+
+    public void setMomentId(String momentId) {
+        this.momentId = momentId;
+    }
+
+    public int getGoodNum() {
+        return goodNum;
+    }
+
+    public void setGoodNum(int goodNum) {
+        this.goodNum = goodNum;
+    }
+
+
+
+
 }

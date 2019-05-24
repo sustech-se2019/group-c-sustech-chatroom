@@ -3,15 +3,7 @@ package sim.utils;
 /**
  * This class is to return json result
  *
- * @Description: Custom response data structure
- *              This class is for portal, ios, Android, WeChat Mall
- *              After accepting such data, the portal needs to use the method of this class to convert to the data type format (class, or list).
- *              Other self-handling
- * 				200：success
- * 				500：error in msg segment
- * 				501：Bean validation error, no matter how many errors are returned as a map
- * 				502：The interceptor intercepted the user token error
- * 				555：exception
+ * @Description: Custom response data structure              This class is for portal, ios, Android, WeChat Mall              After accepting such data, the portal needs to use the method of this class to convert to the data type format (class, or list).              Other self-handling 				200：success 				500：error in msg segment 				501：Bean validation error, no matter how many errors are returned as a map 				502：The interceptor intercepted the user token error 				555：exception
  */
 public class JSONResult {
 
@@ -35,6 +27,7 @@ public class JSONResult {
     public static JSONResult build(Integer status, String msg, Object data) {
         return new JSONResult(status, msg, data);
     }
+
     /**
      * Ok json result.
      *
@@ -44,7 +37,8 @@ public class JSONResult {
     public static JSONResult ok(Object data) {
         return new JSONResult(data);
     }
-     /**
+
+    /**
      * Ok json result.
      *
      * @return the json result
@@ -52,6 +46,7 @@ public class JSONResult {
     public static JSONResult ok() {
         return new JSONResult(null);
     }
+
     /**
      * Error msg json result.
      *
@@ -61,6 +56,7 @@ public class JSONResult {
     public static JSONResult errorMsg(String msg) {
         return new JSONResult(500, msg, null);
     }
+
     /**
      * Error map json result.
      *
@@ -70,6 +66,7 @@ public class JSONResult {
     public static JSONResult errorMap(Object data) {
         return new JSONResult(501, "error", data);
     }
+
     /**
      * Error token msg json result.
      *
@@ -79,6 +76,7 @@ public class JSONResult {
     public static JSONResult errorTokenMsg(String msg) {
         return new JSONResult(502, msg, null);
     }
+
     /**
      * Error exception json result.
      *
@@ -88,6 +86,7 @@ public class JSONResult {
     public static JSONResult errorException(String msg) {
         return new JSONResult(555, msg, null);
     }
+
     /**
      * Instantiates a new Json result.
      *
@@ -100,6 +99,7 @@ public class JSONResult {
         this.msg = msg;
         this.data = data;
     }
+
     /**
      * Instantiates a new Json result.
      *
@@ -110,6 +110,7 @@ public class JSONResult {
         this.msg = "OK";
         this.data = data;
     }
+
     /**
      * Is ok boolean.
      *
@@ -118,6 +119,7 @@ public class JSONResult {
     public Boolean isOK() {
         return this.status == 200;
     }
+
     /**
      * Gets status.
      *
@@ -126,6 +128,7 @@ public class JSONResult {
     public Integer getStatus() {
         return status;
     }
+
     /**
      * Sets status.
      *
@@ -134,6 +137,7 @@ public class JSONResult {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
     /**
      * Gets msg.
      *
@@ -142,6 +146,7 @@ public class JSONResult {
     public String getMsg() {
         return msg;
     }
+
     /**
      * Sets msg.
      *
@@ -150,6 +155,7 @@ public class JSONResult {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
     /**
      * Gets data.
      *
@@ -158,6 +164,7 @@ public class JSONResult {
     public Object getData() {
         return data;
     }
+
     /**
      * Sets data.
      *
