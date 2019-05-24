@@ -230,7 +230,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.send_msg:
                 String content = inputText.getText().toString();
-                if("".equals(content)){
+                if(!"".equals(content)){
                     AppData.getInstance().sendChatMsg(content);
                     refreshView();
                     inputText.setText("");//清空输入框的内容

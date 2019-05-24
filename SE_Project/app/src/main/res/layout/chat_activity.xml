@@ -18,7 +18,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:id="@+id/Chat_who"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:gravity="center"
                 android:textSize="20dp"
                 android:background="@drawable/style2"
@@ -32,21 +32,31 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/aliceblue"
-            android:divider="#0000">
-        </ListView>
+            android:background="@color/whitesmoke"
+            android:divider="#0000"></ListView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="10dp"
+            android:layout_height="3dp"
             android:background="@color/white"
             ></LinearLayout>
         <!--输入框部分（横排排列）-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/aliceblue"
+            android:background="@color/white"
             >
+            <Button
+
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/camera"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/camera"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                />
 
 
             <!--输入框-->
@@ -56,36 +66,27 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_gravity="center_vertical"
-                android:hint="Type here"
+                android:background="@color/aliceblue"
+                android:hint="Type something here"
                 android:maxLines="2"/>
 
             <!--发送按钮-->
             <Button
                 android:id="@+id/send_msg"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:textAllCaps="false"
                 android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="5dp"
                 android:background="@drawable/send"
                 android:textColor="@color/white" />
 
-            <Button
 
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:id="@+id/camera"
-                android:layout_gravity="center_vertical"
-                android:layout_marginHorizontal="5dp"
-                android:background="@drawable/camera"
-                android:textColor="@color/white"
-                android:textAllCaps="false"
-                />
 
             <Button
 
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:id="@+id/Image"
                 android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="5dp"

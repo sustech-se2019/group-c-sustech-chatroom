@@ -17,19 +17,37 @@
             android:layout_height="40dp"
             android:src="@drawable/gpa0"/>
         <ImageView
-            android:id="@+id/left_image_msg"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/rectangle"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <LinearLayout
+            android:background="@drawable/bubble"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:layout_gravity="center"
-            android:layout_margin="10dp" />
-        <TextView
-            android:id="@+id/left_msg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:textColor="#0D2EA4"/>
+            >
+            <ImageView
+                android:id="@+id/left_image_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                android:layout_margin="10dp" />
+            <TextView
+                android:id="@+id/left_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:textColor="#0D2EA4"/>
+        </LinearLayout>
+
 
     </LinearLayout>
     <!--右chat-->
